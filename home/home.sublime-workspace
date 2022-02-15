@@ -1,0 +1,480 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"from",
+				"from-transparent "
+			],
+			[
+				"pointer-events",
+				"pointer-events-none "
+			],
+			[
+				"skew",
+				"skew-x-3 "
+			],
+			[
+				"font-",
+				"font-normal "
+			],
+			[
+				"font",
+				"font-normal "
+			],
+			[
+				"leading-",
+				"leading-snug "
+			],
+			[
+				"opacity",
+				"opacity-75"
+			]
+		]
+	},
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 135.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"rein",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"compress",
+				"Format CSS: Compressed"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			],
+			[
+				"comp",
+				"Format CSS: Compressed"
+			],
+			[
+				"compre",
+				"Format CSS: Compressed"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"wrap",
+				"Word Wrap: Toggle"
+			],
+			[
+				"xml",
+				"Set Syntax: XML"
+			],
+			[
+				"pretty",
+				"HTMLPrettify"
+			],
+			[
+				"url",
+				"Emmet: Encode\\Decode Image to data:URL"
+			],
+			[
+				"packa",
+				"Install Package Control"
+			]
+		],
+		"width": 493.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/Craig/Dropbox/sites/_freelance/wisconsinmusic.net/wisconsinmusic.net.sublime-project",
+		"/Users/Craig/Desktop/☑️.md",
+		"/Users/Craig/Dropbox/sites/qrayg.com/home/site/live/index.html",
+		"/Users/Craig/Dropbox/work/meridian/prototypes/index.html",
+		"/Users/Craig/Dropbox/apps/sublime/User/Snippets/Tailwind - HTML.sublime-snippet",
+		"/Users/Craig/Desktop/int/_.md",
+		"/Users/Craig/Desktop/_.md",
+		"/Users/Craig/Dropbox/sites/qrayg.com/home/site/live/humans.txt",
+		"/Users/Craig/Dropbox/sites/qrayg.com/site/live/img/grid.svg",
+		"/Users/Craig/Dropbox/sites/qrayg.com/home/home.sublime-project",
+		"/Users/Craig/Desktop/tw/node_modules/twind/package.json",
+		"/Users/Craig/Dropbox/sites/qrayg.com/home/site/src/tailwind.config.js",
+		"/Users/Craig/Dropbox/sites/qrayg.com/home/site/src/index.html",
+		"/Users/Craig/Dropbox/sites/qrayg.com/home/site/src/js/main.js",
+		"/Users/Craig/Dropbox/sites/qrayg.com/home/site/src/css/main.css",
+		"/Users/Craig/Dropbox/sites/qrayg.com/home/site/src/gulpfile.js",
+		"/Users/Craig/Dropbox/sites/qrayg.com/home/site/src/package.json",
+		"/Users/Craig/Dropbox/sites/legendofmana.info/site/_dev/gulpfile.js",
+		"/Users/Craig/Dropbox/sites/legendofmana.info/site/_dev/tailwind.config.js",
+		"/Users/cerskine/Dropbox/sites/qrayg.com/home/site/live/sftp-config.json",
+		"/Users/cerskine/Dropbox/sites/qrayg.com/home/site/live/humans.txt",
+		"/Users/cerskine/Dropbox/sites/qrayg.com/home/site/src/js/main.js",
+		"/Users/cerskine/Dropbox/sites/qrayg.com/home/site/src/css/main.css",
+		"/Users/cerskine/Desktop/es6.html",
+		"/Volumes/UX/cerskine/prototypes/branding/themes.html",
+		"/Users/cerskine/Dropbox/sites/qrayg.com/home/site/src/index.html",
+		"/Users/cerskine/Dropbox/sites/qrayg.com/home/site/live/index.html",
+		"/Users/cerskine/Dropbox/sites/qrayg.com/home/site/src/asset-manifest.json",
+		"/Users/cerskine/Dropbox/sites/qrayg.com/home/site/src/.gitignore",
+		"/Users/cerskine/Dropbox/sites/qrayg.com/home/site/src/gulpfile.js",
+		"/Users/cerskine/Dropbox/sites/qrayg.com/home/site/src/tailwind.config.js",
+		"/Users/cerskine/Dropbox/Sites/home.qrayg.com/site/live/index.html",
+		"/Users/cerskine/Dropbox/Sites/home.qrayg.com/site/src/package.json",
+		"/Users/cerskine/Dropbox/Sites/home.qrayg.com/site/src/gulpfile.js",
+		"/Users/cerskine/Dropbox/sites/home.qrayg.com/site/src/asset-manifest.json",
+		"/Users/cerskine/Dropbox/Sites/home.qrayg.com/site/src/js/main.js",
+		"/Users/cerskine/Dropbox/Sites/home.qrayg.com/site/live/sftp-config.json",
+		"/Users/cerskine/Desktop/beat.html",
+		"/Users/cerskine/Dropbox/Sites/_dev/@time.html",
+		"/Users/cerskine/Dropbox/Sites/pxl.media/site/_dev/gulpfile.js",
+		"/Users/cerskine/Dropbox/Sites/home.qrayg.com/site/live/js/main.js",
+		"/Users/cerskine/Dropbox/Sites/home.qrayg.com/site/src/index.html",
+		"/Users/cerskine/Dropbox/Sites/home.qrayg.com/site/live/humans.txt",
+		"/Users/cerskine/Dropbox/Sites/home.qrayg.com/home.qrayg.com.sublime-project",
+		"/Users/cerskine/Dropbox/Sites/home.qrayg.com/src/tailwind.js",
+		"/Users/cerskine/Dropbox/Sites/home.qrayg.com/src/css/main.css",
+		"/Users/cerskine/Dropbox/Sites/home.qrayg.com/src/js/main.js",
+		"/Users/cerskine/Dropbox/Sites/home.qrayg.com/src/gulpfile.js",
+		"/Users/cerskine/Dropbox/Sites/home.qrayg.com/src/js/plugins.js",
+		"/Users/cerskine/Dropbox/Sites/home.qrayg.com/src/js/jquery.js",
+		"/Volumes/Portable/games/console/nec-turbografx/_mac/ID.txt",
+		"/Users/cerskine/Library/Caches/Transmit/79D4CEDA-B929-4F10-B9F4-B270BD7C74C1/retropie.local/media/usb0/games/mattel-intellivision/gamelist.xml",
+		"/Users/cerskine/Desktop/es_systems.cfg",
+		"/Volumes/UX/cerskine/prototypes/ux/dashboards/index.html",
+		"/Users/cerskine/Desktop/work/tw-core/dist/css/_tw.css",
+		"/Volumes/UX/cerskine/prototypes/ux/table-utility.html",
+		"/Users/cerskine/Desktop/dashboards.txt",
+		"/Volumes/UX/cerskine/prototypes/required-training/assignment-create.html",
+		"/Volumes/Storage/work/cerskine/prototypes/required-training/assignment-create.html",
+		"/Volumes/Storage/work/cerskine/prototypes/_assets/inc/18.x/header.html",
+		"/Users/cerskine/Dropbox/Sites/openemu.org/openemu.github.io/data.js",
+		"/Volumes/UX/cerskine/prototypes/credits-certs/content-details-search.html",
+		"/Volumes/UX/cerskine/prototypes/_assets/css/proto.css",
+		"/Volumes/UX/cerskine/prototypes/_assets/js/proto.js",
+		"/Users/cerskine/Desktop/work/tw-core/tailwind.js",
+		"/Volumes/UX/cerskine/prototypes/reports/landing.html",
+		"/Volumes/UX/cerskine/index.html",
+		"/Users/cerskine/Desktop/work/tw-core/gulpfile.js",
+		"/Users/cerskine/Dropbox/Sites/openemu.org/openemu.github.io/.gitignore",
+		"/Users/cerskine/Dropbox/Sites/openemu.org/openemu.github.io/_src/gulpfile.js",
+		"/Users/cerskine/Dropbox/Sites/openemu.org/openemu.github.io/_src/package.json",
+		"/Users/cerskine/Dropbox/Sites/openemu.org/openemu.github.io/README.md",
+		"/Users/cerskine/Dropbox/Sites/openemu.org/openemu.github.io/css/main.css",
+		"/Users/cerskine/Desktop/oe/app/gulpfile.js",
+		"/Users/cerskine/Dropbox/Sites/openemu.org/openemu.github.io/js/data.js",
+		"/Users/cerskine/Desktop/oe/app/js/main.js",
+		"/Users/cerskine/Desktop/oe/dist/js/main.js",
+		"/Users/cerskine/Desktop/oe/dist/img/donate-patreon.svg",
+		"/Users/cerskine/Desktop/oe/dist/img/donate-cashapp.svg",
+		"/Users/cerskine/Desktop/oe/dist/img/donate-bitcoin.svg",
+		"/Users/cerskine/Desktop/oe/dist/img/donate-bitcash.svg",
+		"/Users/cerskine/Dropbox/Sites/pxl.media/site/_dev/app/js/main.js",
+		"/Users/cerskine/Desktop/oe/app/js/plugins.js",
+		"/Users/cerskine/Desktop/jquery.leanModal.min.js",
+		"/Users/cerskine/Dropbox/Sites/craigerskine.com/site/live/workspace/theme/assets/js/resume.js",
+		"/Users/cerskine/Dropbox/Sites/craigerskine.com/site/live/workspace/theme/templates/master.xsl",
+		"/Users/cerskine/Dropbox/Sites/craigerskine.com/site/_dev/app/js/main.js",
+		"/Users/cerskine/Dropbox/Sites/craigerskine.com/site/live/workspace/pages/home.xsl",
+		"/Users/cerskine/Dropbox/Sites/craigerskine.com/site/live/workspace/theme/assets/js/main.js",
+		"/Users/cerskine/Dropbox/Sites/craigerskine.com/site/live/workspace/theme/assets/css/main.css",
+		"/Volumes/UX/cerskine/prototypes/credits-certs/admin-setup.html",
+		"/Users/cerskine/Dropbox/Sites/craigerskine.com/site/_dev/gulpfile.js",
+		"/Users/craig/Dropbox/Sites/craigerskine.com/site/live/workspace/pages/home.xsl",
+		"/Users/cerskine/Dropbox/Sites/craigerskine.com/site/live/workspace/theme/assets/img/chart-html.svg",
+		"/Users/cerskine/Dropbox/Sites/craigerskine.com/site/live/workspace/theme/assets/img/chart-js.svg",
+		"/Users/cerskine/Dropbox/Sites/craigerskine.com/site/live/workspace/theme/assets/img/chart-ui.svg",
+		"/Users/cerskine/Dropbox/Sites/craigerskine.com/site/live/workspace/theme/partials/currently-playing.xsl",
+		"/Users/cerskine/Dropbox/Sites/craigerskine.com/site/live/workspace/theme/partials/currently-listening.xsl",
+		"/Users/Craig/Dropbox/Sites/craigerskine.com/live/workspace/theme/assets/css/main.less",
+		"/Users/cerskine/Dropbox/Sites/craigerskine.com/live/workspace/theme/templates/master.xsl",
+		"/Users/cerskine/Dropbox/Sites/craigerskine.com/live/workspace/theme/assets/css/main.less",
+		"/Users/cerskine/Dropbox/Sites/craigerskine.com/live/workspace/theme/assets/css/main.css",
+		"/Users/cerskine/Dropbox/Sites/craigerskine.com/live/workspace/theme/assets/js/main.js",
+		"/Users/cerskine/Library/Application Support/Sublime Text 3/Packages/User/SFTP.errors.log",
+		"/Users/cerskine/Desktop/animate.css",
+		"/Users/cerskine/Dropbox/Sites/craigerskine.com/live/workspace/theme/assets-src/css/resume.css",
+		"/Users/cerskine/Dropbox/Sites/craigerskine.com/live/.htaccess",
+		"/Users/cerskine/Desktop/do.txt",
+		"/Users/cerskine/Dropbox/Sites/craigerskine.com/live/workspace/theme/master.xsl",
+		"/Users/cerskine/Dropbox/Sites/craigerskine.com/live/workspace/pages/home.xsl",
+		"/Users/cerskine/Dropbox/Sites/craigerskine.com/live/workspace/pages/resume.xsl",
+		"/Users/cerskine/Dropbox/Sites/pxl.media/live/workspace/theme/master.xsl",
+		"/Users/craig.erskine/Dropbox/Sites/craigerskine.com/live/workspace/theme/master.xsl",
+		"/Users/craig.erskine/Dropbox/Sites/craigerskine.com/live/workspace/theme/assets-src/js/resume.js",
+		"/Users/craig.erskine/Dropbox/Sites/craigerskine.com/live/workspace/pages/resume.xsl",
+		"/Users/craig.erskine/Dropbox/Sites/craigerskine.com/live/workspace/theme/assets-src/css/main.css",
+		"/Users/Craig/Dropbox/Sites/craigerskine.com/craigerskine.com/sftp-config.json",
+		"/Users/Craig/Dropbox/Sites/craigerskine.com/craigerskine.com/humans.txt",
+		"/Users/Craig/Dropbox/Sites/craigerskine.com/craigerskine.com/workspace/theme/partials/currently-playing.xsl",
+		"/Users/Craig/Library/Application Support/OpenEmu/Game Library/Library.storedata-shm",
+		"/Users/Craig/Library/Application Support/OpenEmu/Game Library/Library.storedata-wal",
+		"/Users/Craig/Desktop/gamelist.xml",
+		"/Users/Craig/Library/Application Support/Sublime Text 3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
+		"/Users/Craig/Library/Caches/Cleanup At Startup/Transmit/B4460BE8-6674-4A96-B53E-1BB1B3BD41D0/gamelist.xml",
+		"/Users/Craig/Library/Caches/Cleanup At Startup/Transmit/6027426E-2099-4B69-8B4F-38A6B8874274/theme.xml"
+	],
+	"find":
+	{
+		"height": 29.0
+	},
+	"find_in_files":
+	{
+		"height": 106.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"opacity-75",
+			"duration-",
+			"dark",
+			"PT",
+			"normal",
+			"10xl",
+			"9xl",
+			"8xl",
+			"7xl",
+			"gray-500 opacity-10)",
+			"bg-current",
+			"<li class=\"",
+			"dark:(hover:(text-gray-100))",
+			"opacity-75\">",
+			"opacity-75\">&nbsp;</sup>",
+			"<b class=\"date-",
+			"text-gray-300",
+			"<li class=\"flex-1",
+			"<li class=\"w-full py-4 flex-1 flex items-end\">",
+			"<li class=\"w-full flex-1 flex items-end\">",
+			"divide(x gray-500 opacity-25)",
+			"snug",
+			"text-blue-400",
+			"full flex-1",
+			"px-1 w-full flex-1",
+			"w-4 h-1",
+			" w-4 h-1",
+			"mx-auto w-4 h-1",
+			"<li class=\"w-full flex-1 flex items-end justify-center\">",
+			"px-1 w-full flex",
+			"px-2 w-full flex-1",
+			"xl:p-8",
+			"p-4 ",
+			"<li class=\"",
+			"<li class=\"px-2 w-full flex items-end\">",
+			"lg:(px-8 w-64)",
+			"w-64",
+			"transition duration-75",
+			"w-full h-1 transition duration-75",
+			"hover:(text-gray-400)",
+			"xl:p-8",
+			"lg:px-8 w-full lg:w-64",
+			"text-center",
+			"lg:px-6 w-full lg:w-32",
+			"hover:text-white",
+			"px-1 lg:px-6 w-full lg:w-32 flex flex-col",
+			"mb-1 lg:mb-2",
+			"h-px lg:h-1",
+			"w-4 lg:w-32",
+			"px-8 w-8",
+			" px-6 w-4",
+			" w-6",
+			"w-32",
+			"w-64",
+			"duration-75",
+			"-3",
+			"12",
+			"<li class=\"flex items-end justify-center\">",
+			"w-full",
+			"<li class=\"tick ",
+			"hrs-",
+			"mb-1 lg:mb-2",
+			"mx-1 w-4 lg:mx-8 lg:w-10",
+			"\"></span>",
+			"lg:mx-8 w-4 lg:w-10",
+			" opacity-75",
+			"small",
+			"hover:text-white transition duration-75",
+			"opacity-75",
+			"text-red-500",
+			"border-r border-gray-400 border-opacity-10",
+			"border-t border-gray-400 border-opacity-10",
+			" transition duration-75\"></li>",
+			"<li class=\"tick ",
+			"border-white border-opacity-10",
+			"border-gray-800",
+			"gray-800",
+			" opacity-75",
+			" font-hairline",
+			"<b",
+			"xl:",
+			"...tickOff",
+			"...tickOn",
+			"item.classList",
+			").forEach(",
+			"$(",
+			"list-head",
+			"callback",
+			"cb",
+			"Blah",
+			"<li",
+			"===",
+			"theme-import-zip",
+			"rounded transition duration-75",
+			"<li class=\"lg:mx-8 max-w-xs flex-1",
+			"max-w-xs flex-1 ",
+			"ml-2 text-xs",
+			"small",
+			"span",
+			"p-8",
+			"\">",
+			"src",
+			"offClass",
+			"onClass",
+			"h-1",
+			"max-w-xs",
+			"'bg-blue-500'",
+			"'bg-gray-800'",
+			"'bg-blue-500'",
+			"'bg-gray-800'",
+			"bg-blue-500",
+			"bg-gray-600",
+			"bg-gray-800",
+			"lg:mx-8",
+			"mx-3 lg:mx-8",
+			"mb-2",
+			"mx-3 pt-2",
+			"max-w-xs",
+			"px-6 lg:px-16",
+			"flex items-end",
+			"font-hairline",
+			"<li class=\"flex\">",
+			"justify-end",
+			" class=\"py-4 flex justify-center\"",
+			"pt-4 flex justify-center",
+			"span",
+			"flex justify-center",
+			"flex-1"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"incremental_find":
+	{
+		"height": 29.0
+	},
+	"input":
+	{
+		"height": 37.0
+	},
+	"menu_visible": true,
+	"output.SFTP":
+	{
+		"height": 104.0
+	},
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 104.0
+	},
+	"pinned_build_system": "",
+	"replace":
+	{
+		"height": 54.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Dropbox/sites/_freelance/wisconsinmusic.net/wisconsinmusic.net.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 194.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

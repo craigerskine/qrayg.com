@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="en" class="bg-gray-900 motion-safe:scroll-smooth" hidden>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>qrayg - Twitch Streamer, Gamer, UX Designer, UI Developer</title>
+    <meta name="description" content="qrayg - Twitch Streamer, Gamer" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:title" content="qrayg - Twitch Streamer, Gamer, UX Designer, UI Developer" />
+    <meta property="og:description" content="qrayg - Twitch Streamer, Gamer" />
+    <meta property="og:image" content="https://qrayg.com/apple-touch-icon.png" />
+    <meta property="og:image:alt" content="qrayg.com" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#222222" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;900&family=Inter:wght@900&display=swap" />
+
+    <meta name="p:domain_verify" content="8f7326aedb8678368871e5a49beaa8ac" />
+
+  </head>
+  <body class="text-gray-400">
+
+    <main class="main w-full min-h-screen flex flex-col relative opacity-100 transition duration-300" v-cloak>
+
+      <transition>
+        <section class="landing m-auto text-center relative z-20 transition-all duration-100" v-show="state == '#/'">
+          <h1 class="logo group pt-4 pb-24 flex justify-center relative">
+            <a href="#/" @click="state = '#/'" class="mx-4 text-white block animate-spin">
+              <b class="animate-throb inline-block">
+                <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" role="img" class="w-24 md:(w-32) h-auto inline-block align-middle">
+                  <title>qrayg - Twitch Streamer, Gamer, UX Designer, UI Developer</title>
+                  <g fill="currentColor">
+                    <circle cx="98.1" cy="98.1" r="6" opacity=".25" />
+                    <path d="M109.402699,94.0592724 C116.085856,84.3838 120,72.6489986 120,60 C120,26.862915 93.137085,0 60,0 C26.862915,0 0,26.862915 0,60 C0,93.137085 26.862915,120 60,120 C72.6489986,120 84.3838,116.085856 94.0592724,109.402699 C90.049715,107.969131 87.0258166,104.462602 86.278593,100.174129 C78.7292272,105.12235 69.7006692,108 60,108 C33.490332,108 12,86.509668 12,60 C12,33.490332 33.490332,12 60,12 C86.509668,12 108,33.490332 108,60 C108,69.7006692 105.12235,78.7292272 100.174122,86.2786024 C104.462602,87.0258166 107.969131,90.049715 109.402699,94.0592724 Z" />
+                  </g>
+                </svg>
+              </b>
+            </a>
+            <b class="flex items-center justify-center opacity-[.0001] absolute bottom-0 inset-x-0 translate-y-1 transition-all group-hover:(opacity-100 -translate-y-1) group-focus:(opacity-100 -translate-y-1)"><b class="usr pb-8 text-xl md:(text-2xl) font-black "><small class="text(red-500 base)">@</small> <b class="logo-usr" title="qrayg - Twitch Streamer, Gamer, UX Designer, UI Developer">qrayg</b></b></b>
+          </h1>
+          <ul class="social mb-16 flex relative">
+            <li v-for="(soc, index) in social" class="mx-3 md:mx-8">
+              <a :href="soc.url" :class="'w-8 h-8 md:(w-12 h-12) flex relative transition-all duration-300 ease-in-out text-'+ soc.color" :aria-label="soc.name">
+                <template v-if="soc.name !== 'Gumroad'">
+                  <i :class="['m-auto inline-block align-middle fa-fw text-2xl md:(text-3xl)', soc.icon]" aria-hidden="true"></i>
+                </template>
+                <template v-else>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true" focusable="false" role="img" class="svg-inline--fa fa-w-16 fa-fw m-auto fill-current inline-block align-middle fa-fw text-2xl md:(text-3xl)">
+                    <path d="m226.175328 461c-110.925333 0-176.175328-89.196961-176.175328-200.149878 0-115.302334 71.775063-208.850122 208.799984-208.850122 141.37533 0 189.226009 95.723247 191.399986 150.111226h-102.224652c-2.175341-30.45711-28.275339-76.143252-91.350675-76.143252-67.424654 0-110.924514 58.739306-110.924514 130.531776 0 71.792742 43.49986 130.531639 110.924514 130.531639 60.899996 0 86.999994-47.860919 97.875334-95.723202h-97.875334v-39.160174h205.375357v200.149878h-90.100024v-126.181267c-6.524659 45.686415-34.799998 134.883376-145.724648 134.883376z" />
+                  </svg>
+                </template>
+                <b></b>
+              </a>
+            </li>
+          </ul>
+          <p class="message mb-16 pt-8 text(4xl center) opacity-50 hidden"><b class="font-black"></b></p>
+        </section>
+      </transition>
+
+      <transition>
+        <section class="gear mx-auto px-4 w-full max-w-screen-lg font-mono relative z-20 transition-all duration-100" v-show="state !== '#/'">
+
+          <header class="mb-8 pt-12">
+            <section class="mx-auto w-full md:(flex divide(x gray-500 opacity-25))">
+              <a href="#/" @click="state = '#/'" class="text-white self-center flex items-center justify-center relative opacity-50 hover:opacity-100 focus:opacity-100 transition duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" class="w-10 h-10">
+                  <title>qrayg</title>
+                  <g class="fill-current">
+                    <circle cx="98.1" cy="98.1" r="6" opacity=".25"></circle>
+                    <path d="M109.402699,94.0592724 C116.085856,84.3838 120,72.6489986 120,60 C120,26.862915 93.137085,0 60,0 C26.862915,0 0,26.862915 0,60 C0,93.137085 26.862915,120 60,120 C72.6489986,120 84.3838,116.085856 94.0592724,109.402699 C90.049715,107.969131 87.0258166,104.462602 86.278593,100.174129 C78.7292272,105.12235 69.7006692,108 60,108 C33.490332,108 12,86.509668 12,60 C12,33.490332 33.490332,12 60,12 C86.509668,12 108,33.490332 108,60 C108,69.7006692 105.12235,78.7292272 100.174122,86.2786024 C104.462602,87.0258166 107.969131,90.049715 109.402699,94.0592724 Z"></path>
+                  </g>
+                </svg>
+              </a>
+              <h1 class="py-2 text-5xl tracking-wider uppercase flex-1 flex items-center flex-col md:(ml-6 py-0 items-end)">
+                <b>qrayg<sup class="text-base opacity-80">'s</sup></b>
+                <i class="text-xl font-black not-italic tracking-normal opacity-75 block">Gear/Rig: PC &middot; Streaming &middot; Music</i>
+              </h1>
+              <!-- <div class="md:px-5 pt-5 md:pt-0 md:max-w-sm flex items-center justify-center"><p>...</p></div> -->
+            </section>
+          </header>
+          <section v-for="(group, index) in rig" :id="group.category.replace(' ', '-').toLowerCase().trim()" class="py-4 xl:py-8">
+            <article class="mb-12">
+              <a :href="'#'+ group.category.replace(' ', '-').toLowerCase().trim()" :class="['text-'+ group.color, 'mb-5 text-xl uppercase flex items-center']">
+                <em class="mr-4 text-5xl"><i :class="['fa-fw '+ group.ico]" aria-hidden="true"></i></em>
+                <b class="tracking-widest flex-1 flex items-center justify-center"> <b class="font-black">{{ group.category }}</b> <b class="ml-4 border(t current) flex-1 opacity-25"></b></b>
+              </a>
+              <ul v-if="group.hardware" :class="['lg:pl-16 grid grid-flow-row grid-cols-1 lg:grid-cols-2 gap-6', {'line-through opacity-50': group.category == 'Obsolete'}]">
+                <li v-for="(hardware, index) in group.hardware" class="flex">
+                  <a :href="hardware.link" :class="['border-'+ group.color, 'hover:bg-'+ group.color, 'focus:bg-'+ group.color, 'hover:text-'+ group.color, 'focus:text-'+ group.color, 'py-2 hover:border-l-4 border-l border-opacity-25 w-full flex space-x-4 bg-transparent hover:bg-opacity-10 focus:bg-opacity-10 transition-all duration-300 group']">
+                    <b class="w-1/3 font-black tracking-wider text-right uppercase group-hover:text-white opacity-80">
+                      <b class="text-sm">{{ hardware.type }}</b>
+                      <small v-if="hardware.soon" class="uppercase leading-none tracking-wider block space-x-1">
+                        <b class="px-1 py-px font-black text-yellow-300 ring(1 current inset) inline-block relative">Pending <b class="ring(1 current inset) absolute inset-0 animate-ping-sm z-[-1]" aria-hidden="true"></b></b>
+                      </small>
+                    </b>
+                    <div :class="['border-'+ group.color, 'mt-2 border w-2 h-2 rounded-full relative top-px']"></div>
+                    <i class="not-italic md:tracking-tight flex-1">
+                      {{ hardware.name }}
+                      <small v-if="hardware.sub" class="uppercase leading-none tracking-wider flex flex-wrap">
+                        <b v-for="(sub, index) in hardware.sub" class="mb-1 mr-1 px-1 py-px font-black text-current opacity-80 inline-block ring-1 ring-current ring-inset">{{ sub.name }}</b>
+                      </small>
+                    </i>
+                  </a>
+                </li>
+              </ul>
+            </article>
+          </section>
+          <!-- <aside class="w-32 h-32 flex items-end justify-end fixed bottom-0 right-0 overflow-hidden">
+            <a href="https://github.com/craigerskine/website-gear" class="w-12 h-12 text-gray-300 hover:text-white focus:text-white hidden md:flex relative transition duration-300" aria-label="Fork on GitHub">
+              <i class="fab fa-fw fa-lg fa-github" title="GitHub" class="relative -top-1 -left-1"></i>
+              <b class="w-64 bg-white bg-opacity-10 text-xs text-center uppercase absolute top-1/2 left-1/2 z-20 transform -rotate-45 -translate-x-1/2 -translate-y-1/2">Fork</b>
+            </a>
+          </aside> -->
+        </section>
+      </transition>
+
+      <a href="#gear/" @click="state = '#gear/'" v-show="state == '#/'" class="gear-open w-12 h-12 text-grey-darker hover:text-white focus:text-white flex items-center justify-center fixed right-0 top-0 z-20 transition-all duration-300" title="PC/Streaming/Music Gear/Rig"><i class="inline-block align-middle far fa-fw fa-stream" aria-hidden="true"></i></a>
+      <a href="#/" @click="state = '#/'" v-show="state !== '#/'" class="gear-close w-12 h-12 text-grey-darker hover:text-white focus:text-white flex items-center justify-center fixed right-0 top-0 z-20 transition-all duration-300" aria-label="Close"><i class="inline-block align-middle fal fa-fw fa-2x fa-times" aria-hidden="true"></i></a>
+
+      <div id="particles" class="particles text-white opacity-10 fixed inset-0 z-[-1]"></div>
+      <div id="bg" class="bg-gradient-to-b from-transparent via-transparent to-gray-800 fixed inset-0 z-[-2]"><div class="bg(grid fixed) absolute inset-0"></div></div>
+
+    </main>
+
+    <script src="js/twind.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="https://kit.fontawesome.com/6d6156d427.js" crossorigin="anonymous"></script>
+
+    <script>
+
+      // vue
+      var app = new Vue({
+        el: '.main',
+        data: {
+          state: location.hash || '#/',
+          social: [
+            { name: 'Twitch', icon: 'fab fa-twitch', color: 'purple-500', url: 'https://twitch.tv/qrayg/', },
+            { name: 'YouTube', icon: 'fab fa-youtube', color: 'red-700', url: 'https://youtube.com/c/qrayg/', },
+            { name: 'Discord', icon: 'fab fa-discord', color: 'indigo-500', url: 'https://discord.gg/Pa9X3C8', },
+            { name: 'Gumroad', icon: '', color: 'gray-200', url: 'http://qrayg.gumroad.com', },
+            { name: 'Patreon', icon: 'fab fa-patreon', color: 'red-400', url: 'https://patreon.com/qrayg/', },
+          ],
+          rig: [
+            {
+              category: 'PC',
+              ico: 'fab fa-windows',
+              color: 'blue-400',
+              hardware: [
+                { type: 'Case', name: 'SSUPD › Meshlicious', sub: [{name: 'White'},], link: 'https://ssupd.com/products/meshlicious', },
+                { type: 'MB', name: 'Asus › ROG Strix Z390-I', sub: [{name: 'ITX'},], link: '/buy/B07HM57LVH', },
+                { type: 'CPU', name: 'Intel › Core i5-8400', sub: [{name: '2.8-4.0 GHz'}, {name: '6 Cores'},], link: '/buy/B0759FGJ3Q', },
+                { type: 'Cooler', name: 'Noctua › NH-L9i', sub: [{name: 'chromax.Black'},], link: '/buy/B07Y892M38', },
+                { type: 'GPU', name: 'Gigabyte › GTX 1660', sub: [{name: 'GeForce'},], link: '/buy/B081715P57', },
+                { type: 'RAM', name: 'Corsair › Vengeance LPX', sub: [{name: '16GB'},], link: '/buy/B0134EW7G8', },
+                { type: 'PSU', name: 'Corsair › SF 450', sub: [{name: '80+ Gold'},], link: '/buy/B01CGGOXWQ', },
+                { type: 'M.2', name: 'Samsung › 970 Evo Plus', sub: [{name: '250GB'},], link: '/buy/B07MG119KG', },
+                //{ type: 'Storage SSD', name: 'Samsung › 970 Evo', sub: [{name: '1TB'},], link: '/buy/B07864WMK8', },
+              ]
+            },
+            {
+              category: 'Mac',
+              ico: 'fab fa-apple',
+              color: 'gray-300',
+              hardware: [
+                { type: 'Laptop', name: 'MacBook › Pro', sub: [{name: '2021'}, {name: 'M1 Pro'}, {name: '14"'}, {name: '8-core'},], link: '/buy/B09JQL8KP9', soon: true, },
+                { type: 'Dock', name: 'Brydge › Stone Pro', sub: [{name: 'Thunderbolt 3'},], link: '/buy/B08G9WDH6B', },
+                //{ type: 'Dongle', name: 'Aukey › 9-in-2', sub: [{name: '2x 4k HDMI'}, {name: '2x USB3'}, {name: '1x USBC'}, {name: 'SD/microSD'}, {name: '1Gbps Network'},], link: '/buy/B088R6H7NC', },
+                { type: 'Hub', name: 'Satechi › Stand', sub: [{name: '3x USB3'}, {name: '1x USBC'}, {name: 'SD/microSD'},], link: '/buy/B07GX1WW47', },
+                { type: 'External SSD', name: 'Samsung › T7', sub: [{name: '500GB'},], link: '/buy/B0874XN4D8', },
+              ]
+            },
+            {
+              category: 'Accessories',
+              ico: 'fal fa-computer-speaker',
+              color: 'red-400',
+              hardware: [
+                { type: 'Display 1', name: 'LG › 27GL83A-B', sub: [{name: '27"'},{name: '144hz'},], link: '/buy/B07YGZL8XF', },
+                { type: 'Display 2', name: 'LG › 27GL83A-B', sub: [{name: '27"'},{name: '144hz'},], link: '/buy/B07YGZL8XF', },
+                { type: 'Speakers', name: 'Audioengine › A2+', sub: [{name: '+ S1 Sub'},], link: '/buy/B07MYW4Q8S', },
+                { type: 'Headphones', name: 'Bowers & Wilkins › PX-7', sub: [{name: 'Over Ear'},], link: '/buy/B07WK6SGZC', },
+                { type: 'Peripheral Switch', name: 'UGreen › USB3 Switch', sub: [{name: '4x USB3'}, {name: 'Mac ↔ PC'},], link: '/buy/B01N6GD9JO', },
+                { type: 'Chair', name: 'Steelcase › Reply Mesh', sub: [{name: 'Gray'},{name: 'Black'},], link: 'https://store.steelcase.com/Store/seating/office-chairs/reply-mesh-back-chair', },
+              ]
+            },
+            {
+              category: 'Keyboards',
+              ico: 'fal fa-keyboard',
+              color: 'green-500',
+              hardware: [
+                //{ type: 'KB', name: 'Apple › Magic Keyboard', sub: [{name: 'w/ Keypad'}, {name: 'Space Gray'},], link: 'https://apple.com/keyboard', },
+                { type: 'KB', name: 'Keychron › Q2', sub: [{name: '65%'}, {name: 'Hotswap'}, {name: 'RGB'}, { name: 'Carbon Black'}], link: 'https://keychron.com/products/keychron-q2-qmk-custom-mechanical-keyboard', },
+                { type: 'KB', name: 'Keychron › K7', sub: [{name: '65%'}, {name: 'Hotswap'}, {name: 'RGB'}, {name: 'Banana'},], link: 'https://keychron.com/pages/keychron-k7-wireless-mechanical-keyboard', },
+                { type: 'KB', name: 'Keychron › K14', sub: [{name: '65%'}, {name: 'Hotswap'}, {name: 'RGB'}, {name: 'Red'},], link: 'https://keychron.com/pages/keychron-k14-wireless-mechanical-keyboard', },
+                { type: 'KB', name: 'Satechi › Slim X1', sub: [{name: 'Wireless'}, {name: 'Backlit'},], link: 'https://satechi.net/products/slim-x1-bluetooth-backlit-keyboard', },
+                { type: 'KB', name: 'MelGeek › Z70', sub: [{name: '65%'}, {name: 'Black'}, {name: 'Healio'}, {name: '63.5g'},], link: 'https://melgeek.com/products/melgeek-z70-ultra-65-rgb-custom-mechanical-keyboard-kit', },
+                { type: 'KB', name: 'GMMK › Pro', sub: [{name: '75%'}, {name: 'Black'}, {name: 'Boba U4'}, ], link: 'https://www.pcgamingrace.com/products/glorious-gmmk-pro-75-barebone-black', },
+                { type: 'KB', name: 'IKKI68 › Aurora', sub: [{name: '65%'}, {name: 'Snow'}, {name: 'TBD'}, ], link: 'https://shop.wuquestudio.com/pages/ikki68-aurora', soon: true, },
+                { type: 'KB', name: 'NK65 › Entry Edition', sub: [{name: '65%'}, {name: 'Fire'}, {name: 'Milky Yellow'}, ], link: 'https://novelkeys.xyz/collections/keyboards/products/nk65-entry-edition', },
+                { type: 'KB', name: 'Leopold › FC660C', sub: [{name: '65%'}, {name: 'White'}, {name: 'Topre Silent'}, {name: 'Extended2048'},], link: '/buy/B07QKXC6WC', },
+                { type: 'KB', name: 'Morgrie', sub: [{name: '65%'},{name: 'Clicky'},], link: 'https://morgrie.com/', },
+                { type: 'KB', name: 'Cajal', sub: [{name: '45%'}, {name: 'Space Grey'}, {name: 'Silent Sky'},], link: 'https://walletburner.co/pages/cajal', },
+                { type: 'KB', name: 'UT47.2', sub: [{name: '40%'}, {name: 'Alu'}, {name: 'Kailh Copper'},], link: 'https://keyhive.xyz/shop/ut472-kit', },
+                { type: 'KB', name: 'Planck EZ › Glow x2', sub: [{name: '40%'}, {name: 'Black - Kaihl Gold'}, {name: 'White - Zilent'},], link: 'https://ergodox-ez.com/pages/planck', },
+                { type: 'KB', name: 'Keyboardio › Atreus', sub: [{name: '40%'}, {name: 'Black - Kaihl Box Brown'},], link: 'https://shop.keyboard.io/products/keyboardio-atreus', },
+                { type: 'KB', name: 'Vortex › Core', sub: [{name: '40%'}, {name: 'Cherry Blue'}, {name: 'Bamboo'},], link: '/buy/B01MS3PWS0', },
+                { type: 'KB', name: 'MiniVan › KUMO', sub: [{name: '40%'}, {name: 'Purple Tactile'}, {name: 'Walnut'},], link: 'https://thekey.company/products/minivan', },
+                { type: 'KB', name: 'MiniVan › JetVan', sub: [{name: '40%'}, {name: 'Aliaz'}, {name: 'White'},], link: 'https://thekey.company/products/minivan', },
+                { type: 'Caps', name: 'R1', sub: [{name: 'NP/XDA'},], link: 'https://kbdfans.com/collections/np-pg-da-profile/products/np-pbt-grey-and-blue-keycaps-set', },
+                { type: 'Caps', name: 'DSA Light Cycle', sub: [{name: 'Control the System'},], link: 'https://drop.com/buy/lightcycle-dsa-custom-keycap-set-for-the-minivan', },
+                { type: 'Caps', name: 'biip MT3 Extended 2048', sub: [{name: 'Modifiers'}, {name: 'Icono'}, {name: 'Media Icons'},], link: 'https://drop.com/buy/drop-biip-mt3-extended-custom-keycap-set', },
+                { type: 'Caps', name: 'Plastic', sub: [{name: 'Clone'}, {name: 'XDA'},], link: '/buy/B08ZMR1651', },
+                { type: 'Caps', name: 'GMK Dolch 2', sub: [{name: 'Modern'}, {name: 'Standard'}, {name: 'Obscure'},], link: 'https://omnitype.com/', },
+                { type: 'Caps', name: 'Domikey Ghost', sub: [{name: 'Extension'},], link: 'https://cannonkeys.com/collections/group-buy/products/gb-domikey-ghost', soon: true, },
+                { type: 'Caps', name: 'Less But Better', sub: [{name: 'Novelties'}, {name: 'Extras'},], link: 'https://kono.store/products/epbt-less-but-better', soon: true, },
+                { type: 'Caps', name: 'kam_superuser', sub: [{name: 'Mods Highlight'}, {name: '40\'s Highlight'}, {name: 'Spacebars'}, {name: 'Novelties'},], link: 'https://novelkeys.com/products/kam-superuser', soon: true, },
+                { type: 'Caps', name: 'DSA Milkshake', sub: [{name: 'Weirdo'}, {name: 'Spacebars'}, {name: 'Fruit'},], link: 'https://novelkeys.com/collections/keycaps/products/dsa-milkshake', soon: true, },
+                
+              ]
+            },
+            {
+              category: 'Streaming',
+              ico: 'fal fa-waveform-path',
+              color: 'purple-500',
+              hardware: [
+                { type: 'Capture', name: 'Elgato › HD60 S', sub: [{name: 'USB'},], link: '/buy/B01DRWCOGA', },
+                { type: 'Cam', name: 'Logitech › C920x Pro Stream', sub: [{name: 'USB'},], link: '/buy/B01LXCDPPK', },
+                { type: 'Mic', name: 'Shure › MV7', sub: [{name: 'USB'}, {name: 'XLR'},], link: '/buy/B08G7RG9ML', },
+                { type: 'Strip HDCP', name: 'OREI › HD-102', sub: [{name: 'HDMI'},], link: '/buy/B005HXFARS', },
+                { type: 'Misc', name: 'LeMetric › Time', sub: [{name: 'Smart Clock'},], link: '/buy/B01IVTVK3W', },
+                { type: 'Games/Consoles', name: 'pxl.media', sub:[{name: 'Game / console collection'},], link: 'https://pxl.media/', },
+              ]
+            },
+            {
+              category: 'Home Theater',
+              ico: 'fal fa-speakers',
+              color: 'pink-500',
+              hardware: [
+                { type: 'AV Receiver', name: 'Marantz › NR1711', sub: [{name: 'Black'},], link: '/buy/B0786M9ZZS', },
+                { type: 'Front', name: 'Wharfedale › EM 95', sub: [{name: 'Speakers'},], link: '/buy/B00004SY59', },
+                { type: 'Center', name: 'Klipsch › R-52C', sub: [{name: 'Speaker'},], link: '/buy/B07FK41FGL', },
+                { type: 'Rear', name: 'Klipsch › R-41M', sub: [{name: 'Speakers'},], link: '/buy/B07FKH3VPV', },
+                { type: 'Subwoofer', name: 'Yamaha › YST-SW90', sub: [{name: 'Powered'},], link: '/buy/B00FRET3RA', },
+                { type: 'Phono', name: 'Pro-Ject › T1', sub: [{name: 'Walnut'},], link: '/buy/B07Z8NHNZZ', },
+              ]
+            },
+            {
+              category: 'Music',
+              ico: 'fal fa-amp-guitar',
+              color: 'yellow-400',
+              hardware: [
+                { type: 'Guitar', name: 'Ibanez › QX52', sub: [{name: '2021'},{name: 'Black'},], link: '/buy/B09JGQ3WWR', },
+                { type: 'Guitar', name: 'Kiesel › Vader', sub: [{name: '2021'},{name: 'Custom 6'},{name: 'Fishman Fluence'},], link: 'https://craigerskine.github.io/prototypes/kiesel/order-sheet/', },
+                { type: 'Guitar', name: '.strandberg* › Boden', sub: [{name: '2020'},{name: 'Metal 6'},{name: 'Black Pearl'},], link: 'https://strandbergguitars.com/product/boden-metal-6-black-pearl/', },
+                { type: 'Modeling', name: 'Line 6 › HX Stomp', sub: [{name: 'USB'},], link: '/buy/B07J2LV1N1', },
+                { type: 'Sequencer', name: 'Arturia › Keystep', sub: [{name: 'MIDI Controller'},], link: '/buy/B01BPSBU40', },
+                { type: 'Interface', name: 'AXE › I/O Solo', sub: [{name: 'USB'},], link: '/buy/B085JDFLLD', },
+              ]
+            },
+            // {
+            //   category: 'Obsolete',
+            //   ico: 'fal fa-hourglass-end',
+            //   color: 'white opacity-25',
+            //   hardware: [
+            //     { type: 'Display', name: 'Dell › U2415', link: '/buy/B00NZTKOQI', },
+            //     { type: 'Display', name: 'Apple › 24" Cinema Display', link: '/buy/B074D4ZSC4', },
+            //     { type: 'Case', name: 'Lazer3D › LZ7-v1', link: 'https://www.lazer3d.com/product/lz7/', },
+            //     { type: 'PSU', name: 'Corsair › SF450', link: '/buy/B01CGGOXWQ', },
+            //     { type: 'Cooler', name: 'Noctua › NH-L12S', link: '/buy/B075SF5QQ8', },
+            //     { type: 'Fan', name: 'Cryorig › XT140', link: '/buy/B00IAPV5YW', },
+            //   ]
+            // },
+          ]
+        }
+      });
+
+      // ES6 garbage
+      var $ = document.querySelectorAll.bind(document);
+
+      // social loop
+      var socialLoopPaused = false;
+      socialLoop();
+      $('.social').forEach(function(item){item.addEventListener('mouseenter', function(){
+        $('.social a').forEach(function(item){item.classList.remove('active')});
+        socialLoopPaused = true;
+      })});
+      $('.social').forEach(function(item){item.addEventListener('mouseleave', function(){
+        socialLoopPaused = false;
+      })});
+      function socialLoop(){
+        setInterval(function(){
+          if(!socialLoopPaused){
+            if($('.social .active').length){
+              $('.social .active').forEach(
+                function(item){
+                  item.classList.remove('active');
+                  if(!item.closest('li').matches(':last-child')){
+                    item.closest('li').nextElementSibling.querySelectorAll('a').forEach(function(item){item.classList.add('active')});
+                  }
+                }
+              )
+            } else {
+              $('.social li:first-child a').forEach(function(item){item.classList.add('active')});
+            }
+          }
+        }, 1500);
+      }
+
+      // query/message stuff for twitch streaming
+      const urlParams = new URLSearchParams(window.location.search);
+
+      if(location.hash == '' && urlParams.get('message') == ''){
+        location.hash = '#/';
+      }
+
+      if(urlParams.get('message') == 'start'){
+        $('.message').forEach(function(el){el.classList.remove('hidden')});
+        var typed = new Typed('.message b', {
+          strings: ['Stream^250 starting soon^1000!', 'It^500 won\'t be long now^250.^250.^250.'],
+          typeSpeed: 50,
+          backSpeed: 50,
+          backDelay: 1000,
+          cursorChar: '|',
+          smartBackspace: false,
+          loop: true
+        });
+      }
+      if(urlParams.get('message') == 'end'){
+        $('.message').forEach(function(el){el.classList.remove('hidden')});
+        var typed = new Typed('.message b', {
+          strings: ['Thanks for^250 watching^1000!', 'Come back^500 soon^250.^250.^250.'],
+          typeSpeed: 50,
+          backSpeed: 50,
+          backDelay: 1000,
+          cursorChar: '|',
+          smartBackspace: false,
+          loop: true
+        });
+      }
+
+      twind.setup({
+        mode: "silent",
+        theme: {
+          extend: {
+            colors: {
+              gray: twindColors.gray,
+            },
+            fontFamily: (theme) => ({
+              sans: 'Inter,'+ theme('fontFamily.sans'),
+              mono: 'Inconsolata,'+ theme('fontFamily.mono'),
+            }),
+            keyframes: {
+              'anim_ping-sm': {
+                '75%, 100%': {
+                  transform: 'scale(1.5)',
+                  opacity: '0',
+                },
+              },
+              'anim_throb': {
+                '0%': { transform: 'scale(1)' },
+                '50%': { transform: 'scale(1.1)' },
+                '100%': { transform: 'scale(1.001)' },
+              },
+              'anim_spin': {
+                '0%, 90%': { transform: 'rotate(0deg)' },
+                '100%': { transform: 'rotate(360deg)' },
+              },
+            },
+            animation: {
+              'ping-sm': 'anim_ping-sm 1s cubic-bezier(0, 0, 0.2, 1) infinite',
+              'throb': 'anim_throb 3s ease-in-out infinite',
+              'spin': 'anim_spin 8s ease-in-out infinite',
+            },
+          },
+        },
+        plugins: {
+          'scroll-smooth': { 'scroll-behavior': 'smooth' },
+          'bg-grid': { 'background-image': 'url("data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 4 4\' width=\'4\' height=\'4\'><rect x=\'0\' y=\'0\' width=\'2\' height=\'2\' fill=\'rgba(5,5,5,.33)\'></rect></svg>")', },
+        },
+      })
+      twind.tw(() => ({
+        '@global': {
+          ':root [v-cloak]': { '@apply': 'hidden', },
+          '.v-leave-active': { '@apply': 'hidden', },
+          '.v-enter-active': { '@apply': 'opacity-0 translate-y-12', },
+          '.social a b': { '@apply': 'w-full h-full ring(1 inset current) absolute top-0 left-0 index-10 opacity-0 rounded-full transform scale-50 transition-all duration-150 md:(bg-transparent ring-2)', },
+          '.social .active b,.social a:hover b,.social a:focus b': { '@apply': 'opacity-75 scale-125', },
+          '.social a svg': { '@apply': 'text-white opacity-50 relative z-20', },
+          '.social .active,.social a:hover': { '@apply': 'transform scale-125', },
+          '.social .active svg,.social a:hover svg,.social a:focus svg': { '@apply': 'text-current opacity-100', },
+        }
+      }))
+      twindObserve.observe(document.documentElement);
+      document.documentElement.removeAttribute('hidden');
+
+     // particles
+      particlesJS("particles",
+        {
+          "particles": {
+            "number": {
+              "value": 160,
+              "density": {
+                "enable": false,
+                "value_area": 800
+              }
+            },
+            "color": {
+              "value": "#CCCCCC"
+            },
+            "shape": {
+              "type": "edge",
+              "stroke": {
+                "width": 0,
+                "color": "#CCCCCC"
+              },
+              "polygon": {
+                "nb_sides": 5
+              },
+              "image": {
+                "src": "",
+                "width": 100,
+                "height": 100
+              }
+            },
+            "opacity": {
+              "value": 1,
+              "random": true,
+              "anim": {
+                "enable": true,
+                "speed": 1,
+                "opacity_min": 0,
+                "sync": false
+              }
+            },
+            "size": {
+              "value": 2,
+              "random": true,
+              "anim": {
+                "enable": true,
+                "speed": 4,
+                "size_min": 1,
+                "sync": false
+              }
+            },
+            "line_linked": {
+              "enable": false,
+              "distance": 150,
+              "color": "#999999",
+              "opacity": 0.4,
+              "width": 1
+            },
+            "move": {
+              "enable": true,
+              "speed": 1,
+              "direction": "none",
+              "random": true,
+              "straight": false,
+              "out_mode": "out",
+              "bounce": false,
+              "attract": {
+                "enable": false,
+                "rotateX": 600,
+                "rotateY": 600
+              }
+            }
+          },
+          "interactivity": {
+            "detect_on": "window",
+            "events": {
+              "onhover": {
+                "enable": true,
+                "mode": "bubble"
+              },
+              "onclick": {
+                "enable": true,
+                "mode": "repulse"
+              },
+              "resize": true
+            },
+            "modes": {
+              "grab": {
+                "distance": 400,
+                "line_linked": {
+                  "opacity": 1
+                }
+              },
+              "bubble": {
+                "distance": 100,
+                "size": 1,
+                "duration": 2,
+                "opacity": 1,
+                "speed": 3
+              },
+              "repulse": {
+                "distance": 200,
+                "duration": 0.4
+              },
+              "push": {
+                "particles_nb": 4
+              },
+              "remove": {
+                "particles_nb": 2
+              }
+            }
+          },
+          "retina_detect": true
+        }
+      );
+
+      // analytics
+      window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+      ga('create', 'UA-6318307-2', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+    </script>
+    <script src="https://www.google-analytics.com/analytics.js" async></script>
+
+  </body>
+</html>
