@@ -123,7 +123,7 @@
       </transition>
 
       <a href="#gear/" @click="state = '#gear/'" v-show="state == '#/'" class="gear-open w-12 h-12 text-grey-darker hover:text-white focus:text-white flex items-center justify-center fixed right-0 top-0 z-20 transition-all duration-300" title="PC/Streaming/Music Gear/Rig"><i class="inline-block align-middle far fa-fw fa-stream" aria-hidden="true"></i></a>
-      <a href="#/" @click="state = '#/'" v-show="state !== '#/'" class="gear-close w-12 h-12 text-grey-darker hover:text-white focus:text-white flex items-center justify-center fixed right-0 top-0 z-20 transition-all duration-300" aria-label="Close"><i class="inline-block align-middle fal fa-fw fa-2x fa-times" aria-hidden="true"></i></a>
+      <a href="#/" @click="state = '#/'" v-show="state !== '#/'" class="gear-close w-12 h-12 text-grey-darker hover:text-white focus:text-white flex items-center justify-center fixed right-0 top-0 z-20 transition-all duration-300" aria-label="Close"><i class="inline-block align-middle fat fa-fw fa-2x fa-times" aria-hidden="true"></i></a>
 
       <div id="particles" class="particles text-white opacity-10 fixed inset-0 z-[-1]"></div>
       <div id="bg" class="bg-gradient-to-b from-transparent via-transparent to-gray-800 fixed inset-0 z-[-2]"><div class="bg(grid fixed) absolute inset-0"></div></div>
@@ -170,7 +170,7 @@
               ico: 'fab fa-apple',
               color: 'gray-300',
               hardware: [
-                { type: 'Laptop', name: 'MacBook › Pro', sub: [{name: '2021'}, {name: 'M1 Pro'}, {name: '14"'}, {name: '8-core'},], link: 'https://amzn.com/dp/B09JQL8KP9?tag=qrayg-20', soon: true, },
+                { type: 'Laptop', name: 'MacBook › Pro', sub: [{name: '2021'}, {name: 'M1 Pro'}, {name: '14"'}, {name: '8-core'},], link: 'https://amzn.com/dp/B09JQL8KP9?tag=qrayg-20', },
                 { type: 'Dock', name: 'Brydge › Stone Pro', sub: [{name: 'Thunderbolt 3'},], link: 'https://amzn.com/dp/B08G9WDH6B?tag=qrayg-20', },
                 //{ type: 'Dongle', name: 'Aukey › 9-in-2', sub: [{name: '2x 4k HDMI'}, {name: '2x USB3'}, {name: '1x USBC'}, {name: 'SD/microSD'}, {name: '1Gbps Network'},], link: 'https://amzn.com/dp/B088R6H7NC?tag=qrayg-20', },
                 { type: 'Hub', name: 'Satechi › Stand', sub: [{name: '3x USB3'}, {name: '1x USBC'}, {name: 'SD/microSD'},], link: 'https://amzn.com/dp/B07GX1WW47?tag=qrayg-20', },
@@ -179,7 +179,7 @@
             },
             {
               category: 'Accessories',
-              ico: 'fal fa-computer-speaker',
+              ico: 'fat fa-computer-speaker',
               color: 'red-400',
               hardware: [
                 { type: 'Display 1', name: 'LG › 27GL83A-B', sub: [{name: '27"'},{name: '144hz'},], link: 'https://amzn.com/dp/B07YGZL8XF?tag=qrayg-20', },
@@ -192,7 +192,7 @@
             },
             {
               category: 'Keyboards',
-              ico: 'fal fa-keyboard',
+              ico: 'fat fa-keyboard',
               color: 'green-500',
               hardware: [
                 //{ type: 'KB', name: 'Apple › Magic Keyboard', sub: [{name: 'w/ Keypad'}, {name: 'Space Gray'},], link: 'https://apple.com/keyboard', },
@@ -227,11 +227,11 @@
             },
             {
               category: 'Streaming',
-              ico: 'fal fa-waveform-path',
+              ico: 'fat fa-waveform-path',
               color: 'purple-500',
               hardware: [
                 { type: 'Capture', name: 'Elgato › HD60 S', sub: [{name: 'USB'},], link: 'https://amzn.com/dp/B01DRWCOGA?tag=qrayg-20', },
-                { type: 'Cam', name: 'Logitech › C920x Pro Stream', sub: [{name: 'USB'},], link: 'https://amzn.com/dp/B01LXCDPPK?tag=qrayg-20', },
+                { type: 'Cam', name: 'Lumina › AI Webcam', sub: [{name: 'USB'},{name: 'Grey'},], link: 'https://getlumina.com/', },
                 { type: 'Mic', name: 'Shure › MV7', sub: [{name: 'USB'}, {name: 'XLR'},], link: 'https://amzn.com/dp/B08G7RG9ML?tag=qrayg-20', },
                 { type: 'Strip HDCP', name: 'OREI › HD-102', sub: [{name: 'HDMI'},], link: 'https://amzn.com/dp/B005HXFARS?tag=qrayg-20', },
                 { type: 'Misc', name: 'LeMetric › Time', sub: [{name: 'Smart Clock'},], link: 'https://amzn.com/dp/B01IVTVK3W?tag=qrayg-20', },
@@ -240,7 +240,7 @@
             },
             {
               category: 'Home Theater',
-              ico: 'fal fa-speakers',
+              ico: 'fat fa-speakers',
               color: 'pink-500',
               hardware: [
                 { type: 'AV Receiver', name: 'Marantz › NR1711', sub: [{name: 'Black'},], link: 'https://amzn.com/dp/B0786M9ZZS?tag=qrayg-20', },
@@ -253,7 +253,7 @@
             },
             {
               category: 'Music',
-              ico: 'fal fa-amp-guitar',
+              ico: 'fat fa-amp-guitar',
               color: 'yellow-400',
               hardware: [
                 { type: 'Guitar', name: 'Ibanez › QX52', sub: [{name: '2021'},{name: 'Black'},], link: 'https://amzn.com/dp/B09JGQ3WWR?tag=qrayg-20', },
@@ -266,7 +266,7 @@
             },
             // {
             //   category: 'Obsolete',
-            //   ico: 'fal fa-hourglass-end',
+            //   ico: 'fat fa-hourglass-end',
             //   color: 'white opacity-25',
             //   hardware: [
             //     { type: 'Display', name: 'Dell › U2415', link: 'https://amzn.com/dp/B00NZTKOQI?tag=qrayg-20', },
