@@ -94,11 +94,11 @@
               </a>
               <ul v-if="group.hardware" :class="['grid(& flow-row cols-1) gap-x-6 lg:(pl-16 grid-cols-2)', {'line-through opacity-50': group.category == 'Obsolete'}]">
                 <li v-for="(hardware, index) in group.hardware" class="flex">
-                  <a :href="hardware.link" :class="['border-'+ group.color, 'hover:bg-'+ group.color, 'focus:bg-'+ group.color, 'hover:text-'+ group.color, 'focus:text-'+ group.color, 'py-3 px-5 hover:border-l-4 border(l b opacity-25) w-full bg-transparent hover:(bg-opacity-10) focus:(bg-opacity-10) transition-all group md:(px-0 flex space-x-4)']">
-                    <b class="font-black tracking-wider uppercase block opacity-80 group-hover:(text-white) md:(w-1/4 text-right)">
+                  <a :href="hardware.link" :class="['border-'+ group.color, 'hover:bg-'+ group.color, 'focus:bg-'+ group.color, 'hover:text-'+ group.color, 'focus:text-'+ group.color, 'group py-3 px-5 border(l b opacity-25) w-full bg-transparent transition-all hover:(border-l-4 bg-opacity-10) focus:(border-l-4 bg-opacity-10) md:(px-0 flex space-x-4)']">
+                    <b class="font-black tracking-wider uppercase block opacity-80 group-hover:(text-white) group-focus:(text-white) md:(w-1/4 text-right)">
                       <b class="text-sm">{{ hardware.type }}</b>
-                      <small v-if="hardware.soon" class="uppercase leading-none tracking-wider inline-block space-x-1">
-                        <b class="px-1 py-px font-black text-yellow-300 ring(1 current inset) inline-block relative">Pending <b class="ring(1 current inset) absolute inset-0 animate-ping-sm z-[-1]" aria-hidden="true"></b></b>
+                      <small v-if="hardware.soon" class="uppercase leading-none tracking-wider flex justify-end">
+                        <b class="px-1 py-px font-black text-yellow-300 ring(1 current inset) block relative">Pending <b class="ring(1 current inset) absolute inset-0 animate-ping-sm z-[-1]" aria-hidden="true"></b></b>
                       </small>
                     </b>
                     <div :class="['border-'+ group.color, 'mt-2 border w-2 h-2 rounded-full relative top-px hidden md:(block)']"></div>
@@ -193,6 +193,7 @@
               ico: 'fat fa-keyboard',
               color: 'green-500',
               hardware: [
+                { type: 'KB', name: 'Apple › Wireless', sub: ['100%', 'Space Gray'], link: 'https://amzn.com/dp/B082C15S5L?tag=qrayg-20', },
                 { type: 'KB', name: 'Keychron › Q2', sub: ['65%', 'Hotswap', 'RGB', 'Carbon Black'], link: 'https://keychron.com/products/keychron-q2-qmk-custom-mechanical-keyboard', },
                 { type: 'KB', name: 'Keychron › K7', sub: ['65%', 'Hotswap', 'RGB', 'Banana'], link: 'https://keychron.com/pages/keychron-k7-wireless-mechanical-keyboard', },
                 { type: 'KB', name: 'Keychron › K14', sub: ['65%', 'Hotswap', 'RGB', 'Red'], link: 'https://keychron.com/pages/keychron-k14-wireless-mechanical-keyboard', },
@@ -206,7 +207,6 @@
                 { type: 'KB', name: 'Cajal', sub: ['45%', 'Space Grey', 'Silent Sky'], link: 'https://walletburner.co/pages/cajal', },
                 { type: 'KB', name: 'UT47.2', sub: ['40%', 'Alu', 'Kailh Copper'], link: 'https://keyhive.xyz/shop/ut472-kit', },
                 { type: 'KB', name: 'Planck EZ › Glow x2', sub: ['40%', 'Black - Kaihl Gold', 'White - Zilent'], link: 'https://ergodox-ez.com/pages/planck', },
-                { type: 'KB', name: 'Keyboardio › Atreus', sub: ['40%', 'Black - Kaihl Box Brown'], link: 'https://shop.keyboard.io/products/keyboardio-atreus', },
                 { type: 'KB', name: 'Vortex › Core', sub: ['40%', 'Cherry Blue', 'Bamboo'], link: 'https://amzn.com/dp/B01MS3PWS0?tag=qrayg-20', },
                 { type: 'KB', name: 'MiniVan › KUMO', sub: ['40%', 'Purple Tactile', 'Walnut'], link: 'https://thekey.company/products/minivan', },
                 { type: 'KB', name: 'MiniVan › JetVan', sub: ['40%', 'Aliaz', 'White'], link: 'https://thekey.company/products/minivan', },
