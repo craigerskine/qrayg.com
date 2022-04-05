@@ -47,8 +47,8 @@
             <b class="flex items-center justify-center opacity-[.0001] absolute bottom-0 inset-x-0 translate-y-1 transition-all group-hover:(opacity-100 -translate-y-1) group-focus:(opacity-100 -translate-y-1)"><b class="usr pb-8 text-xl md:(text-2xl) font-black "><small class="text(red-500 base)">@</small> <b class="logo-usr" title="qrayg - Twitch Streamer, Gamer, UX Designer, UI Developer">qrayg</b></b></b>
           </h1>
           <ul class="social mb-16 flex relative">
-            <li v-for="(soc, index) in social" class="mx-3 md:mx-8">
-              <a :href="soc.url" :class="'w-8 h-8 md:(w-12 h-12) flex relative transition-all ease-in-out text-'+ soc.color" :aria-label="soc.name">
+            <li v-for="(soc, index) in social" class="mx-3 md:mx-8" @mouseover="socialLoopPaused = true, socialActive = null" @mouseout="socialLoopPaused = false">
+              <a :href="soc.url" :class="['w-8 h-8 md:(w-12 h-12) flex relative transition-all ease-in-out text-'+ soc.color, socialActive === (index + 1) ? 'active' : '']" :aria-label="soc.name">
                 <template v-if="soc.name !== 'Gumroad'">
                   <i :class="['m-auto inline-block align-middle fa-fw text-2xl md:(text-3xl)', soc.icon]" aria-hidden="true"></i>
                 </template>
@@ -113,12 +113,6 @@
               </ul>
             </article>
           </section>
-          <!-- <aside class="w-32 h-32 flex items-end justify-end fixed bottom-0 right-0 overflow-hidden">
-            <a href="https://github.com/craigerskine/website-gear" class="w-12 h-12 text-gray-300 hover:text-white focus:text-white hidden md:flex relative transition" aria-label="Fork on GitHub">
-              <i class="fab fa-fw fa-lg fa-github" title="GitHub" class="relative -top-1 -left-1"></i>
-              <b class="w-64 bg-white bg-opacity-10 text-xs text-center uppercase absolute top-1/2 left-1/2 z-20 transform -rotate-45 -translate-x-1/2 -translate-y-1/2">Fork</b>
-            </a>
-          </aside> -->
         </section>
       </transition>
 
@@ -145,9 +139,11 @@
             { name: 'Twitch', icon: 'fab fa-twitch', color: 'purple-500', url: 'https://twitch.tv/qrayg/', },
             { name: 'YouTube', icon: 'fab fa-youtube', color: 'red-700', url: 'https://youtube.com/c/qrayg/', },
             { name: 'Discord', icon: 'fab fa-discord', color: 'indigo-500', url: 'https://discord.gg/Pa9X3C8', },
-            { name: 'Gumroad', icon: '', color: 'gray-600', url: 'http://qrayg.gumroad.com', },
+            { name: 'Gumroad', icon: null, color: 'gray-600', url: 'http://qrayg.gumroad.com', },
             { name: 'Patreon', icon: 'fab fa-patreon', color: 'red-400', url: 'https://patreon.com/qrayg/', },
           ],
+          socialActive: null,
+          socialLoopPaused: false,
           rig: [
             {
               category: 'PC',
@@ -265,40 +261,27 @@
               ]
             },
           ]
-        }
+        },
+        methods: {
+          socialLoop: function() {
+            setInterval(function() {
+              if(!app.socialLoopPaused) {
+                if(app.socialActive < (app.social.length)) {
+                  app.socialActive++
+                } else {
+                  app.socialActive = null
+                }
+              }
+            }, 1500);
+          }
+        },
+        mounted() {
+          this.socialLoop()
+        },
       });
 
       // ES6 garbage
       var $ = document.querySelectorAll.bind(document);
-
-      // social loop
-      var socialLoopPaused = false;
-      socialLoop();
-      $('.social').forEach(function(item){item.addEventListener('mouseenter', function(){
-        $('.social a').forEach(function(item){item.classList.remove('active')});
-        socialLoopPaused = true;
-      })});
-      $('.social').forEach(function(item){item.addEventListener('mouseleave', function(){
-        socialLoopPaused = false;
-      })});
-      function socialLoop(){
-        setInterval(function(){
-          if(!socialLoopPaused){
-            if($('.social .active').length){
-              $('.social .active').forEach(
-                function(item){
-                  item.classList.remove('active');
-                  if(!item.closest('li').matches(':last-child')){
-                    item.closest('li').nextElementSibling.querySelectorAll('a').forEach(function(item){item.classList.add('active')});
-                  }
-                }
-              )
-            } else {
-              $('.social li:first-child a').forEach(function(item){item.classList.add('active')});
-            }
-          }
-        }, 1500);
-      }
 
       // query/message stuff for twitch streaming
       const urlParams = new URLSearchParams(window.location.search);
