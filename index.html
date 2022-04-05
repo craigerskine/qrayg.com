@@ -145,7 +145,7 @@
             { name: 'Twitch', icon: 'fab fa-twitch', color: 'purple-500', url: 'https://twitch.tv/qrayg/', },
             { name: 'YouTube', icon: 'fab fa-youtube', color: 'red-700', url: 'https://youtube.com/c/qrayg/', },
             { name: 'Discord', icon: 'fab fa-discord', color: 'indigo-500', url: 'https://discord.gg/Pa9X3C8', },
-            { name: 'Gumroad', icon: '', color: 'gray-200', url: 'http://qrayg.gumroad.com', },
+            { name: 'Gumroad', icon: '', color: 'gray-600', url: 'http://qrayg.gumroad.com', },
             { name: 'Patreon', icon: 'fab fa-patreon', color: 'red-400', url: 'https://patreon.com/qrayg/', },
           ],
           rig: [
@@ -377,11 +377,11 @@
           ':root [v-cloak]': { '@apply': 'hidden', },
           '.v-leave-active': { '@apply': 'hidden', },
           '.v-enter-active': { '@apply': 'opacity-0 translate-y-12', },
-          '.social a b': { '@apply': 'w-full h-full ring(1 inset current) absolute top-0 left-0 index-10 opacity-0 rounded-full transform scale-50 transition-all duration-150 md:(bg-transparent ring-2)', },
-          '.social .active b,.social a:hover b,.social a:focus b': { '@apply': 'opacity-75 scale-125', },
+          '.social a b': { '@apply': 'w-full h-full absolute top-0 left-0 index-10 opacity-0 rounded-full transform scale-50 transition-all duration-150', },
+          '.social .active b,.social a:hover b,.social a:focus b': { '@apply': 'bg-current opacity-75 shadow-xl scale-125', },
           '.social a svg': { '@apply': 'text-white opacity-50 relative z-20', },
           '.social .active,.social a:hover': { '@apply': 'transform scale-125', },
-          '.social .active svg,.social a:hover svg,.social a:focus svg': { '@apply': 'text-current opacity-100', },
+          '.social .active svg,.social a:hover svg,.social a:focus svg': { '@apply': 'text-white opacity-100', },
         }
       }))
       twindObserve.observe(document.documentElement);
