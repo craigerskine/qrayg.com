@@ -48,7 +48,7 @@
           </h1>
           <ul class="social mb-16 flex relative">
             <li v-for="(soc, index) in social" class="mx-3 md:mx-8" @mouseover="socialLoopPaused = true, socialActive = null" @mouseout="socialLoopPaused = false">
-              <a :href="soc.url" :class="['w-8 h-8 md:(w-12 h-12) flex relative transition-all ease-in-out text-'+ soc.color, socialActive === (index + 1) ? 'active' : '']" :aria-label="soc.name">
+              <a :href="soc.url" :class="['w-8 h-8 md:(w-12 h-12) flex relative transition-all text-'+ soc.color, socialActive === (index + 1) ? 'active' : '']" :aria-label="soc.name">
                 <template v-if="soc.name !== 'Gumroad'">
                   <i :class="['m-auto inline-block align-middle fa-fw text-2xl md:(text-3xl)', soc.icon]" aria-hidden="true"></i>
                 </template>
@@ -327,6 +327,12 @@
               mono: 'Inconsolata,'+ theme('fontFamily.mono'),
             }),
             keyframes: {
+              blob: {
+                '15%': { 'transform-origin': 'center center', transform: 'scale(1.4, 1.2)', },
+                '40%': { 'transform-origin': 'center center', transform: 'scale(.9, .9)', },
+                '75%': { 'transform-origin': 'center center', transform: 'scale(1.08, 1)', },
+                '100%': { 'transform-origin': 'center center', transform: 'scale(1, 1)', },
+              },
               'anim_ping-sm': {
                 '75%, 100%': {
                   transform: 'scale(1.5)',
@@ -344,6 +350,7 @@
               },
             },
             animation: {
+              blob: 'blob .3s ease-in-out',
               'ping-sm': 'anim_ping-sm 1s cubic-bezier(0, 0, 0.2, 1) infinite',
               'throb': 'anim_throb 3s ease-in-out infinite',
               'spin': 'anim_spin 8s ease-in-out infinite',
@@ -360,10 +367,10 @@
           ':root [v-cloak]': { '@apply': 'hidden', },
           '.v-leave-active': { '@apply': 'hidden', },
           '.v-enter-active': { '@apply': 'opacity-0 translate-y-12', },
-          '.social a b': { '@apply': 'w-full h-full absolute top-0 left-0 index-10 opacity-0 rounded-full transform scale-50 transition-all duration-150', },
-          '.social .active b,.social a:hover b,.social a:focus b': { '@apply': 'bg-current opacity-75 shadow-xl scale-125', },
-          '.social a svg': { '@apply': 'text-white opacity-50 relative z-20', },
-          '.social .active,.social a:hover': { '@apply': 'transform scale-125', },
+          '.social a b': { '@apply': 'w-full h-full absolute top-0 left-0 index-10 opacity-0 rounded-full', },
+          '.social .active b,.social a:hover b,.social a:focus b': { '@apply': 'bg-current opacity-75 shadow-xl transition-all scale-150', },
+          '.social a svg': { '@apply': 'text-white opacity-50 relative z-20 transition-all', },
+          '.social .active,.social a:hover,.social a:focus': { '@apply': 'animate-blob', },
           '.social .active svg,.social a:hover svg,.social a:focus svg': { '@apply': 'text-white opacity-100', },
         }
       }))
