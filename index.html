@@ -105,7 +105,9 @@
                     <i class="not-italic md:tracking-tight flex-1">
                       {{ hardware.name }}
                       <small v-if="hardware.sub" class="uppercase leading-none tracking-wider flex flex-wrap">
-                        <b v-for="(sub, index) in hardware.sub" class="mb-1 mr-1 px-1 py-px font-black text-current opacity-80 inline-block ring-1 ring-current ring-inset">{{ sub }}</b>
+                        <b v-for="(sub, index) in hardware.sub" class="mb-1 mr-1 py-px font-black text-current opacity-60 inline-block">
+                          {{ sub }}<i v-if="hardware.sub.length > (index + 1)">, </i>
+                        </b>
                       </small>
                     </i>
                   </a>
