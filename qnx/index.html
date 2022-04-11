@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en" class="bg-cream" hidden>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>QNX Skins by qrayg</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch&family=Inter:wght@100;400;700;900&display=swap" rel="stylesheet" />
+  </head>
+  <body class="text-xs">
+    <div class="w-64 h-64 bg(cover no-repeat) absolute -top-32 -left-32 rounded-full shadow-2xl" style="background-image: url('assets/img/star.png')"></div>
+    <div class="app min-h-screen flex(& col) relative" v-cloak>
+      <header class="py-16 w-full text-center md:(flex items-center justify-center space-x-10)">
+        <h1 class="text(5xl ui-line) leading-none font-sketch md:(text-[6vw])"><b class="font-normal inline-block opacity-50">q</b>Skins</h1>
+        <img src="assets/img/header.png" alt="QNX Chrome" class="inline-block" />
+      </header>
+      <main class="py-8 px-4 w-full flex-1 flex">
+        <section class="mx-auto container space-y-10 flex flex-col items-center md:(flex-row items-start justify-center space-x-10 space-y-0)">
+          <nav class="w-[150px] leading-tight shadow-md">
+            <div>
+              <div class="border(1 ui-line)">
+                <bevel>
+                  <ul class="pt-2 w-full relative">
+                    <li v-for="(entry, index) in entries" v-if="!entry.divider" :class="['pb-2 px-2', (index + 1) === entries.length ? 'border(b ui-dark)' : '']">
+                      <a href="#" @click.prevent="active = index" :class="['group py-1 px-2 w-full flex items-center space-x-2 transition hover:(bg-theme) focus:(bg-theme)', active === index ? 'bg-theme' : 'bg-ui-item']">
+                        <img :src="'assets/img/ico-'+ entry.ico +'.png'" :alt="entry.title" class="w-[16px] h-[16px] object-contain object-center opacity-50 transition group-hover:(opacity-100) group-focus:(opacity-100)" />
+                        <span>{{ entry.title }}</span>
+                      </a>
+                    </li>
+                    <li v-else class="pb-2 flex(& col)">
+                      <b class="w-full h-px bg-ui-dark"></b>
+                      <b class="w-full h-px bg-ui-line"></b>
+                      <b class="w-full h-px bg-ui-lite"></b>
+                    </li>
+                  </ul>
+                </bevel>
+              </div>
+            </div>
+          </nav>
+          <article class="w-[150px] bg(repeat-y center) shadow-md" style="background-image: url('assets/img/win-bg.png');">
+            <div class="border(1 black)">
+              <div class="border(1 ui-line)">
+                <img src="assets/img/win-start.png" alt="" />
+                <div v-for="(entry, index) in entries" v-if="active === index" class="px-[4px]">
+                  <ul class="-mb-[3px] divide(y ui-dark)">
+                    <li v-for="(file, index) in entry.files" class="p-2">
+                      <a :href="'assets/files/'+ slug(entry.title) +'-'+ slug(file.title) +'.zip'" class="group flex items-center space-x-2 transition" download>
+                        <img :src="'assets/img/ico-'+ entry.ico +'.png'" :alt="entry.title" class="w-[16px] h-[16px] object-contain object-center opacity-50 transition group-hover:(opacity-100) group-focus:(opacity-100)" />
+                        <span>{{ file.title }}</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <img src="assets/img/win-end.png" alt="" />
+              </div>
+            </div>
+          </article>
+        </section>
+      </main>
+      <footer class="mt-auto pt-[6px] w-full bg(repeat-x [#C0C0C0]) flex" style="background-image: url('assets/img/footer-bg.png');">
+        <div class="border(r ui-line) shadow">
+          <bevel>
+            <ul class="flex">
+              <li v-for="(entry, index) in entries" v-if="!entry.divider" class="py-[3px] px-px flex">
+                <bevel sunk>
+                  <div v-if="active !== index" class="flex absolute inset-px"><bevel></bevel></div>
+                  <a href="#" @click.prevent="active = index" :class="['group m-px py-1 px-2 w-full flex items-center relative transition md:(text-sm space-x-2)', active === index ? 'bg-ui-dark shadow-inner' : '']">
+                    <img :src="'assets/img/ico-'+ entry.ico +'.png'" :alt="entry.title" class="w-[16px] h-[16px] object-contain object-center hidden opacity-50 transition group-hover:(opacity-100) group-focus:(opacity-100) md:(block)" />
+                    <span>{{ entry.title }}</span>
+                  </a>
+                </bevel>
+              </li>
+            </ul>
+          </bevel>
+        </div>
+      </footer>
+    </div>
+
+    <script src="../js/twind.js"></script>
+    <script src="../js/plugins.js"></script>
+    <script>
+      // components
+      Vue.component('bevel', {
+        template: `
+          <div class="bg-ui-base flex-1 flex relative">
+            <b :class="['border-t absolute inset-x-0 top-0', sunk ? 'border-ui-dark' : 'border-ui-lite']"></b>
+            <b :class="['border-r absolute inset-y-0 right-0', sunk ? 'border-ui-lite' : 'border-ui-dark']"></b>
+            <b :class="['border-b absolute inset-x-0 bottom-0', sunk ? 'border-ui-lite' : 'border-ui-dark']"></b>
+            <b :class="['border-l absolute inset-y-0 left-0', sunk ? 'border-ui-dark' : 'border-ui-lite']"></b>
+            <slot></slot>
+          </div>
+        `,
+        props: {
+          'sunk': Boolean,
+        },
+      });
+
+      // data
+      var app = new Vue({
+        el: '.app',
+        data() {
+          return {
+            active: 0,
+            entries: [
+              //{ title: 'Home', ico: 'home', },
+              //{ title: 'About', ico: 'voyager', },
+              //{ divider: true, },
+              {
+                title: 'Skins',
+                ico: 'window',
+                desc: '...',
+                files: [
+                  { title: 'ICQ Plus', },
+                  { title: 'NS QNX', },
+                  { title: 'NS QNX2', },
+                  { title: 'NS QNX3', },
+                  { title: 'NS QNX_RTP', },
+                  { title: 'ObjectBar', },
+                  { title: 'Opera Toolbar', },
+                  { title: 'WinAmp', },
+                  { title: 'WindowBlinds', },
+                ],
+              },
+              {
+                title: 'Themes',
+                ico: 'mask',
+                desc: '...',
+                files: [
+                  { title: 'Windows XP', },
+                ],
+              },
+              {
+                title: 'Icons',
+                ico: 'tool',
+                desc: '...',
+                files: [
+                  { title: 'Windows', },
+                  { title: 'IconPhile', },
+                ],
+              },
+              {
+                title: 'Wallpapers',
+                ico: 'wall',
+                desc: '...',
+                files: [
+                  { title: 'Fold', },
+                  { title: 'Momentics', },
+                  { title: 'Orange', },
+                  { title: 'Checked', },
+                ],
+              },
+            ],
+          }
+        },
+        methods: {
+          slug: function(text) {
+            return text.toString().toLowerCase()
+            .replace(/\s+/g, '-')           // Replace spaces with -
+            .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+            .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+            .replace(/^-+/, '')             // Trim - from start of text
+            .replace(/-+$/, '');            // Trim - from end of text
+          },
+        },
+      });
+
+      twind.setup({
+        mode: "silent",
+        theme: {
+          extend: {
+            colors: {
+              gray: twindColors.gray,
+              'cream': '#E7E3D6',
+              'theme': '#98A8C8',
+              'ui-lite': '#F0F0F0',
+              'ui-base': '#D8D8D8',
+              'ui-item': '#C8CCC8',
+              'ui-dark': '#B8BCB8',
+              'ui-line': '#484848',
+            },
+            fontFamily: (theme) => ({
+              sans: 'Inter,'+ theme('fontFamily.sans'),
+              sketch: 'Cabin Sketch,'+ theme('fontFamily.sans'),
+            }),
+          },
+        },
+        plugins: {},
+      })
+      twind.tw(() => ({
+        '@global': {
+          ':root [v-cloak]': { '@apply': 'hidden', },
+        }
+      }))
+      twindObserve.observe(document.documentElement);
+      document.documentElement.removeAttribute('hidden');
+    </script>
+
+  </body>
+</html>
