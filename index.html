@@ -65,7 +65,7 @@
       </transition>
 
       <transition>
-        <section class="gear mx-auto px-4 w-full max-w-screen-lg font-mono relative z-20 transition-all" v-show="state !== '#/'">
+        <section class="gear mx-auto px-4 w-full max-w-screen-lg font-mono relative z-20 transition-all" v-show="state !== '#/' && state !== '#404/'">
 
           <header class="mb-8 pt-12">
             <section class="mx-auto w-full md:(flex divide(x gray-500 opacity-25))">
@@ -117,6 +117,22 @@
         </section>
       </transition>
 
+      <transition>
+        <section class="w-full h-screen flex" v-show="state === '#404/'">
+          <article class="m-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" class="mx-auto w-10 h-10 block">
+              <title>qrayg</title>
+              <g class="fill-current">
+                <circle cx="98.1" cy="98.1" r="6" opacity=".25"></circle>
+                <path d="M109.402699,94.0592724 C116.085856,84.3838 120,72.6489986 120,60 C120,26.862915 93.137085,0 60,0 C26.862915,0 0,26.862915 0,60 C0,93.137085 26.862915,120 60,120 C72.6489986,120 84.3838,116.085856 94.0592724,109.402699 C90.049715,107.969131 87.0258166,104.462602 86.278593,100.174129 C78.7292272,105.12235 69.7006692,108 60,108 C33.490332,108 12,86.509668 12,60 C12,33.490332 33.490332,12 60,12 C86.509668,12 108,33.490332 108,60 C108,69.7006692 105.12235,78.7292272 100.174122,86.2786024 C104.462602,87.0258166 107.969131,90.049715 109.402699,94.0592724 Z"></path>
+              </g>
+            </svg>
+            <h1 class="my-6 text-6xl">#404</h1>
+            <small class="ml-3 text-lg block text-center"><a href="/" class="transition hover:(text-white)"><i class="fa-regular fa-arrow-left-to-line"></i></a></small>
+          </article>
+        </section>
+      </transition>
+
       <a href="#gear/" @click="state = '#gear/'" v-show="state == '#/'" class="gear-open w-12 h-12 text-grey-darker hover:text-white focus:text-white flex items-center justify-center fixed right-0 top-0 z-20 transition-all" title="PC/Streaming/Music Gear/Rig"><i class="inline-block align-middle far fa-fw fa-stream" aria-hidden="true"></i></a>
       <a href="#/" @click="state = '#/'" v-show="state !== '#/'" class="gear-close w-12 h-12 text-grey-darker hover:text-white focus:text-white flex items-center justify-center fixed right-0 top-0 z-20 transition-all" aria-label="Close"><i class="inline-block align-middle fat fa-fw fa-2x fa-times" aria-hidden="true"></i></a>
 
@@ -125,8 +141,8 @@
 
     </main>
 
-    <script src="js/twind.js"></script>
-    <script src="js/plugins.js"></script>
+    <script src="/js/twind.js"></script>
+    <script src="/js/plugins.js"></script>
     <script src="https://kit.fontawesome.com/6d6156d427.js" crossorigin="anonymous"></script>
 
     <script>
