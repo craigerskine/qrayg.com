@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en" class="bg-gray-900 motion-safe:scroll-smooth" hidden>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>UX Experiments by qrayg</title>
+    <meta name="description" content="QNX skins, QNX themes, QNX icons. For all of your QNX theming/skinning needs." />
+    <meta name="keywords" content="qnx skins, qnx themes, qnx icons, qnx_rtp skins, qnx_rtp themes, qnx_rtp icons" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700;900&display=swap" rel="stylesheet" />
+  </head>
+  <body class="text-gray-400">
+    <div id="bg" class="bg-gradient-to-b from-transparent via-transparent to-gray-800 fixed inset-0"><div class="bg(grid fixed) absolute inset-0"></div></div>
+    <div class="app min-h-screen flex(& col) relative">
+      <header class="py-12 px-4 w-full text-center md:(flex items-center justify-center)">
+        <a href="/" class="m-auto p-4 inline-flex md:(m-0)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" class="w-16 h-auto inline-flex align-middle"><title>qrayg - Twitch Streamer, Gamer, UX Designer, UI Developer</title> <g fill="currentColor"><circle cx="98.1" cy="98.1" r="6" opacity=".25"></circle> <path d="M109.402699,94.0592724 C116.085856,84.3838 120,72.6489986 120,60 C120,26.862915 93.137085,0 60,0 C26.862915,0 0,26.862915 0,60 C0,93.137085 26.862915,120 60,120 C72.6489986,120 84.3838,116.085856 94.0592724,109.402699 C90.049715,107.969131 87.0258166,104.462602 86.278593,100.174129 C78.7292272,105.12235 69.7006692,108 60,108 C33.490332,108 12,86.509668 12,60 C12,33.490332 33.490332,12 60,12 C86.509668,12 108,33.490332 108,60 C108,69.7006692 105.12235,78.7292272 100.174122,86.2786024 C104.462602,87.0258166 107.969131,90.049715 109.402699,94.0592724 Z"></path></g></svg></a>
+        <h1 class="mx-5 text(3xl gray-200) font-black md:(text([4vw]))">UX <b class="inline-flex text-gray-500 font-thin tracking-tight">Experiments</b></h1>
+      </header>
+      <main class="py-12 px-4 w-full flex">
+        <ul class="m-auto w-full max-w-sm text-center divide(y gray-500 opacity-25)">
+          <li v-for="(entry, index) in entries">
+            <a :href="entry.url" class="group p-1 text-cyan-500 inline-flex relative transition hover:(text-cyan-300)">
+              {{ entry.title }}
+              <b class="w-0 h-px bg-current absolute bottom-0 left-0 opacity-0 transition-all group-hover:(w-full opacity-100)"></b>
+            </a>
+          </li>
+        </ul>
+      </main>
+      <footer class="mt-auto p-4 text(xs center) font-bold uppercase">
+        Made with <svg xmlns="http://www.w3.org/2000/svg" class="mx-1 text-red-400 align-top inline-block" width="16" height="16" viewBox="0 0 16 16" role="img" aria-labelledby="foot-love"><title id="foot-love">Love</title><polygon class="fill-current" fill-rule="evenodd" points="8 6 11 3 15 7 8 14 1 7 5 3"></polygon></svg> by <a href="http://craigerskine.com/" class="mx-1">Craig Erskine (qrayg)</a>
+      </footer>
+    </div>
+
+    <script src="../js/twind.js"></script>
+    <script src="../js/plugins.js"></script>
+    <script>
+      // components
+      Vue.component('comp', {
+        template: `
+          <div class="">
+            <slot></slot>
+          </div>
+        `,
+        props: {
+          'someProp': Boolean,
+        },
+      });
+
+      // data
+      var app = new Vue({
+        el: '.app',
+        data() {
+          return {
+            entries: [
+              { title: 'Tailwind Contrast Color', url: 'request-tw-contrastcolor.html'}
+            ],
+          }
+        },
+        methods: {
+          slug: function(text) {
+            return text.toString().toLowerCase()
+            .replace(/\s+/g, '-')           // Replace spaces with -
+            .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+            .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+            .replace(/^-+/, '')             // Trim - from start of text
+            .replace(/-+$/, '');            // Trim - from end of text
+          },
+        },
+      });
+
+      twind.setup({
+        mode: "silent",
+        theme: {
+          extend: {
+            colors: {
+              gray: twindColors.gray,
+              cyan: twindColors.cyan,
+              fuchsia: twindColors.fuchsia,
+              lime: twindColors.lime,
+              orange: twindColors.orange,
+              rose: twindColors.rose,
+              teal: twindColors.teal,
+            },
+            fontFamily: (theme) => ({
+              sans: 'Inter,'+ theme('fontFamily.sans'),
+            }),
+          },
+        },
+        plugins: {
+          'scroll-smooth': { 'scroll-behavior': 'smooth' },
+          'bg-grid': { 'background-image': 'url("data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 4 4\' width=\'4\' height=\'4\'><rect x=\'0\' y=\'0\' width=\'2\' height=\'2\' fill=\'rgba(5,5,5,.33)\'></rect></svg>")', },
+        },
+      })
+      twind.tw(() => ({
+        '@global': {
+          ':root [v-cloak]': { '@apply': 'hidden', },
+        }
+      }))
+      twindObserve.observe(document.documentElement);
+      document.documentElement.removeAttribute('hidden');
+    </script>
+
+  </body>
+</html>
