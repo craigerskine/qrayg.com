@@ -9,9 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link href="https://fonts.gstatic.com" rel="preconnect" />
-    <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch&family=Inter:wght@100;400;700;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch&display=swap" rel="stylesheet" />
   </head>
   <body class="text-xs">
+    <div class="bg-gradient-to-br from-cream to-[#BFB6A9] fixed inset-0"></div>
     <div class="w-64 h-64 bg(cover no-repeat) absolute -top-32 -left-32 rounded-full shadow-2xl" style="background-image: url('assets/img/star.png')"></div>
     <div class="app min-h-screen flex(& col) relative" v-cloak>
       <header class="py-16 px-4 w-full text-center">
@@ -52,7 +53,7 @@
               <div class="border(1 ui-line)">
                 <img src="assets/img/win-start.png" alt="" />
                 <div v-for="(entry, index) in entries" v-if="active === index" class="px-[4px]">
-                  <ul class="-mb-[3px] divide(y ui-dark)">
+                  <ul class="-mb-[3px] bg-cream divide(y ui-dark)">
                     <li v-for="(file, index) in entry.files" class="p-2">
                       <a :href="'assets/files/'+ slug(entry.title) +'-'+ slug(file.title) +'.zip'" class="group inline-flex items-center space-x-2 transition hover:(text-blue-500) focus:(text-blue-500)" download>
                         <img :src="'assets/img/ico-'+ entry.ico +'.png'" :alt="entry.title" class="w-[16px] h-[16px] object-contain object-center opacity-50 transition group-hover:(opacity-100) group-focus:(opacity-100)" />
@@ -190,7 +191,7 @@
               'ui-line': '#484848',
             },
             fontFamily: (theme) => ({
-              sans: 'Inter,'+ theme('fontFamily.sans'),
+              sans: 'Tahoma,'+ theme('fontFamily.sans'),
               sketch: 'Cabin Sketch,'+ theme('fontFamily.sans'),
             }),
           },
