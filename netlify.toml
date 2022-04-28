@@ -1,4 +1,9 @@
 [[redirects]]
+  from = "/experiments"
+  to = "/ux/"
+  status = 301
+
+[[redirects]]
   from = "/skins"
   to = "/qnx/"
   status = 301
