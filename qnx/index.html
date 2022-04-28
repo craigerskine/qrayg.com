@@ -12,7 +12,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch&display=swap" rel="stylesheet" />
   </head>
   <body class="text-xs">
-    <div class="bg-gradient-to-br from-cream to-[#BFB6A9] fixed inset-0"></div>
+    <div class="bg-gradient-to-br from-cream to-[#BFB6A9] fixed inset-0">
+      <div class="fixed inset-0 opacity-75" style="background-image: url(assets/img/bg-fabric.png);"></div>
+    </div>
     <div class="w-64 h-64 bg(cover no-repeat) absolute -top-32 -left-32 rounded-full shadow-2xl" style="background-image: url('assets/img/star.png')"></div>
     <div class="app min-h-screen flex(& col) relative" v-cloak>
       <header class="py-16 px-4 w-full text-center">
@@ -48,7 +50,7 @@
               </div>
             </div>
           </nav>
-          <article class="w-[150px] bg(repeat-y center) shadow-md" style="background-image: url('assets/img/win-bg.png');">
+          <article v-if="active !== null" class="w-[150px] bg(repeat-y center) shadow-md" style="background-image: url('assets/img/win-bg.png');">
             <div class="border(1 black)">
               <div class="border(1 ui-line)">
                 <img src="assets/img/win-start.png" alt="" />
@@ -65,6 +67,9 @@
                 <img src="assets/img/win-end.png" alt="" />
               </div>
             </div>
+          </article>
+          <article v-else class="p-5 border(2 dashed black opacity-10) w-[150px] h-64 flex">
+            <b class="mx-auto text-base">Choose</b>
           </article>
         </section>
       </main>
