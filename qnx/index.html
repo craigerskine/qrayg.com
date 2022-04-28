@@ -27,7 +27,7 @@
           <p>Welcome QNX fans! Just a heads up... all of the skins, themes, icons, &amp; wallpapers on this site are super old and problably will not work with modern OS's or their required software anymore. You have been warned.</p>
         </section>
       </header>
-      <main class="py-8 px-4 w-full flex-1 flex">
+      <main class="py-8 px-4 w-full flex-1">
         <section class="container mx-auto space-y-10 flex flex-col items-center md:(flex-row items-start justify-center space-x-10 space-y-0)">
           <nav class="w-[150px] leading-tight shadow-md">
             <div>
@@ -50,26 +50,52 @@
               </div>
             </div>
           </nav>
-          <article v-if="active !== null" class="w-[150px] bg(repeat-y center) shadow-md" style="background-image: url('assets/img/win-bg.png');">
-            <div class="border(1 black)">
-              <div class="border(1 ui-line)">
-                <img src="assets/img/win-start.png" alt="" />
-                <div v-for="(entry, index) in entries" v-if="active === index" class="px-[4px]">
-                  <ul class="-mb-[3px] bg-cream divide(y ui-dark)">
-                    <li v-for="(file, index) in entry.files" class="p-2">
-                      <a :href="'assets/files/'+ slug(entry.title) +'-'+ slug(file.title) +'.zip'" class="group inline-flex items-center space-x-2 transition hover:(text-blue-500) focus:(text-blue-500)" download>
-                        <img :src="'assets/img/ico-'+ entry.ico +'.png'" :alt="entry.title" class="w-[16px] h-[16px] object-contain object-center opacity-50 transition group-hover:(opacity-100) group-focus:(opacity-100)" />
-                        <span>{{ file.title }}</span>
-                      </a>
-                    </li>
-                  </ul>
+          <article class="w-[150px] bg(repeat-y center) shadow-md" style="background-image: url('assets/img/win-bg.png');">
+            <div class="window border(1 ui-line) shadow-md">
+              <div class="header h-4 bg-title flex relative">
+                <div class="title flex">
+                  <b class="pl-1.5 pr-2 bg-title-active flex-1 flex">
+                    <i class="my-auto mr-12 w-2 h-2 bg(black opacity-50) flex ring(1 white opacity-75) rounded-full shadow">
+                      <i class="m-auto w-[2px] h-1 bg-[#FFEB00] rounded-full"></i>
+                    </i>
+                  </b>
+                  <i class="flex -space-x-[8px] relative -left-[2px]">
+                    <i class="w-[10px] bg-title rounded-[12px/40px]"></i>
+                    <i class="w-[10px] bg-title-active rounded-[12px/40px]"></i>
+                    <i class="w-[10px] bg-title rounded-[12px/40px]"></i>
+                    <i class="w-[10px] bg-title-active rounded-[12px/40px]"></i>
+                    <i class="w-[10px] bg-title rounded-[12px/40px]"></i>
+                  </i>
                 </div>
-                <img src="assets/img/win-end.png" alt="" />
+                <i class="my-auto ml-auto mr-1.5 w-2 h-2 bg(black opacity-50) flex ring(1 white opacity-75) rounded-full shadow">
+                  <i class="m-auto w-1 h-[2px] bg-[#FFEB00] rounded-full"></i>
+                </i>
+                <b class="r w-px bg(black opacity-25) absolute inset-y-0 right-0"></b>
+                <b class="b h-px bg(black opacity-25) absolute inset-x-0 bottom-0"></b>
+                <b class="l w-px bg(white opacity-25) absolute inset-y-0 left-0"></b>
+                <b class="t h-px bg(white opacity-25) absolute inset-x-0 top-0"></b>
+              </div>
+              <div class="body p-[2px] pt-0 bg-ui-base relative">
+                <b class="r w-px bg(black opacity-25) absolute inset-y-0 right-0"></b>
+                <b class="b h-px bg(black opacity-25) absolute inset-x-0 bottom-0"></b>
+                <b class="l w-px bg(white opacity-25) absolute inset-y-0 left-0"></b>
+                <b class="notch w-[2px] h-3 bg-[#2C4A70] absolute -top-px left-0">
+                  <b class="w-px bg(white opacity-25) absolute left-0 inset-y-0"></b>
+                </b>
+                <div class="border(1 ui-line) bg-cream">
+                  <div v-for="(entry, index) in entries" v-if="active === index">
+                    <ul class="bg-cream divide(y ui-dark)">
+                      <li v-for="(file, index) in entry.files" class="p-2">
+                        <a :href="'assets/files/'+ slug(entry.title) +'-'+ slug(file.title) +'.zip'" class="group inline-flex items-center space-x-2 transition hover:(text-blue-500) focus:(text-blue-500)" download>
+                          <img :src="'assets/img/ico-'+ entry.ico +'.png'" :alt="entry.title" class="w-[16px] h-[16px] object-contain object-center opacity-50 transition group-hover:(opacity-100) group-focus:(opacity-100)" />
+                          <span>{{ file.title }}</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
-          </article>
-          <article v-else class="p-5 border(2 dashed black opacity-10) w-[150px] h-64 flex">
-            <b class="mx-auto text-base">Choose</b>
           </article>
         </section>
       </main>
@@ -206,6 +232,8 @@
       twind.tw(() => ({
         '@global': {
           ':root [v-cloak]': { '@apply': 'hidden', },
+          '.bg-title': { '@apply': 'bg-gradient-to-b from-[#F7F7F7] to-[#9C9E9C]' },
+          '.bg-title-active': { '@apply': 'bg-gradient-to-b from-[#638ECE] to-[#396194]' },
         }
       }))
       twindObserve.observe(document.documentElement);
