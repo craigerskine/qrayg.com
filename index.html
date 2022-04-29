@@ -20,7 +20,7 @@
     <link rel="manifest" href="/site.webmanifest" />
 
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;900&family=Inter:wght@900&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;900&family=Inter:wght@100;400;700;900&display=swap" />
 
     <meta name="p:domain_verify" content="8f7326aedb8678368871e5a49beaa8ac" />
 
@@ -30,9 +30,9 @@
     <main class="main w-full min-h-screen flex flex-col relative opacity-100 transition" v-cloak>
 
       <transition>
-        <section class="landing m-auto text-center relative z-20 transition-all" v-show="state == '#/'">
+        <section class="landing m-auto text-center relative z-20 transition-all" v-show="page == '#/'">
           <h1 class="logo group pt-4 pb-24 flex justify-center relative">
-            <a href="#/" @click="state = '#/'" class="mx-4 text-white block animate-spin">
+            <a href="/" class="mx-4 text-white block animate-spin">
               <b class="animate-throb inline-block">
                 <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" role="img" class="w-24 md:(w-32) h-auto inline-block align-middle">
                   <title>qrayg - Twitch Streamer, Gamer, UX Designer, UI Developer</title>
@@ -65,11 +65,10 @@
       </transition>
 
       <transition>
-        <section class="gear mx-auto px-4 w-full max-w-screen-lg font-mono relative z-20 transition-all" v-show="state !== '#/' && state !== '#404/'">
-
+        <section class="gear mx-auto px-4 w-full max-w-screen-lg font-mono relative z-20 transition-all" v-show="page !== '#/' && page !== '#404/'">
           <header class="mb-8 pt-12">
             <section class="mx-auto w-full md:(flex divide(x gray-500 opacity-25))">
-              <a href="#/" @click="state = '#/'" class="text-white self-center flex items-center justify-center relative opacity-50 hover:(opacity-100) focus:(opacity-100) transition">
+              <a href="/" class="text-white self-center flex items-center justify-center relative opacity-50 hover:(opacity-100) focus:(opacity-100) transition">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" class="w-10 h-10">
                   <title>qrayg</title>
                   <g class="fill-current">
@@ -118,7 +117,7 @@
       </transition>
 
       <transition>
-        <section class="w-full h-screen flex" v-show="state === '#404/'">
+        <section class="w-full h-screen flex" v-show="page === '#404/'">
           <article class="m-auto">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" class="mx-auto w-10 h-10 block">
               <title>qrayg</title>
@@ -133,8 +132,19 @@
         </section>
       </transition>
 
-      <a href="#gear/" @click="state = '#gear/'" v-show="state == '#/'" class="gear-open w-12 h-12 text-grey-darker hover:text-white focus:text-white flex items-center justify-center fixed right-0 top-0 z-20 transition-all" title="PC/Streaming/Music Gear/Rig"><i class="inline-block align-middle far fa-fw fa-stream" aria-hidden="true"></i></a>
-      <a href="#/" @click="state = '#/'" v-show="state !== '#/'" class="gear-close w-12 h-12 text-grey-darker hover:text-white focus:text-white flex items-center justify-center fixed right-0 top-0 z-20 transition-all" aria-label="Close"><i class="inline-block align-middle fat fa-fw fa-2x fa-times" aria-hidden="true"></i></a>
+      <div class="fixed right-0 top-0 z-20">
+        <a v-show="page === '#/'" @click.prevent="menu = !menu" href="#" class="menu-open w-12 h-12 flex items-center justify-center transition-all hover:(text-white)"><i class="inline-block align-middle fa-regular fa-fw fa-stream"></i></a>
+        <a v-show="page === '#gear/'" @click="page = '#/'" href="#/" class="menu-close w-12 h-12 flex items-center justify-center transition-all hover:(text-white)" aria-label="Close"><i class="inline-block align-middle fa-thin fa-fw fa-2x fa-times"></i></a>
+        <transition name="slide">
+          <div v-show="menu" class="menu p-3 fixed top-0 right-12 transition-all">
+            <ul class="font-normal flex(& row-reverse) gap-8">
+              <li><a @click="page = '#gear/', menu = false" href="#gear/" class="transition hover:(text-white)"><i class="fa-regular fa-fw fa-computer"></i></a></li>
+              <li><a href="/qnx/" class="transition hover:(text-white)"><i class="fa-regular fa-fw fa-q"></i></a></li>
+              <li><a href="/ux/" class="transition hover:(text-white)"><i class="fa-regular fa-fw fa-fill"></i></a></li>
+            </ul>
+          </div>
+        </transition>
+      </div>
 
       <div id="particles" class="particles text-white opacity-10 fixed inset-0 z-[-1]"></div>
       <div id="bg" class="bg-gradient-to-b from-transparent via-transparent to-gray-800 fixed inset-0 z-[-2]"><div class="bg(grid fixed) absolute inset-0"></div></div>
@@ -151,20 +161,21 @@
       var app = new Vue({
         el: '.main',
         data: {
-          state: location.hash || '#/',
+          page: location.hash || '#/',
+          menu: false,
           social: [
-            { name: 'Twitch', icon: 'fab fa-twitch', color: 'purple-500', url: 'https://twitch.tv/qrayg/', },
-            { name: 'YouTube', icon: 'fab fa-youtube', color: 'red-700', url: 'https://youtube.com/c/qrayg/', },
-            { name: 'Discord', icon: 'fab fa-discord', color: 'indigo-500', url: 'https://discord.gg/Pa9X3C8', },
+            { name: 'Twitch', icon: 'fa-brands fa-twitch', color: 'purple-500', url: 'https://twitch.tv/qrayg/', },
+            { name: 'YouTube', icon: 'fa-brands fa-youtube', color: 'red-700', url: 'https://youtube.com/c/qrayg/', },
+            { name: 'Discord', icon: 'fa-brands fa-discord', color: 'indigo-500', url: 'https://discord.gg/Pa9X3C8', },
             { name: 'Gumroad', icon: null, color: 'gray-600', url: 'http://qrayg.gumroad.com', },
-            { name: 'Patreon', icon: 'fab fa-patreon', color: 'red-400', url: 'https://patreon.com/qrayg/', },
+            { name: 'Patreon', icon: 'fa-brands fa-patreon', color: 'red-400', url: 'https://patreon.com/qrayg/', },
           ],
           socialActive: null,
           socialLoopPaused: false,
           rig: [
             {
               category: 'PC',
-              ico: 'fab fa-windows',
+              ico: 'fa-brands fa-windows',
               color: 'blue-400',
               hardware: [
                 { type: 'Case', name: 'SSUPD › Meshlicious', sub: ['White'], link: 'https://ssupd.com/products/meshlicious', },
@@ -179,7 +190,7 @@
             },
             {
               category: 'Mac',
-              ico: 'fab fa-apple',
+              ico: 'fa-brands fa-apple',
               color: 'gray-300',
               hardware: [
                 { type: 'Laptop', name: 'MacBook › Pro', sub: ['2021', 'M1 Pro', '14"', '8-core'], link: 'https://amzn.com/dp/B09JQL8KP9?tag=qrayg-20', },
@@ -190,7 +201,7 @@
             },
             {
               category: 'Accessories',
-              ico: 'fat fa-computer-speaker',
+              ico: 'fa-thin fa-computer-speaker',
               color: 'red-400',
               hardware: [
                 { type: 'Display 1', name: 'LG › 27GL83A-B', sub: ['27"', '144hz'], link: 'https://amzn.com/dp/B07YGZL8XF?tag=qrayg-20', },
@@ -203,7 +214,7 @@
             },
             {
               category: 'Keyboards',
-              ico: 'fat fa-keyboard',
+              ico: 'fa-thin fa-keyboard',
               color: 'green-500',
               hardware: [
                 { type: 'KB', name: 'Apple › Wireless', sub: ['100%', 'Space Gray'], link: 'https://amzn.com/dp/B082C15S5L?tag=qrayg-20', },
@@ -237,7 +248,7 @@
             },
             {
               category: 'Streaming',
-              ico: 'fat fa-waveform-path',
+              ico: 'fa-thin fa-waveform-path',
               color: 'purple-500',
               hardware: [
                 { type: 'Capture', name: 'Elgato › HD60 S', sub: ['USB'], link: 'https://amzn.com/dp/B01DRWCOGA?tag=qrayg-20', },
@@ -250,7 +261,7 @@
             },
             {
               category: 'Home Theater',
-              ico: 'fat fa-speakers',
+              ico: 'fa-thin fa-speakers',
               color: 'pink-500',
               hardware: [
                 { type: 'AV Receiver', name: 'Marantz › NR1711', sub: ['Black'], link: 'https://amzn.com/dp/B0786M9ZZS?tag=qrayg-20', },
@@ -263,7 +274,7 @@
             },
             {
               category: 'Music',
-              ico: 'fat fa-amp-guitar',
+              ico: 'fa-thin fa-amp-guitar',
               color: 'yellow-400',
               hardware: [
                 { type: 'Guitar', name: 'Ibanez › QX52', sub: ['2021', 'Black'], link: 'https://amzn.com/dp/B09JGQ3WWR?tag=qrayg-20', },
@@ -385,6 +396,8 @@
           ':root [v-cloak]': { '@apply': 'hidden', },
           '.v-leave-active': { '@apply': 'hidden', },
           '.v-enter-active': { '@apply': 'opacity-0 translate-y-12', },
+          '.slide-enter-active,.slide-leave-active': { '@apply': 'transition-all', },
+          '.slide-enter,.slide-leave-to': { '@apply': 'opacity-[.0098] translate-x-8', },
           '.social a b': { '@apply': 'w-full h-full absolute top-0 left-0 index-10 opacity-0 rounded-full', },
           '.social .active b,.social a:hover b,.social a:focus b': { '@apply': 'bg-current opacity-75 shadow-xl transition-all scale-150', },
           '.social a svg': { '@apply': 'text-white opacity-50 relative z-20 transition-all', },
