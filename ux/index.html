@@ -33,24 +33,11 @@
       </footer>
     </div>
 
+    <script src="../js/vue.js"></script>
     <script src="../js/twind.js"></script>
-    <script src="../js/plugins.js"></script>
     <script>
-      // components
-      Vue.component('comp', {
-        template: `
-          <div class="">
-            <slot></slot>
-          </div>
-        `,
-        props: {
-          'someProp': Boolean,
-        },
-      });
-
-      // data
-      var app = new Vue({
-        el: '.app',
+      // vue
+      var app = Vue.createApp({
         data() {
           return {
             entries: [
@@ -70,6 +57,21 @@
         },
       });
 
+      // components
+      app.component('comp', {
+        template: `
+          <div class="">
+            <slot></slot>
+          </div>
+        `,
+        props: {
+          'someProp': Boolean,
+        },
+      });
+
+      app.mount('.app');
+
+      // twind
       twind.setup({
         mode: "silent",
         theme: {
