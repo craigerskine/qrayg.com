@@ -65,7 +65,7 @@
       </transition>
 
       <transition>
-        <section class="gear mx-auto px-4 w-full max-w-screen-lg font-mono relative z-20 transition-all" v-show="page !== '#/' && page !== '#404/'">
+        <section class="gear mx-auto px-4 w-full max-w-screen-lg font-mono relative z-20 transition-all" v-show="page === '#gear/'">
           <header class="mb-8 pt-12">
             <section class="mx-auto w-full md:(flex divide(x gray-500 opacity-25))">
               <a href="/" class="text-white self-center flex items-center justify-center relative opacity-50 hover:(opacity-100) focus:(opacity-100) transition">
@@ -117,24 +117,25 @@
       </transition>
 
       <transition>
-        <section class="w-full h-screen flex" v-show="page === '#404/'">
+        <section class="w-full h-screen flex" v-show="page !== '#/' && page !== '#gear/'">
           <article class="m-auto">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" class="mx-auto w-10 h-10 block">
-              <title>qrayg</title>
-              <g class="fill-current">
-                <circle cx="98.1" cy="98.1" r="6" opacity=".25"></circle>
-                <path d="M109.402699,94.0592724 C116.085856,84.3838 120,72.6489986 120,60 C120,26.862915 93.137085,0 60,0 C26.862915,0 0,26.862915 0,60 C0,93.137085 26.862915,120 60,120 C72.6489986,120 84.3838,116.085856 94.0592724,109.402699 C90.049715,107.969131 87.0258166,104.462602 86.278593,100.174129 C78.7292272,105.12235 69.7006692,108 60,108 C33.490332,108 12,86.509668 12,60 C12,33.490332 33.490332,12 60,12 C86.509668,12 108,33.490332 108,60 C108,69.7006692 105.12235,78.7292272 100.174122,86.2786024 C104.462602,87.0258166 107.969131,90.049715 109.402699,94.0592724 Z"></path>
-              </g>
-            </svg>
-            <h1 class="my-6 text-6xl">#404</h1>
-            <small class="ml-3 text-lg block text-center"><a href="/" class="transition hover:(text-white)"><i class="fa-regular fa-arrow-left-to-line"></i></a></small>
+            <a href="/" class="fixed top-3 left-3">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" class="w-8 h-auto">
+                <title>qrayg - Twitch Streamer, Gamer, UX Designer, UI Developer</title>
+                <g fill="currentColor">
+                  <circle cx="98.1" cy="98.1" r="6" opacity=".25" />
+                  <path d="M109.402699,94.0592724 C116.085856,84.3838 120,72.6489986 120,60 C120,26.862915 93.137085,0 60,0 C26.862915,0 0,26.862915 0,60 C0,93.137085 26.862915,120 60,120 C72.6489986,120 84.3838,116.085856 94.0592724,109.402699 C90.049715,107.969131 87.0258166,104.462602 86.278593,100.174129 C78.7292272,105.12235 69.7006692,108 60,108 C33.490332,108 12,86.509668 12,60 C12,33.490332 33.490332,12 60,12 C86.509668,12 108,33.490332 108,60 C108,69.7006692 105.12235,78.7292272 100.174122,86.2786024 C104.462602,87.0258166 107.969131,90.049715 109.402699,94.0592724 Z" />
+                </g>
+              </svg>
+            </a>
+            <h1 class="my-6 bg(gradient-to-r clip-text) text([calc(10vw+10vh)] transparent) from-red-100 to-red-600 font-black"><small class="font-normal inline-block">#</small>404</h1>
           </article>
         </section>
       </transition>
 
       <div class="fixed right-0 top-0 z-20">
         <a v-show="page === '#/'" @click.prevent="menu = !menu" href="#" class="menu-open w-12 h-12 flex items-center justify-center transition-all hover:(text-white)"><i class="inline-block align-middle fa-regular fa-fw fa-stream"></i></a>
-        <a v-show="page === '#gear/'" @click="page = '#/'" href="#/" class="menu-close w-12 h-12 flex items-center justify-center transition-all hover:(text-white)" aria-label="Close"><i class="inline-block align-middle fa-thin fa-fw fa-2x fa-times"></i></a>
+        <a v-show="page !== '#/'" @click="page = '#/'" href="/" class="menu-close w-12 h-12 flex items-center justify-center transition-all hover:(text-white)" aria-label="Close"><i class="inline-block align-middle fa-thin fa-fw fa-2x fa-times"></i></a>
         <transition name="slide">
           <div v-show="menu" class="menu p-3 fixed top-0 right-12 transition-all">
             <ul class="font-normal flex(& row-reverse) gap-8">
@@ -161,7 +162,7 @@
       var app = Vue.createApp({
         data() {
           return {
-            page: location.hash || '#/',
+            page: window.location.hash || '#/',
             menu: false,
             social: [
               { name: 'Twitch', icon: 'fa-brands fa-twitch', color: 'purple-500', url: 'https://twitch.tv/qrayg/', },
@@ -317,11 +318,11 @@
       // query/message stuff for twitch streaming
       const urlParams = new URLSearchParams(window.location.search);
 
-      if(location.hash == '' && urlParams.get('message') == ''){
-        location.hash = '#/';
+      if(window.location.hash === '' && urlParams.get('message') === ''){
+        window.location.hash = '#/';
       }
 
-      if(urlParams.get('message') == 'start'){
+      if(urlParams.get('message') === 'start'){
         $('.message').forEach(function(el){el.classList.remove('hidden')});
         var typed = new Typed('.message b', {
           strings: ['Stream^250 starting soon^1000!', 'It^500 won\'t be long now^250.^250.^250.'],
@@ -333,7 +334,7 @@
           loop: true
         });
       }
-      if(urlParams.get('message') == 'end'){
+      if(urlParams.get('message') === 'end'){
         $('.message').forEach(function(el){el.classList.remove('hidden')});
         var typed = new Typed('.message b', {
           strings: ['Thanks for^250 watching^1000!', 'Come back^500 soon^250.^250.^250.'],
