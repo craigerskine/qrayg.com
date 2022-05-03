@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title></title>
+    <title>qrayg</title>
     <meta name="description" content="qrayg - Twitch Streamer, Gamer" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -28,6 +28,7 @@
   <body class="text-gray-400">
 
     <main class="app w-full min-h-screen flex flex-col relative opacity-100 transition" v-cloak>
+
       <router-view v-slot="{ Component }">
         <transition>
           <component :is="Component" />
@@ -84,39 +85,6 @@
       });
       app.use(router);
       app.mount('.app');
-
-      // ES6 garbage
-      var $ = document.querySelectorAll.bind(document);
-
-      // query/message stuff for twitch streaming
-      const urlParams = new URLSearchParams(window.location.search);
-
-      if(window.location.hash === '' && urlParams.get('message') === ''){}
-
-      if(urlParams.get('message') === 'start'){
-        $('.message').forEach(function(el){el.classList.remove('hidden')});
-        var typed = new Typed('.message b', {
-          strings: ['Stream^250 starting soon^1000!', 'It^500 won\'t be long now^250.^250.^250.'],
-          typeSpeed: 50,
-          backSpeed: 50,
-          backDelay: 1000,
-          cursorChar: '|',
-          smartBackspace: false,
-          loop: true
-        });
-      }
-      if(urlParams.get('message') === 'end'){
-        $('.message').forEach(function(el){el.classList.remove('hidden')});
-        var typed = new Typed('.message b', {
-          strings: ['Thanks for^250 watching^1000!', 'Come back^500 soon^250.^250.^250.'],
-          typeSpeed: 50,
-          backSpeed: 50,
-          backDelay: 1000,
-          cursorChar: '|',
-          smartBackspace: false,
-          loop: true
-        });
-      }
 
       // twind
       twind.setup({
