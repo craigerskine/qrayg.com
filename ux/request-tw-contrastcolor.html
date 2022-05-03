@@ -18,41 +18,41 @@
           </h1>
           <p>I'm looking to use this type of color contrast logic within TailwindCSS. Ideally it would be a <code>.text-contrast</code> class that 'enables' a CSS var that is auto applied to every <code>.bg-<i>color</i></code></p>
           <pre class="p-3 bg-black bg-opacity-50 text-gray-400 text-xs rounded shadow-lg overflow-x-scroll">.bg-black {
-    --tw-bg-opacity: 1;
-    --tw-fg-contrast: #FFF;
-    background-color: rgba(0,0,0,var(--tw-bg-opacity));
-  }
-  .text-contrast {
-    color: var(--tw-fg-contrast);
-  }</pre>
+  --tw-bg-opacity: 1;
+  --tw-fg-contrast: #FFF;
+  background-color: rgba(0,0,0,var(--tw-bg-opacity));
+}
+.text-contrast {
+  color: var(--tw-fg-contrast);
+}</pre>
           <p>So, you would have the option to use an auto contrast for accessibility. If anyone can help build a TailwindCSS plugin to do this, I would be most grateful.</p>
           <p>Here's the partial jQuery plugin I Frankenstein'd together that I've been using:</p>
           <pre class="p-3 bg-black bg-opacity-50 text-gray-400 text-xs rounded shadow-lg overflow-x-scroll">$.fn.contrastColor = function(target){
-    return this.each(function(){
-      var target = target;
-      if(target === undefined){ target = this; }
-      var bg = $(this).css('background-color');
-      // use first opaque parent bg if element is transparent
-      if(bg == 'transparent' || bg == 'rgba(0, 0, 0, 0)'){ 
-        $(this).parents().each(function(){
-          bg = $(this).css('background-color')
-          if(bg != 'transparent' && bg != 'rgba(0, 0, 0, 0)') return false; 
-        });
-        // exit if all parents are transparent
-        if(bg == 'transparent' || bg == 'rgba(0, 0, 0, 0)') return false;
-      }
-      // get r,g,b and decide
-      var rgb = bg.replace(/^(rgb|rgba)\(/,'').replace(/\)$/,'').replace(/\s/g,'').split(',');
-      var yiq = (rgb[0]*0.2126)+(rgb[1]*0.7152)+(rgb[2]*0.0722);
-      // if light
-      if(yiq >= 128) $(target).addClass('text-gray-900');
-      // if dark
-      else $(target).addClass('text-white');
-    });
-  };
-  $(function(){
-    $('.text-contrast').contrastColor();
-  });</pre>
+  return this.each(function(){
+    var target = target;
+    if(target === undefined){ target = this; }
+    var bg = $(this).css('background-color');
+    // use first opaque parent bg if element is transparent
+    if(bg == 'transparent' || bg == 'rgba(0, 0, 0, 0)'){ 
+      $(this).parents().each(function(){
+        bg = $(this).css('background-color')
+        if(bg != 'transparent' && bg != 'rgba(0, 0, 0, 0)') return false; 
+      });
+      // exit if all parents are transparent
+      if(bg == 'transparent' || bg == 'rgba(0, 0, 0, 0)') return false;
+    }
+    // get r,g,b and decide
+    var rgb = bg.replace(/^(rgb|rgba)\(/,'').replace(/\)$/,'').replace(/\s/g,'').split(',');
+    var yiq = (rgb[0]*0.2126)+(rgb[1]*0.7152)+(rgb[2]*0.0722);
+    // if light
+    if(yiq >= 128) $(target).addClass('text-gray-900');
+    // if dark
+    else $(target).addClass('text-white');
+  });
+};
+$(function(){
+  $('.text-contrast').contrastColor();
+});</pre>
           <h2 class="text-gray-400 text-2xl font-thin">Demo of the jQuery Plugin</h2>
           <ul class="flex justify-center space-x-4">
             <swatch color="black">Black</swatch>
