@@ -1,6 +1,6 @@
 const _error = {
 	template: `
-    <section class="w-full h-screen flex">
+    <section class="w-full h-screen flex transition-all">
       <article class="m-auto">
         <router-link to="/" class="fixed top-3 left-3">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" class="w-8 h-auto">
