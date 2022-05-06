@@ -67,6 +67,7 @@ const Home = {
   },
   mounted() {
     document.title = 'qrayg - Twitch Streamer, Gamer, UX Designer, UI Developer',
+    document.querySelector("link[rel~='icon']").href = '/favicon.ico',
     this.socialLoop()
   },
 };

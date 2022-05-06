@@ -17,6 +17,7 @@ const _error = {
   `,
   props: [],
   mounted() {
-    document.title = 'qrayg - Error';
+    document.title = 'qrayg - Error',
+    document.querySelector("link[rel~='icon']").href = '/favicon.ico'
   },
 };

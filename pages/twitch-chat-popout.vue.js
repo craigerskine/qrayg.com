@@ -39,6 +39,7 @@ const Twitch = {
     }
   },
   mounted() {
-    document.title = 'qrayg - Twitch Chat Popout'
+    document.title = 'qrayg - Twitch Chat Popout',
+    document.querySelector("link[rel~='icon']").href = '/favicon-twitch.ico'
   },
 };

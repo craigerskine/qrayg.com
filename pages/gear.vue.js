@@ -173,6 +173,7 @@ const Gear = {
     }
   },
   mounted() {
-    document.title = 'qrayg\'s PC, Streaming, Music Gear/Rig';
+    document.title = 'qrayg\'s PC, Streaming, Music Gear/Rig',
+    document.querySelector("link[rel~='icon']").href = '/favicon.ico'
   },
 };

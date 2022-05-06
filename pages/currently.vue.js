@@ -91,6 +91,7 @@ const Currently = {
   methods: {},
   mounted() {
     document.title = 'Currently',
+    document.querySelector("link[rel~='icon']").href = '/favicon.ico',
 
     // jquery-like selector
     window.$_ = function(selector, next) {
