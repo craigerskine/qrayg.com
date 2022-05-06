@@ -20,7 +20,7 @@
     <link rel="manifest" href="/site.webmanifest" />
 
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;900&family=Inter:wght@100;400;700;900&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;900&family=Inter:wght@100;400;700;900&family=Roboto+Mono:wght@100;400;700&display=swap" />
 
     <meta name="p:domain_verify" content="8f7326aedb8678368871e5a49beaa8ac" />
 
@@ -37,7 +37,7 @@
 
       <div class="fixed right-0 top-0 z-20">
         <a v-show="$route.path === '/'" @click.prevent="menu = !menu" href="#" class="menu-open w-12 h-12 flex items-center justify-center transition-all hover:(text-white)"><i class="inline-block align-middle fa-regular fa-fw fa-stream"></i></a>
-        <router-link v-show="$route.path !== '/'" to="/" class="menu-close w-12 h-12 flex items-center justify-center transition-all hover:(text-white)" aria-label="Close"><i class="inline-block align-middle fa-thin fa-fw fa-2x fa-times"></i></router-link>
+        <router-link v-show="$route.path !== '/' && $route.path !== '/currently/'" to="/" class="menu-close w-12 h-12 flex items-center justify-center transition-all hover:(text-white)" aria-label="Close"><i class="inline-block align-middle fa-thin fa-fw fa-2x fa-times"></i></router-link>
         <transition name="slide">
           <div v-show="menu" class="menu p-3 fixed top-0 right-12 transition-all">
             <ul class="font-normal flex(& row-reverse) gap-8">
@@ -61,6 +61,7 @@
     <script src="/pages/home.vue.js"></script>
     <script src="/pages/gear.vue.js"></script>
     <script src="/pages/twitch-chat-popout.vue.js"></script>
+    <script src="/pages/currently.vue.js"></script>
     <script src="/pages/error.vue.js"></script>
 
     <script>
@@ -77,6 +78,7 @@
         routes: [
           { path: '/:pathMatch(.*)', component: _error },
           { path: '/', component: Home },
+          { path: '/currently/', component: Currently },
           { path: '/gear/', component: Gear },
           { path: '/qnx/', beforeEnter: (to, from) => {location.href = '/qnx/'}},
           { path: '/ux/', beforeEnter: (to, from) => {location.href = '/ux/'}},
@@ -93,7 +95,8 @@
               { title: 'Gear', url: '/gear/', ico: 'computer', },
               { title: 'QNX', url: '/qnx/', ico: 'window', },
               { title: 'UX', url: '/ux/', ico: 'fill', },
-              { title: 'Twitch Caht Popup', url: '/twitch-chat-popout/', ico: 'comment', },
+              { title: 'Twitch Chat Popup', url: '/twitch-chat-popout/', ico: 'comment', },
+              { title: 'Currently', url: '/currently/', ico: 'clock', },
             ],
           }
         },
@@ -112,6 +115,7 @@
             fontFamily: (theme) => ({
               sans: 'Inter,'+ theme('fontFamily.sans'),
               mono: 'Inconsolata,'+ theme('fontFamily.mono'),
+              roboto: 'Roboto Mono,'+ theme('fontFamily.mono'),
             }),
             keyframes: {
               blob: {
