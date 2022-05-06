@@ -2,7 +2,7 @@ const Home = {
 	template: `
     <section class="landing m-auto text-center relative z-20 transition-all">
       <h1 class="logo group pt-4 pb-24 flex justify-center relative">
-        <a href="/" class="mx-4 text-white block animate-spin">
+        <router-link to="/" class="mx-4 text-white block animate-spin">
           <b class="animate-throb inline-block">
             <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" role="img" class="w-24 md:(w-32) h-auto inline-block align-middle">
               <title>qrayg - Twitch Streamer, Gamer, UX Designer, UI Developer</title>
@@ -12,7 +12,7 @@ const Home = {
               </g>
             </svg>
           </b>
-        </a>
+        </router-link>
         <b class="flex items-center justify-center opacity-[.0001] absolute bottom-0 inset-x-0 translate-y-1 transition-all group-hover:(opacity-100 -translate-y-1) group-focus:(opacity-100 -translate-y-1)"><b class="usr pb-8 text-xl md:(text-2xl) font-black "><small class="text(red-500 base)">@</small> <b class="logo-usr" title="qrayg - Twitch Streamer, Gamer, UX Designer, UI Developer">qrayg</b></b></b>
       </h1>
       <ul class="social mb-16 flex justify-center relative">
