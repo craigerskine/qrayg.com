@@ -41,10 +41,7 @@
         <transition name="slide">
           <div v-show="menu" class="menu p-3 fixed top-0 right-12 transition-all">
             <ul class="font-normal flex(& row-reverse) gap-8">
-              <li><router-link @click="menu = false" to="/gear/" class="transition hover:(text-white)"><i class="fa-solid fa-fw fa-computer"></i></router-link></li>
-              <li><a href="/qnx/" class="transition hover:(text-white)"><i class="fa-solid fa-fw fa-window"></i></a></li>
-              <li><a href="/ux/" class="transition hover:(text-white)"><i class="fa-solid fa-fw fa-fill"></i></a></li>
-              <li><router-link @click="menu = false" to="/twitch-chat-popout/" class="transition hover:(text-white)"><i class="fa-brands fa-fw fa-twitch"></i></router-link></li>
+              <li v-for="(item, index) in nav"><router-link @click="menu = false" :to="item.url" class="transition hover:(text-white)"><i :class="'fa-solid fa-fw fa-'+ item.ico"></i></router-link></li>
             </ul>
           </div>
         </transition>
@@ -81,6 +78,8 @@
           { path: '/:pathMatch(.*)', component: _error },
           { path: '/', component: Home },
           { path: '/gear/', component: Gear },
+          { path: '/qnx/', beforeEnter: (to, from) => {location.href = '/qnx/'}},
+          { path: '/ux/', beforeEnter: (to, from) => {location.href = '/ux/'}},
           { path: '/twitch-chat-popout/', component: Twitch },
         ],
       })
@@ -90,6 +89,12 @@
         data() {
           return {
             menu: false,
+            nav: [
+              { title: 'Gear', url: '/gear/', ico: 'computer', },
+              { title: 'QNX', url: '/qnx/', ico: 'window', },
+              { title: 'UX', url: '/ux/', ico: 'fill', },
+              { title: 'Twitch Caht Popup', url: '/twitch-chat-popout/', ico: 'comment', },
+            ],
           }
         },
       });
