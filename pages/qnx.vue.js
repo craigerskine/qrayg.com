@@ -21,12 +21,18 @@ const Qnx = {
             <nav class="w-[150px] leading-tight shadow-md">
               <div>
                 <div class="border(1 qnx-line)">
+                  <div class="border(b qnx-line)">
+                    <qnx-bevel>
+                      <div class="w-full h-3 bg-gradient-to-b from-transparent via-transparent to-white opacity-50"></div>
+                    </qnx-bevel>
+                  </div>
                   <qnx-bevel>
                     <ul class="pt-2 w-full relative">
                       <li v-for="(entry, index) in entries" :class="['pb-2 px-2', (index + 1) === entries.length ? 'border(b qnx-dark)' : '']">
                         <a href="#" @click.prevent="qnxActive = index" :class="['group py-1 px-2 w-full flex items-center space-x-2 transition hover:(bg-qnx-theme) focus:(bg-qnx-theme)', qnxActive === index ? 'bg-qnx-theme' : 'bg-qnx-item']">
                           <img :src="'/assets/qnx/img/ico-'+ entry.ico +'.png'" :alt="entry.title" class="w-[16px] h-[16px] object-contain object-center opacity-50 transition group-hover:(opacity-100) group-focus:(opacity-100)" />
-                          <span>{{ entry.title }}</span>
+                          <span class="flex-1">{{ entry.title }}</span>
+                          <b class="w-[9px] h-[9px] bg-white text-qnx-line flex ring(1 inset qnx-line) rounded-full"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5 5" class="m-auto w-[5px] h-[5px] fill-current" aria-hidden="true"><path d="m0 1h2v-1l3 2.5-3 2.5v-1h-2z" fill-rule="evenodd" /></svg></b>
                         </a>
                       </li>
                     </ul>
