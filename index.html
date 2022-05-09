@@ -62,6 +62,7 @@
     <script src="/pages/home.vue.js"></script>
     <script src="/pages/gear.vue.js"></script>
     <script src="/pages/qnx.vue.js"></script>
+    <script src="/pages/ux.vue.js"></script>
     <script src="/pages/twitch-chat-popout.vue.js"></script>
     <script src="/pages/currently.vue.js"></script>
     <script src="/pages/error.vue.js"></script>
@@ -83,7 +84,8 @@
           { path: '/currently/', component: Currently },
           { path: '/gear/', component: Gear },
           { path: '/qnx/', component: Qnx },
-          { path: '/ux/', beforeEnter: (to, from) => {location.href = '/ux/'}},
+          { path: '/ux/', component: Ux },
+          //{ path: '/ux/', beforeEnter: (to, from) => {location.href = '/ux/'}},
           { path: '/twitch-chat-popout/', component: Twitch },
         ],
       })
@@ -129,6 +131,12 @@
           extend: {
             colors: {
               gray: twindColors.gray,
+              cyan: twindColors.cyan,
+              fuchsia: twindColors.fuchsia,
+              lime: twindColors.lime,
+              orange: twindColors.orange,
+              rose: twindColors.rose,
+              teal: twindColors.teal,
               'qnx-cream': '#E7E3D6',
               'qnx-theme': '#98A8C8',
               'qnx-lite': '#F0F0F0',
