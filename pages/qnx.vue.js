@@ -12,7 +12,7 @@ const Qnx = {
             <img src="/assets/qnx/img/header.png" alt="QNX Chrome" class="inline-block" />
           </div>
           <section class="mx-auto pt-8 max-w-prose text(sm center) md:(text(base left))">
-            <hr class="my-5 border-qnx-dark" />
+            <hr class="my-5 border(black opacity-20) h-[2px] bg(white opacity-30)" />
             <p>Welcome QNX fans! Just a heads up... all of the skins, themes, icons, &amp; wallpapers on this site are super old and problably will not work with modern OS's or their required software anymore. You have been warned.</p>
           </section>
         </header>
