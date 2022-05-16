@@ -26,8 +26,8 @@ const Qnx = {
           </section>
         </header>
         <section class="py-8 px-4 w-full flex-1">
-          <section class="container mx-auto space-y-10 flex flex-col items-center md:(flex-row items-start justify-center space-x-10 space-y-0)">
-            <nav class="w-[150px] leading-tight shadow-md">
+          <section class="container mx-auto flex items-start justify-center space-x-2 md:(space-x-10)">
+            <nav class="w-[140px] leading-tight shadow-md">
               <div>
                 <div class="border(1 qnx-line)">
                   <div class="border(b qnx-line)">
@@ -49,7 +49,7 @@ const Qnx = {
                 </div>
               </div>
             </nav>
-            <article class="w-[150px] bg(repeat-y center) shadow-md" style="background-image: url('/assets/qnx/img/win-bg.png');">
+            <article class="w-[140px] bg(repeat-y center) shadow-md" style="background-image: url('/assets/qnx/img/win-bg.png');">
               <div class="window border(1 qnx-line) shadow-md">
                 <div class="header h-4 qnx-bg-title flex relative">
                   <div class="title flex">
