@@ -1,9 +1,9 @@
 const Gear = {
 	template: `
-    <section class="gear mx-auto px-4 w-full max-w-screen-lg font-mono relative z-20 transition-all">
+    <section class="gear mx-auto px-4 w-full max-w-screen-lg font-mono relative z-20 motion-safe:transition-all">
       <header class="mb-8 pt-12">
         <section class="mx-auto w-full md:(flex divide(x gray-500 opacity-25))">
-          <router-link to="/" class="text-white self-center flex items-center justify-center relative opacity-50 hover:(opacity-100) focus:(opacity-100) transition">
+          <router-link to="/" class="text-white self-center flex items-center justify-center relative opacity-50 hover:(opacity-100) focus:(opacity-100) motion-safe:transition">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" class="w-10 h-10">
               <title>qrayg</title>
               <g class="fill-current">
@@ -26,7 +26,7 @@ const Gear = {
           </a>
           <ul v-if="group.hardware" :class="['grid(& flow-row cols-1) gap-x-6 lg:(pl-16 grid-cols-2)', {'line-through opacity-50': group.category == 'Obsolete'}]">
             <li v-for="(hardware, index) in group.hardware" class="flex">
-              <a :href="hardware.link" :class="['border-'+ group.color, 'hover:bg-'+ group.color, 'focus:bg-'+ group.color, 'hover:text-'+ group.color, 'focus:text-'+ group.color, 'group py-3 px-5 border(l b opacity-25) w-full bg-transparent transition-all hover:(border-l-4 bg-opacity-10) focus:(border-l-4 bg-opacity-10) md:(px-0 flex space-x-4)']">
+              <a :href="hardware.link" :class="['border-'+ group.color, 'hover:bg-'+ group.color, 'focus:bg-'+ group.color, 'hover:text-'+ group.color, 'focus:text-'+ group.color, 'group py-3 px-5 border(l b opacity-25) w-full bg-transparent motion-safe:transition-all hover:(border-l-4 bg-opacity-10) focus:(border-l-4 bg-opacity-10) md:(px-0 flex space-x-4)']">
                 <b class="font-black tracking-wider uppercase block opacity-80 group-hover:(text-white) group-focus:(text-white) md:(w-1/4 text-right)">
                   <b class="text-sm">{{ hardware.type }}</b>
                   <small v-if="hardware.soon" class="uppercase leading-none tracking-wider flex justify-end">

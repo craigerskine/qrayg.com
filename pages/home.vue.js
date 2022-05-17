@@ -1,6 +1,6 @@
 const Home = {
 	template: `
-    <section class="landing m-auto text-center relative z-20 transition-all">
+    <section class="landing m-auto text-center relative z-20 motion-safe:transition-all">
       <h1 class="logo group pt-4 pb-24 flex justify-center relative">
         <router-link to="/" class="mx-4 text-white block animate-spin">
           <b class="animate-throb inline-block">
@@ -13,11 +13,11 @@ const Home = {
             </svg>
           </b>
         </router-link>
-        <b class="flex items-center justify-center opacity-[.0001] absolute bottom-0 inset-x-0 translate-y-1 transition-all group-hover:(opacity-100 -translate-y-1) group-focus:(opacity-100 -translate-y-1)"><b class="usr pb-8 text-xl md:(text-2xl) font-black "><small class="text(red-500 base)">@</small> <b class="logo-usr" title="qrayg - Twitch Streamer, Gamer, UX Designer, UI Developer">qrayg</b></b></b>
+        <b class="flex items-center justify-center opacity-[.0001] absolute bottom-0 inset-x-0 translate-y-1 motion-safe:transition-all group-hover:(opacity-100 -translate-y-1) group-focus:(opacity-100 -translate-y-1)"><b class="usr pb-8 text-xl md:(text-2xl) font-black "><small class="text(red-500 base)">@</small> <b class="logo-usr" title="qrayg - Twitch Streamer, Gamer, UX Designer, UI Developer">qrayg</b></b></b>
       </h1>
       <ul class="social mb-16 flex justify-center relative">
         <li v-for="(soc, index) in social" class="mx-3 md:mx-8" @mouseover="socialLoopPaused = true, socialActive = null" @mouseout="socialLoopPaused = false">
-          <a :href="soc.url" :class="['w-8 h-8 md:(w-12 h-12) flex relative transition-all text-'+ soc.color, socialActive === (index + 1) ? 'active' : '']" :aria-label="soc.name">
+          <a :href="soc.url" :class="['w-8 h-8 md:(w-12 h-12) flex relative motion-safe:transition-all text-'+ soc.color, socialActive === (index + 1) ? 'active' : '']" :aria-label="soc.name">
             <template v-if="soc.name !== 'Gumroad'">
               <i :class="['m-auto inline-block align-middle fa-fw text-2xl md:(text-3xl)', soc.icon]" aria-hidden="true"></i>
             </template>

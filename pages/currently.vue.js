@@ -1,6 +1,6 @@
 const Currently = {
 	template: `
-    <section class="w-full h-screen font-roboto flex(& col) divide(y gray-500 opacity-10) transition-all">
+    <section class="w-full h-screen font-roboto flex(& col) divide(y gray-500 opacity-10) motion-safe:transition-all">
       <section class="clock w-full h-full flex-1 flex flex-col justify-center">
         <h1 class="time w-full text-5xl font-thin leading-none flex divide(x gray-500 opacity-10) md:(text-[calc(5vw+5vh+.5vmin)])">
           <span class="hours w-full text-center flex-1"></span>
@@ -11,53 +11,53 @@ const Currently = {
         <ul class="binary-digits w-full flex divide(x gray-500 opacity-10)">
           <li class="w-full py-4 lg:py-8 flex-1 flex items-end">
             <ul class="hour-1 px-4 w-full flex-1 flex flex-col space-y-2">
-              <li class="tick hrs-1-2 ml-auto w-4 h-1 rounded-full transition-all"></li>
-              <li class="tick hrs-1-1 ml-auto w-4 h-1 rounded-full transition-all"></li>
+              <li class="tick hrs-1-2 ml-auto w-4 h-1 rounded-full motion-safe:transition-all"></li>
+              <li class="tick hrs-1-1 ml-auto w-4 h-1 rounded-full motion-safe:transition-all"></li>
             </ul>
             <ul class="hour-2 px-4 w-full flex-1 flex flex-col space-y-2">
-              <li class="tick hrs-2-8 w-4 h-1 rounded-full transition-all"></li>
-              <li class="tick hrs-2-4 w-4 h-1 rounded-full transition-all"></li>
-              <li class="tick hrs-2-2 w-4 h-1 rounded-full transition-all"></li>
-              <li class="tick hrs-2-1 w-4 h-1 rounded-full transition-all"></li>
+              <li class="tick hrs-2-8 w-4 h-1 rounded-full motion-safe:transition-all"></li>
+              <li class="tick hrs-2-4 w-4 h-1 rounded-full motion-safe:transition-all"></li>
+              <li class="tick hrs-2-2 w-4 h-1 rounded-full motion-safe:transition-all"></li>
+              <li class="tick hrs-2-1 w-4 h-1 rounded-full motion-safe:transition-all"></li>
             </ul>
           </li>
           <li class="w-full py-4 lg:py-8 flex-1 flex items-end">
             <ul class="minute-1 px-4 w-full flex-1 flex flex-col space-y-2">
-              <li class="tick min-1-4 ml-auto w-4 h-1 rounded-full transition-all"></li>
-              <li class="tick min-1-2 ml-auto w-4 h-1 rounded-full transition-all"></li>
-              <li class="tick min-1-1 ml-auto w-4 h-1 rounded-full transition-all"></li>
+              <li class="tick min-1-4 ml-auto w-4 h-1 rounded-full motion-safe:transition-all"></li>
+              <li class="tick min-1-2 ml-auto w-4 h-1 rounded-full motion-safe:transition-all"></li>
+              <li class="tick min-1-1 ml-auto w-4 h-1 rounded-full motion-safe:transition-all"></li>
             </ul>
             <ul class="minute-2 px-4 w-full flex-1 flex flex-col space-y-2">
-              <li class="tick min-2-8 w-4 h-1 rounded-full transition-all"></li>
-              <li class="tick min-2-4 w-4 h-1 rounded-full transition-all"></li>
-              <li class="tick min-2-2 w-4 h-1 rounded-full transition-all"></li>
-              <li class="tick min-2-1 w-4 h-1 rounded-full transition-all"></li>
+              <li class="tick min-2-8 w-4 h-1 rounded-full motion-safe:transition-all"></li>
+              <li class="tick min-2-4 w-4 h-1 rounded-full motion-safe:transition-all"></li>
+              <li class="tick min-2-2 w-4 h-1 rounded-full motion-safe:transition-all"></li>
+              <li class="tick min-2-1 w-4 h-1 rounded-full motion-safe:transition-all"></li>
             </ul>
           </li>
           <li class="w-full py-4 lg:py-8 flex-1 flex items-end">
             <ul class="second-1 px-4 w-full flex-1 flex flex-col space-y-2">
-              <li class="tick sec-1-4 ml-auto w-4 h-1 rounded-full transition-all"></li>
-              <li class="tick sec-1-2 ml-auto w-4 h-1 rounded-full transition-all"></li>
-              <li class="tick sec-1-1 ml-auto w-4 h-1 rounded-full transition-all"></li>
+              <li class="tick sec-1-4 ml-auto w-4 h-1 rounded-full motion-safe:transition-all"></li>
+              <li class="tick sec-1-2 ml-auto w-4 h-1 rounded-full motion-safe:transition-all"></li>
+              <li class="tick sec-1-1 ml-auto w-4 h-1 rounded-full motion-safe:transition-all"></li>
             </ul>
             <ul class="second-2 px-4 w-full flex-1 flex flex-col space-y-2">
-              <li class="tick sec-2-8 w-4 h-1 rounded-full transition-all"></li>
-              <li class="tick sec-2-4 w-4 h-1 rounded-full transition-all"></li>
-              <li class="tick sec-2-2 w-4 h-1 rounded-full transition-all"></li>
-              <li class="tick sec-2-1 w-4 h-1 rounded-full transition-all"></li>
+              <li class="tick sec-2-8 w-4 h-1 rounded-full motion-safe:transition-all"></li>
+              <li class="tick sec-2-4 w-4 h-1 rounded-full motion-safe:transition-all"></li>
+              <li class="tick sec-2-2 w-4 h-1 rounded-full motion-safe:transition-all"></li>
+              <li class="tick sec-2-1 w-4 h-1 rounded-full motion-safe:transition-all"></li>
             </ul>
           </li>
         </ul>
       </section>
       <section class="misc w-full flex flex-col justify-center">
         <ul class="font-bold sm:(flex) lg:(text-4xl)">
-          <li class="py-4 border(b gray-500 opacity-10) transition hover:(text-gray-700) dark:(hover:(text-gray-300)) sm:(w-1/3 border(r)) lg:(py-32)" title="Internet/Beat Time">
+          <li class="py-4 border(b gray-500 opacity-10) motion-safe:transition hover:(text-gray-700) dark:(hover:(text-gray-300)) sm:(w-1/3 border(r)) lg:(py-32)" title="Internet/Beat Time">
             <h4 class="internet pl-5 flex items-center justify-center">
               <sup class="mr-2 text(sm gray-400 opacity-50) font-black uppercase">@</sup>
               <b class="beats font-black">&nbsp;</b>
             </h4>
           </li>
-          <li class="w-full flex-1 transition hover:(text-gray-700) dark:(hover:(text-gray-300))">
+          <li class="w-full flex-1 motion-safe:transition hover:(text-gray-700) dark:(hover:(text-gray-300))">
             <ul class="date flex">
               <li class="py-4 lg:py-32 flex-1 flex items-center justify-center" title="Month">
                 <b class="date-m font-black">&nbsp;</b>
@@ -78,7 +78,7 @@ const Currently = {
         </ul>
       </section>
 
-      <router-link to="/" class="w-12 h-12 text-grey-darker hover:text-white focus:text-white flex items-center justify-center fixed right-0 top-0 z-20 transition-all">
+      <router-link to="/" class="w-12 h-12 text-grey-darker hover:text-white focus:text-white flex items-center justify-center fixed right-0 top-0 z-20 motion-safe:transition-all">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" class="fill-current w-5 h-auto block"><title>qrayg - Twitch Streamer, Gamer, UX Designer, UI Developer</title> <g><circle cx="98.1" cy="98.1" r="6" opacity=".25"></circle> <path d="M109.402699,94.0592724 C116.085856,84.3838 120,72.6489986 120,60 C120,26.862915 93.137085,0 60,0 C26.862915,0 0,26.862915 0,60 C0,93.137085 26.862915,120 60,120 C72.6489986,120 84.3838,116.085856 94.0592724,109.402699 C90.049715,107.969131 87.0258166,104.462602 86.278593,100.174129 C78.7292272,105.12235 69.7006692,108 60,108 C33.490332,108 12,86.509668 12,60 C12,33.490332 33.490332,12 60,12 C86.509668,12 108,33.490332 108,60 C108,69.7006692 105.12235,78.7292272 100.174122,86.2786024 C104.462602,87.0258166 107.969131,90.049715 109.402699,94.0592724 Z"></path></g></svg>
       </router-link>
 

@@ -1,6 +1,6 @@
 const Qnx = {
 	template: `
-    <section class="bg-cream text(gray-900 xs) font-tahoma transition-all">
+    <section class="bg-cream text(gray-900 xs) font-tahoma motion-safe:transition-all">
       <div class="bg-gradient-to-br from-qnx-cream to-[#BFB6A9] fixed inset-0">
         <div class="fixed inset-0 opacity-75" style="background-image: url(/assets/qnx/img/bg-fabric.png);"></div>
       </div>
@@ -38,8 +38,8 @@ const Qnx = {
                   <qnx-bevel>
                     <ul class="pt-2 w-full relative">
                       <li v-for="(entry, index) in entries" :class="['pb-2 px-2', (index + 1) === entries.length ? 'border(b qnx-dark)' : '']">
-                        <a href="#" @click.prevent="qnxActive = index" :class="['group py-1 px-2 w-full flex items-center space-x-2 transition hover:(bg-qnx-theme) focus:(bg-qnx-theme)', qnxActive === index ? 'bg-qnx-theme' : 'bg-qnx-item']">
-                          <img :src="'/assets/qnx/img/ico-'+ entry.ico +'.png'" :alt="entry.title" class="w-[16px] h-[16px] object-contain object-center opacity-50 transition group-hover:(opacity-100) group-focus:(opacity-100)" />
+                        <a href="#" @click.prevent="qnxActive = index" :class="['group py-1 px-2 w-full flex items-center space-x-2 motion-safe:transition hover:(bg-qnx-theme) focus:(bg-qnx-theme)', qnxActive === index ? 'bg-qnx-theme' : 'bg-qnx-item']">
+                          <img :src="'/assets/qnx/img/ico-'+ entry.ico +'.png'" :alt="entry.title" class="w-[16px] h-[16px] object-contain object-center opacity-50 motion-safe:transition group-hover:(opacity-100) group-focus:(opacity-100)" />
                           <span class="flex-1">{{ entry.title }}</span>
                           <b class="w-[9px] h-[9px] bg-white text-qnx-line flex ring(1 current) rounded-full"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 7" class="m-auto w-[7px] h-[7px] fill-current" aria-hidden="true"><polygon points="3 7 3 5 0 5 0 2 3 2 3 0 7 3.5" /></svg></b>
                         </a>
@@ -85,8 +85,8 @@ const Qnx = {
                     <div v-for="(entry, index) in entries" v-show="qnxActive === index">
                       <ul class="bg-qnx-cream divide(y qnx-dark)">
                         <li v-for="(file, index) in entry.files" class="p-2">
-                          <a :href="'/assets/qnx/files/'+ slug(entry.title) +'-'+ slug(file.title) +'.zip'" class="group inline-flex items-center space-x-2 transition hover:(text-blue-500) focus:(text-blue-500)" download>
-                            <img :src="'/assets/qnx/img/ico-'+ entry.ico +'.png'" :alt="entry.title" class="w-[16px] h-[16px] object-contain object-center opacity-50 transition group-hover:(opacity-100) group-focus:(opacity-100)" />
+                          <a :href="'/assets/qnx/files/'+ slug(entry.title) +'-'+ slug(file.title) +'.zip'" class="group inline-flex items-center space-x-2 motion-safe:transition hover:(text-blue-500) focus:(text-blue-500)" download>
+                            <img :src="'/assets/qnx/img/ico-'+ entry.ico +'.png'" :alt="entry.title" class="w-[16px] h-[16px] object-contain object-center opacity-50 motion-safe:transition group-hover:(opacity-100) group-focus:(opacity-100)" />
                             <span>{{ file.title }}</span>
                           </a>
                         </li>
@@ -104,7 +104,7 @@ const Qnx = {
               <ul class="pr-px flex">
                 <li class="border(r qnx-line) flex">
                   <qnx-bevel>
-                    <div class="group m-px py-1 px-2 w-full flex items-center relative transition md:(text-sm space-x-2)">
+                    <div class="group m-px py-1 px-2 w-full flex items-center relative motion-safe:transition md:(text-sm space-x-2)">
                       <img src="/assets/qnx/img/ico-qnx.png" alt="Launch" class="w-[16px] h-[16px] object-contain object-center" />
                     </div>
                   </qnx-bevel>
@@ -114,8 +114,8 @@ const Qnx = {
                     <div class="p-1 flex">
                       <qnx-bevel sunk>
                         <div v-if="qnxActive !== index" class="flex absolute inset-px"><qnx-bevel></qnx-bevel></div>
-                        <a href="#" @click.prevent="qnxActive = index" :class="['group m-px py-1 px-3 w-full flex items-center relative transition md:(text-sm space-x-2)', qnxActive === index ? 'bg-qnx-dark shadow-inner' : '']">
-                          <img :src="'/assets/qnx/img/ico-'+ entry.ico +'.png'" :alt="entry.title" class="w-[16px] h-[16px] object-contain object-center opacity-50 transition group-hover:(opacity-100) group-focus:(opacity-100)" />
+                        <a href="#" @click.prevent="qnxActive = index" :class="['group m-px py-1 px-3 w-full flex items-center relative motion-safe:transition md:(text-sm space-x-2)', qnxActive === index ? 'bg-qnx-dark shadow-inner' : '']">
+                          <img :src="'/assets/qnx/img/ico-'+ entry.ico +'.png'" :alt="entry.title" class="w-[16px] h-[16px] object-contain object-center opacity-50 motion-safe:transition group-hover:(opacity-100) group-focus:(opacity-100)" />
                           <span class="hidden md:(inline-block)">{{ entry.title }}</span>
                         </a>
                       </qnx-bevel>
@@ -125,7 +125,7 @@ const Qnx = {
               </ul>
             </qnx-bevel>
           </div>
-          <p class="ml-auto px-2 text-center"><span class="hidden sm:(inline-block)">site by</span> <router-link to="/" class="font-bold transition hover:(text-blue-600) focus:(text-blue-600)">qrayg</router-link></p>
+          <p class="ml-auto px-2 text-center"><span class="hidden sm:(inline-block)">site by</span> <router-link to="/" class="font-bold motion-safe:transition hover:(text-blue-600) focus:(text-blue-600)">qrayg</router-link></p>
         </footer>
       </div>
     </section>
