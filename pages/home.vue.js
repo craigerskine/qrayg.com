@@ -2,8 +2,8 @@ const Home = {
 	template: `
     <section class="landing m-auto text-center relative z-20 motion-safe:transition-all">
       <h1 class="logo group pt-4 pb-24 flex justify-center relative">
-        <router-link to="/" class="mx-4 text-white block animate-spin">
-          <b class="animate-throb inline-block">
+        <router-link to="/" class="mx-4 text-white block motion-safe:animate-spin">
+          <b class="motion-safe:animate-throb inline-block">
             <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" role="img" class="w-24 md:(w-32) h-auto inline-block align-middle">
               <title>qrayg - Twitch Streamer, Gamer, UX Designer, UI Developer</title>
               <g fill="currentColor">

@@ -144,7 +144,7 @@ const Currently = {
     }
 
     var binary = function(n,t) {
-      const tickOn = ['bg-blue-400', 'animate-tick'];
+      const tickOn = ['bg-blue-400', 'motion-safe:animate-tick'];
       const tickOff = ['ring-1', 'ring-gray-500', 'ring-opacity-25'];
       if(n == 1) {
         $_('.'+t+'-1', function(e){e.classList.add(...tickOn); e.classList.remove(...tickOff)});

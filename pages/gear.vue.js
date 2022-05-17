@@ -30,7 +30,7 @@ const Gear = {
                 <b class="font-black tracking-wider uppercase block opacity-80 group-hover:(text-white) group-focus:(text-white) md:(w-1/4 text-right)">
                   <b class="text-sm">{{ hardware.type }}</b>
                   <small v-if="hardware.soon" class="uppercase leading-none tracking-wider flex justify-end">
-                    <b class="px-1 py-px font-black text-yellow-300 ring(1 current inset) block relative">Pending <b class="ring(1 current inset) absolute inset-0 animate-ping-sm z-[-1]" aria-hidden="true"></b></b>
+                    <b class="px-1 py-px font-black text-yellow-300 ring(1 current inset) block relative">Pending <b class="ring(1 current inset) absolute inset-0 motion-safe:animate-ping-sm z-[-1]" aria-hidden="true"></b></b>
                   </small>
                 </b>
                 <div :class="['border-'+ group.color, 'mt-2 border w-2 h-2 rounded-full relative top-px hidden md:(block)']"></div>
