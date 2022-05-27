@@ -98,13 +98,14 @@ const Qnx = {
             </article>
           </section>
         </section>
-        <footer class="mt-auto pt-[6px] w-full bg(repeat-x [#C0C0C0]) flex items-center" style="background-image: url('/assets/qnx/img/footer-bg.png');">
-          <div class="shadow">
+        <footer class="mt-auto pt-[6px] w-full bg-[#C0C0C0] flex items-center relative">
+          <div class="border(y-1 qnx-line) h-[6px] flex absolute top-0 inset-x-0 shadow"><qnx-bevel></qnx-bevel></div>
+          <div class="relative shadow">
             <qnx-bevel>
               <ul class="pr-px flex">
-                <li class="border(r qnx-line) flex">
+                <li class="border(r qnx-line) flex md:(w-12)">
                   <qnx-bevel>
-                    <div class="group m-px py-1 px-2 w-full flex items-center relative motion-safe:transition md:(text-sm space-x-2)">
+                    <div class="group m-px py-1 px-2 w-full flex items-center justify-center relative motion-safe:transition md:(text-sm space-x-2)">
                       <img src="/assets/qnx/img/ico-qnx.png" alt="Launch" class="w-[16px] h-[16px] object-contain object-center" />
                     </div>
                   </qnx-bevel>
