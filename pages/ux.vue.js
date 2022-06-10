@@ -20,7 +20,8 @@ const Ux = {
   data() {
     return {
       entries: [
-        { title: 'Tailwind Contrast Color', url: 'request-tw-contrastcolor.html'}
+        { title: 'Tailwind Prose Example', url: 'tw-prose.html'},
+        { title: 'Tailwind Contrast Color', url: 'request-tw-contrastcolor.html'},
       ],
     }
   },
