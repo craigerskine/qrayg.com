@@ -6,7 +6,7 @@ const Ux = {
         <h1 class="mx-5 text(3xl gray-200) font-black md:(text([4vw]))">UX <b class="inline-flex text-gray-500 font-thin tracking-tight">Experiments</b></h1>
       </header>
       <ul class="m-auto w-full max-w-sm text-center flex-1 divide(y gray-500 opacity-25)">
-        <li v-for="(entry, index) in entries">
+        <li v-for="(entry, index) in entries" class="py-4">
           <a :href="entry.url" class="group p-1 text-cyan-500 inline-flex relative motion-safe:transition hover:(text-cyan-300)">
             {{ entry.title }}
             <b class="w-0 h-px bg-current absolute bottom-0 left-0 opacity-0 motion-safe:transition-all group-hover:(w-full opacity-100)"></b>
