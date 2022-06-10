@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="bg-gray-200 motion-safe:scroll-smooth" hidden>
+<html lang="en" class="bg-gray-200 motion-safe:(scroll-smooth)" hidden>
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
@@ -8,29 +8,35 @@
     <link href="https://fonts.gstatic.com" rel="preconnect" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;600;700;900&display=swap" rel="stylesheet" />
   </head>
-  <body class="text(gray-800)">
+  <body class="text-gray-800">
 
-    <div class="app min-h-screen flex flex-col divide(y gray-500 opacity-30)" v-cloak>
+    <div class="app min-h-screen flex flex-col divide(y gray-500 opacity-20)" v-cloak>
       <header class="py-8 px-4 bg-pri-900 text-pri-400">
-        <div class="container mx-auto md:(flex items-center)">
-          <h1 class="py-2 text-3xl font-bold uppercase flex flex-wrap items-center justify-center md:(justify-start)">
-            <b class="mr-4 w-10 h-10 ring(1 current) text-pri-400 relative z-20 rounded-full"><b class="ring(1 pri-400) absolute inset-0 -z-10 rounded-full animate-ping"></b></b>
-            Title
-            <small class="ml-4 text-base opacity-50">Slogan</small>
+        <div class="container mx-auto lg:(flex items-center)">
+          <h1 class="py-2 font-bold uppercase flex(& wrap) items-center justify-center lg:(text-3xl justify-start)">
+            <b class="mr-4 relative z-20">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" role="img" id="site-logo" class="w-10 h-10 text-pri-400 fill-current">
+                <title><!-- title gets injected on pageload --></title>
+                <circle cx="10" cy="10" r="10" />
+              </svg>
+              <b class="ring(1 pri-400) absolute inset-0 -z-10 rounded-full motion-safe:(animate-ping)"></b>
+            </b>
+            <span id="site-title"><!-- title gets injected on pageload --></span>
+            <small class="ml-4 text-xs opacity-50 lg:(text-base)">Some slogan</small>
           </h1>
-          <nav class="py-5 md:ml-auto">
-            <ul class="flex flex-wrap items-center justify-center space-x-5 font-bold uppercase md:(justify-end)">
+          <nav class="py-5 lg:(ml-auto)">
+            <ul class="text-sm flex(& wrap) items-center justify-center gap-5 font-bold uppercase lg:(text-base justify-end)">
               <li v-for="(item, index) in nav">
-                <a :href="item.href" class="group flex(& col) transition hover:(text-pri-100)">
+                <a :href="item.href" class="group flex(& col) motion-safe:(transition) hover:(text-pri-100)">
                   <span>{{ item.name }}</span>
-                  <b class="mt-1 w-full h-[2px] flex"><b class="mx-auto w-0 bg-current transition-all group-hover:(w-full)"></b></b>
+                  <b class="mt-1 w-full h-[2px] flex"><b class="mx-auto w-0 bg-current motion-safe:(transition-all) group-hover:(w-full)"></b></b>
                 </a>
               </li>
             </ul>
           </nav>
         </div>
         <section class="mx-auto py-8 max-w-prose md:(w-3/4 max-w-none)">
-          <h2 class="first-line::(text-white font-black) font-bold leading-tight text-3xl md:(text-[calc(3vw+3vh+.5vmin)] tracking-tight)">Welcome to this amazing site! Let's do some fancy one-off font scaling <sup class="font-normal opacity-30">*</sup></h2>
+          <h2 class="first-line::(text-white font-black) font-bold leading-tight text-3xl md:(text-[calc(3vw+3vh+.5vmin)] tracking-tight)">Welcome to this amazing site! Let's do some fancy one-off font/text trickery <sup class="font-normal opacity-30">*</sup></h2>
           <small class="pt-3 text-xs font-semibold block opacity-70 transform translate-y-8 md:(text-sm)">* Resize your viewport or rotate your device</small>
         </section>
       </header>
@@ -76,13 +82,13 @@
           </div>
           <fieldset class="relative">
             <label for="list-filter" class="w-8 h-8 flex items-center justify-center absolute z-10 right-5 top-1/2 opacity-50 transform -translate-y-1/2"><i class="m-auto fa fa-fw fa-filter" role="presentation" aria-label="Filter"></i></label>
-            <input type="search" id="list-filter" v-model="list_filter" class="appearance-none py-3 px-6 w-full bg(gray-500 opacity-10) block placeholder(gray-500 opacity-75) rounded-md transition focus:(bg-white outline-none shadow-xl ring(& white)) relative z-20" placeholder="Filter the following list..." />
+            <input type="search" id="list-filter" v-model="list_filter" class="appearance-none py-3 px-6 w-full bg(gray-500 opacity-10) block placeholder(gray-500 opacity-75) rounded-md motion-safe:(transition) focus:(bg-white outline-none shadow-xl ring(& white)) relative z-20" placeholder="Filter the following list..." />
           </fieldset>
           <section v-if="!list_results.length" class="py-8 text(gray-500 opacity-50) font-bold text-2xl uppercase tracking-tight text-center"><i class="fa fa-fw fa-ban opacity-50" role="presentation" aria-hidden="true"></i> No Results</section>
           <ul class="py-4">
             <li v-for="(item, index) in list_results" class="py-2">
-              <a href="#" @click.prevent class="group p-4 flex items-center gap-4 rounded-lg transition hover:(bg(pri-600) text-white shadow-xl)">
-                <b class="w-12 h-12 bg(gray-500 opacity-30) text-gray-500 flex(& none) rounded-full transform scale-75 transition group-hover:(bg-pri-900 text-white scale-100 -rotate-[360deg])">
+              <a href="#" @click.prevent class="group p-4 flex items-center gap-4 rounded-lg motion-safe:(transition) hover:(bg(pri-600) text-white shadow-xl)">
+                <b class="w-12 h-12 bg(gray-500 opacity-30) text-gray-500 flex(& none) rounded-full transform scale-75 motion-safe:(transition) group-hover:(bg-pri-900 text-white scale-100 -rotate-[360deg])">
                   <i class="fa fa-check m-auto text-xl"></i>
                 </b>
                 <div>
@@ -98,14 +104,14 @@
           </ul>
         </section>
       </main>
-      <footer class="mt-auto py-8 px-4 text(xs center) font-bold uppercase">
+      <footer class="mt-auto py-8 px-4 text(gray-500 xs center) font-bold uppercase">
         <div class="container mx-auto">
           Made with
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" role="img" class="-mt-1 mx-1 fill-current text-red-400 inline-block">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" role="img" class="-mt-1 mx-1 fill-current text-red-500 inline-block">
             <title>Love</title>
             <polygon points="8 3 11 0 12 0 16 4 16 5 9 12 7 12 0 5 0 4 4 0 5 0" transform="translate(0,2)"></polygon>
           </svg>
-          by <a href="https://craigerskine.com/" class="mx-1 text-current transition">Craig Erskine</a>
+          by <a href="https://craigerskine.com/" class="mx-1 text-red-500 motion-safe:(transition) hover:(text-red-900)">Craig Erskine</a>
         </div>
       </footer>
     </div>
@@ -160,6 +166,7 @@
           }
         },
         methods: {
+          // slugify a string
           slug: function(text) {
             const a = 'àáâäæãåāăąçćčđďèéêëēėęěğǵḧîïíīįìıİłḿñńǹňôöòóœøōõőṕŕřßśšşșťțûüùúūǘůűųẃẍÿýžźż·/_,:;'
             const b = 'aaaaaaaaaacccddeeeeeeeegghiiiiiiiilmnnnnoooooooooprrsssssttuuuuuuuuuwxyyzzz------'
@@ -191,15 +198,18 @@
           }
         },
         mounted() {
-          // modify the page title
-          document.title = 'Some Title';
+          // modify the page/logo title
+          const pageTitle = 'Twind Prose + Vue Fun';
+          document.title = pageTitle;
+          document.querySelector('#site-logo title').textContent = pageTitle;
+          document.querySelector('#site-title').textContent = pageTitle;
         },
       });
       // component example
       app.component('btn', {
         template: `
           <button :class="[
-            'px-2.5 py-1 inline-block rounded transition',
+            'px-2.5 py-1 inline-block rounded motion-safe:(transition)',
             variant === 'primary' ? 'bg-pri-500 text-white hover:(bg-pri-700)' :
             (variant === 'secondary') ? 'bg-gray-400 text-gray-900 hover:(bg-gray-600 text-white)' :
             'ring(1 inset gray-500 opacity-50) hover:(opacity-60)',
@@ -246,7 +256,7 @@
       })
       twind.tw(() => ({
         '@global': {
-          // some prose helpers
+          // some prose helpers since twind's version is outdated
           '.prose h1,.prose h2,.prose h3': { '@apply': 'font-black' },
           '.prose h4,.prose h5,.prose h6': { '@apply': 'font-bold' },
           '.prose hr': { '@apply': 'border(pri-500 opacity-30)' },
