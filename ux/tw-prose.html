@@ -21,13 +21,15 @@
               </svg>
               <b class="ring(1 pri-400) absolute inset-0 -z-10 rounded-full motion-safe:(animate-ping)"></b>
             </b>
-            <span id="site-title"><!-- title gets injected on pageload --></span>
-            <small class="ml-4 text-xs opacity-50 lg:(text-base)">Some slogan</small>
+            <span>
+              <span id="site-title"><!-- title gets injected on pageload --></span>
+              <small class="text-xs block opacity-50 lg:(text-base)">Some slogan</small>
+            </span>
           </h1>
           <nav class="py-5 lg:(ml-auto)">
             <ul class="text-sm flex(& wrap) items-center justify-center gap-5 font-bold uppercase lg:(text-base justify-end)">
               <li v-for="(item, index) in nav">
-                <a :href="item.href" class="group flex(& col) motion-safe:(transition) hover:(text-pri-100)">
+                <a :href="item.href" @click.prevent class="group flex(& col) motion-safe:(transition) hover:(text-pri-100)">
                   <span>{{ item.name }}</span>
                   <b class="mt-1 w-full h-[2px] flex"><b class="mx-auto w-0 bg-current motion-safe:(transition-all) group-hover:(w-full)"></b></b>
                 </a>
@@ -36,7 +38,7 @@
           </nav>
         </div>
         <section class="mx-auto py-8 max-w-prose md:(w-3/4 max-w-none)">
-          <h2 class="first-line::(text-white font-black) font-bold leading-tight text-3xl md:(text-[calc(3vw+3vh+.5vmin)] tracking-tight)">Welcome to this amazing site! Let's do some fancy one-off font/text trickery <sup class="font-normal opacity-30">*</sup></h2>
+          <h2 class="first-line::(text-white font-black) font-bold leading-tight text-3xl md:(text-[calc(3vw+3vh+.5vmin)] tracking-tight) lg:(py-24)">Welcome to this amazing site! Let's do some fancy one-off font/text trickery <sup class="font-normal opacity-30">*</sup></h2>
           <small class="pt-3 text-xs font-semibold block opacity-70 transform translate-y-8 md:(text-sm)">* Resize your viewport or rotate your device</small>
         </section>
       </header>
