@@ -26,10 +26,10 @@ const Twitch = {
       twitchUser: '',
       favs: [
         // add/remove your own favs
-        { user: 'sdshepard', },
-        { user: 'chainbrain', },
-        { user: 'mcrocklin', },
         { user: 'mst3k', },
+        { user: 'hermanli', },
+        { user: 'mcrocklin', },
+        { user: 'sdshepard', },
       ]
     }
   },
