@@ -37,12 +37,12 @@
       </router-view>
 
       <div class="fixed right-0 top-0 z-20">
-        <a v-show="$route.path === '/'" @click.prevent="menu = !menu" href="#" class="menu-open w-12 h-12 flex items-center justify-center motion-safe:transition-all hover:(text-white)"><i class="inline-block align-middle fa-regular fa-fw fa-stream"></i></a>
-        <router-link v-show="$route.path !== '/' && $route.path !== '/currently/'" to="/" :class="['menu-close w-12 h-12 flex items-center justify-center motion-safe:transition-all', $route.path === '/qnx/' ? 'text-gray-900 hover:(opacity-70)' : 'hover:(text-white)']" aria-label="Close"><i class="inline-block align-middle fa-thin fa-fw fa-2x fa-times"></i></router-link>
+        <a @click.prevent="menu = !menu" href="#" class="menu-open w-12 h-12 flex items-center justify-center motion-safe:transition-all" :class="[$route.path === '/qnx/' ? 'text-gray-900 hover:(opacity-70)' : 'hover:(text-white)']"><i class="inline-block align-middle fa-regular fa-fw fa-stream"></i></a>
+        <!-- <router-link v-show="$route.path !== '/' && $route.path !== '/currently/'" to="/" :class="['menu-close w-12 h-12 flex items-center justify-center motion-safe:transition-all', $route.path === '/qnx/' ? 'text-gray-900 hover:(opacity-70)' : 'hover:(text-white)']" aria-label="Close"><i class="inline-block align-middle fa-thin fa-fw fa-2x fa-times"></i></router-link> -->
         <transition name="slide">
           <div v-show="menu" class="menu p-3 fixed top-0 right-12 motion-safe:transition-all">
             <ul class="font-normal flex(& row-reverse) gap-8">
-              <li v-for="(item, index) in nav"><router-link @click="menu = false" :to="item.url" class="motion-safe:transition hover:(text-white)"><i :class="'fa-solid fa-fw fa-'+ item.ico"></i></router-link></li>
+              <li v-for="(item, index) in nav"><router-link @click="menu = false" :to="item.url" class="motion-safe:(transition)" :class="[$route.path === '/qnx/' ? 'text-gray-900 hover:(opacity-70)' : 'hover:(text-white)']"><i :class="'fa-solid fa-fw fa-'+ item.ico"></i></router-link></li>
             </ul>
           </div>
         </transition>
@@ -85,7 +85,6 @@
           { path: '/gear/', component: Gear },
           { path: '/qnx/', component: Qnx },
           { path: '/ux/', component: Ux },
-          //{ path: '/ux/', beforeEnter: (to, from) => {location.href = '/ux/'}},
           { path: '/twitch-chat-popout/', component: Twitch },
         ],
       })
@@ -96,6 +95,7 @@
           return {
             menu: false,
             nav: [
+              { title: 'Home', url: '/', ico: 'slash-forward', },
               { title: 'Gear', url: '/gear/', ico: 'computer', },
               { title: 'QNX', url: '/qnx/', ico: 'window', },
               { title: 'UX', url: '/ux/', ico: 'fill', },
