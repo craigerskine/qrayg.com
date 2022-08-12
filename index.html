@@ -37,7 +37,7 @@
       </router-view>
 
       <div class="fixed right-0 top-0 z-20">
-        <a @click.prevent="menu = !menu" href="#" class="menu-open w-12 h-12 flex items-center justify-center motion-safe:transition-all" :class="[$route.path === '/qnx/' ? 'text-gray-900 hover:(opacity-70)' : 'hover:(text-white)']"><i class="inline-block align-middle fa-regular fa-fw fa-stream"></i></a>
+        <a v-show="$route.path !== '/currently/'" @click.prevent="menu = !menu" href="#" class="menu-open w-12 h-12 flex items-center justify-center motion-safe:transition-all" :class="[$route.path === '/qnx/' ? 'text-gray-900 hover:(opacity-70)' : 'hover:(text-white)']"><i class="inline-block align-middle fa-regular fa-fw fa-stream"></i></a>
         <!-- <router-link v-show="$route.path !== '/' && $route.path !== '/currently/'" to="/" :class="['menu-close w-12 h-12 flex items-center justify-center motion-safe:transition-all', $route.path === '/qnx/' ? 'text-gray-900 hover:(opacity-70)' : 'hover:(text-white)']" aria-label="Close"><i class="inline-block align-middle fa-thin fa-fw fa-2x fa-times"></i></router-link> -->
         <transition name="slide">
           <div v-show="menu" class="menu p-3 fixed top-0 right-12 motion-safe:transition-all">
