@@ -97,7 +97,7 @@ const Gear = {
           ico: 'fa-thin fa-keyboard',
           color: 'green-500',
           hardware: [
-            { type: 'KB', name: 'Apple › Wireless', sub: ['100%', 'Space Gray'], link: 'https://amzn.com/dp/B082C15S5L?tag=qrayg-20', },
+            { type: 'KB', name: 'Apple › Wireless', sub: ['100%', 'Space Gray', 'Touch ID'], link: 'https://amzn.com/dp/B09V3JXSS9?tag=qrayg-20', },
             { type: 'KB', name: 'Keychron › Q2', sub: ['65%', 'Hotswap', 'RGB', 'Carbon Black'], link: 'https://keychron.com/products/keychron-q2-qmk-custom-mechanical-keyboard', },
             { type: 'KB', name: 'Keychron › K7', sub: ['65%', 'Hotswap', 'RGB', 'Banana'], link: 'https://keychron.com/pages/keychron-k7-wireless-mechanical-keyboard', },
             { type: 'KB', name: 'Keychron › K14', sub: ['65%', 'Hotswap', 'RGB', 'Red'], link: 'https://keychron.com/pages/keychron-k14-wireless-mechanical-keyboard', },
