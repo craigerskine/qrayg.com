@@ -136,8 +136,8 @@ const Gear = {
             { type: 'Cam', name: 'Lumina › AI Webcam', sub: ['USB', 'Grey'], link: 'https://getlumina.com/', },
             { type: 'Mic', name: 'Shure › MV7', sub: ['USB', 'XLR'], link: 'https://amzn.com/dp/B08G7RG9ML?tag=qrayg-20', },
             { type: 'Strip HDCP', name: 'OREI › HD-102', sub: ['HDMI'], link: 'https://amzn.com/dp/B005HXFARS?tag=qrayg-20', },
-            { type: 'Misc', name: 'LeMetric › Time', sub: ['Smart Clock'], link: 'https://amzn.com/dp/B01IVTVK3W?tag=qrayg-20', },
-            { type: 'Games Room', name: '... › pxl.media', sub:['Game / console collection'], link: 'https://pxl.media/', },
+            { type: 'Misc', name: 'LaMetric › Time', sub: ['Smart Clock'], link: 'https://amzn.com/dp/B01IVTVK3W?tag=qrayg-20', },
+            { type: 'Game Room', name: 'Web › pxl.media', sub:['Game / console collection'], link: 'https://pxl.media/', },
           ]
         },
         {
@@ -162,7 +162,7 @@ const Gear = {
             { type: 'Guitar', name: 'Kiesel › Vader', sub: ['2021', 'Custom 6', 'Fishman Fluence'], link: 'https://craigerskine.github.io/prototypes/kiesel/order-sheet/', },
             { type: 'Guitar', name: '.strandberg* › Boden', sub: ['2020', 'Metal 6', 'Black Pearl'], link: 'https://strandbergguitars.com/product-category/family/boden-metal/', },
             { type: 'Amp', name: 'Positive Grid › Spark 40', sub: ['40 watt'], link: 'https://amzn.com/dp/B08HQCG79H?tag=qrayg-20', },
-            { soon: true, type: 'Amp', name: 'Positive Grid › Spark MINI', sub: ['10 watt'], link: 'https://www.positivegrid.com/spark-mini', },
+            { type: 'Amp', name: 'Positive Grid › Spark MINI', sub: ['10 watt'], link: 'https://www.positivegrid.com/spark-mini', },
             { type: 'Amp', name: 'Boss › Katana MINI', sub: ['7 watt'], link: 'https://amzn.com/dp/B072XKP8TH?tag=qrayg-20', },
             { type: 'Modeling', name: 'Line 6 › HX Stomp', sub: ['USB'], link: 'https://amzn.com/dp/B07J2LV1N1?tag=qrayg-20', },
             { type: 'Plugins', name: 'Neural DSP › Archetype', sub: ['Petrucci', 'Tim Henson'], link: 'https://neuraldsp.com/plugins', },
