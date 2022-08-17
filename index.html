@@ -40,8 +40,8 @@
         <a v-show="$route.path !== '/currently/'" @click.prevent="menu = !menu" href="#" class="menu-open w-12 h-12 flex items-center justify-center motion-safe:transition-all" :class="[$route.path === '/qnx/' ? 'text-gray-900 hover:(opacity-70)' : 'hover:(text-white)']"><i class="inline-block align-middle fa-regular fa-fw fa-stream"></i></a>
         <!-- <router-link v-show="$route.path !== '/' && $route.path !== '/currently/'" to="/" :class="['menu-close w-12 h-12 flex items-center justify-center motion-safe:transition-all', $route.path === '/qnx/' ? 'text-gray-900 hover:(opacity-70)' : 'hover:(text-white)']" aria-label="Close"><i class="inline-block align-middle fa-thin fa-fw fa-2x fa-times"></i></router-link> -->
         <transition name="slide">
-          <div v-show="menu" class="menu p-3 fixed top-0 right-12 motion-safe:transition-all">
-            <ul class="font-normal flex(& row-reverse) gap-8">
+          <div v-show="menu" class="menu p-3 fixed top-0 right-12 motion-safe:(transition-all)">
+            <ul class="font-normal flex(& row-reverse) gap-5 sm:(gap-8)">
               <li v-for="(item, index) in nav"><router-link @click="menu = false" :to="item.url" class="motion-safe:(transition)" :class="[$route.path === '/qnx/' ? 'text-gray-900 hover:(opacity-70)' : 'hover:(text-white)']"><i :class="'fa-solid fa-fw fa-'+ item.ico"></i></router-link></li>
             </ul>
           </div>
@@ -96,11 +96,11 @@
             menu: false,
             nav: [
               { title: 'Home', url: '/', ico: 'slash-forward', },
-              { title: 'Gear', url: '/gear/', ico: 'computer', },
+              { title: 'Gear', url: '/gear/', ico: 'keyboard', },
               { title: 'QNX', url: '/qnx/', ico: 'window', },
               { title: 'UX', url: '/ux/', ico: 'fill', },
               { title: 'Twitch Chat Popup', url: '/twitch-chat-popout/', ico: 'message-lines', },
-              //{ title: 'Currently', url: '/currently/', ico: 'clock', },
+              { title: 'Currently', url: '/currently/', ico: 'clock', },
             ],
           }
         },
