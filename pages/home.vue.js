@@ -44,7 +44,7 @@ const Home = {
       social: [
         { name: 'Twitch', icon: 'fa-brands fa-twitch', color: 'purple-500', url: 'https://twitch.tv/qrayg/', },
         { name: 'YouTube', icon: 'fa-brands fa-youtube', color: 'red-700', url: 'https://youtube.com/c/qrayg/', },
-        { name: 'Discord', icon: 'fa-brands fa-discord', color: 'indigo-500', url: 'https://discord.gg/Pa9X3C8', },
+        { name: 'Discord', icon: 'fa-brands fa-discord', color: 'indigo-500', url: 'https://discord.com/users/qrayg#0001', },
         { name: 'Gumroad', icon: null, color: 'gray-600', url: 'http://qrayg.gumroad.com', },
         { name: 'Patreon', icon: 'fa-brands fa-patreon', color: 'red-400', url: 'https://patreon.com/qrayg/', },
       ],
