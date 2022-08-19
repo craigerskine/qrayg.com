@@ -108,7 +108,7 @@ const Gear = {
             { type: 'KB', name: 'NK65 › Entry Edition', sub: ['65%', 'Fire', 'Milky Yellow'], link: 'https://novelkeys.xyz/collections/keyboards/products/nk65-entry-edition', },
             { type: 'KB', name: 'Leopold › FC660C', sub: ['65%', 'White', 'Topre Silent', 'Extended2048'], link: 'https://amzn.com/dp/B07QKXC6WC?tag=qrayg-20', },
             { type: 'KB', name: 'Morgrie', sub: ['65%', 'Clicky'], link: 'https://morgrie.com/', },
-            { soon: true, type: 'KB', name: 'Candybar', sub: ['50%', 'Black', 'Summer', 'Outemu Tactile'], link: 'https://thekey.company/collections/candybar-round-3/', },
+            { type: 'KB', name: 'Candybar', sub: ['50%', 'Black', 'Summer', 'Outemu Tactile'], link: 'https://thekey.company/collections/candybar-round-3/', },
             { soon: true, type: 'KB', name: 'Keychron › Q9', sub: ['45%', 'Silver', 'Knob', 'Silent Alpaca'], link: 'https://keychron.com/products/keychron-q9-qmk-custom-mechanical-keyboard', },
             { type: 'KB', name: 'Cajal', sub: ['45%', 'Space Grey', 'Silent Sky'], link: 'https://walletburner.co/pages/cajal', },
             { type: 'KB', name: 'UT47.2', sub: ['40%', 'Alu', 'Kailh Copper'], link: 'https://keyhive.xyz/shop/ut472-kit', },
