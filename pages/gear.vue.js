@@ -123,7 +123,7 @@ const Gear = {
             { type: 'Caps', name: 'Plastic', sub: ['Clone', 'XDA'], link: 'https://amzn.com/dp/B08ZMR1651?tag=qrayg-20', },
             { type: 'Caps', name: 'GMK Dolch 2', sub: ['Modern', 'Standard', 'Obscure'], link: 'https://omnitype.com/', },
             { type: 'Caps', name: 'DSA Milkshake', sub: ['Weirdo', 'Spacebars', 'Fruit'], link: 'https://novelkeys.com/collections/keycaps/products/dsa-milkshake', },
-            { soon: true, type: 'Caps', name: 'Less But Better', sub: ['Novelties', 'Extras'], link: 'https://kono.store/products/epbt-less-but-better', },
+            { type: 'Caps', name: 'Less But Better', sub: ['Novelties', 'Extras'], link: 'https://kono.store/products/epbt-less-but-better', },
             { soon: true, type: 'Caps', name: 'Domikey Ghost', sub: ['Extension'], link: 'https://cannonkeys.com/collections/group-buy/products/gb-domikey-ghost', },
             { soon: true, type: 'Caps', name: 'kam_superuser', sub: ['Mods Highlight', '40\'s Highlight', 'Spacebars', 'Novelties'], link: 'https://novelkeys.com/products/kam-superuser', },
           ]
