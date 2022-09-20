@@ -86,7 +86,9 @@ const Qnx = {
                       <ul class="bg-qnx-cream divide(y qnx-dark)">
                         <li v-for="(file, index) in entry.files" class="p-2">
                           <a :href="'/assets/qnx/files/'+ slug(entry.title) +'-'+ slug(file.title) +'.zip'" class="group inline-flex items-center space-x-2 motion-safe:transition hover:(text-blue-500) focus:(text-blue-500)" download>
-                            <img :src="'/assets/qnx/img/ico-'+ entry.ico +'.png'" :alt="entry.title" class="w-[16px] h-[16px] object-contain object-center opacity-50 motion-safe:transition group-hover:(opacity-100) group-focus:(opacity-100)" />
+                            <b class="w-[9px] h-[9px] text-qnx-line flex ring(1 current) rounded-full opacity-50 transform rotate-90">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 7" class="m-auto w-[7px] h-[7px] fill-current" aria-hidden="true"><polygon points="3 7 3 5 0 5 0 2 3 2 3 0 7 3.5" /></svg>
+                            </b>
                             <span>{{ file.title }}</span>
                           </a>
                         </li>
