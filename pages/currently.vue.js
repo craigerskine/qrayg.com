@@ -77,11 +77,6 @@ const Currently = {
           </li>
         </ul>
       </section>
-
-      <router-link to="/" class="w-12 h-12 text-grey-darker hover:text-white focus:text-white flex items-center justify-center fixed right-0 top-0 z-20 motion-safe:transition-all">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" class="fill-current w-5 h-auto block"><title>qrayg - Twitch Streamer, Gamer, UX Designer, UI Developer</title> <g><circle cx="98.1" cy="98.1" r="6" opacity=".25"></circle> <path d="M109.402699,94.0592724 C116.085856,84.3838 120,72.6489986 120,60 C120,26.862915 93.137085,0 60,0 C26.862915,0 0,26.862915 0,60 C0,93.137085 26.862915,120 60,120 C72.6489986,120 84.3838,116.085856 94.0592724,109.402699 C90.049715,107.969131 87.0258166,104.462602 86.278593,100.174129 C78.7292272,105.12235 69.7006692,108 60,108 C33.490332,108 12,86.509668 12,60 C12,33.490332 33.490332,12 60,12 C86.509668,12 108,33.490332 108,60 C108,69.7006692 105.12235,78.7292272 100.174122,86.2786024 C104.462602,87.0258166 107.969131,90.049715 109.402699,94.0592724 Z"></path></g></svg>
-      </router-link>
-
     </section>
   `,
   props: [],
