@@ -100,7 +100,7 @@ const Qnx = {
             </article>
           </section>
         </section>
-        <footer class="mt-auto pt-[6px] w-full bg-[#C0C0C0] flex items-center relative">
+        <footer class="mt-auto pt-[6px] w-full bg-[#C0C0C0] flex items-center relative shadow-up">
           <div class="border(y-1 qnx-line) h-[6px] flex absolute top-0 inset-x-0 shadow"><qnx-bevel></qnx-bevel></div>
           <div class="relative shadow">
             <qnx-bevel>
