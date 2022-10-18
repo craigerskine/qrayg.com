@@ -16,18 +16,18 @@
       <div class="bg-gradient-to-b from-transparent via-transparent to-gray-300 fixed inset-0"><div class="bg-grid absolute inset-0 opacity-30"></div></div>
 
       <nav class="fixed top-10 inset-x-10">
-        <ul class="flex justify-center gap-x-12 leading-none">
+        <ul class="flex justify-center gap-x-3 leading-none md:(gap-x-12)">
           <li v-for="(i, index) in ['Simple', 'Fun', 'Elegant', 'Brutal']" :class="[{ 'order-last' : index === 1 }]">
             <a @click.prevent="theme = index" :href="'#'+ slug(i)" :class="['py-2 w-24 flex(& col) items-center relative rounded-md transition', index === theme ? 'bg-gray-900 text-white' : '']" :tabindex="index === 1 ? '4' : (index === 2) ? '2' : (index === 3) ? '3' : '1'">
-              <span :class="['mb-1 opacity-50']">
-                <i :class="['fa fa-2x',
+              <span :class="['mb-1 text-xl opacity-50 md:(text-3xl)']">
+                <i :class="['fa',
                   index === 0 ? 'fa-window-maximize' :
                   (index === 1) ? 'fa-face-grin-tongue-wink' :
                   (index === 2) ? 'fa-signature' :
                   'fa-cube'
                 ]"></i>
               </span>
-              <b class="py-1">{{ i }}</b>
+              <b class="py-1 text-sm md:(text-base)">{{ i }}</b>
               <!-- <b :class="['h-[2px] bg-current opacity-50', theme === index ? 'w-full' : 'w-0']"></b> -->
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="10" viewBox="0 0 20 10" aria-hidden="true" :class="['fill-current absolute -bottom-[10px] left-1/2 transform -translate-x-1/2 transition', index === theme ? 'text-gray-900' : 'text-transparent']">
                 <polygon points="0 0 20 0 10 10"></polygon>
