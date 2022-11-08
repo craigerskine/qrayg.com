@@ -90,21 +90,21 @@ const Currently = {
 
     // jquery-like selector
     window.$_ = function(selector, next) {
-      var selectors = document.querySelectorAll(selector);
+      let selectors = document.querySelectorAll(selector);
       [].forEach.call(selectors, next);
     };
 
     function now(){
-      var date = new Date();
+      let date = new Date();
 
       // date/time/beats
-      var hours = date.getHours() % 12;
+      let hours = date.getHours() % 12;
       hours = hours ? hours : 12;
-      var minutes = date.getMinutes();
-      var seconds = date.getSeconds();
-      var milliseconds = (date.getMilliseconds()/10).toFixed(0);
-      var beatHours = (date.getUTCHours() == 23) ? 0 : date.getUTCHours() + 1;
-      var beats = Math.abs(((((beatHours * 60) + date.getUTCMinutes()) * 60) + date.getUTCSeconds()) / 86.4).toFixed(2);
+      let minutes = date.getMinutes();
+      let seconds = date.getSeconds();
+      let milliseconds = (date.getMilliseconds()/10).toFixed(0);
+      let beatHours = (date.getUTCHours() == 23) ? 0 : date.getUTCHours() + 1;
+      let beats = Math.abs(((((beatHours * 60) + date.getUTCMinutes()) * 60) + date.getUTCSeconds()) / 86.4).toFixed(2);
 
       $_('.hours', function(e){e.innerHTML = pad(hours)});
       $_('.minutes', function(e){e.innerHTML = pad(minutes)});
@@ -118,12 +118,12 @@ const Currently = {
       $_('.date-y', function(e){e.innerHTML = date.toLocaleDateString("en-US", {year: 'numeric'})});
 
       // binary
-      var sec2 = seconds % 10;
-      var sec1 = (seconds - sec2) / 10 % 10;
-      var min2 = minutes % 10;
-      var min1 = (minutes - min2) / 10 % 10;
-      var hrs2 = hours % 10;
-      var hrs1 = (hours - hrs2) / 10 % 10;
+      let sec2 = seconds % 10;
+      let sec1 = (seconds - sec2) / 10 % 10;
+      let min2 = minutes % 10;
+      let min1 = (minutes - min2) / 10 % 10;
+      let hrs2 = hours % 10;
+      let hrs1 = (hours - hrs2) / 10 % 10;
 
       binary(sec1, 'sec-1');
       binary(sec2, 'sec-2');
@@ -138,9 +138,9 @@ const Currently = {
       return ('0' + num).slice(-2);
     }
 
-    var binary = function(n,t) {
-      const tickOn = ['bg-blue-400', 'motion-safe:animate-tick'];
-      const tickOff = ['ring-1', 'ring-gray-500', 'ring-opacity-25'];
+    function binary(n,t) {
+      let tickOn = ['bg-blue-400', 'motion-safe:animate-tick'];
+      let tickOff = ['ring-1', 'ring-gray-500', 'ring-opacity-25'];
       if(n == 1) {
         $_('.'+t+'-1', function(e){e.classList.add(...tickOn); e.classList.remove(...tickOff)});
         $_('.'+t+'-2', function(e){e.classList.add(...tickOff); e.classList.remove(...tickOn)});
