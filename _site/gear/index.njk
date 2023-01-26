@@ -1,0 +1,69 @@
+---
+layout: 'layouts/default.njk'
+title: 'PC, Streaming, Music Gear/Rig'
+eleventyNavigation:
+  key: Gear
+  icon: keyboard
+  order: 5
+---
+
+<section class="gear mx-auto px-4 w-full max-w-screen-lg font-mono relative z-20 motion-safe:(transition-all)">
+  <header class="mb-8 pt-12">
+    <section class="mx-auto w-full md:(flex divide-(x gray-500 opacity-25))">
+      <a href="/" class="text-white self-center flex items-center justify-center relative opacity-50 hover:(opacity-100) focus:(opacity-100) motion-safe:(transition)">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" class="w-10 h-10">
+          <title>{{ site.meta.title }}</title>
+          <g class="fill-current">
+            <circle cx="98.1" cy="98.1" r="6" opacity=".25"></circle>
+            <path d="M109.402699,94.0592724 C116.085856,84.3838 120,72.6489986 120,60 C120,26.862915 93.137085,0 60,0 C26.862915,0 0,26.862915 0,60 C0,93.137085 26.862915,120 60,120 C72.6489986,120 84.3838,116.085856 94.0592724,109.402699 C90.049715,107.969131 87.0258166,104.462602 86.278593,100.174129 C78.7292272,105.12235 69.7006692,108 60,108 C33.490332,108 12,86.509668 12,60 C12,33.490332 33.490332,12 60,12 C86.509668,12 108,33.490332 108,60 C108,69.7006692 105.12235,78.7292272 100.174122,86.2786024 C104.462602,87.0258166 107.969131,90.049715 109.402699,94.0592724 Z"></path>
+          </g>
+        </svg>
+      </a>
+      <h1 class="py-2 text-5xl tracking-wider uppercase flex-1 flex items-center flex-col md:(ml-6 py-0 items-end)">
+        <b>qrayg<sup class="text-base opacity-80">'s</sup></b>
+        <i class="text-xl font-black not-italic tracking-normal opacity-75 block">{{ title }}</i>
+      </h1>
+    </section>
+  </header>
+  {%- for group in gear %}
+  <section id="{{ group.category | slugify }}" class="mb-10 py-4 xl:(mb-32 py-8)">
+    <article>
+      <a href="#{{ group.category | slugify }}" class="text-{{ group.color }} mb-5 text-xl uppercase flex items-center">
+        <em class="mr-4 text-5xl"><i class="fa-fw {{ group.ico }}"></i></em>
+        <b class="tracking-widest flex-1 flex items-center justify-center"> <b class="font-black">{{ group.category }}</b> <b class="ml-4 border-(t current) flex-1 opacity-25"></b></b>
+      </a>
+      {%- if group.hardware %}
+      <ul class="grid-(& flow-row cols-1) gap-x-6 lg:(pl-16 grid-cols-2){% if group.category == 'Obsolete' %} line-through opacity-50{% endif %}">
+        {%- for hardware in group.hardware %}
+        <li class="flex">
+          <a href="{{ hardware.link }}" class="border-{{ group.color }} hover:bg-{{ group.color }} focus:bg-{{ group.color }} hover:text-{{ group.color }} focus:text-{{ group.color }} group py-3 px-5 border-(l b opacity-25) w-full bg-transparent motion-safe:(transition-all) hover:(border-l-4 bg-opacity-10) focus:(border-l-4 bg-opacity-10) md:(px-0 flex space-x-4)">
+            <b class="font-black tracking-wider uppercase block opacity-80 group-hover:(text-white) group-focus:(text-white) md:(w-1/4 text-right)">
+              <b class="text-sm">{{ hardware.type }}</b>
+              {% if hardware.soon %}
+              <small class="uppercase leading-none tracking-wider flex justify-end">
+                <b class="px-1 py-px font-black text-yellow-300 ring-(1 current inset) block relative">Pending <b class="ring-(1 current inset) absolute inset-0 motion-safe:(animate-ping-sm) z-[-1]" aria-hidden="true"></b></b>
+              </small>
+              {%- endif %}
+            </b>
+            <div class="border-{{ group.color }} mt-2 border w-2 h-2 rounded-full relative top-px hidden md:(block)"></div>
+            <i class="not-italic flex-1 md:(tracking-tight)">
+              {{ hardware.name }}
+              {%- if hardware.sub %}
+              <small class="uppercase leading-none tracking-wider flex flex-wrap">
+                {% for sub in hardware.sub %}
+                <b class="mb-1 mr-1 py-px font-black text-current opacity-60 inline-block">
+                  {{ sub }}{% if not loop.last %}<i>, </i>{% endif %}
+                </b>
+                {%- endfor %}
+              </small>
+              {%- endif %}
+            </i>
+          </a>
+        </li>
+        {%- endfor %}
+      </ul>
+      {%- endif %}
+    </article>
+  </section>
+  {%- endfor %}
+</section>

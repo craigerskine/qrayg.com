@@ -1,0 +1,10 @@
+---
+meta:
+  title: 'qrayg'
+  description: 'Twitch Streamer, Gamer, UX Designer & Engineer'
+  author: 'qrayg'
+  author_url: https://qrayg.com/
+analytics: |-
+  // google analytics
+  window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+  ga('create', 'UA-6318307-2', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
