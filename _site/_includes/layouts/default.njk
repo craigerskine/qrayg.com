@@ -56,7 +56,7 @@
             class="menu p-3 h-12 flex items-center fixed top-0 right-12 motion-safe:(transition-all)">
             <ul class="font-normal flex gap-5 sm:(gap-8)">
               {%- for item in collections.all | eleventyNavigation %}
-              <li><a @click="menu = false" href="{{ item.url }}" class="{%- if page.url == '/qnx/' %}text-gray-900 hover:(opacity-70){%- else %}hover:(text-white){%- endif %} motion-safe:(transition)"><i class="fa-solid fa-fw fa-{{ item.icon }}"></i></a></li>
+              <li><a href="{{ item.url }}" class="{%- if page.url == '/qnx/' %}text-gray-900 hover:(opacity-70){%- else %}hover:(text-white){%- endif %} motion-safe:(transition)"><i class="fa-solid fa-fw fa-{{ item.icon }}"></i></a></li>
               {%- endfor %}
             </ul>
           </div>
