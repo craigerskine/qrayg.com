@@ -11,6 +11,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('_site/netlify.toml');
   eleventyConfig.addPassthroughCopy('_site/site.webmanifest');
   eleventyConfig.addPassthroughCopy('_site/*.ico');
+  eleventyConfig.addPassthroughCopy('_site/*.jpg');
   eleventyConfig.addPassthroughCopy('_site/*.png');
   eleventyConfig.addPassthroughCopy('_site/*.svg');
   eleventyConfig.addPassthroughCopy('_site/*.txt');
