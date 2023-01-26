@@ -41,7 +41,7 @@ permalink: /ux/twind-contrast-beta.html
           <div class="pb-6 flex items-center justify-center space-x-6 fixed top-5 right-5">
             <p class="flex(& 1) justify-end">
               <button type="button" @click.prevent="contrastEnabled = !contrastEnabled" :class="['p-1 w-12 inline-flex rounded-full transition-all', contrastEnabled ? 'bg-blue-500 text-white' : 'bg-white text-gray-500 opacity-50']" role="switch" :aria-checked="contrastEnabled">
-                <span v-text="'Toogle contrast'" class="sr-only"></span>
+                <span v-text="'Toggle contrast'" class="sr-only"></span>
                 <span :class="['w-4 h-4 rounded-full transition-all', contrastEnabled ? 'bg-current shadow transform translate-x-6' : 'ring(2 inset current)']" aria-hidden="true"></span>
               </button>
             </p>
