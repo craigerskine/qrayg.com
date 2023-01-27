@@ -7,9 +7,9 @@ eleventyNavigation:
   order: 5
 ---
 
-<section class="gear mx-auto px-4 w-full max-w-screen-lg font-mono relative z-20 motion-safe:(transition-all)">
-  <header class="mb-8 pt-12">
-    <section class="mx-auto w-full md:(flex divide-(x gray-500 opacity-25))">
+<section class="gear mx-auto px-4 w-full max-w-screen-lg font-mono relative z-20">
+  <article class="mb-8 pt-12">
+    <aside class="mx-auto w-full md:(flex divide-(x gray-500 opacity-25))">
       <a href="/" class="text-white self-center flex items-center justify-center relative opacity-50 hover:(opacity-100) focus:(opacity-100) motion-safe:(transition)">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" class="w-10 h-10">
           <title>{{ site.meta.title }}</title>
@@ -23,8 +23,8 @@ eleventyNavigation:
         <b>qrayg<sup class="text-base opacity-80">'s</sup></b>
         <i class="text-xl font-black not-italic tracking-normal opacity-75 block">{{ title }}</i>
       </h1>
-    </section>
-  </header>
+    </aside>
+  </article>
   {%- for group in gear %}
   <section id="{{ group.category | slugify }}" class="mb-10 py-4 xl:(mb-32 py-8)">
     <article>
