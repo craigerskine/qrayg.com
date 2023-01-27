@@ -46,6 +46,7 @@ eleventyNavigation:
   </p>
 </section>
 
+{% setblock 'js' %}
 <script>
   document.addEventListener('alpine:init', () => {
     Alpine.data('social', () => ({
@@ -73,3 +74,4 @@ eleventyNavigation:
     }))
   })
 </script>
+{% endsetblock %}

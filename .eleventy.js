@@ -32,7 +32,16 @@ module.exports = function (eleventyConfig) {
   // shortcodes
   eleventyConfig.addShortcode('bust', () => `${new Date().getFullYear()}${new Date().getMonth()}${new Date().getDate()}${new Date().getHours()}`);
   eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`);
+  eleventyConfig.addShortcode('renderblock', function(name) {
+    return (this.page.setblock || {})[name] || '';
+  });
+  eleventyConfig.addPairedShortcode('setblock', function(content, name) {
+    if (!this.page.setblock) this.page.setblock = {};
+    this.page.setblock[name] = content;
+    return '';
+  });
 
+  // filters
   // | randomLimit(6, page.url)
   eleventyConfig.addFilter('randomLimit', (arr, limit, currPage) => {
     const pageArr = arr.filter((page) => page.url !== currPage);

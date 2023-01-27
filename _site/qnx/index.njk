@@ -151,6 +151,7 @@ eleventyNavigation:
   </div>
 </section>
 
+{% setblock 'js' %}
 <script>
   document.addEventListener('alpine:init', () => {
     Alpine.data('qnx', () => ({
@@ -217,3 +218,4 @@ eleventyNavigation:
     }))
   })
 </script>
+{% endsetblock %}

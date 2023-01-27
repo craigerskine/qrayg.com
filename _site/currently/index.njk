@@ -86,6 +86,7 @@ eleventyNavigation:
   </aside>
 </section>
 
+{% setblock 'js' %}
 <script>
   // jquery-like selector
   window.$_ = function(selector, next) {
@@ -196,3 +197,4 @@ eleventyNavigation:
   now();
   setInterval(now, 10);
 </script>
+{% endsetblock %}
