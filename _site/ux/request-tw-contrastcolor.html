@@ -67,7 +67,7 @@ $(function(){
             <swatch color="gray-200"><div><div><div class="text-contrast">Nested</div></div></div></swatch>
           </ul>
           <ul v-for="(swatch, index) in swatches" class="flex justify-center space-x-4 font-mono">
-            <swatch v-for="i in 9" :color="swatch.color +'-'+ (i * 100)">{{ swatch.title }}</swatch>
+            <swatch v-for="i in 9" :color="swatch.color +'-'+ (i * 100)"><span v-text="swatch.title"></span></swatch>
           </ul>
         </section>
       </main>

@@ -32,7 +32,7 @@ permalink: /ux/twind-vue-themer.html
                   'fa-cube'
                 ]"></i>
               </span>
-              <b class="py-1 text-sm md:(text-base)">{{ i }}</b>
+              <b class="py-1 text-sm md:(text-base)" v-text="i"></b>
               <!-- <b :class="['h-[2px] bg-current opacity-50', theme === index ? 'w-full' : 'w-0']"></b> -->
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="10" viewBox="0 0 20 10" aria-hidden="true" :class="['fill-current absolute -bottom-[10px] left-1/2 transform -translate-x-1/2 transition', index === theme ? 'text-gray-900' : 'text-transparent']">
                 <polygon points="0 0 20 0 10 10"></polygon>
@@ -65,9 +65,7 @@ permalink: /ux/twind-vue-themer.html
               <div class="space-x-2 flex text-sm">
                 <label v-for="(i, index) in ['Water', 'Oil', 'Acrylic']" class="text-gray-700">
                   <input name="size" type="radio" :value="i" class="sr-only" />
-                  <span :class="['px-2 h-8 flex items-center justify-center', { 'bg-indigo-600 text-white rounded-md' : index === 1 && theme === 0 }, { 'bg-yellow-500 text-yellow-900 rounded-full' : index === 1 && theme === 1 }, { 'ring(1 inset current)' : index === 1 && theme === 2 }, { 'bg-black text-white' : index === 1 && theme === 3 }]">
-                    {{ i }}
-                  </span>
+                  <span :class="['px-2 h-8 flex items-center justify-center', { 'bg-indigo-600 text-white rounded-md' : index === 1 && theme === 0 }, { 'bg-yellow-500 text-yellow-900 rounded-full' : index === 1 && theme === 1 }, { 'ring(1 inset current)' : index === 1 && theme === 2 }, { 'bg-black text-white' : index === 1 && theme === 3 }]" v-text="i"></span>
                 </label>
               </div>
             </div>

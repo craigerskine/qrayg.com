@@ -36,7 +36,7 @@ permalink: /ux/tw-prose.html
             <ul class="text-sm flex(& wrap) items-center justify-center gap-5 font-bold uppercase lg:(text-base justify-end)">
               <li v-for="(item, index) in nav">
                 <a :href="item.href" @click.prevent class="group flex(& col) motion-safe:(transition) hover:(text-pri-100)">
-                  <span>{{ item.name }}</span>
+                  <span v-text="item.name"></span>
                   <b class="mt-1 w-full h-[2px] flex"><b class="mx-auto w-0 bg-current motion-safe:(transition-all) group-hover:(w-full)"></b></b>
                 </a>
               </li>
@@ -54,7 +54,7 @@ permalink: /ux/tw-prose.html
             <h3>Typography/Prose</h3>
             <p>In a fantastical universe, centuries ago, Solveig was born into a family in a small fishing town in the cold North. Father fished, and Mother took care of the market stall to make their living.</p>
             <ul>
-              <li v-for="i in [{title: 'Solveig', url: 'https://amzn.com/dp/B072ZCNFGP?tag=qrayg-20'},{title: 'Emerald Seas', url: 'https://amzn.com/dp/B07ZWBQK5L?tag=qrayg-20'},{title: 'Gods of Debauchery', url: 'https://amzn.com/dp/B096LSVYDL?tag=qrayg-20'}]"><a :href="i.url">{{ i.title }}</a></li>
+              <li v-for="i in [{title: 'Solveig', url: 'https://amzn.com/dp/B072ZCNFGP?tag=qrayg-20'},{title: 'Emerald Seas', url: 'https://amzn.com/dp/B07ZWBQK5L?tag=qrayg-20'},{title: 'Gods of Debauchery', url: 'https://amzn.com/dp/B096LSVYDL?tag=qrayg-20'}]"><a :href="i.url" v-text="i.title"></a></li>
             </ul>
             <p>Solveig never spent much time with the other children, instead preferring the company of the näcken boy who laughed and played violin while she danced by the river in the woods by her house, and of the strange old woman at the edge of town - unfailingly kind, always giving Solveig sweets, and rumoured to be a witch.</p>
             <blockquote>
@@ -100,10 +100,10 @@ permalink: /ux/tw-prose.html
                   <i class="fa fa-check m-auto text-xl"></i>
                 </b>
                 <div>
-                  {{ item.name }}
+                  <span v-text="item.name"></span>
                   <ol v-if="item.tags" class="-mx-2 px-1 text-xs uppercase flex flex-wrap">
                     <li v-for="(tag, index) in item.tags" class="p-1">
-                      <b class="px-1 py-px font-semibold bg(gray-500 opacity-25) inline-block rounded group-hover:(bg(pri-900 opacity-50))">{{ tag.name }}</b>
+                      <b class="px-1 py-px font-semibold bg(gray-500 opacity-25) inline-block rounded group-hover:(bg(pri-900 opacity-50))" v-text="tag.name"></b>
                     </li>
                   </ol>
                 </div>

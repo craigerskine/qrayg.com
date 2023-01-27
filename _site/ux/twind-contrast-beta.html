@@ -49,10 +49,10 @@ permalink: /ux/twind-contrast-beta.html
           </div>
           <ul v-for="(swatch, index) in swatches" class="font-mono flex -space-x-1 lg:(-space-x-3)">
             <swatch :contrast="contrastEnabled" :color="swatch.color" :shade="50">
-              <i>{{ swatch.title }}</i>
+              <i v-text="swatch.title"></i>
             </swatch>
             <swatch v-for="i in 9" :contrast="contrastEnabled" :color="swatch.color" :shade="(i * 100)">
-              <i>{{ swatch.title }}</i>
+              <i v-text="swatch.title"></i>
             </swatch>
           </ul>
         </section>
