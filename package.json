@@ -7,7 +7,9 @@
     "build": "eleventy"
   },
   "keywords": [
-    "11ty"
+    "11ty",
+    "Alpine.js",
+    "esbuild"
   ],
   "devDependencies": {
     "@11ty/eleventy": "^1.0.2",
