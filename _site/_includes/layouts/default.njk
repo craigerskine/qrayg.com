@@ -44,11 +44,10 @@
     <div class="app w-full min-h-screen flex-(& col) relative">
 
       {%- if page.url == '/qnx/' %}
-        <div class="w-48 h-48 bg-(cover no-repeat) absolute -top-24 -left-24 rounded-full shadow-2xl sm:(w-64 h-64 -top-32 -left-32)" style="background-image: url('/_assets/qnx/img/star.png');"></div>
-      {%- else %}
-        <div id="particles" class="particles text-white hidden fixed inset-0 z-[-1] opacity-10 motion-safe:(block)" aria-hidden="true"></div>
-        <div id="bg" class="bg-gradient-to-b from-transparent via-transparent to-gray-800 fixed inset-0 z-[-2]" aria-hidden="true"><div class="bg-(grid fixed) absolute inset-0"></div></div>
+      <div class="w-48 h-48 bg-(cover no-repeat) absolute -top-24 -left-24 rounded-full shadow-2xl sm:(w-64 h-64 -top-32 -left-32)" style="background-image: url('/_assets/qnx/img/star.png');"></div>
       {%- endif %}
+      <div id="particles" class="particles text-white hidden fixed inset-0 z-[-1] opacity-[.15] motion-safe:(block)" aria-hidden="true"></div>
+      <div id="bg" class="bg-gradient-to-b from-transparent via-transparent to-gray-800 fixed inset-0 z-[-2]" aria-hidden="true"><div class="bg-(grid fixed) absolute inset-0"></div></div>
 
       <header class="fixed right-0 top-0 z-20">
         <nav>
