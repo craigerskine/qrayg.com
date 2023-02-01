@@ -25,18 +25,18 @@ eleventyNavigation:
       </h1>
     </aside>
   </article>
-  {%- for group in gear %}
-  <section id="{{ group.category | slugify }}" class="mb-10 py-4 xl:(mb-32 py-8)">
+  {%- for group in collections.gear %}
+  <section id="{{ group.data.title | slugify }}" class="mb-10 py-4 xl:(mb-32 py-8)">
     <article>
-      <a href="#{{ group.category | slugify }}" class="text-{{ group.color }} mb-5 text-xl uppercase flex items-center">
-        <em class="mr-4 text-5xl"><i class="fa-fw {{ group.ico }}"></i></em>
-        <b class="tracking-widest flex-1 flex items-center justify-center"> <b class="font-black">{{ group.category }}</b> <b class="ml-4 border-(t current) flex-1 opacity-25"></b></b>
+      <a href="#{{ group.data.title | slugify }}" class="text-{{ group.data.color }} mb-5 text-xl uppercase flex items-center">
+        <em class="mr-4 text-5xl"><i class="fa-fw {{ group.data.ico }}"></i></em>
+        <b class="tracking-widest flex-1 flex items-center justify-center"> <b class="font-black">{{ group.data.title }}</b> <b class="ml-4 border-(t current) flex-1 opacity-25"></b></b>
       </a>
-      {%- if group.hardware %}
-      <ul class="grid-(& flow-row cols-1) gap-x-6 lg:(pl-16 grid-cols-2){% if group.category == 'Obsolete' %} line-through opacity-50{% endif %}">
-        {%- for hardware in group.hardware %}
+      {%- if group.data.hardware %}
+      <ul class="grid-(& flow-row cols-1) gap-x-6 lg:(pl-16 grid-cols-2){% if group.data.title == 'Obsolete' %} line-through opacity-50{% endif %}">
+        {%- for hardware in group.data.hardware %}
         <li class="flex">
-          <a href="{{ hardware.link }}" class="border-{{ group.color }} hover:bg-{{ group.color }} focus:bg-{{ group.color }} hover:text-{{ group.color }} focus:text-{{ group.color }} group py-3 px-5 border-(l b opacity-25) w-full bg-transparent motion-safe:(transition-all) hover:(border-l-4 bg-opacity-10) focus:(border-l-4 bg-opacity-10) md:(px-0 flex space-x-4)">
+          <a href="{{ hardware.link }}" class="border-{{ group.data.color }} hover:bg-{{ group.data.color }} focus:bg-{{ group.data.color }} hover:text-{{ group.data.color }} focus:text-{{ group.data.color }} group py-3 px-5 border-(l b opacity-25) w-full bg-transparent motion-safe:(transition-all) hover:(border-l-4 bg-opacity-10) focus:(border-l-4 bg-opacity-10) md:(px-0 flex space-x-4)">
             <b class="font-black tracking-wider uppercase block opacity-80 group-hover:(text-white) group-focus:(text-white) md:(w-1/4 text-right)">
               <b class="text-sm">{{ hardware.type }}</b>
               {% if hardware.soon %}
@@ -45,7 +45,7 @@ eleventyNavigation:
               </small>
               {%- endif %}
             </b>
-            <div class="border-{{ group.color }} mt-2 border w-2 h-2 rounded-full relative top-px hidden md:(block)"></div>
+            <div class="border-{{ group.data.color }} mt-2 border w-2 h-2 rounded-full relative top-px hidden md:(block)"></div>
             <i class="not-italic flex-1 md:(tracking-tight)">
               {{ hardware.name }}
               {%- if hardware.sub %}
