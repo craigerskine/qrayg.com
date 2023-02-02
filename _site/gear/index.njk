@@ -1,25 +1,38 @@
 ---
 layout: 'layouts/default.njk'
-title: 'qrayg''s Tech / Music - Gear / Setup'
+type1: Gear
+type2: Setup
+type3: Tech
+type4: Music
 eleventyNavigation:
   key: Gear
   icon: keyboard
   order: 5
+eleventyComputed:
+  title: '{{ type1 }} / {{ type2 }} : {{ type3 }} / {{ type4 }}'
 ---
 
 <section class="gear mx-auto pt-8 px-12 w-full max-w-screen-lg font-mono relative">
   <heading class="w-12 flex items-start fixed inset-y-0 left-0 overflow-y-auto">
-    <aside class="py-4 w-full flex-(& none) items-center gap-4 [writing-mode:vertical-lr]">
+    <aside class="py-4 w-full text-sm tracking-wider uppercase [writing-mode:vertical-lr] flex-(& none) items-center gap-4">
       <a href="/" class="motion-safe:(transition) hover:(text-white)">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" class="w-6 h-6 block">
-          <title>{{ site.meta.title }}</title>
+          <title>{{ site.meta.title }}'s</title>
           <g class="fill-current">
             <circle cx="98.1" cy="98.1" r="6" opacity=".5"></circle>
             <path d="M109.402699,94.0592724 C116.085856,84.3838 120,72.6489986 120,60 C120,26.862915 93.137085,0 60,0 C26.862915,0 0,26.862915 0,60 C0,93.137085 26.862915,120 60,120 C72.6489986,120 84.3838,116.085856 94.0592724,109.402699 C90.049715,107.969131 87.0258166,104.462602 86.278593,100.174129 C78.7292272,105.12235 69.7006692,108 60,108 C33.490332,108 12,86.509668 12,60 C12,33.490332 33.490332,12 60,12 C86.509668,12 108,33.490332 108,60 C108,69.7006692 105.12235,78.7292272 100.174122,86.2786024 C104.462602,87.0258166 107.969131,90.049715 109.402699,94.0592724 Z"></path>
           </g>
         </svg>
       </a>
-      <h1>{{ title }}</h1>
+      <h1 class="text-gray-50 flex-(& wrap) items-center gap-2">
+        <span>{{ type1 }}</span>
+        <i class="fa-light fa-fw fa-slash-forward fa-rotate-90 opacity-30"></i>
+        <span>{{ type2 }}</span>
+        <i class="fa-light fa-fw fa-colon fa-rotate-90 opacity-30"></i>
+        <span>{{ type3 }}</span>
+        <i class="fa-light fa-fw fa-slash-forward fa-rotate-90 opacity-30"></i>
+        <span>{{ type4 }}</span>
+      </h1>
     </aside>
   </heading>
   {%- for group in collections.gear %}

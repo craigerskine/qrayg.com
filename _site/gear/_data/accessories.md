@@ -1,5 +1,5 @@
 ---
-title: Accessories
+title: Office
 date: 0003-01-01
 ico: fa-thin fa-computer-speaker
 color: red-400
