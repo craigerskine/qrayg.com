@@ -8,7 +8,9 @@ eleventyNavigation:
   order: 4
 ---
 
-<section class="bg-cream text-(gray-900 xs) font-tahoma" x-data="qnx">
+{% setblock 'data' %}qnx{% endsetblock %}
+
+<section class="bg-cream text-(gray-900 xs) font-tahoma">
   <div class="bg-gradient-to-br from-qnx-cream to-[#BFB6A9] fixed inset-0">
     <div class="fixed inset-0 opacity-75" style="background-image: url(/_assets/qnx/img/bg-fabric.png);"></div>
   </div>
@@ -114,42 +116,45 @@ eleventyNavigation:
         </article>
       </section>
     </section>
-    <footer class="mt-auto pt-[6px] w-full bg-[#C0C0C0] flex items-center relative shadow-up">
-      <div class="border-(y-1 qnx-line) h-[6px] flex absolute top-0 inset-x-0 shadow"><div class="qnx-bevel"></div></div>
-      <div class="relative shadow">
-        <div class="qnx-bevel">
-          <ul class="pr-px flex">
-            <li class="border-(r qnx-line) flex md:(w-12)">
-              <div class="qnx-bevel">
-                <div class="group m-px py-1 px-2 w-full flex items-center justify-center relative motion-safe:transition md:(text-sm space-x-2)">
-                  <img src="/_assets/qnx/img/ico-qnx.png" alt="Launch" class="w-[16px] h-[16px] object-contain object-center" />
-                </div>
-              </div>
-            </li>
-            <template x-for="(entry, index) in entries">
-            <li class="border-(r qnx-line) flex">
-              <div class="qnx-bevel">
-                <div class="p-[2px] flex">
-                  <div class="qnx-bevel-sunk">
-                    <template x-if="qnxActive !== index">
-                      <div class="flex absolute inset-0"><div class="qnx-bevel"></div></div>
-                    </template>
-                    <a href="#" @click.prevent="qnxActive = index" :class="['group py-1 px-3 w-full flex items-center relative motion-safe:transition md:(text-sm space-x-2)', qnxActive === index ? 'bg-qnx-dark shadow-inner' : '']">
-                      <img :src="'/_assets/qnx/img/ico-'+ entry.ico +'.png'" :alt="entry.title" class="w-[16px] h-[16px] object-contain object-center opacity-50 motion-safe:transition group-hover:(opacity-100) group-focus:(opacity-100)" />
-                      <span class="hidden md:(inline-block)" x-text="entry.title"></span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </li>
-            </template>
-          </ul>
-        </div>
-      </div>
-      <p class="ml-auto px-2 text-center"><span class="hidden sm:(inline-block)">site by</span> <a href="/" class="font-bold motion-safe:transition hover:(text-blue-600) focus:(text-blue-600)">qrayg</a></p>
-    </footer>
   </div>
 </section>
+
+{% setblock 'footer' %}
+<footer class="mt-auto pt-[6px] w-full bg-[#C0C0C0] font-tahoma flex items-center relative shadow-up">
+  <div class="border-(y-1 qnx-line) h-[6px] flex absolute top-0 inset-x-0 shadow"><div class="qnx-bevel"></div></div>
+  <div class="relative shadow">
+    <div class="qnx-bevel">
+      <ul class="pr-px flex">
+        <li class="border-(r qnx-line) flex md:(w-12)">
+          <div class="qnx-bevel">
+            <div class="group m-px py-1 px-2 w-full flex items-center justify-center relative motion-safe:transition md:(text-sm space-x-2)">
+              <img src="/_assets/qnx/img/ico-qnx.png" alt="Launch" class="w-[16px] h-[16px] object-contain object-center" />
+            </div>
+          </div>
+        </li>
+        <template x-for="(entry, index) in entries">
+        <li class="border-(r qnx-line) flex">
+          <div class="qnx-bevel">
+            <div class="p-[2px] flex">
+              <div class="qnx-bevel-sunk">
+                <template x-if="qnxActive !== index">
+                  <div class="flex absolute inset-0"><div class="qnx-bevel"></div></div>
+                </template>
+                <a href="#" @click.prevent="qnxActive = index" :class="['group py-1 px-3 w-full flex items-center relative motion-safe:transition md:(text-sm space-x-2)', qnxActive === index ? 'bg-qnx-dark shadow-inner' : '']">
+                  <img :src="'/_assets/qnx/img/ico-'+ entry.ico +'.png'" :alt="entry.title" class="w-[16px] h-[16px] object-contain object-center opacity-50 motion-safe:transition group-hover:(opacity-100) group-focus:(opacity-100)" />
+                  <span class="hidden md:(inline-block)" x-text="entry.title"></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
+        </template>
+      </ul>
+    </div>
+  </div>
+  <p class="ml-auto px-2 text-sm"><span class="hidden sm:(inline-block)">site by</span> <a href="/" class="font-bold motion-safe:transition hover:(text-blue-600) focus:(text-blue-600)">qrayg</a></p>
+</footer>
+{% endsetblock %}
 
 {% setblock 'js' %}
 <script>
