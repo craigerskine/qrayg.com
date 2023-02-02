@@ -1,15 +1,17 @@
 ---
 layout: 'layouts/default.njk'
-type1: Gear
-type2: Setup
-type3: Tech
-type4: Music
+title: ''
+seg:
+  - Gear
+  - Setup
+  - Tech
+  - Music
 eleventyNavigation:
   key: Gear
   icon: keyboard
   order: 5
 eleventyComputed:
-  title: '{{ type1 }} / {{ type2 }} : {{ type3 }} / {{ type4 }}'
+  title: '{{ seg[0] }} / {{ seg[1] }} : {{ seg[2] }} / {{ seg[3] }}'
 ---
 
 <section class="gear mx-auto pt-8 px-12 w-full max-w-screen-lg font-mono relative">
@@ -24,14 +26,13 @@ eleventyComputed:
           </g>
         </svg>
       </a>
-      <h1 class="text-gray-50 flex-(& wrap) items-center gap-2">
-        <span>{{ type1 }}</span>
-        <i class="fa-light fa-fw fa-slash-forward fa-rotate-90 opacity-30"></i>
-        <span>{{ type2 }}</span>
-        <i class="fa-light fa-fw fa-colon fa-rotate-90 opacity-30"></i>
-        <span>{{ type3 }}</span>
-        <i class="fa-light fa-fw fa-slash-forward fa-rotate-90 opacity-30"></i>
-        <span>{{ type4 }}</span>
+      <h1 class="text-gray-50 flex items-center gap-2">
+        {%- for item in seg %}
+        <span>{{ item }}</span>
+        {%- if not loop.last %}
+        <i class="fa-light fa-fw fa-{% if loop.index == 2 %}colon{% else %}slash-forward{% endif %} fa-rotate-90 opacity-30"></i>
+        {%- endif %}
+        {%- endfor %}
       </h1>
     </aside>
   </heading>
