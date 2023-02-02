@@ -33,11 +33,11 @@ eleventyNavigation:
       <ul class="grid-(& flow-row cols-1) gap-x-6 lg:(pl-16 grid-cols-2){% if group.data.title == 'Obsolete' %} line-through opacity-50{% endif %}">
         {%- for hardware in group.data.hardware %}
         <li class="flex">
-          <a href="{{ hardware.link }}" class="border-{{ group.data.color }} hover:bg-{{ group.data.color }} focus:bg-{{ group.data.color }} hover:text-{{ group.data.color }} focus:text-{{ group.data.color }} group py-3 px-5 border-(l b opacity-25) w-full bg-transparent motion-safe:(transition-all) hover:(border-l-4 bg-opacity-10) focus:(border-l-4 bg-opacity-10) md:(px-0 flex space-x-4)">
-            <b class="font-black tracking-wider uppercase block opacity-80 group-hover:(text-white) group-focus:(text-white) md:(w-1/4 text-right)">
+          <a href="{{ hardware.link }}" class="group py-3 px-5 border-(l b {{ group.data.color }} opacity-25) w-full bg-transparent relative motion-safe:(transition-all) hover:(bg-({{ group.data.color }} opacity-10) text-{{ group.data.color }}) md:(px-0 flex space-x-4)">
+            <b class="font-black tracking-wider uppercase block opacity-80 group-hover:(text-white) md:(w-1/4 text-end)">
               <b class="text-sm">{{ hardware.type }}</b>
               {% if hardware.soon %}
-              <small class="uppercase leading-none tracking-wider flex justify-end">
+              <small class="uppercase leading-none tracking-wider flex md:(justify-end)">
                 <b class="px-1 py-px font-black text-yellow-300 ring-(1 current inset) block relative">Pending <b class="ring-(1 current inset) absolute inset-0 motion-safe:(animate-ping-sm) z-[-1]" aria-hidden="true"></b></b>
               </small>
               {%- endif %}
@@ -55,6 +55,7 @@ eleventyNavigation:
               </small>
               {%- endif %}
             </i>
+            <b class="!m-0 w-[4px] bg-{{ group.data.color }} absolute inset-y-0 left-0 transform scale-0 motion-safe:(transition) group-hover:(scale-100)"></b>
           </a>
         </li>
         {%- endfor %}
