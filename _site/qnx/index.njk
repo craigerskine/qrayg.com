@@ -126,11 +126,34 @@ eleventyNavigation:
     <div class="qnx-bevel">
       <ul class="pr-px flex">
         <li class="border-(r qnx-line) flex md:(w-12)">
-          <div class="qnx-bevel">
+          <a href="#" @click.prevent.stop="taskMenu = !taskMenu" :class="[taskMenu ? 'bg-qnx-dark qnx-bevel-sunk' : 'qnx-bevel']">
             <div class="group m-px py-1 px-2 w-full flex items-center justify-center relative motion-safe:transition md:(text-sm space-x-2)">
               <img src="/_assets/qnx/img/ico-qnx.png" alt="Launch" class="w-[16px] h-[16px] object-contain object-center" />
             </div>
-          </div>
+          </a>
+          <nav
+            x-show="taskMenu"
+            @click.outside="taskMenu = !taskMenu"
+            x-transition:enter-start="opacity-0 translate-y-3"
+            x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave-start="opacity-100 translate-y-0"
+            x-transition:leave-end="opacity-0 translate-y-3"
+            class="task-menu fixed left-1 bottom-12 shadow-xl motion-safe:transition-all">
+            <div class="w-[140px] leading-tight shadow-md">
+              <div class="border-(1 qnx-line)">
+                <div class="qnx-bevel">
+                  <ul class="pt-1.5 w-full relative">
+                    <li class="pb-1.5 px-1.5 border-(b qnx-dark)">
+                      <a href="/" class="group py-1 px-2 w-full bg-qnx-item flex items-center space-x-2 motion-safe:(transition) hover:(bg-qnx-theme) focus:(bg-qnx-theme)">
+                        <img src="/_assets/qnx/img/ico-window.png" alt="entry.title" class="w-[16px] h-[16px] object-contain object-center opacity-50 motion-safe:transition group-hover:(opacity-100) group-focus:(opacity-100)" />
+                        <span class="flex-1 text-xs">Site by qrayg</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </nav>
         </li>
         <template x-for="(entry, index) in entries">
         <li class="border-(r qnx-line) flex">
@@ -152,7 +175,6 @@ eleventyNavigation:
       </ul>
     </div>
   </div>
-  <p class="ml-auto px-2 text-sm"><span class="hidden sm:(inline-block)">site by</span> <a href="/" class="font-bold motion-safe:transition hover:(text-blue-600) focus:(text-blue-600)">qrayg</a></p>
 </footer>
 {% endsetblock %}
 
@@ -161,6 +183,7 @@ eleventyNavigation:
   document.addEventListener('alpine:init', () => {
     Alpine.data('qnx', () => ({
       qnxActive: 0,
+      taskMenu: false,
       entries: [
         {
           title: 'Skins',
