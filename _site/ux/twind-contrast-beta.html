@@ -97,17 +97,17 @@ permalink: /ux/twind-contrast-beta.html
         },
         methods: {
           slug: function(text) {
-            const a = 'àáâäæãåāăąçćčđďèéêëēėęěğǵḧîïíīįìıİłḿñńǹňôöòóœøōõőṕŕřßśšşșťțûüùúūǘůűųẃẍÿýžźż·/_,:;'
-            const b = 'aaaaaaaaaacccddeeeeeeeegghiiiiiiiilmnnnnoooooooooprrsssssttuuuuuuuuuwxyyzzz------'
-            const p = new RegExp(a.split('').join('|'), 'g')
-            return text.toString().toLowerCase()
-              .replace(/\s+/g, '-')                    // Replace spaces with -
-              .replace(p, c => b.charAt(a.indexOf(c))) // Replace special characters
-              .replace(/&/g, '-and-')                  // Replace & with 'and'
-              .replace(/[^\w\-]+/g, '')                // Remove all non-word characters
-              .replace(/\-\-+/g, '-')                  // Replace multiple - with single -
-              .replace(/^-+/, '')                      // Trim - from start of text
-              .replace(/-+$/, '')                      // Trim - from end of text
+            return text
+              .toString()
+              .toLowerCase()
+              .trim()
+              .replace(/\.+/g, '-')     // . to -
+              .replace(/\s+/g, '-')     // space to -
+              .normalize('NFKD')        // unicode normalization
+              .replace(/[^\w\-]+/g, '') // remove other crazy chars
+              .replace(/\-\-+/g, '-')   // multiple - to single -
+              .replace(/^-+/, '')       // remove - from start
+              .replace(/-+$/, '')       // remove - from end
           },
         },
       });
@@ -157,13 +157,14 @@ permalink: /ux/twind-contrast-beta.html
         plugins: {
           // typography
           ...twindTypography(),
-          // my custom stuff
+          // smooth anchors
           'scroll-smooth': { 'scroll-behavior': 'smooth' },
+          // bg + contrast fg var
           'bg-c': (parts, { theme }) => ({
             'background-color': 'rgba('+ tinycolor(theme('colors', parts)).toRgb().r +', '+ tinycolor(theme('colors', parts)).toRgb().g +', '+ tinycolor(theme('colors', parts)).toRgb().b +', var(--tw-bg-opacity, 1))',
             '--tw-contrast-color': tinycolor.mostReadable(theme('colors', parts), ['#FFF', '#111']).toRgbString(),
           }),
-          'text-contrast': { 'color': 'var(--tw-contrast-color)' },
+          'text-contrast': { 'color': 'var(--tw-contrast-color, currentColor)' },
         },
       })
       twind.tw(() => ({

@@ -106,17 +106,17 @@ permalink: /ux/twind-vue-themer.html
         },
         methods: {
           slug: function(text) {
-            const a = 'àáâäæãåāăąçćčđďèéêëēėęěğǵḧîïíīįìıİłḿñńǹňôöòóœøōõőṕŕřßśšşșťțûüùúūǘůűųẃẍÿýžźż·/_,:;'
-            const b = 'aaaaaaaaaacccddeeeeeeeegghiiiiiiiilmnnnnoooooooooprrsssssttuuuuuuuuuwxyyzzz------'
-            const p = new RegExp(a.split('').join('|'), 'g')
-            return text.toString().toLowerCase()
-              .replace(/\s+/g, '-')                    // Replace spaces with -
-              .replace(p, c => b.charAt(a.indexOf(c))) // Replace special characters
-              .replace(/&/g, '-and-')                  // Replace & with 'and'
-              .replace(/[^\w\-]+/g, '')                // Remove all non-word characters
-              .replace(/\-\-+/g, '-')                  // Replace multiple - with single -
-              .replace(/^-+/, '')                      // Trim - from start of text
-              .replace(/-+$/, '')                      // Trim - from end of text
+            return text
+              .toString()
+              .toLowerCase()
+              .trim()
+              .replace(/\.+/g, '-')     // . to -
+              .replace(/\s+/g, '-')     // space to -
+              .normalize('NFKD')        // unicode normalization
+              .replace(/[^\w\-]+/g, '') // remove other crazy chars
+              .replace(/\-\-+/g, '-')   // multiple - to single -
+              .replace(/^-+/, '')       // remove - from start
+              .replace(/-+$/, '')       // remove - from end
           },
         },
         computed: {
