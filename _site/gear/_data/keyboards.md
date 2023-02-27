@@ -27,6 +27,15 @@ hardware:
       - Silent Alpaca
     link: 'https://keychron.com/products/keychron-q2-qmk-custom-mechanical-keyboard'
   - type: KB
+    name: Keychron › K7 Pro
+    sub:
+      - 65%
+      - Hotswap
+      - RGB
+      - Red
+    link: 'https://keychron.com/products/keychron-k7-pro-qmk-via-wireless-custom-mechanical-keyboard'
+    soon: true
+  - type: KB
     name: Keychron › K7
     sub:
       - 65%
@@ -159,12 +168,12 @@ hardware:
       - Icono
       - Media Icons
     link: 'https://drop.com/buy/drop-biip-mt3-extended-custom-keycap-set'
-  - type: Caps
-    name: Plastic
-    sub:
-      - Clone
-      - XDA
-    link: 'https://amzn.com/dp/B08ZMR1651?tag=qrayg-20'
+  # - type: Caps
+  #   name: Plastic
+  #   sub:
+  #     - Clone
+  #     - XDA
+  #   link: 'https://amzn.com/dp/B08ZMR1651?tag=qrayg-20'
   - type: Caps
     name: GMK Dolch 2
     sub:
@@ -190,8 +199,7 @@ hardware:
     sub:
       - Extension
     link: 'https://cannonkeys.com/collections/group-buy/products/gb-domikey-ghost'
-  - soon: true
-    type: Caps
+  - type: Caps
     name: kam_superuser
     sub:
       - Mods Highlight
@@ -199,4 +207,5 @@ hardware:
       - Spacebars
       - Novelties
     link: 'https://novelkeys.com/products/kam-superuser'
+    soon: true
 ---
