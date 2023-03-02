@@ -34,7 +34,6 @@ hardware:
       - RGB
       - Red
     link: 'https://keychron.com/products/keychron-k7-pro-qmk-via-wireless-custom-mechanical-keyboard'
-    soon: true
   - type: KB
     name: Keychron › K7
     sub:
