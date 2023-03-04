@@ -54,7 +54,8 @@
         {% renderblock 'header' %}
         <nav class="fixed right-0 top-0 z-20">
           <a @click.prevent.stop="menu = !menu" href="#" class="menu-toggle w-12 h-12 flex items-center justify-center motion-safe:(transition-all)">
-            <i class="inline-block align-middle fa-regular fa-fw fa-stream"></i>
+            <i x-show="!menu" class="inline-block align-middle fa-regular fa-fw fa-stream"></i>
+            <i x-show="menu" class="inline-block align-middle fa-regular fa-fw fa-xmark"></i>
             <span class="sr-only">Toggle navigation</span>
           </a>
           <div
