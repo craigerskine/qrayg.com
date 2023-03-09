@@ -6,6 +6,13 @@ const markdownItAttrs = require("markdown-it-attrs");
 const yaml = require("js-yaml");
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.setDataFileBaseName('_data');
+
+  eleventyConfig.addPassthroughCopy({
+    '_site/_assets/qnx': '_assets/qnx',
+    '_site/_assets/twitch': '_assets/twitch',
+    '_site/_assets/_root': './',
+  });
   eleventyConfig.addPassthroughCopy('_site/_assets/twitch');
   eleventyConfig.addPassthroughCopy('_site/_assets/qnx');
   eleventyConfig.addPassthroughCopy({'_site/_assets/_root': './'});
