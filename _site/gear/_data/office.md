@@ -5,16 +5,16 @@ ico: fa-thin fa-computer-speaker
 color: red-400
 hardware:
   - type: Display 1
-    name: LG › 27GL83A-B
+    name: Spectrum › OLED
     sub:
       - 27"
-      - 144hz
-    link: 'https://amzn.com/dp/B07YGZL8XF?tag=qrayg-20'
+      - 240Hz
+    link: 'https://intl.dough.tech/products/spectrum-oled-qhd-240hz-gaming-monitor-es07e2d'
   - type: Display 2
     name: LG › 27GL83A-B
     sub:
       - 27"
-      - 144hz
+      - 144Hz
     link: 'https://amzn.com/dp/B07YGZL8XF?tag=qrayg-20'
   - type: Speakers
     name: Audioengine › A2+
