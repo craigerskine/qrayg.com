@@ -1,7 +1,7 @@
 ---
 title: PC
 date: 0001-01-01
-ico: fa-brands fa-windows
+ico: fa6-brands:windows
 color: blue-400
 hardware:
   - type: Case

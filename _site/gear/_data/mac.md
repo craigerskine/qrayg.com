@@ -1,7 +1,7 @@
 ---
 title: Mac
 date: 0002-01-01
-ico: fa-brands fa-apple
+ico: mdi:apple
 color: gray-300
 hardware:
   - type: Laptop

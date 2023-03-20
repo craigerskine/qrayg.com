@@ -1,7 +1,7 @@
 ---
 title: Music
 date: 0007-01-01
-ico: fa-thin fa-amp-guitar
+ico: mdi:music
 color: yellow-400
 hardware:
   - type: Guitar

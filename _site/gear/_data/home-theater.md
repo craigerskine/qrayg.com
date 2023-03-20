@@ -1,7 +1,7 @@
 ---
 title: Home Theater
 date: 0006-01-01
-ico: fa-thin fa-speakers
+ico: mdi:speaker
 color: pink-500
 hardware:
   - type: Living Room

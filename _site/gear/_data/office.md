@@ -1,7 +1,7 @@
 ---
 title: Office
 date: 0003-01-01
-ico: fa-thin fa-computer-speaker
+ico: mdi:desktop-tower
 color: red-400
 hardware:
   - type: Display 1

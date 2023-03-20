@@ -2,7 +2,7 @@
 layout: 'layouts/default.njk'
 eleventyNavigation:
   key: Home
-  icon: 'slash-forward'
+  icon: fa6-solid:angle-left
 ---
 
 <section class="landing m-auto text-center relative z-20 motion-safe:transition-all" x-data="social" x-init="socialLoop">
@@ -24,14 +24,7 @@ eleventyNavigation:
     <template x-for="(soc, index) in social">
     <li class="mx-3 md:mx-8" @mouseover="socialLoopPaused = true, socialActive = null" @mouseout="socialLoopPaused = false">
       <a :href="soc.url" :class="['w-8 h-8 flex relative motion-safe:(transition-all) md:(w-12 h-12) text-'+ soc.color, socialActive === (index + 1) ? 'active' : '']" :aria-label="soc.name">
-        <template x-if="soc.name !== 'Gumroad'">
-          <i :class="['m-auto inline-block align-middle fa-fw text-2xl md:(text-3xl)', soc.icon]" aria-hidden="true"></i>
-        </template>
-        <template x-if="soc.name == 'Gumroad'">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true" focusable="false" role="img" class="svg-inline--fa fa-w-16 fa-fw m-auto fill-current inline-block align-middle fa-fw text-2xl md:(text-3xl)">
-            <path d="m226.175328 461c-110.925333 0-176.175328-89.196961-176.175328-200.149878 0-115.302334 71.775063-208.850122 208.799984-208.850122 141.37533 0 189.226009 95.723247 191.399986 150.111226h-102.224652c-2.175341-30.45711-28.275339-76.143252-91.350675-76.143252-67.424654 0-110.924514 58.739306-110.924514 130.531776 0 71.792742 43.49986 130.531639 110.924514 130.531639 60.899996 0 86.999994-47.860919 97.875334-95.723202h-97.875334v-39.160174h205.375357v200.149878h-90.100024v-126.181267c-6.524659 45.686415-34.799998 134.883376-145.724648 134.883376z" />
-          </svg>
-        </template>
+        <iconify-icon :icon="soc.icon" inline="false" class="m-auto inline-block align-middle text-2xl md:(text-3xl)"></iconify-icon>
         <b></b>
       </a>
     </li>
@@ -50,11 +43,11 @@ eleventyNavigation:
   document.addEventListener('alpine:init', () => {
     Alpine.data('social', () => ({
       social: [
-        { name: 'Twitch', icon: 'fa-brands fa-twitch', color: 'purple-500', url: 'https://twitch.tv/qrayg/', },
-        { name: 'YouTube', icon: 'fa-brands fa-youtube', color: 'red-700', url: 'https://youtube.com/c/qrayg/', },
-        { name: 'Discord', icon: 'fa-brands fa-discord', color: 'indigo-500', url: 'https://discord.com/users/qrayg#0001', },
-        { name: 'Gumroad', icon: null, color: 'gray-600', url: 'https://qrayg.gumroad.com/', },
-        { name: 'Patreon', icon: 'fa-brands fa-patreon', color: 'red-400', url: 'https://patreon.com/qrayg/', },
+        { name: 'Twitch', icon: 'fa6-brands:twitch', color: 'purple-500', url: 'https://twitch.tv/qrayg/', },
+        { name: 'YouTube', icon: 'fa6-brands:youtube', color: 'red-700', url: 'https://youtube.com/c/qrayg/', },
+        { name: 'Discord', icon: 'fa6-brands:discord', color: 'indigo-500', url: 'https://discord.com/users/qrayg#0001', },
+        { name: 'Gumroad', icon: 'simple-icons:gumroad', color: 'gray-600', url: 'https://qrayg.gumroad.com/', },
+        { name: 'Patreon', icon: 'fa6-brands:patreon', color: 'red-400', url: 'https://patreon.com/qrayg/', },
       ],
       socialActive: null,
       socialLoopPaused: false,

@@ -1,7 +1,7 @@
 ---
 title: Keyboards
 date: 0004-01-01
-ico: fa-thin fa-keyboard
+ico: mdi:keyboard
 color: green-500
 hardware:
   - type: KB

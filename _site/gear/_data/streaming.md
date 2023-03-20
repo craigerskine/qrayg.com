@@ -1,7 +1,7 @@
 ---
 title: Streaming
 date: 0005-01-01
-ico: fa-thin fa-waveform-path
+ico: mdi:waveform
 color: purple-500
 hardware:
   - type: Capture

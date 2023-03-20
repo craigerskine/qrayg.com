@@ -8,7 +8,7 @@ seg:
   - Music
 eleventyNavigation:
   key: Gear
-  icon: keyboard
+  icon: fa6-regular:keyboard
   order: 5
 eleventyComputed:
   title: '{{ seg[0] }} / {{ seg[1] }} : {{ seg[2] }} / {{ seg[3] }}'
@@ -30,7 +30,7 @@ eleventyComputed:
       {%- for item in seg %}
       <span>{{ item }}</span>
       {%- if not loop.last %}
-      <i class="fa-light fa-fw fa-{% if loop.index == 2 %}colon{% else %}slash-forward{% endif %} fa-rotate-90 opacity-30"></i>
+      <b class="opacity-30" aria-hidden="true">{% if loop.index == 2 %} : {% else %} / {% endif %}</b>
       {%- endif %}
       {%- endfor %}
     </h1>
@@ -43,7 +43,7 @@ eleventyComputed:
   <section id="{{ group.data.title | slugify }}" class="mb-10 py-4 xl:(mb-32 py-8)">
     <article>
       <a href="#{{ group.data.title | slugify }}" class="text-{{ group.data.color }} mb-5 text-xl uppercase flex items-center">
-        <em class="mr-4 text-5xl"><i class="fa-fw {{ group.data.ico }}"></i></em>
+        <em class="mr-4 text-5xl"><iconify-icon icon="{{ group.data.ico }}" inline="false"></iconify-icon></em>
         <b class="tracking-widest flex-1 flex items-center justify-center"> <b class="font-black">{{ group.data.title }}</b> <b class="ml-4 border-(t current) flex-1 opacity-25"></b></b>
       </a>
       {%- if group.data.hardware %}
