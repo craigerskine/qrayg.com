@@ -53,9 +53,9 @@
       <header class="w-full">
         {% renderblock 'header' %}
         <nav class="fixed right-0 top-0 z-20">
-          <a @click.prevent.stop="menu = !menu" href="#" class="menu-toggle w-12 h-12 flex items-center justify-center motion-safe:(transition-all)">
-            <i x-show="!menu" class="inline-block align-middle"><iconify-icon icon="fa6-solid:bars-staggered" inline="false"></iconify-icon></i>
-            <i x-show="menu" class="inline-block align-middle"><iconify-icon icon="fa6-solid:xmark" inline="false"></iconify-icon></i>
+          <a @click.prevent.stop="menu = !menu" href="#" class="menu-toggle w-12 h-12 text-2xl leading-none flex items-center justify-center motion-safe:(transition-all)">
+            <i x-show="!menu"><iconify-icon icon="mdi:menu" width="1em" height="1em" inline="false"></iconify-icon></i>
+            <i x-show="menu"><iconify-icon icon="mdi:menu-close" width="1em" height="1em" inline="false"></iconify-icon></i>
             <span class="sr-only">Toggle navigation</span>
           </a>
           <div
@@ -66,11 +66,11 @@
             x-transition:leave-end="opacity-0 translate-x-8"
             @click.outside="menu = !menu"
             class="menu p-3 h-12 flex items-center fixed top-0 right-12 motion-safe:(transition-all)">
-            <ul class="text-lg font-normal flex gap-5 sm:(gap-8)">
+            <ul class="text-xl font-normal flex gap-5 sm:(gap-8)">
               {%- for item in collections.all | eleventyNavigation %}
               <li>
                 <a href="{{ item.url }}" class="{%- if page.url == '/qnx/' %}text-gray-900 hover:(opacity-70){%- else %}hover:(text-white){%- endif %} motion-safe:(transition)">
-                  <iconify-icon icon="{{ item.icon }}" inline="false"></iconify-icon>
+                  <iconify-icon icon="{{ item.icon }}" width="1em" height="1em" inline="false"></iconify-icon>
                 </a>
               </li>
               {%- endfor %}
@@ -83,11 +83,11 @@
         {{ content | safe }}
       </main>
 
-      {% renderblock 'footer' %}
+      {%- renderblock 'footer' %}
 
     </div>
 
-    {% renderblock 'js' %}
+    {%- renderblock 'js' %}
     <script src="/_assets/js/_app.js?v={% bust %}"></script>
 
   </body>
