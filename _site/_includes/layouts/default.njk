@@ -55,7 +55,7 @@
         <nav class="fixed right-0 top-0 z-20">
           <a @click.prevent.stop="menu = !menu" href="#" class="menu-toggle w-12 h-12 text-2xl leading-none flex items-center justify-center motion-safe:(transition-all)">
             <i x-show="!menu"><iconify-icon icon="mdi:menu" width="1em" height="1em" inline="false"></iconify-icon></i>
-            <i x-show="menu"><iconify-icon icon="mdi:menu-close" width="1em" height="1em" inline="false"></iconify-icon></i>
+            <i x-show="menu"><iconify-icon icon="mdi:menu-close" width="1em" height="1em" rotate="180deg" inline="false"></iconify-icon></i>
             <span class="sr-only">Toggle navigation</span>
           </a>
           <div
