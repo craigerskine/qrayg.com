@@ -16,6 +16,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('_site/_assets/twitch');
   eleventyConfig.addPassthroughCopy('_site/_assets/qnx');
   eleventyConfig.addPassthroughCopy({'_site/_assets/_root': './'});
+
+  eleventyConfig.addWatchTarget('./_site/_app/_app.js');
   
   eleventyConfig.addPlugin(EleventyRenderPlugin);
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
