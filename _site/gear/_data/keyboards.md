@@ -51,14 +51,6 @@ hardware:
       - Red
     link: https://keychron.com/pages/keychron-k14-wireless-mechanical-keyboard
   - type: KB
-    name: NuPhy › Air60
-    sub:
-      - 65%
-      - Hotswap
-      - RGB
-      - Brown
-    link: https://nuphy.com/collections/keyboards/products/air60
-  - type: KB
     name: MelGeek › Z70
     sub:
       - 65%
@@ -94,6 +86,14 @@ hardware:
       - 65%
       - Clicky
     link: https://morgrie.com/
+  - type: KB
+    name: NuPhy › Air60
+    sub:
+      - 60%
+      - Hotswap
+      - RGB
+      - Brown
+    link: https://nuphy.com/collections/keyboards/products/air60
   - type: KB
     name: Candybar
     sub:
