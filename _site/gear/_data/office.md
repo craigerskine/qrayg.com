@@ -9,33 +9,33 @@ hardware:
     sub:
       - 27"
       - 240Hz
-    link: 'https://intl.dough.tech/products/spectrum-oled-qhd-240hz-gaming-monitor-es07e2d'
+    link: https://intl.dough.tech/products/spectrum-oled-qhd-240hz-gaming-monitor-es07e2d
   - type: Display 2
     name: LG › 27GL83A-B
     sub:
       - 27"
       - 144Hz
-    link: 'https://amzn.com/dp/B07YGZL8XF?tag=qrayg-20'
+    link: https://amzn.com/dp/B07YGZL8XF?tag=qrayg-20
   - type: Speakers
     name: Audioengine › A2+
     sub:
       - + S1 Sub
-    link: 'https://amzn.com/dp/B07MYW4Q8S?tag=qrayg-20'
+    link: https://amzn.com/dp/B07MYW4Q8S?tag=qrayg-20
   - type: Headphones
     name: Bowers & Wilkins › PX-7
     sub:
       - Over Ear
-    link: 'https://amzn.com/dp/B07WK6SGZC?tag=qrayg-20'
+    link: https://amzn.com/dp/B07WK6SGZC?tag=qrayg-20
   - type: USB Switch
     name: UGreen › USB3 Switch
     sub:
       - 4x USB3
       - Mac ↔ PC
-    link: 'https://amzn.com/dp/B01N6GD9JO?tag=qrayg-20'
+    link: https://amzn.com/dp/B01N6GD9JO?tag=qrayg-20
   - type: Chair
     name: Steelcase › Reply Mesh
     sub:
       - Gray
       - Black
-    link: 'https://store.steelcase.com/Store/seating/office-chairs/reply-mesh-back-chair'
+    link: https://store.steelcase.com/Store/seating/office-chairs/reply-mesh-back-chair
 ---
