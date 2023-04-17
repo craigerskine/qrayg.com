@@ -16,7 +16,7 @@ hardware:
       - 2021
       - Custom 6
       - Fishman Fluence
-    link: https://craigerskine.github.io/prototypes/kiesel/order-sheet/
+    link: https://craigerskine.com/ux/proto-kiesel-itemization/
   - type: Guitar
     name: .strandberg* › Boden
     sub:
