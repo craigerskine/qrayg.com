@@ -15,7 +15,7 @@ eleventyComputed:
 ---
 
 {% setblock 'header' %}
-<div class="w-12 font-mono flex items-start fixed inset-y-0 left-0 overflow-y-auto">
+<div class="w-12 font-mono bg-black/30 flex items-start fixed inset-y-0 left-0 overflow-y-auto">
   <aside class="py-4 w-full text-sm tracking-wider uppercase [writing-mode:vertical-lr] flex-(& none) items-center gap-4">
     <a href="/" class="motion-safe:(transition) hover:(text-white)">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" class="w-6 h-6 block">
@@ -38,7 +38,7 @@ eleventyComputed:
 </div>
 {% endsetblock %}
 
-<section class="gear mx-auto pt-8 px-12 w-full max-w-screen-lg font-mono relative">
+<section class="gear mx-auto pt-8 px-16 w-full max-w-screen-lg font-mono relative">
   {%- for group in collections.gear %}
   <section id="{{ group.data.title | slugify }}" class="mb-10 py-4 xl:(mb-32 py-8)">
     <article>
