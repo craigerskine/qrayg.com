@@ -21,11 +21,10 @@ hardware:
       - Surround x2
     link: https://amzn.com/dp/B07W8ZVXWR?tag=qrayg-20
   - type: Office
-    name: Sonos › Sub
+    name: Sonos › Sub Mini
     sub:
       - Subwoofer
-    link: https://amzn.com/dp/B087CCZH4Q?tag=qrayg-20
-    soon: true
+    link: https://amzn.com/dp/B0BGJV72YM?tag=qrayg-20
   - type: Basement
     name: Marantz › NR1711
     sub:
