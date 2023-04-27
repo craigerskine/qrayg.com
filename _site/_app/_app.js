@@ -72,18 +72,19 @@ install({
   ],
 });
 
-injectGlobal({
-  // global
-  'html': { '@apply': 'bg-gray-900' },
-  'body': { '@apply': 'text-(gray-400 sm) font-sans !block' },
-  '.social a b': { '@apply': 'w-full h-full absolute top-0 left-0 index-10 opacity-0 rounded-full', },
-  '.social .active b,.social a:hover b,.social a:focus b': { '@apply': 'bg-current opacity-75 shadow-xl motion-safe:transition-all scale-150', },
-  '.social a iconify-icon': { '@apply': 'text-white opacity-50 relative z-20 motion-safe:transition-all', },
-  '.social .active,.social a:hover,.social a:focus': { '@apply': 'motion-safe:animate-blob', },
-  '.social .active iconify-icon,.social a:hover iconify-icon,.social a:focus iconify-icon': { '@apply': 'text-white opacity-100', },
-  '.qnx-bg-title': { '@apply': 'bg-gradient-to-b from-[#F7F7F7] to-[#9C9E9C]' },
-  '.qnx-bg-title-active': { '@apply': 'bg-gradient-to-b from-[#638ECE] to-[#396194]' },
-});
+injectGlobal`
+  @layer base {
+    html { @apply bg-gray-900; }
+    body { @apply text-(gray-400 sm) font-sans !block; }
+    .social a b { @apply w-full h-full absolute top-0 left-0 index-10 opacity-0 rounded-full; }
+    .social .active b,.social a:hover b,.social a:focus b { @apply bg-current opacity-75 shadow-xl motion-safe:transition-all scale-150; }
+    .social a iconify-icon { @apply text-white opacity-50 relative z-20 motion-safe:transition-all; }
+    .social .active,.social a:hover,.social a:focus { @apply motion-safe:animate-blob; }
+    .social .active iconify-icon,.social a:hover iconify-icon,.social a:focus iconify-icon { @apply text-white opacity-100; }
+    .qnx-bg-title { @apply bg-gradient-to-b from-[#F7F7F7] to-[#9C9E9C]; }
+    .qnx-bg-title-active { @apply bg-gradient-to-b from-[#638ECE] to-[#396194]; }
+  }
+`
 
 // particles
 import { tsParticles } from 'tsparticles-engine';
