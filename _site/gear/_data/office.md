@@ -26,12 +26,34 @@ hardware:
     sub:
       - Over Ear
     link: https://amzn.com/dp/B07WK6SGZC?tag=qrayg-20
+  - type: Cam
+    name: Opal › AI Webcam
+    sub:
+      - USB
+      - Black
+    link: https://opalcamera.com/
   - type: USB Switch
     name: UGreen › USB3 Switch
     sub:
       - 4x USB3
       - Mac ↔ PC
     link: https://amzn.com/dp/B01N6GD9JO?tag=qrayg-20
+  - type: Misc
+    name: LaMetric › Sky
+    sub:
+      - Smart Lighting
+    link: https://lametric.com/en-US/sky/
+  - type: Misc
+    name: LaMetric › Time
+    sub:
+      - Smart Clock
+    link: https://amzn.com/dp/B01IVTVK3W?tag=qrayg-20
+  - type: NAS
+    name: Argon › EON
+    sub:
+      - Pi4 8GB
+      - OpenMediaValut
+    link: https://amzn.com/dp/B09YXB7BX1?tag=qrayg-20
   - type: Chair
     name: Steelcase › Reply Mesh
     sub:

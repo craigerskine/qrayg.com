@@ -9,12 +9,6 @@ hardware:
     sub:
       - USB
     link: https://amzn.com/dp/B01DRWCOGA?tag=qrayg-20
-  - type: Cam
-    name: Opal › AI Webcam
-    sub:
-      - USB
-      - Black
-    link: https://opalcamera.com/
   - type: Mic
     name: Shure › MV7
     sub:
@@ -26,11 +20,6 @@ hardware:
     sub:
       - HDMI
     link: https://amzn.com/dp/B005HXFARS?tag=qrayg-20
-  - type: Misc
-    name: LaMetric › Time
-    sub:
-      - Smart Clock
-    link: https://amzn.com/dp/B01IVTVK3W?tag=qrayg-20
   - type: Game Room
     name: Web › pxl.media
     sub:

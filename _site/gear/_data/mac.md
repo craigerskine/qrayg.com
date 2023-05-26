@@ -24,7 +24,7 @@ hardware:
       - 1x USBC
       - SD/microSD
     link: https://amzn.com/dp/B07GX1WW47?tag=qrayg-20
-  - type: External SSD
+  - type: Ext SSD
     name: Samsung › T7
     sub:
       - 500GB
