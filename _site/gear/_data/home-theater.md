@@ -5,14 +5,26 @@ ico: mdi:speaker
 color: pink-500
 hardware:
   - type: Living Room
-    name: Sonos › Playbar
+    name: Sony › KD55X85K
+    sub:
+      - TV
+    link: https://amzn.com/dp/B09R9NT3FT?tag=qrayg-20
+  - type: Living Room
+    name: Sonos › Beam
     sub:
       - Soundbar
-    link: https://amzn.com/dp/B00AEMGGU2?tag=qrayg-20
+      - Gen 2
+    link: https://amzn.com/dp/B09GPYL7BJ?tag=qrayg-20
+  - type: Office
+    name: Sony › XBR43X800E
+    sub:
+      - TV
+    link: https://amzn.com/dp/B01MZFJWOS?tag=qrayg-20
   - type: Office
     name: Sonos › Beam
     sub:
       - Soundbar
+      - Gen 1
     link: https://amzn.com/dp/B09GPYL7BJ?tag=qrayg-20
   - type: Office
     name: Sonos › One SL
@@ -60,4 +72,14 @@ hardware:
       - Phono
       - Walnut
     link: https://amzn.com/dp/B07Z8NHNZZ?tag=qrayg-20
+  - type: Garage
+    name: Panasonic › TC-P50ST60
+    sub:
+      - TV
+    link: https://amzn.com/dp/B00AVRJK3K?tag=qrayg-20
+  - type: Garage
+    name: Sonos › Playbar
+    sub:
+      - Soundbar
+    link: https://amzn.com/dp/B00AEMGGU2?tag=qrayg-20
 ---
