@@ -62,10 +62,10 @@ hardware:
       - Speakers
     link: https://amzn.com/dp/B07FKH3VPV?tag=qrayg-20
   - type: Basement
-    name: Yamaha › YST-SW90
+    name: Audioengine › S8
     sub:
       - Subwoofer
-    link: https://amzn.com/dp/B00FRET3RA?tag=qrayg-20
+    link: https://amzn.com/dp/B0013J1DI0?tag=qrayg-20
   - type: Basement
     name: Pro-Ject › T1
     sub:

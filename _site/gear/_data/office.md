@@ -19,7 +19,7 @@ hardware:
   - type: Speakers
     name: Audioengine › A2+
     sub:
-      - + S1 Sub
+      - + S6 Sub
     link: https://amzn.com/dp/B07MYW4Q8S?tag=qrayg-20
   - type: Headphones
     name: Bowers & Wilkins › PX-7
