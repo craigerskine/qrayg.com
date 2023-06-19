@@ -49,11 +49,11 @@ hardware:
       - Smart Clock
     link: https://amzn.com/dp/B01IVTVK3W?tag=qrayg-20
   - type: NAS
-    name: Argon › EON
+    name: Synology › DS416slim
     sub:
-      - Pi4 8GB
-      - OpenMediaValut
-    link: https://amzn.com/dp/B09YXB7BX1?tag=qrayg-20
+      - 4 Bays
+      - 2 TB
+    link: https://amzn.com/dp/B00LB0E9B4?tag=qrayg-20
   - type: Chair
     name: Steelcase › Reply Mesh
     sub:
