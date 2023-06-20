@@ -5,12 +5,6 @@ ico: mdi:guitar-electric
 color: yellow-400
 hardware:
   - type: Guitar
-    name: Ibanez › QX52
-    sub:
-      - 2021
-      - Black
-    link: https://amzn.com/dp/B09JGQ3WWR?tag=qrayg-20
-  - type: Guitar
     name: Kiesel › Vader
     sub:
       - 2021
@@ -24,6 +18,13 @@ hardware:
       - Metal 6
       - Black Pearl
     link: https://strandbergguitars.com/product-category/family/boden-metal/
+  - type: Guitar
+    name: Ibanez › QX52
+    sub:
+      - 2021
+      - Black
+      - Fishman Fluence Mod
+    link: https://amzn.com/dp/B09JGQ3WWR?tag=qrayg-20
   - type: Amp
     name: Positive Grid › Spark 40
     sub:
