@@ -15,6 +15,12 @@ hardware:
       - Soundbar
       - Gen 2
     link: https://amzn.com/dp/B09GPYL7BJ?tag=qrayg-20
+  - type: Living Room
+    name: Sonos › One SL
+    sub:
+      - Rear
+      - Surround x2
+    link: https://amzn.com/dp/B07W8ZVXWR?tag=qrayg-20
   - type: Office
     name: Sony › XBR43X800E
     sub:
@@ -38,34 +44,21 @@ hardware:
       - Subwoofer
     link: https://amzn.com/dp/B0BGJV72YM?tag=qrayg-20
   - type: Basement
-    name: Marantz › NR1711
+    name: Sony › KDL40V4100
     sub:
-      - AV Receiver
-      - Black
-    link: https://amzn.com/dp/B0786M9ZZS?tag=qrayg-20
+      - TV
+    link: https://www.crutchfield.com/S-486JN9Njsnm/p_15840V4100/Sony-KDL-40V4100.html
   - type: Basement
-    name: Wharfedale › EM 95
+    name: Sonos › Playbar
     sub:
-      - Front
-      - Speakers
-    link: https://amzn.com/dp/B00004SY59?tag=qrayg-20
+      - Soundbar
+    link: https://amzn.com/dp/B00AEMGGU2?tag=qrayg-20
   - type: Basement
-    name: Klipsch › R-52C
-    sub:
-      - Center
-      - Speaker
-    link: https://amzn.com/dp/B07FK41FGL?tag=qrayg-20
-  - type: Basement
-    name: Klipsch › R-41M
+    name: Sonos › Play 1
     sub:
       - Rear
-      - Speakers
-    link: https://amzn.com/dp/B07FKH3VPV?tag=qrayg-20
-  - type: Basement
-    name: Audioengine › S8
-    sub:
-      - Subwoofer
-    link: https://amzn.com/dp/B0013J1DI0?tag=qrayg-20
+      - Surround x2
+    link: https://amzn.com/dp/B07W8ZVXWR?tag=qrayg-20
   - type: Basement
     name: Pro-Ject › T1
     sub:
@@ -77,9 +70,4 @@ hardware:
     sub:
       - TV
     link: https://amzn.com/dp/B00AVRJK3K?tag=qrayg-20
-  - type: Garage
-    name: Sonos › Playbar
-    sub:
-      - Soundbar
-    link: https://amzn.com/dp/B00AEMGGU2?tag=qrayg-20
 ---

@@ -214,5 +214,4 @@ hardware:
       - Spacebars
       - Novelties
     link: https://novelkeys.com/products/kam-superuser
-    soon: true
 ---
