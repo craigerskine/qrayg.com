@@ -15,17 +15,17 @@ hardware:
     sub:
       - 27"
       - 144Hz
-    link: https://amzn.com/dp/B07YGZL8XF?tag=qrayg-20
+    link: https://amazon.com/dp/B07YGZL8XF?tag=qrayg-20
   - type: Speakers
     name: Audioengine › A2+
     sub:
       - + S6 Sub
-    link: https://amzn.com/dp/B07MYW4Q8S?tag=qrayg-20
+    link: https://amazon.com/dp/B07MYW4Q8S?tag=qrayg-20
   - type: Headphones
     name: Bowers & Wilkins › PX-7
     sub:
       - Over Ear
-    link: https://amzn.com/dp/B07WK6SGZC?tag=qrayg-20
+    link: https://amazon.com/dp/B07WK6SGZC?tag=qrayg-20
   - type: Cam
     name: Opal › AI Webcam
     sub:
@@ -37,7 +37,7 @@ hardware:
     sub:
       - 4x USB3
       - Mac ↔ PC
-    link: https://amzn.com/dp/B01N6GD9JO?tag=qrayg-20
+    link: https://amazon.com/dp/B01N6GD9JO?tag=qrayg-20
   - type: Misc
     name: LaMetric › Sky
     sub:
@@ -47,13 +47,13 @@ hardware:
     name: LaMetric › Time
     sub:
       - Smart Clock
-    link: https://amzn.com/dp/B01IVTVK3W?tag=qrayg-20
+    link: https://amazon.com/dp/B01IVTVK3W?tag=qrayg-20
   - type: NAS
     name: Synology › DS416slim
     sub:
       - 4 Bays
       - 2 TB
-    link: https://amzn.com/dp/B00LB0E9B4?tag=qrayg-20
+    link: https://amazon.com/dp/B00LB0E9B4?tag=qrayg-20
   - type: Chair
     name: Steelcase › Reply Mesh
     sub:

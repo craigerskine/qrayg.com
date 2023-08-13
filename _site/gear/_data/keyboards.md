@@ -10,7 +10,7 @@ hardware:
       - 100%
       - Space Gray
       - Touch ID
-    link: https://amzn.com/dp/B09V3JXSS9?tag=qrayg-20
+    link: https://amazon.com/dp/B09V3JXSS9?tag=qrayg-20
   - type: KB
     name: GMMK › Pro
     sub:
@@ -79,7 +79,7 @@ hardware:
       - White
       - Topre Silent
       - Extended2048
-    link: https://amzn.com/dp/B07QKXC6WC?tag=qrayg-20
+    link: https://amazon.com/dp/B07QKXC6WC?tag=qrayg-20
   - type: KB
     name: Morgrie
     sub:
@@ -137,7 +137,7 @@ hardware:
       - 40%
       - Cherry Blue
       - Bamboo
-    link: https://amzn.com/dp/B01MS3PWS0?tag=qrayg-20
+    link: https://amazon.com/dp/B01MS3PWS0?tag=qrayg-20
   - type: KB
     name: MiniVan › KUMO
     sub:
@@ -180,7 +180,7 @@ hardware:
     sub:
       - Clone
       - XDA
-    link: https://amzn.com/dp/B08ZMR1651?tag=qrayg-20
+    link: https://amazon.com/dp/B08ZMR1651?tag=qrayg-20
   - type: Caps
     name: GMK Dolch 2
     sub:

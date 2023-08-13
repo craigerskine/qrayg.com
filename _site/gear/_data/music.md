@@ -24,12 +24,12 @@ hardware:
       - 2021
       - Black
       - Fishman Fluence Mod
-    link: https://amzn.com/dp/B09JGQ3WWR?tag=qrayg-20
+    link: https://amazon.com/dp/B09JGQ3WWR?tag=qrayg-20
   - type: Amp
     name: Positive Grid › Spark 40
     sub:
       - 40 watt
-    link: https://amzn.com/dp/B08HQCG79H?tag=qrayg-20
+    link: https://amazon.com/dp/B08HQCG79H?tag=qrayg-20
   - type: Amp
     name: Positive Grid › Spark MINI
     sub:
@@ -39,7 +39,7 @@ hardware:
     name: HeadRush › FRFR-108
     sub:
       - 2000 watt
-    link: https://amzn.com/dp/B07M7JNZNX?tag=qrayg-20
+    link: https://amazon.com/dp/B07M7JNZNX?tag=qrayg-20
   - type: Modeling
     name: Neural DSP › Quad Cortex
     sub:
@@ -55,10 +55,10 @@ hardware:
     name: Arturia › Keystep
     sub:
       - MIDI Controller
-    link: https://amzn.com/dp/B01BPSBU40?tag=qrayg-20
+    link: https://amazon.com/dp/B01BPSBU40?tag=qrayg-20
   - type: Interface
     name: AXE › I/O Solo
     sub:
       - + Amplitube
-    link: https://amzn.com/dp/B085JDFLLD?tag=qrayg-20
+    link: https://amazon.com/dp/B085JDFLLD?tag=qrayg-20
 ---
