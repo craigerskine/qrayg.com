@@ -55,9 +55,9 @@ hardware:
       - 2 TB
     link: https://amazon.com/dp/B00LB0E9B4?tag=qrayg-20
   - type: Chair
-    name: Steelcase › Reply Mesh
+    name: HINOMI › H1 Classic #Steelcase › Reply Mesh
     sub:
-      - Gray
+      #- Gray
       - Black
-    link: https://store.steelcase.com/Store/seating/office-chairs/reply-mesh-back-chair
+    link: https://hinomi.co/products/hinomi-h1-classic-ergonomic-office-chair
 ---
