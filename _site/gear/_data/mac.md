@@ -13,10 +13,15 @@ hardware:
       - 8-core
     link: https://amazon.com/dp/B09JQL8KP9?tag=qrayg-20
   - type: Dock
-    name: Brydge › Stone Pro
+    name: CalDigit › TS4
     sub:
-      - Thunderbolt 3
-    link: https://amazon.com/dp/B08G9WDH6B?tag=qrayg-20
+      - Thunderbolt 4
+    link: https://amazon.com/dp/B09GK8LBWS?tag=qrayg-20
+  # - type: Dock
+  #   name: Brydge › Stone Pro
+  #   sub:
+  #     - Thunderbolt 3
+  #   link: https://amazon.com/dp/B08G9WDH6B?tag=qrayg-20
   - type: Hub
     name: Satechi › Stand
     sub:
