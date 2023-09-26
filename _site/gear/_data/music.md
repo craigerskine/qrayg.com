@@ -45,7 +45,12 @@ hardware:
     sub:
       - USB
     link: https://www.sweetwater.com/store/detail/QuadCortex--neural-dsp-quad-cortex-quad-core-digital-effects-modeler-profiler-floorboard
-  - type: Plugins
+  - type: Plugin
+    name: PolyChrome › DSP
+    sub:
+      - McRocklin Suite
+    link: https://polychromedsp.com/
+  - type: Plugin
     name: Neural DSP › Archetype
     sub:
       - Petrucci
@@ -56,9 +61,9 @@ hardware:
     sub:
       - MIDI Controller
     link: https://amazon.com/dp/B01BPSBU40?tag=qrayg-20
-  - type: Interface
-    name: AXE › I/O Solo
-    sub:
-      - + Amplitube
-    link: https://amazon.com/dp/B085JDFLLD?tag=qrayg-20
+  # - type: Interface
+  #   name: AXE › I/O Solo
+  #   sub:
+  #     - + Amplitube
+  #   link: https://amazon.com/dp/B085JDFLLD?tag=qrayg-20
 ---

@@ -27,11 +27,17 @@ hardware:
       - Over Ear
     link: https://amazon.com/dp/B07WK6SGZC?tag=qrayg-20
   - type: Cam
-    name: Opal › AI Webcam
+    name: Insta360 › Link
     sub:
       - USB
-      - Black
-    link: https://opalcamera.com/
+      - AI
+    link: https://amazon.com/dp/B0B826KS4B?tag=qrayg-20
+  # - type: Cam
+  #   name: Opal › AI Webcam
+  #   sub:
+  #     - USB
+  #     - Black
+  #   link: https://opalcamera.com/
   - type: USB Switch
     name: UGreen › USB3 Switch
     sub:
