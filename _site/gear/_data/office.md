@@ -64,7 +64,7 @@ hardware:
     name: Synology › DS620slim
     sub:
       - 6 Bays
-      - 2 TB
+      - 8GB Crucial Ram
     link: https://amazon.com/dp/B07V6CC4M2?tag=qrayg-20
   # - type: NAS
   #   name: Synology › DS416slim
