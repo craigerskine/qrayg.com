@@ -38,6 +38,12 @@ hardware:
   #     - USB
   #     - Black
   #   link: https://opalcamera.com/
+  # - type: Cam
+  #   name: Lumina › AI Webcam
+  #   sub:
+  #     - USB
+  #     - Atomic Grey
+  #   link: https://amazon.com/dp/B09T74FDVJ?tag=qrayg-20
   - type: USB Switch
     name: UGreen › USB3 Switch
     sub:
@@ -55,11 +61,17 @@ hardware:
       - Smart Clock
     link: https://amazon.com/dp/B01IVTVK3W?tag=qrayg-20
   - type: NAS
-    name: Synology › DS416slim
+    name: Synology › DS620slim
     sub:
-      - 4 Bays
+      - 6 Bays
       - 2 TB
-    link: https://amazon.com/dp/B00LB0E9B4?tag=qrayg-20
+    link: https://amazon.com/dp/B07V6CC4M2?tag=qrayg-20
+  # - type: NAS
+  #   name: Synology › DS416slim
+  #   sub:
+  #     - 4 Bays
+  #     - 2 TB
+  #   link: https://amazon.com/dp/B00LB0E9B4?tag=qrayg-20
   - type: Chair
     name: HINOMI › H1 Classic #Steelcase › Reply Mesh
     sub:
