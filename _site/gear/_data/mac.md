@@ -23,15 +23,22 @@ hardware:
   #     - Thunderbolt 3
   #   link: https://amazon.com/dp/B08G9WDH6B?tag=qrayg-20
   - type: Hub
-    name: Satechi › Stand
+    name: Sabrent › USB
     sub:
-      - 3x USB3
-      - 1x USBC
-      - SD/microSD
-    link: https://amazon.com/dp/B07GX1WW47?tag=qrayg-20
+      - 16 Ports
+      - 90 Watts
+    link: https://amazon.com/dp/B07KHRLSTT?tag=qrayg-20
+  # - type: Hub
+  #   name: Satechi › Stand
+  #   sub:
+  #     - 3x USB3
+  #     - 1x USBC
+  #     - SD/microSD
+  #   link: https://amazon.com/dp/B07GX1WW47?tag=qrayg-20
   - type: Ext SSD
     name: Samsung › T7
     sub:
+      - 2TB
       - 500GB
     link: https://amazon.com/dp/B0874XN4D8?tag=qrayg-20
 ---
