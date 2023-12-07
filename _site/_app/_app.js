@@ -26,10 +26,10 @@ install({
         'qnx-line': '#484848',
       }),
       fontFamily: ({ theme }) => ({
-        sans: 'Inter,'+ theme('fontFamily.sans'),
-        mono: 'Inconsolata,'+ theme('fontFamily.mono'),
-        roboto: 'Roboto Mono,'+ theme('fontFamily.mono'),
-        tahoma: 'Tahoma,'+ theme('fontFamily.sans'),
+        sans: ['Inter', ...theme('fontFamily.sans')],
+        mono: ['Inconsolata', ...theme('fontFamily.mono')],
+        roboto: ['Roboto Mono', ...theme('fontFamily.mono')],
+        tahoma: ['Tahoma', ...theme('fontFamily.sans')],
       }),
       boxShadow: {
         'up': '0 -5px 15px 0 rgba(0,0,0,.2)',
