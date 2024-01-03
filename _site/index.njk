@@ -30,12 +30,9 @@ eleventyNavigation:
     </li>
     </template>
   </ul>
-  <p x-show="streamState == 'start' || streamState == 'end'" class="message mb-16 pt-8 text(4xl center) opacity-50">
-    <b class="font-black">
-      <template x-if="streamState == 'start'"><span>Stream starting soon!, It won't be long now...</span></template>
-      <template x-if="streamState == 'end'"><span>Thanks for watching!, Come back soon...</span></template>
-    </b>
-  </p>
+  <h2 x-show="streamState == 'start' || streamState == 'end'" class="message mb-16 pt-8 text-(4xl center) opacity-50">
+    <b class="font-black" x-text="streamState == 'start' ? 'Stream starting soon! It won\'t be long now...' : 'Stream Ended! Thanks for watching...'"></b>
+  </h2>
 </section>
 
 {% setblock 'js' %}

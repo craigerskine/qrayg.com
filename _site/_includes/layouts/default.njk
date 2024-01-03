@@ -70,6 +70,7 @@
               {%- for item in collections.all | eleventyNavigation %}
               <li>
                 <a href="{{ item.url }}" class="{%- if page.url == '/qnx/' %}text-gray-900 hover:(opacity-70){%- else %}hover:(text-white){%- endif %} motion-safe:(transition)">
+                  <b class="sr-only">{{ item.title }}</b>
                   <iconify-icon icon="{{ item.icon }}" width="1em" height="1em" inline="false"></iconify-icon>
                 </a>
               </li>
