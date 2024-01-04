@@ -86,6 +86,7 @@ hardware:
     name: Morgrie
     sub:
       - 65%
+      - White
       - Clicky
     link: https://store.morgrie.com/
   - type: KB
