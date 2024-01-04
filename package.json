@@ -24,7 +24,6 @@
     "instant.page": "^5.1.1",
     "js-yaml": "^4.1.0",
     "markdown-it-attrs": "^4.1.6",
-    "tsparticles": "^2.9.3",
-    "tsparticles-engine": "^2.9.3"
+    "particles.js": "^2.0.0"
   }
 }

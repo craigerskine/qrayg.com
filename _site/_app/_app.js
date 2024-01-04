@@ -8,7 +8,6 @@ import 'iconify-icon';
 import { install, injectGlobal } from '@twind/core';
 import presetAutoprefix from '@twind/preset-autoprefix';
 import presetTailwind from '@twind/preset-tailwind';
-
 install({
   presets: [presetAutoprefix(), presetTailwind()],
   darkMode: 'class',
@@ -71,7 +70,6 @@ install({
     [ 'qnx-bevel-sunk', { '@apply': 'bg-qnx-base border border-t-qnx-dark border-l-qnx-dark border-b-qnx-light border-r-qnx-light flex-1 flex relative' } ],
   ],
 });
-
 injectGlobal`
   @layer base {
     .social a b { @apply w-full h-full absolute top-0 left-0 index-10 opacity-0 rounded-full; }
@@ -84,18 +82,16 @@ injectGlobal`
   }
 `
 
-// particles
-import { tsParticles } from 'tsparticles-engine';
-import { loadFull } from 'tsparticles';
-import pOptions from '../_app/configs/particles.json';
-loadFull(tsParticles);
+// particles - https://github.com/VincentGarreau/particles.js/
+import 'particles.js';
+import particlesOptions from '../_app/configs/particles.json';
 if(document.querySelector('#particles')) {
-  tsParticles.load('particles', pOptions);
+  particlesJS('particles', particlesOptions, function() {
+    // callback
+  });
 }
-
 
 // alpinejs
 import Alpine from 'alpinejs';
 window.Alpine = Alpine;
-
 Alpine.start();
