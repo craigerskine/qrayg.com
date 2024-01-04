@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="antialiased" x-data="{ menu: false }">
+<html lang="en" class="bg-transparent antialiased" x-data="{ menu: false }">
 
   <head>
     <meta charset="utf-8" />
@@ -40,7 +40,7 @@
 
   </head>
 
-  <body class="text-base {% if page.url === '/qnx/' %}bg-cream text-(gray-900 xs) font-tahoma{% else %}text-gray-400{%- endif %}" style="display: none;" data-instant-intensity="mousedown">
+  <body class="!block {% if page.url === '/qnx/' %}bg-cream text-(gray-900 xs) font-tahoma{% else %}bg-gray-900 text-(gray-400 sm) font-sans{%- endif %}" style="display: none;" data-instant-intensity="mousedown">
     <div class="app w-full min-h-screen flex-(& col) relative" x-data="{% renderblock 'data' -%}">
 
       {%- if page.url === '/qnx/' %}

@@ -74,8 +74,6 @@ install({
 
 injectGlobal`
   @layer base {
-    html { @apply bg-gray-900; }
-    body { @apply text-(gray-400 sm) font-sans !block; }
     .social a b { @apply w-full h-full absolute top-0 left-0 index-10 opacity-0 rounded-full; }
     .social .active b,.social a:hover b,.social a:focus b { @apply bg-current opacity-75 shadow-xl motion-safe:transition-all scale-150; }
     .social a iconify-icon { @apply text-white opacity-50 relative z-20 motion-safe:transition-all; }
