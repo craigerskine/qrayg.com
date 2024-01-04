@@ -2,7 +2,9 @@
 title: Home Theater
 date: 0006-01-01
 ico: mdi:speaker
-color: pink-500
+color:
+  title: pink
+  shade: 500
 hardware:
   - type: Living Room
     name: Sony › KD55X85K

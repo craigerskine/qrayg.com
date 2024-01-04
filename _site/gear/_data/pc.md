@@ -2,7 +2,9 @@
 title: PC
 date: 0001-01-01
 ico: fa6-brands:windows
-color: blue-400
+color:
+  title: blue
+  shade: 400
 hardware:
   - type: Case
     name: SSUPD › Meshlicious

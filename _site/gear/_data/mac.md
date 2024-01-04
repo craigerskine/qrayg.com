@@ -2,7 +2,9 @@
 title: Mac
 date: 0002-01-01
 ico: mdi:apple
-color: gray-300
+color:
+  title: gray
+  shade: 300
 hardware:
   - type: Laptop
     name: MacBook › Pro

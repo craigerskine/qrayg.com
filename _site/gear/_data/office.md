@@ -2,7 +2,9 @@
 title: Office
 date: 0003-01-01
 ico: mdi:desktop-tower
-color: red-400
+color:
+  title: red
+  shade: 400
 hardware:
   - type: Display 1
     name: Spectrum › OLED

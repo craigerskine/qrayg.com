@@ -2,7 +2,9 @@
 title: Music
 date: 0007-01-01
 ico: mdi:guitar-electric
-color: yellow-400
+color:
+  title: yellow
+  shade: 400
 hardware:
   - type: Guitar
     name: Kiesel › Vader

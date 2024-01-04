@@ -16,7 +16,7 @@ eleventyNavigation:
     <b class="font-black text-2xl leading-none">Twitch Chat <small class="text-base block opacity-80">Popout Launcher</small></b>
     <b class="py-px flex-1 bg-purple-500 bg-opacity-50"></b>
   </h1>
-  <fieldset class="py-8 relative">
+  <div class="py-8 relative">
     <label class="w-10 h-10 flex items-center justify-center absolute top-1/2 left-0 transform -translate-y-5" for="u"><b class="relative z-20">@</b></label>
     <input
       required
@@ -29,7 +29,7 @@ eleventyNavigation:
       @keyup.enter="twitchUser.length ? pop('https://twitch.tv/popout/'+ twitchUser.toString().toLowerCase() +'/chat', 'chat-'+ twitchUser.toString().toLowerCase()) : null"
       @keydown.space.prevent
     />
-  </fieldset>
+  </div>
   <ul class="list-favs list-none text-xs font-bold flex space-x-2">
     <li class="my-1 py-1 opacity-75"><small class="uppercase">Favs:</small></li>
     <li class="flex-1">

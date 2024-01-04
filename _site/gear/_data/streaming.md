@@ -2,7 +2,9 @@
 title: Streaming
 date: 0005-01-01
 ico: mdi:waveform
-color: purple-500
+color:
+  title: purple
+  shade: 500
 hardware:
   - type: Capture
     name: Elgato › HD60 S

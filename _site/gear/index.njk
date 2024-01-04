@@ -17,7 +17,7 @@ eleventyComputed:
 {% setblock 'header' %}
 <div class="border-(r gray-500/20) w-12 bg-black/30 font-mono flex items-start fixed inset-y-0 left-0 overflow-y-auto">
   <aside class="py-4 w-full text-sm tracking-wider font-semibold uppercase [writing-mode:vertical-lr] flex-(& none) items-center gap-4">
-    <a href="/" class="motion-safe:(transition) hover:(text-white)">
+    <a href="/../" class="motion-safe:(transition) hover:(text-white)">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" class="w-6 h-6 block">
         <title>{{ site.meta.title }}'s</title>
         <g class="fill-current">
@@ -42,7 +42,7 @@ eleventyComputed:
   {%- for group in collections.gear %}
   <section id="{{ group.data.title | slugify }}" class="mb-10 py-4 xl:(mb-32 py-8)">
     <article>
-      <a href="#{{ group.data.title | slugify }}" class="text-{{ group.data.color }} mb-5 text-xl uppercase flex items-center">
+      <a href="#{{ group.data.title | slugify }}" class="text-{{ group.data.color.title +'-'+ group.data.color.shade }} mb-5 text-xl uppercase flex items-center">
         <em class="mr-4 text-5xl"><iconify-icon icon="{{ group.data.ico }}" inline="false"></iconify-icon></em>
         <b class="tracking-widest flex-1 flex items-center justify-center"> <b class="font-black">{{ group.data.title }}</b> <b class="ml-4 border-(t current) flex-1 opacity-25"></b></b>
       </a>
@@ -50,19 +50,24 @@ eleventyComputed:
       <ul class="grid-(& flow-row cols-1) gap-x-6 lg:(pl-16 grid-cols-2){% if group.data.title == 'Obsolete' %} line-through opacity-50{% endif %}">
         {%- for hardware in group.data.hardware %}
         <li class="flex">
-          <a href="{{ hardware.link }}" class="group py-3 px-5 border-(l b {{ group.data.color }}/25) w-full relative motion-safe:(transition) hover:(text-{{ group.data.color }}) md:(px-0 flex space-x-4)">
-            <b class="w-0 bg-transparent absolute left-0 inset-y-0 motion-safe:(transition-all duration-200) group-hover:(bg-({{ group.data.color }}/10) w-full)" aria-hidden="true"></b>
-            <b class="font-black tracking-wider uppercase block relative opacity-80 group-hover:(text-white) md:(w-1/4 text-end)">
-              <b class="text-sm">{{ hardware.type }}</b>
+          <div class="py-3 px-5 border-(l b {{ group.data.color.title +'-'+ group.data.color.shade }}/25) w-full relative md:(px-0 flex space-x-4)">
+            <b class="font-black tracking-wider uppercase block opacity-80 md:(w-1/4 text-end)">
+              <b class="text-({{ group.data.color.title }}-50 sm)">{{ hardware.type }}</b>
               {% if hardware.soon %}
               <small class="uppercase leading-none tracking-wider flex md:(justify-end)">
                 <b class="px-1 py-px font-black text-yellow-300 ring-(1 current inset) block relative">Pending <b class="ring-(1 current inset) absolute inset-0 motion-safe:(animate-ping-sm) z-[-1]" aria-hidden="true"></b></b>
               </small>
               {%- endif %}
             </b>
-            <div class="border-{{ group.data.color }} mt-2 border w-2 h-2 rounded-full relative top-px hidden md:(block)"></div>
-            <i class="not-italic flex-1 relative md:(tracking-tight)">
-              {{ hardware.name }}
+            <div class="border-{{ group.data.color.title +'-'+ group.data.color.shade }} mt-2 border w-2 h-2 rounded-full relative top-px hidden md:(block)"></div>
+            <i class="not-italic flex-1 md:(tracking-tight)">
+              <a href="{{ hardware.link }}" class="group text-{{ group.data.color.title }}-200">
+                {{ hardware.name }}
+                <b class="absolute inset-0 z-10" aria-hidden="true">
+                  <b class="w-0 bg-transparent absolute left-0 inset-y-0 motion-safe:(transition-all duration-200) group-hover:(bg-({{ group.data.color.title +'-'+ group.data.color.shade }}/10) w-full)" aria-hidden="true"></b>
+                  <b class="!m-0 w-[4px] bg-{{ group.data.color.title +'-'+ group.data.color.shade }} absolute inset-y-0 left-0 transform scale-0 motion-safe:(transition) group-hover:(scale-100)" aria-hidden="true"></b>
+                </b>
+              </a>
               {%- if hardware.sub %}
               <small class="uppercase leading-none tracking-wider flex flex-wrap">
                 {% for sub in hardware.sub %}
@@ -73,8 +78,7 @@ eleventyComputed:
               </small>
               {%- endif %}
             </i>
-            <b class="!m-0 w-[4px] bg-{{ group.data.color }} absolute inset-y-0 left-0 transform scale-0 motion-safe:(transition) group-hover:(scale-100)"></b>
-          </a>
+          </div>
         </li>
         {%- endfor %}
       </ul>

@@ -2,7 +2,9 @@
 title: Keyboards
 date: 0004-01-01
 ico: mdi:keyboard
-color: green-500
+color:
+  title: green
+  shade: 500
 hardware:
   - type: KB
     name: Apple › Wireless
@@ -85,7 +87,7 @@ hardware:
     sub:
       - 65%
       - Clicky
-    link: https://morgrie.com/
+    link: https://store.morgrie.com/
   - type: KB
     name: NuPhy › Air60
     sub:
@@ -101,7 +103,7 @@ hardware:
       - Black
       - Summer
       - Outemu Tactile
-    link: https://thekey.company/collections/candybar-round-3/
+    link: https://thekey.company/products/candybar-round-3-pcb
   - type: KB
     name: Keychron › Q9
     sub:
@@ -116,7 +118,7 @@ hardware:
       - 45%
       - Space Grey
       - Silent Sky
-    link: https://walletburner.co/pages/cajal
+    link: '#'
   - type: KB
     name: UT47.2
     sub:
@@ -144,14 +146,14 @@ hardware:
       - 40%
       - Purple Tactile
       - Walnut
-    link: https://thekey.company/products/minivan
+    link: https://trashman.wiki/en/keyboards/minivan
   - type: KB
     name: MiniVan › JetVan
     sub:
       - 40%
       - Aliaz
       - White
-    link: https://thekey.company/products/minivan
+    link: https://trashman.wiki/pcbs/jetvan
   - type: KB
     name: Work Louder › Creator Micro
     sub:
