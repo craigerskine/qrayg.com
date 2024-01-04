@@ -91,7 +91,9 @@ import { tsParticles } from 'tsparticles-engine';
 import { loadFull } from 'tsparticles';
 import pOptions from '../_app/configs/particles.json';
 loadFull(tsParticles);
-tsParticles.load('particles', pOptions);
+if(document.querySelector('#particles')) {
+  tsParticles.load('particles', pOptions);
+}
 
 
 // alpinejs
