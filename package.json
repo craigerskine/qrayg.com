@@ -21,7 +21,7 @@
     "alpinejs": "^3.11.1",
     "esbuild": "^0.16.17",
     "iconify-icon": "^1.0.7",
-    "instant.page": "^5.1.1",
+    "instant.page": "^5.2.0",
     "js-yaml": "^4.1.0",
     "markdown-it-attrs": "^4.1.6",
     "particles.js": "^2.0.0"
