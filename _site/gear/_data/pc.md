@@ -10,7 +10,7 @@ hardware:
     name: SSUPD › Meshlicious
     sub:
       - White
-    link: https://ssupd.com/products/meshlicious
+    link: https://ssupd.co/products/meshlicious
   - type: MB
     name: Asus › ROG Strix Z390-I
     sub:
