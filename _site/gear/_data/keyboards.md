@@ -59,7 +59,7 @@ hardware:
       - Black
       - Healio
       - 63.5g
-    link: https://melgeek.com/products/melgeek-z70-ultra-65-rgb-custom-mechanical-keyboard-kit
+    link: https://melgeek.com/products/melgeek-z70ultra-65-hotswappable-with-aluminum-keyboard-kit
   - type: KB
     name: IKKI68 › Aurora
     sub:
@@ -190,7 +190,7 @@ hardware:
       - Modern
       - Standard
       - Obscure
-    link: https://omnitype.com/
+    link: https://qoda.studio/modo2
   - type: Caps
     name: DSA Milkshake
     sub:
@@ -208,7 +208,7 @@ hardware:
     name: Domikey Ghost
     sub:
       - Extension
-    link: https://cannonkeys.com/collections/group-buy/products/gb-domikey-ghost
+    link: https://cannonkeys.com/products/domikey-ghost
   - type: Caps
     name: kam_superuser
     sub:
