@@ -22,12 +22,12 @@ eleventyNavigation:
   </h1>
   <ul class="social mb-16 flex justify-center relative">
     <template x-for="(soc, index) in social">
-    <li class="mx-3 md:mx-8" @mouseover="socialLoopPaused = true, socialActive = null" @mouseout="socialLoopPaused = false">
-      <a :href="soc.url" :class="['w-8 h-8 flex relative motion-safe:(transition-all) md:(w-12 h-12) text-'+ soc.color, socialActive === (index + 1) ? 'active' : '']" :aria-label="soc.name">
-        <iconify-icon :icon="soc.icon" inline="false" class="m-auto inline-block align-middle text-2xl md:(text-3xl)"></iconify-icon>
-        <b></b>
-      </a>
-    </li>
+      <li class="mx-3 md:mx-8" @mouseover="socialLoopPaused = true, socialActive = null" @mouseout="socialLoopPaused = false">
+        <a :href="soc.url" :class="['w-8 h-8 flex relative motion-safe:(transition-all) md:(w-12 h-12) text-'+ soc.color, socialActive === (index + 1) ? 'active' : '']" :aria-label="soc.name">
+          <iconify-icon :icon="soc.icon" inline="false" class="m-auto inline-block align-middle text-2xl md:(text-3xl)"></iconify-icon>
+          <b></b>
+        </a>
+      </li>
     </template>
   </ul>
   <h2 x-show="streamState == 'start' || streamState == 'end'" class="message mb-16 pt-8 text-(4xl center) opacity-50">
