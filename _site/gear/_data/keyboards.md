@@ -119,7 +119,7 @@ hardware:
       - 45%
       - Space Grey
       - Silent Sky
-    link: '#'
+    link: https://www.keebtalk.com/t/ic-cajal-a-45-keyboard/7683
   - type: KB
     name: UT47.2
     sub:
