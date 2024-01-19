@@ -133,7 +133,7 @@ hardware:
       - 40%
       - Black - Kaihl Gold
       - White - Zilent
-    link: https://ergodox-ez.com/pages/planck
+    link: https://configure.zsa.io/planck-ez/layouts/v6ZrR/latest/0
   - type: KB
     name: Vortex › Core
     sub:
