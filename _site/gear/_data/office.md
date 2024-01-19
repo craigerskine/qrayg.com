@@ -7,11 +7,12 @@ color:
   shade: 400
 hardware:
   - type: Display 1
-    name: Spectrum › OLED
+    name: Spectrum › Black
     sub:
       - 27"
       - 240Hz
-    link: https://intl.dough.tech/products/spectrum-oled-qhd-240hz-gaming-monitor-es07e2d
+      - OLED
+    link: https://dough.tech/products/spectrum-black
   - type: Display 2
     name: LG › 27GL83A-B
     sub:
