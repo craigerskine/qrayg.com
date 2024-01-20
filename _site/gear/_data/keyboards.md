@@ -119,7 +119,7 @@ hardware:
       - 45%
       - Space Grey
       - Silent Sky
-    link: https://www.keebtalk.com/t/ic-cajal-a-45-keyboard/7683
+    link: https://keebtalk.com/t/ic-cajal-a-45-keyboard/7683
   - type: KB
     name: UT47.2
     sub:
@@ -133,7 +133,7 @@ hardware:
       - 40%
       - Black - Kaihl Gold
       - White - Zilent
-    link: https://configure.zsa.io/planck-ez/layouts/v6ZrR/latest/0
+    link: https://zsa.io/planck/
   - type: KB
     name: Vortex › Core
     sub:
