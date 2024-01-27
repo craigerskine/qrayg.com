@@ -172,6 +172,11 @@ hardware:
       - Control the System
     link: https://drop.com/buy/lightcycle-dsa-custom-keycap-set-for-the-minivan
   - type: Caps
+    name: MV Synth
+    sub:
+      - Base Kit
+    link: https://thekey.company/products/mv-synth-keyset
+  - type: Caps
     name: biip MT3 Extended 2048
     sub:
       - Modifiers
