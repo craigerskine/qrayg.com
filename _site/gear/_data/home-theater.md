@@ -78,7 +78,6 @@ hardware:
     sub:
       - Component
     link: https://amazon.com/dp/B07XMDYJRZ?tag=qrayg-20
-    soon: true
   - type: Basement
     name: Pro-Ject › T1
     sub:
