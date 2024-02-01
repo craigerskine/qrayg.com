@@ -5,7 +5,7 @@ eleventyNavigation:
   icon: mdi:home-roof
 ---
 
-<section class="landing m-auto text-center relative z-20 motion-safe:transition-all" x-data="social" x-init="socialLoop">
+<section class="landing m-auto text-center relative z-20 motion-safe:transition-all" x-data="social">
   <h1 class="logo group pt-4 pb-24 flex justify-center relative">
     <a href="/" class="mx-4 text-white block motion-safe:(animate-spin)">
       <b class="inline-block motion-safe:(animate-throb)">
@@ -40,11 +40,11 @@ eleventyNavigation:
   document.addEventListener('alpine:init', () => {
     Alpine.data('social', () => ({
       social: [
-        { name: 'Twitch', icon: 'fa6-brands:twitch', color: 'purple-500', url: 'https://twitch.tv/qrayg/', },
-        { name: 'X', icon: 'fa6-brands:x-twitter', color: 'red-700', url: 'https://twitter.com/qrayg/', },
-        { name: 'Discord', icon: 'fa6-brands:discord', color: 'indigo-500', url: 'https://discord.com/users/qrayg#0001', },
+        { name: 'Twitch', icon: 'simple-icons:twitch', color: 'purple-500', url: 'https://twitch.tv/qrayg/', },
+        { name: 'X', icon: 'simple-icons:x', color: 'red-700', url: 'https://twitter.com/qrayg/', },
+        { name: 'Discord', icon: 'simple-icons:discord', color: 'indigo-500', url: 'https://discord.com/users/qrayg#0001', },
         { name: 'Ko-Fi', icon: 'cib:ko-fi', color: 'gray-600', url: 'https://ko-fi.com/qrayg', },
-        { name: 'Patreon', icon: 'fa6-brands:patreon', color: 'red-400', url: 'https://patreon.com/qrayg/', },
+        { name: 'Patreon', icon: 'simple-icons:patreon', color: 'red-400', url: 'https://patreon.com/qrayg/', },
       ],
       socialActive: null,
       socialLoopPaused: false,
@@ -59,7 +59,10 @@ eleventyNavigation:
             }
           }
         }, 1500);
-      }
+      },
+      init() {
+        this.socialLoop()
+      },
     }))
   })
 </script>

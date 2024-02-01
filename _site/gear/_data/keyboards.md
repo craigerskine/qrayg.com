@@ -6,6 +6,7 @@ color:
   title: green
   shade: 500
 hardware:
+
   - type: KB
     name: Apple › Wireless
     sub:
@@ -13,6 +14,7 @@ hardware:
       - Space Gray
       - Touch ID
     link: https://amazon.com/dp/B09V3JXSS9?tag=qrayg-20
+
   - type: KB
     name: GMMK › Pro
     sub:
@@ -20,6 +22,7 @@ hardware:
       - Black
       - Boba U4
     link: https://www.pcgamingrace.com/products/glorious-gmmk-pro-75-barebone-black
+
   - type: KB
     name: Keychron › Q2
     sub:
@@ -28,6 +31,7 @@ hardware:
       - Knob
       - Silent Alpaca
     link: https://keychron.com/products/keychron-q2-qmk-custom-mechanical-keyboard
+
   - type: KB
     name: Keychron › K7 Pro
     sub:
@@ -36,6 +40,7 @@ hardware:
       - RGB
       - Red
     link: https://keychron.com/products/keychron-k7-pro-qmk-via-wireless-custom-mechanical-keyboard
+
   - type: KB
     name: Keychron › K7
     sub:
@@ -44,6 +49,7 @@ hardware:
       - RGB
       - Banana
     link: https://keychron.com/pages/keychron-k7-wireless-mechanical-keyboard
+
   - type: KB
     name: Keychron › K14
     sub:
@@ -52,6 +58,7 @@ hardware:
       - RGB
       - Red
     link: https://keychron.com/pages/keychron-k14-wireless-mechanical-keyboard
+
   - type: KB
     name: MelGeek › Z70
     sub:
@@ -60,6 +67,7 @@ hardware:
       - Healio
       - 63.5g
     link: https://melgeek.com/products/melgeek-z70ultra-65-hotswappable-with-aluminum-keyboard-kit
+
   - type: KB
     name: IKKI68 › Aurora
     sub:
@@ -67,6 +75,7 @@ hardware:
       - Snow
       - TBD
     link: https://shop.wuquestudio.com/pages/ikki68-aurora
+
   - type: KB
     name: NK65 › Entry Edition
     sub:
@@ -74,6 +83,7 @@ hardware:
       - Fire
       - Milky Yellow
     link: https://novelkeys.xyz/collections/keyboards/products/nk65-entry-edition
+
   - type: KB
     name: Leopold › FC660C
     sub:
@@ -82,6 +92,7 @@ hardware:
       - Topre Silent
       - Extended2048
     link: https://amazon.com/dp/B07QKXC6WC?tag=qrayg-20
+
   - type: KB
     name: Morgrie
     sub:
@@ -89,6 +100,7 @@ hardware:
       - White
       - Clicky
     link: https://store.morgrie.com/
+
   - type: KB
     name: NuPhy › Air60
     sub:
@@ -97,6 +109,7 @@ hardware:
       - RGB
       - Brown
     link: https://nuphy.com/collections/keyboards/products/air60
+
   - type: KB
     name: Candybar
     sub:
@@ -105,6 +118,7 @@ hardware:
       - Summer
       - Outemu Tactile
     link: https://thekey.company/products/candybar-round-3-pcb
+
   - type: KB
     name: Keychron › Q9
     sub:
@@ -113,6 +127,7 @@ hardware:
       - Knob
       - Silent Alpaca
     link: https://keychron.com/products/keychron-q9-qmk-custom-mechanical-keyboard
+
   - type: KB
     name: Cajal
     sub:
@@ -120,6 +135,7 @@ hardware:
       - Space Grey
       - Silent Sky
     link: https://keebtalk.com/t/ic-cajal-a-45-keyboard/7683
+
   - type: KB
     name: UT47.2
     sub:
@@ -127,6 +143,7 @@ hardware:
       - Alu
       - Kailh Copper
     link: https://keyhive.xyz/shop/ut472-kit
+
   - type: KB
     name: Planck EZ › Glow x2
     sub:
@@ -134,6 +151,7 @@ hardware:
       - Black - Kaihl Gold
       - White - Zilent
     link: https://zsa.io/planck/
+
   - type: KB
     name: Vortex › Core
     sub:
@@ -141,6 +159,7 @@ hardware:
       - Cherry Blue
       - Bamboo
     link: https://amazon.com/dp/B01MS3PWS0?tag=qrayg-20
+
   - type: KB
     name: MiniVan › KUMO
     sub:
@@ -148,6 +167,7 @@ hardware:
       - Purple Tactile
       - Walnut
     link: https://trashman.wiki/en/keyboards/minivan
+
   - type: KB
     name: MiniVan › JetVan
     sub:
@@ -155,27 +175,32 @@ hardware:
       - Aliaz
       - White
     link: https://trashman.wiki/pcbs/jetvan
+
   - type: KB
     name: Work Louder › Creator Micro
     sub:
       - Pad
       - RGB
     link: https://worklouder.cc/creator-micro/
+
   - type: Caps
     name: R1
     sub:
       - NP/XDA
     link: https://kbdfans.com/collections/np-pg-da-profile/products/np-pbt-grey-and-blue-keycaps-set
+
   - type: Caps
     name: DSA Light Cycle
     sub:
       - Control the System
     link: https://drop.com/buy/lightcycle-dsa-custom-keycap-set-for-the-minivan
+
   - type: Caps
     name: MV Synth
     sub:
       - Base Kit
     link: https://thekey.company/products/mv-synth-keyset
+
   - type: Caps
     name: biip MT3 Extended 2048
     sub:
@@ -183,12 +208,14 @@ hardware:
       - Icono
       - Media Icons
     link: https://drop.com/buy/drop-biip-mt3-extended-custom-keycap-set
+
   - type: Caps
     name: Plastic
     sub:
       - Clone
       - XDA
     link: https://amazon.com/dp/B08ZMR1651?tag=qrayg-20
+
   - type: Caps
     name: GMK Dolch 2
     sub:
@@ -196,6 +223,7 @@ hardware:
       - Standard
       - Obscure
     link: https://qoda.studio/modo2
+
   - type: Caps
     name: DSA Milkshake
     sub:
@@ -203,17 +231,20 @@ hardware:
       - Spacebars
       - Fruit
     link: https://novelkeys.com/collections/keycaps/products/dsa-milkshake
+
   - type: Caps
     name: Less But Better
     sub:
       - Novelties
       - Extras
     link: https://kono.store/products/epbt-less-but-better
+
   - type: Caps
     name: Domikey Ghost
     sub:
       - Extension
     link: https://cannonkeys.com/products/domikey-ghost
+
   - type: Caps
     name: kam_superuser
     sub:
@@ -222,4 +253,5 @@ hardware:
       - Spacebars
       - Novelties
     link: https://novelkeys.com/products/kam-superuser
+
 ---
