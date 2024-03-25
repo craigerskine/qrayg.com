@@ -137,6 +137,16 @@ hardware:
     link: https://keebtalk.com/t/ic-cajal-a-45-keyboard/7683
 
   - type: KB
+    name: Zan 40
+    sub:
+      - 40%
+      - Tri Mode
+      - Black
+      - SS Plate
+    link: https://en.zfrontier.com/products/pre-order-zan-40-by-zan-niuniu
+    soon: true
+
+  - type: KB
     name: UT47.2
     sub:
       - 40%
