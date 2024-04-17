@@ -264,4 +264,17 @@ hardware:
       - Novelties
     link: https://novelkeys.com/products/kam-superuser
 
+  - type: Caps
+    name: nSA Maya Imprint
+    sub:
+      - Low profile
+      - PBT
+      - Dye-sub
+    link: https://nuphy.com/collections/keycaps/products/maya-imprint
+
+  - type: Caps
+    name: nSA Shine-through
+    sub:
+      - Low profile
+    link: https://nuphy.com/products/nsa-shine-through-abs-keycaps
 ---
