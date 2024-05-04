@@ -24,12 +24,12 @@ hardware:
     link: https://strandbergguitars.com/product-category/family/boden-metal/
 
   - type: Guitar
-    name: Ibanez › QX52
+    name: Legator › Ghost G6FSS
     sub:
-      - 2021
-      - Black
-      - Fishman Fluence Mod
-    link: https://amazon.com/dp/B09JGQ3WWR?tag=qrayg-20
+      - Satin
+      - Flame Maple Black
+      - Multi-Scale
+    link: https://legatorguitars.com/products/g6fss
 
   - type: Amp
     name: Positive Grid › Spark 40
