@@ -82,7 +82,7 @@ hardware:
       - 65%
       - Fire
       - Milky Yellow
-    link: https://novelkeys.xyz/collections/keyboards/products/nk65-entry-edition
+    link: https://novelkeys.com/products/nk65-v2-aluminum-edition
 
   - type: KB
     name: Leopold › FC660C
