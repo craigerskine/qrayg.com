@@ -13,7 +13,7 @@ hardware:
       - 2021
       - Custom 6
       - Fishman Fluence
-    link: https://craigerskine.com/ux/proto-kiesel-itemization/
+    url: https://craigerskine.com/ux/proto-kiesel-itemization/
 
   - type: Guitar
     name: .strandberg* › Boden
@@ -21,7 +21,7 @@ hardware:
       - 2020
       - Metal 6
       - Black Pearl
-    link: https://strandbergguitars.com/product-category/family/boden-metal/
+    url: https://strandbergguitars.com/product-category/family/boden-metal/
 
   - type: Guitar
     name: Legator › Ghost G6FSS
@@ -29,55 +29,55 @@ hardware:
       - Satin
       - Flame Maple Black
       - Multi-Scale
-    link: https://legatorguitars.com/products/g6fss
+    url: https://legatorguitars.com/products/g6fss
 
   - type: Amp
     name: Positive Grid › Spark 40
     sub:
       - 40 watt
-    link: https://amazon.com/dp/B08HQCG79H?tag=qrayg-20
+    url: https://amazon.com/dp/B08HQCG79H?tag=qrayg-20
 
   - type: Amp
     name: Positive Grid › Spark MINI
     sub:
       - 10 watt
-    link: https://www.positivegrid.com/spark-mini
+    url: https://www.positivegrid.com/spark-mini
 
   - type: Speaker
     name: HeadRush › FRFR-108
     sub:
       - 2000 watt
-    link: https://amazon.com/dp/B07M7JNZNX?tag=qrayg-20
+    url: https://amazon.com/dp/B07M7JNZNX?tag=qrayg-20
 
   - type: Modeling
     name: Neural DSP › Quad Cortex
     sub:
       - USB
-    link: https://www.sweetwater.com/store/detail/QuadCortex--neural-dsp-quad-cortex-quad-core-digital-effects-modeler-profiler-floorboard
+    url: https://www.sweetwater.com/store/detail/QuadCortex--neural-dsp-quad-cortex-quad-core-digital-effects-modeler-profiler-floorboard
 
   - type: Plugin
     name: PolyChrome › DSP
     sub:
       - McRocklin Suite
-    link: https://polychromedsp.com/
+    url: https://polychromedsp.com/
 
   - type: Plugin
     name: Neural DSP › Archetype
     sub:
       - Petrucci
       - Tim Henson
-    link: https://neuraldsp.com/plugins
+    url: https://neuraldsp.com/plugins
 
   - type: Sequencer
     name: Arturia › Keystep
     sub:
       - MIDI Controller
-    link: https://amazon.com/dp/B01BPSBU40?tag=qrayg-20
+    url: https://amazon.com/dp/B01BPSBU40?tag=qrayg-20
 
   # - type: Interface
   #   name: AXE › I/O Solo
   #   sub:
   #     - + Amplitube
-  #   link: https://amazon.com/dp/B085JDFLLD?tag=qrayg-20
+  #   url: https://amazon.com/dp/B085JDFLLD?tag=qrayg-20
 
 ---
