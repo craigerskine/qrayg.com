@@ -24,12 +24,11 @@ hardware:
     url: https://strandbergguitars.com/product-category/family/boden-metal/
 
   - type: Guitar
-    name: Legator › Ghost G6FSS
+    name: Ibanez › Q52PB
     sub:
-      - Satin
-      - Flame Maple Black
-      - Multi-Scale
-    url: https://legatorguitars.com/products/g6fss
+      - Nyatoh
+      - Maple/Bubinga
+    url: https://amazon.com/dp/B09JGQ3WWR?tag=qrayg-20
 
   - type: Amp
     name: Positive Grid › Spark 40
