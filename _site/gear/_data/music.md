@@ -28,7 +28,7 @@ hardware:
     sub:
       - Nyatoh
       - Maple/Bubinga
-    url: https://amazon.com/dp/B09JGQ3WWR?tag=qrayg-20
+    url: https://amazon.com/dp/B0BK5615JM?tag=qrayg-20
 
   - type: Amp
     name: Positive Grid › Spark 40
