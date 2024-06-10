@@ -43,10 +43,16 @@ hardware:
     url: https://www.positivegrid.com/spark-mini
 
   - type: Speaker
+    name: QSC › K8.2
+    sub:
+      - 2000 watt
+    url: https://amazon.com/dp/B06Y42XXH6?tag=qrayg-20
+
+  - type: Speaker
     name: HeadRush › FRFR-108
     sub:
       - 2000 watt
-    url: https://amazon.com/dp/B07M7JNZNX?tag=qrayg-20
+    url: https://amazon.com/dp/B0CP9LT3DF?tag=qrayg-20
 
   - type: Modeling
     name: Neural DSP › Quad Cortex
@@ -73,10 +79,9 @@ hardware:
       - MIDI Controller
     url: https://amazon.com/dp/B01BPSBU40?tag=qrayg-20
 
-  # - type: Interface
-  #   name: AXE › I/O Solo
-  #   sub:
-  #     - + Amplitube
-  #   url: https://amazon.com/dp/B085JDFLLD?tag=qrayg-20
-
+  - type: Interface
+    name: AXE › I/O Solo
+    sub:
+      - + Amplitube
+    url: https://amazon.com/dp/B085JDFLLD?tag=qrayg-20
 ---
