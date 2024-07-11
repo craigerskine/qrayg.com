@@ -144,7 +144,6 @@ hardware:
       - Black
       - SS Plate
     url: https://en.zfrontier.com/products/pre-order-zan-40-by-zan-niuniu
-    soon: true
 
   - type: KB
     name: UT47.2
