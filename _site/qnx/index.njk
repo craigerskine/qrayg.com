@@ -43,15 +43,22 @@ eleventyNavigation:
                 </div>
               </div>
               <div class="qnx-bevel">
-                <ul class="pt-2 w-full relative">
-                  <template x-for="(entry, index) in entries">
-                  <li :class="['pb-2 px-2', (index + 1) === entries.length ? 'border-(b qnx-dark)' : '']">
-                    <a href="#" @click.prevent="qnxActive = index" :class="['group py-1 px-2 w-full flex items-center space-x-2 motion-safe:transition hover:(bg-qnx-theme) focus:(bg-qnx-theme)', qnxActive === index ? 'bg-qnx-theme' : 'bg-qnx-item']">
-                      <img :src="'/_assets/qnx/img/ico-'+ entry.ico +'.png'" :alt="entry.title +' icon'" class="w-[16px] h-[16px] object-contain object-center opacity-50 motion-safe:transition group-hover:(opacity-100) group-focus:(opacity-100)" />
-                      <span class="flex-1" x-text="entry.title"></span>
-                      <b class="w-[9px] h-[9px] bg-white text-qnx-line flex ring-(1 current) rounded-full"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 7" class="m-auto w-[7px] h-[7px] fill-current" aria-hidden="true"><polygon points="3 7 3 5 0 5 0 2 3 2 3 0 7 3.5" /></svg></b>
-                    </a>
-                  </li>
+                <ul class="pt-2 w-full relative" role="tablist">
+                  <template x-for="(entry, index) in entries" hidden>
+                    <li :class="['pb-2 px-2', (index + 1) === entries.length ? 'border-(b qnx-dark)' : '']" role="presentation">
+                      <a
+                        href="#"
+                        role="tab"
+                        class="group py-1 px-2 w-full flex items-center space-x-2 motion-safe:transition hover:(bg-qnx-theme) focus:(bg-qnx-theme)"
+                        :class="qnxActive === index ? 'bg-qnx-theme' : 'bg-qnx-item'"
+                        :aria-current="qnxActive === index ? 'page' : null"
+                        @click.prevent="qnxActive = index"
+                      >
+                        <img :src="'/_assets/qnx/img/ico-'+ entry.ico +'.png'" :alt="entry.title +' icon'" class="w-[16px] h-[16px] object-contain object-center opacity-50 motion-safe:transition group-hover:(opacity-100) group-focus:(opacity-100)" />
+                        <span class="flex-1" x-text="entry.title"></span>
+                        <b class="w-[9px] h-[9px] bg-white text-qnx-line flex ring-(1 current) rounded-full"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 7" class="m-auto w-[7px] h-[7px] fill-current" aria-hidden="true"><polygon points="3 7 3 5 0 5 0 2 3 2 3 0 7 3.5" /></svg></b>
+                      </a>
+                    </li>
                   </template>
                 </ul>
               </div>
@@ -91,21 +98,21 @@ eleventyNavigation:
                 <b class="w-px bg-(white opacity-25) absolute left-0 inset-y-0"></b>
               </b>
               <div class="border-(1 qnx-line) bg-qnx-cream">
-                <template x-for="(entry, index) in entries">
-                <div x-show="qnxActive === index">
-                  <ul class="bg-qnx-cream divide-(y qnx-dark)">
-                    <template x-for="(file, index) in entry.files">
-                    <li class="p-2">
-                      <a :href="'/_assets/qnx/files/'+ slugify(entry.title) +'-'+ slugify(file.title) +'.zip'" class="group inline-flex items-center space-x-2 motion-safe:transition hover:(text-blue-500) focus:(text-blue-500)" download>
-                        <b class="w-[9px] h-[9px] text-qnx-line flex ring-(1 current) rounded-full opacity-50 transform rotate-90">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 7" class="m-auto w-[7px] h-[7px] fill-current" aria-hidden="true"><polygon points="3 7 3 5 0 5 0 2 3 2 3 0 7 3.5" /></svg>
-                        </b>
-                        <span x-text="file.title"></span>
-                      </a>
-                    </li>
-                    </template>
-                  </ul>
-                </div>
+                <template x-for="(entry, index) in entries" hidden>
+                  <div x-show="qnxActive === index" x-transition.enter.opacity.duration.2000ms x-transition.leave.opacity.duration.0ms role="tabpanel">
+                    <ul class="bg-qnx-cream divide-(y qnx-dark)">
+                      <template x-for="(file, index) in entry.files" hidden>
+                        <li class="p-2">
+                          <a :href="'/_assets/qnx/files/'+ slugify(entry.title) +'-'+ slugify(file.title) +'.zip'" class="group inline-flex items-center space-x-2 motion-safe:transition hover:(text-blue-500) focus:(text-blue-500)" download>
+                            <b class="w-[9px] h-[9px] text-qnx-line flex ring-(1 current) rounded-full opacity-50 transform rotate-90">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 7" class="m-auto w-[7px] h-[7px] fill-current" aria-hidden="true"><polygon points="3 7 3 5 0 5 0 2 3 2 3 0 7 3.5" /></svg>
+                            </b>
+                            <span x-text="file.title"></span>
+                          </a>
+                        </li>
+                      </template>
+                    </ul>
+                  </div>
                 </template>
               </div>
             </div>
@@ -152,22 +159,22 @@ eleventyNavigation:
             </div>
           </nav>
         </li>
-        <template x-for="(entry, index) in entries">
-        <li class="border-(r qnx-line) flex">
-          <div class="qnx-bevel">
-            <div class="p-[2px] flex">
-              <div class="qnx-bevel-sunk">
-                <template x-if="qnxActive !== index">
-                  <div class="flex absolute inset-0"><div class="qnx-bevel"></div></div>
-                </template>
-                <a href="#" @click.prevent="qnxActive = index" :class="['group py-1 px-3 w-full flex items-center relative motion-safe:transition md:(text-sm space-x-2)', qnxActive === index ? 'bg-qnx-dark shadow-inner' : '']">
-                  <img :src="'/_assets/qnx/img/ico-'+ entry.ico +'.png'" :alt="entry.title +' icon'" class="w-[16px] h-[16px] object-contain object-center opacity-50 motion-safe:transition group-hover:(opacity-100) group-focus:(opacity-100)" />
-                  <span class="hidden md:(inline-block)" x-text="entry.title"></span>
-                </a>
+        <template x-for="(entry, index) in entries" hidden>
+          <li class="border-(r qnx-line) flex">
+            <div class="qnx-bevel">
+              <div class="p-[2px] flex">
+                <div class="qnx-bevel-sunk">
+                  <template x-if="qnxActive !== index" hidden>
+                    <div class="flex absolute inset-0"><div class="qnx-bevel"></div></div>
+                  </template>
+                  <a href="#" @click.prevent="qnxActive = index" :class="['group py-1 px-3 w-full flex items-center relative motion-safe:transition md:(text-sm space-x-2)', qnxActive === index ? 'bg-qnx-dark shadow-inner' : '']">
+                    <img :src="'/_assets/qnx/img/ico-'+ entry.ico +'.png'" :alt="entry.title +' icon'" class="w-[16px] h-[16px] object-contain object-center opacity-50 motion-safe:transition group-hover:(opacity-100) group-focus:(opacity-100)" />
+                    <span class="hidden md:(inline-block)" x-text="entry.title"></span>
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-        </li>
+          </li>
         </template>
       </ul>
     </div>
