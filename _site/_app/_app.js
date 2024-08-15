@@ -15,7 +15,7 @@ install({
   theme: {
     extend: {
       colors: ({ theme }) => ({
-        gray: theme('colors.neutral'),
+        gray: theme('colors.zinc'),
         'qnx-cream': '#E7E3D6',
         'qnx-theme': '#98A8C8',
         'qnx-lite': '#F0F0F0',
