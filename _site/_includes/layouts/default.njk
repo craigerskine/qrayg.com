@@ -53,7 +53,7 @@
       <header class="w-full">
         {% renderblock 'header' %}
         <nav x-trap="menu" class="fixed right-2 top-2 z-20">
-          <button @click.prevent.stop="menu = !menu" class="group w-10 h-10 inline-flex items-center justify-center rounded-full motion-safe:(transition) hover:(bg-gray-500/20) focus:(shadow-none outline-(& 2 current offset-0))" aria-controls="nav-main" :aria-expanded="menu" :aria-pressed="menu">
+          <button @click.prevent.stop="menu = !menu" class="group w-10 h-10 inline-flex items-center justify-center rounded-full motion-safe:(transition) hover:(bg-gray-500/20) focus-visible:(shadow-none outline-(& 2 current offset-0))" aria-controls="nav-main" :aria-expanded="menu" :aria-pressed="menu">
             <span class="sr-only">Menu</span>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="w-4 h-4 fill-current pointer-events-none">
               <rect width="9" height="2" y="7" rx="1" class="origin-center -translate-y-[5px] translate-x-[7px] group-[[aria-pressed=true]]:(translate-x-0 translate-y-0 rotate-[315deg]) motion-safe:(transition-all duration-300)" />
