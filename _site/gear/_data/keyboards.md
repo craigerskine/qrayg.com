@@ -16,14 +16,6 @@ hardware:
     url: https://amazon.com/dp/B09V3JXSS9?tag=qrayg-20
 
   - type: KB
-    name: GMMK › Pro
-    sub:
-      - 75%
-      - Black
-      - Boba U4
-    url: https://www.pcgamingrace.com/products/glorious-gmmk-pro-75-barebone-black
-
-  - type: KB
     name: Keychron › Q2
     sub:
       - 65%
