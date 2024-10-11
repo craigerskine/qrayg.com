@@ -29,6 +29,13 @@ hardware:
       - White
     url: https://amazon.com/dp/B07W8ZVXWR?tag=qrayg-20
 
+  - type: Living Room
+    name: Sonos › Sub Mini
+    sub:
+      - Subwoofer
+      - White
+    url: https://amazon.com/dp/B0BGJV72YM?tag=qrayg-20
+
   - type: Office
     name: Sony › XBR43X800E
     sub:
