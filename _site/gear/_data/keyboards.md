@@ -135,7 +135,7 @@ hardware:
       - Tri Mode
       - Black
       - SS Plate
-    url: https://en.zfrontier.com/products/pre-order-zan-40-by-zan-niuniu
+    url: https://nlandkeys.com/products/stock-zan40-keyboard-kit
 
   - type: KB
     name: UT47.2
