@@ -11,7 +11,7 @@ hardware:
     name: Spectrum › Black
     sub:
       - 27"
-      - 240Hz
+      - 480Hz
       - OLED
     url: https://dough.tech/products/spectrum-black
 
