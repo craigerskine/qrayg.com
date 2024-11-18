@@ -69,9 +69,9 @@ hardware:
   - type: Plugin
     name: Neural DSP › Archetype
     sub:
-      - Petrucci X
-      - Tim Henson X
-      - Gojira X
+      - Petrucci
+      - Tim Henson
+      - Gojira
     url: https://neuraldsp.com/plugins
 
   - type: Sequencer
