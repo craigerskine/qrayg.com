@@ -8,6 +8,13 @@ color:
 hardware:
 
   - type: Display 1
+    name: Dell › UltraSharp U4025QW
+    sub:
+      - 40"
+      - 120Hz
+    url: https://amazon.com/dp/B0D1TX35MQ?tag=qrayg-20
+
+  - type: Display 2
     name: Spectrum › Black
     sub:
       - 27"
@@ -15,17 +22,10 @@ hardware:
       - OLED
     url: https://dough.tech/products/spectrum-black
 
-  - type: Display 2
-    name: LG › 27GL83A-B
-    sub:
-      - 27"
-      - 144Hz
-    url: https://amazon.com/dp/B07YGZL8XF?tag=qrayg-20
-
   - type: Speakers
     name: Audioengine › A2+
     sub:
-      - + S6 Sub
+      - + S8 Sub
     url: https://amazon.com/dp/B07MYW4Q8S?tag=qrayg-20
 
   - type: Headphones
@@ -87,6 +87,18 @@ hardware:
   #     - 4 Bays
   #     - 2 TB
   #   url: https://amazon.com/dp/B00LB0E9B4?tag=qrayg-20
+
+  - type: Desk Frame
+    name: Autonomous › SmartDesk DIY
+    sub:
+      - White
+    url: https://www.autonomous.ai/standing-desks/autonomous-desk-diy
+
+  - type: Desk Top
+    name: IKEA › Karlby
+    sub:
+      - Walnut
+    url: https://www.ikea.com/us/en/p/karlby-countertop-walnut-veneer-50335208/
 
   - type: Chair
     name: HINOMI › H1 Classic #Steelcase › Reply Mesh
