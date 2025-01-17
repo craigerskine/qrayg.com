@@ -10,10 +10,10 @@ hardware:
   - type: Laptop
     name: MacBook › Pro
     sub:
-      - 2021
-      - M1 Pro
+      - 2024
+      - M4 Pro
       - 14"
-      - 8-core
+      - 12-core
     url: https://amazon.com/dp/B09JQL8KP9?tag=qrayg-20
 
   - type: Dock
