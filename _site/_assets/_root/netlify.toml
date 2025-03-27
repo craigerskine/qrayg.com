@@ -4,18 +4,23 @@
   status = 301
 
 [[redirects]]
-  from = "/experiments"
-  to = "/ux/"
+  from = "/skins"
+  to = "https://craigerskine.com/ux/qnx/"
   status = 301
 
 [[redirects]]
-  from = "/skins"
-  to = "/qnx/"
+  from = "/qnx"
+  to = "https://craigerskine.com/ux/qnx/"
   status = 301
 
 [[redirects]]
   from = "/rig"
-  to = "/gear/"
+  to = "https://craigerskine.com/colophon/"
+  status = 301
+
+[[redirects]]
+  from = "/gear"
+  to = "https://craigerskine.com/colophon/"
   status = 301
 
 [[redirects]]
