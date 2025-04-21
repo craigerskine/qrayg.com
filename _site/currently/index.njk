@@ -9,15 +9,15 @@ eleventyNavigation:
   order: 1
 ---
 
-<section class="w-full h-screen font-roboto flex-(& col) divide-(y gray-500 opacity-10) select-none">
+<section class="w-full h-screen font-roboto flex-(& col) select-none">
   <article class="clock w-full h-full flex-(& 1 col) justify-center">
-    <h1 class="time w-full text-5xl font-thin leading-none flex divide-(x gray-500 opacity-10) md:(text-[calc(5vw+5vh+.5vmin)])">
+    <h1 class="time w-full text-5xl font-thin leading-none flex md:(text-[calc(5vw+5vh+.5vmin)])">
       <span class="hours w-full text-center flex-1"></span>
       <span class="minutes w-full text-center flex-1"></span>
       <span class="seconds w-full text-center flex-1"></span>
       {# <span class="milliseconds w-full text-center flex-1"></span> #}
     </h1>
-    <ul class="binary-digits w-full flex divide-(x gray-500 opacity-10)">
+    <ul class="binary-digits w-full flex">
       <li class="w-full py-4 lg:py-8 flex-1 flex items-end">
         <ul class="hour-1 px-4 w-full flex-(& 1 col) space-y-2">
           <li class="tick hrs-1-2 ml-auto w-4 h-1 rounded-full motion-safe:(transition-all)"></li>
@@ -60,7 +60,7 @@ eleventyNavigation:
   </article>
   <aside class="misc w-full flex-(& col) justify-center">
     <ul class="font-bold sm:(flex) lg:(text-4xl)">
-      <li class="py-4 border-(b gray-500 opacity-10) motion-safe:(transition) hover:(text-gray-50) sm:(w-1/3 border-r) lg:(py-32)">
+      <li class="py-4 motion-safe:(transition) hover:(text-gray-50) sm:(w-1/3) lg:(py-32)">
         <h2 class="internet pl-5 flex items-center justify-center">
           <sup class="mr-2 text-(lg gray-400/50) font-black uppercase">@</sup>
           <b class="beats font-black" title="{{ beat.info }}" aria-label="{{ beat.info }}" tabindex="0">&nbsp;</b>
@@ -72,12 +72,10 @@ eleventyNavigation:
             <b class="date-m font-black">&nbsp;</b>
             <sup class="date-mm ml-2 text-(sm gray-400 opacity-50) uppercase">&nbsp;</sup>
           </li>
-          <li class="w-px bg-(gray-500 opacity-10) transform -skew-x-12"></li>
           <li class="py-4 flex-1 flex items-center justify-center lg:(py-32)">
             <b class="date-d font-black">&nbsp;</b>
             <sup class="date-dd ml-2 text-(sm gray-400 opacity-50) uppercase">&nbsp;</sup>
           </li>
-          <li class="w-px bg-(gray-500 opacity-10) transform -skew-x-12"></li>
           <li class="py-4 flex-(& 1) items-center justify-center lg:(py-32)">
             <b class="date-y font-black">&nbsp;</b>
             <sup class="date-yy ml-2 text-(sm gray-400 opacity-50) uppercase">AD</sup>
