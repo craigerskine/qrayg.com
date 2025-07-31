@@ -24,7 +24,7 @@ eleventyNavigation:
     <template x-for="(soc, index) in social">
       <li class="mx-3 md:mx-8" @mouseover="socialLoopPaused = true, socialActive = null" @mouseout="socialLoopPaused = false">
         <a :href="soc.url" :class="['w-8 h-8 flex relative motion-safe:(transition-all) md:(w-12 h-12) text-'+ soc.color, socialActive === (index + 1) ? 'active' : '']" :aria-label="soc.name">
-          <iconify-icon :icon="soc.icon" inline="false" class="m-auto inline-block align-middle text-2xl md:(text-3xl)"></iconify-icon>
+          <iconify-icon :icon="soc.icon" inline="false" class="m-auto inline-block align-middle text-2xl md:(text-3xl)" noobserver></iconify-icon>
           <b></b>
         </a>
       </li>

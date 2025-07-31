@@ -72,7 +72,7 @@
               <li>
                 <a href="{{ item.url }}" class="w-10 h-10 flex items-center justify-center rounded-full motion-safe:(transition) hover:(bg-gray-500/20 text-white) focus:(shadow-none outline-(& 2 current offset-0))">
                   <b class="sr-only">{{ item.title }}</b>
-                  <iconify-icon icon="{{ item.icon }}"></iconify-icon>
+                  <iconify-icon icon="{{ item.icon }}" noobserver></iconify-icon>
                 </a>
               </li>
               {%- endfor %}
