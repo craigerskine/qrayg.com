@@ -1,4 +1,16 @@
 [[redirects]]
+  from = "https://qrayg.qzz.io/*"
+  to = "https://qrayg.com/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.qrayg.qzz.io/*"
+  to = "https://qrayg.com/"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/home"
   to = "/currently/"
   status = 301
