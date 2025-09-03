@@ -59,26 +59,26 @@ eleventyNavigation:
     </ul>
   </article>
   <aside class="misc w-full flex-(& col) justify-center">
-    <ul class="font-bold hidden lg:(text-4xl flex)">
-      <li class="py-4 grow lg:(py-32)">
-        <h2 class="internet pl-5 flex items-center justify-center">
-          <sup class="mr-2 text-(lg gray-400/50) font-black uppercase">@</sup>
+    <ul class="font-bold text-[calc(1.25vw+1vh)] [&_sup]:(text-[.5em]) grid grid-cols-1 md:grid-cols-3">
+      <li class="hidden py-4 md:block lg:(py-32)">
+        <h2 class="internet pl-5 flex items-center justify-center gap-1.5">
+          <sup class="text-(gray-400/50) font-black uppercase">@</sup>
           <b class="beats font-black" title="{{ beat.info }}" aria-label="{{ beat.info }}" tabindex="0">&nbsp;</b>
         </h2>
       </li>
-      <li class="shrink-0">
-        <ul class="date flex gap-4 lg:gap-16">
-          <li class="py-4 flex-1 flex items-center justify-center lg:(py-32)">
+      <li>
+        <ul class="date mx-auto w-fit flex gap-4 lg:gap-16">
+          <li class="py-4 flex-1 flex items-center justify-center gap-1.5 lg:(py-32)">
             <b class="date-m font-black">&nbsp;</b>
-            <sup class="date-mm ml-2 text-(sm gray-400 opacity-50) uppercase">&nbsp;</sup>
+            <sup class="date-mm text-(gray-400 opacity-50) uppercase">&nbsp;</sup>
           </li>
-          <li class="py-4 flex-1 flex items-center justify-center lg:(py-32)">
+          <li class="py-4 flex-1 flex items-center justify-center gap-1.5 lg:(py-32)">
             <b class="date-d font-black">&nbsp;</b>
-            <sup class="date-dd ml-2 text-(sm gray-400 opacity-50) uppercase">&nbsp;</sup>
+            <sup class="date-dd text-(gray-400 opacity-50) uppercase">&nbsp;</sup>
           </li>
-          <li class="py-4 flex-(& 1) items-center justify-center lg:(py-32)">
+          <li class="py-4 flex-(& 1) items-center justify-center gap-1.5 lg:(py-32)">
             <b class="date-y font-black">&nbsp;</b>
-            <sup class="date-yy ml-2 text-(sm gray-400 opacity-50) uppercase">AD</sup>
+            <sup class="date-yy text-(gray-400 opacity-50) uppercase">AD</sup>
           </li>
         </ul>
       </li>
@@ -116,11 +116,11 @@ eleventyNavigation:
           return this.temp == null ? '--' : `${this.temp}`;
         }
       }
-      " class="grow flex items-center justify-center gap-2">
+      " class="hidden md:(flex items-center justify-center gap-1.5)">
         <strong class="stat-desc text-xs uppercase" x-show="loading">Loading...</strong>
         <div class="stat-value" x-text="displayTemp()" x-show="!loading"></div>
         <div class="stat-desc" x-text="error" x-show="error"></div>
-        <sup class="date-yy text-(sm gray-400 opacity-50) uppercase">&deg;F</sup>
+        <sup class="date-yy text-(gray-400 opacity-50) uppercase">&deg;F</sup>
       </li>
     </ul>
   </aside>
