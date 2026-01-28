@@ -50,7 +50,7 @@ eleventyNavigation:
       ],
       socialActive: null,
       socialLoopPaused: false,
-      streamState: window.location.hash ? window.location.hash.substring(1) : null,
+      streamState: null,
       socialLoop() {
         setInterval(() => {
           if(!this.socialLoopPaused) {
@@ -62,10 +62,20 @@ eleventyNavigation:
           }
         }, 1500);
       },
-      init() {
-        this.socialLoop()
+      hashListener() {
+        this.hashUpdate();
+        window.addEventListener('hashchange', () => {
+          this.hashUpdate();
+        });
       },
-    }))
-  })
+      hashUpdate() {
+        this.streamState = window.location.hash ? window.location.hash.substring(1) : null;
+      },
+      init() {
+        this.socialLoop();
+        this.hashListener();
+      },
+    }));
+  });
 </script>
 {% endsetblock %}
