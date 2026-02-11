@@ -7,8 +7,8 @@ eleventyNavigation:
 
 <section class="landing m-auto text-center relative z-20 motion-safe:transition-all" x-data="social">
   <h1 class="logo group pt-4 pb-24 flex justify-center relative">
-    <a href="/" class="mx-4 text-white block motion-safe:(animate-spin)">
-      <b class="inline-block motion-safe:(animate-throb)">
+    <a href="/" class="mx-4 text-white block rounded-full motion-safe:(animate-spin) focus-visible:(outline-none [&>b]:(outline-(& 2 current offset-4)))">
+      <b class="inline-block rounded-full motion-safe:(animate-throb)">
         <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" role="img" class="w-24 h-auto inline-block align-middle md:(w-32)">
           <title>{{ site.meta.title }} - {{ site.meta.description }}</title>
           <g fill="currentColor">
@@ -23,9 +23,8 @@ eleventyNavigation:
   <ul class="social mb-16 flex justify-center relative">
     <template x-for="(soc, index) in social">
       <li class="mx-3 md:mx-8" @mouseover="socialLoopPaused = true, socialActive = null" @mouseout="socialLoopPaused = false">
-        <a :href="soc.url" :class="['w-8 h-8 flex relative motion-safe:(transition-all) md:(w-12 h-12) text-'+ soc.color, socialActive === (index + 1) ? 'active' : '']" :aria-label="soc.name">
+        <a :href="soc.url" :class="['w-8 h-8 flex relative rounded-full motion-safe:(transition-all) md:(w-12 h-12) text-'+ soc.color, socialActive === (index + 1) ? 'active' : '']" :aria-label="soc.name">
           <iconify-icon :icon="soc.icon" inline="false" class="m-auto inline-block align-middle text-2xl md:(text-3xl)" noobserver></iconify-icon>
-          <b></b>
         </a>
       </li>
     </template>

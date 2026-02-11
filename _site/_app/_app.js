@@ -62,11 +62,12 @@ install({
 });
 injectGlobal`
   @layer base {
-    .social a b { @apply w-full h-full absolute top-0 left-0 index-10 opacity-0 rounded-full; }
-    .social .active b,.social a:hover b,.social a:focus b { @apply bg-current opacity-75 shadow-xl motion-safe:transition-all scale-150; }
+    :focus-visible { @apply outline-(& 2 current offset-1); }
+    .social a { @apply after:(content-[''] w-full h-full absolute top-0 left-0 index-10 opacity-0 rounded-full) focus-visible:(outline-none after:(outline-(& 2 current offset-1))); }
+    .social .active,.social a:hover,.social a:focus-visible { @apply after:(bg-current opacity-75 shadow-xl motion-safe:transition-all scale-150); }
     .social a iconify-icon { @apply text-white opacity-50 relative z-20 motion-safe:transition-all; }
-    .social .active,.social a:hover,.social a:focus { @apply motion-safe:animate-blob; }
-    .social .active iconify-icon,.social a:hover iconify-icon,.social a:focus iconify-icon { @apply text-white opacity-100; }
+    .social .active,.social a:hover,.social a:focus-visible { @apply motion-safe:animate-blob; }
+    .social .active iconify-icon,.social a:hover iconify-icon,.social a:focus-visible iconify-icon { @apply text-white opacity-100; }
   }
 `
 
