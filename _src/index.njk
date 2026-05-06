@@ -7,7 +7,7 @@ eleventyNavigation:
 
 <section class="landing m-auto text-center relative z-20 motion-safe:transition-all" x-data="social">
   <h1 class="logo group pt-4 pb-24 flex justify-center relative">
-    <a href="/" class="mx-4 text-white block rounded-full motion-safe:(animate-spin) focus-visible:(outline-none [&>b]:(outline-(& 2 current offset-4)))">
+    <a href="{{ '/' | url }}" class="mx-4 text-white block rounded-full motion-safe:(animate-spin) focus-visible:(outline-none [&>b]:(outline-(& 2 current offset-4)))">
       <b class="inline-block rounded-full motion-safe:(animate-throb)">
         <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" role="img" class="w-24 h-auto inline-block align-middle md:(w-32)">
           <title>{{ site.meta.title }} - {{ site.meta.description }}</title>
