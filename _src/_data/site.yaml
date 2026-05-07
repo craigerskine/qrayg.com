@@ -4,6 +4,7 @@ meta:
   description: Twitch Streamer, Gamer, UX Designer & Engineer
   author: qrayg
   url: https://qrayg.com
+  separator: ' ⇢ '
 analytics: |
   // google analytics
   window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;

@@ -1,4 +1,4 @@
-{%- set pageTitle -%}{%- if title -%}{{ title }} - {{ site.meta.title }}{%- else -%}{{ site.meta.title }} - {{ site.meta.description }}{%- endif -%}{%- endset -%}
+{%- set pageTitle -%}{%- if title -%}{{ title }}{{ site.meta.separator }}{{ site.meta.title }}{%- else -%}{{ site.meta.title }}{{ site.meta.separator }}{{ site.meta.description }}{%- endif -%}{%- endset -%}
 <!doctype html>
 <html lang="en" class="bg-transparent antialiased" x-data="{ menu: false }">
 
