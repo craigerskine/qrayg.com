@@ -1,22 +1,30 @@
+{%- set pageTitle -%}{%- if title -%}{{ title }} - {{ site.meta.title }}{%- else -%}{{ site.meta.title }} - {{ site.meta.description }}{%- endif -%}{%- endset -%}
 <!doctype html>
 <html lang="en" class="bg-transparent antialiased" x-data="{ menu: false }">
 
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>{%- if title -%}{{ title }} - {{ site.meta.title }}{%- else -%}{{ site.meta.title }} - {{ site.meta.description }}{%- endif -%}</title>
+    <title>{{ pageTitle }}</title>
     <meta name="description" content="{{ site.meta.description }}" />
-    <meta name="author" content="{{ site.meta.author + ' - '+ site.meta.author_url }}" />
+    <meta name="author" content="{{ site.meta.author + ' - '+ site.meta.url }}" />
     <meta name="generator" content="{{ eleventy.generator }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <meta property="og:title" content="qrayg.com" />
-    <meta property="og:description" content="Twitch Streamer, Gamer, UX Designer, UI Developer" />
-    <meta property="og:url" content="https://qrayg.com" />
-    <meta property="og:image" content="https://qrayg.com/og-image.jpg" />
+    <meta name="title" content="{{ pageTitle }}" />
+    <meta name="description" content="{{ site.meta.description }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ site.meta.url }}{{ page.url | url }}" />
+    <meta property="og:title" content="{{ pageTitle }}" />
+    <meta property="og:description" content="{{ site.meta.description }}" />
+    <meta property="og:image" content="{{ site.meta.url }}/og-image.png" />
     <meta property="og:image:width" content="279" />
     <meta property="og:image:height" content="279" />
-    <meta name="theme-color" content="#222222" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="{{ site.meta.url }}{{ page.url | url }}" />
+    <meta property="twitter:title" content="{{ pageTitle }}" />
+    <meta property="twitter:description" content="{{ site.meta.description }}" />
+    <meta property="twitter:image" content="{{ site.meta.url }}/og-image.png" />
 
     <link rel="icon" type="image/x-icon" href="{{ '/' | url }}{%- if favicon -%}_assets/{{ favicon }}/{%- endif -%}favicon.ico" />
     <link rel="apple-touch-icon" href="{{ '/' | url }}apple-touch-icon.png" />
@@ -24,13 +32,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-
-    {%- if '/currently/' in page.url %}
-    <link onload="this.onload=null;this.rel='stylesheet'" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;400;700&display=swap" />
-    {%- else %}
-    <link onload="this.onload=null;this.rel='stylesheet'" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" />
-    {%- endif %}
-
+    <link onload="this.onload=null;this.rel='stylesheet'" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family={{ 'Roboto+Mono:wght@100;400;700' if '/currently/' in page.url else 'Inter:wght@100..900' }}&display=swap" />
+    
     <meta name="p:domain_verify" content="8f7326aedb8678368871e5a49beaa8ac" />
 
   </head>

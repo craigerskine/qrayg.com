@@ -3,7 +3,7 @@ meta:
   title: qrayg
   description: Twitch Streamer, Gamer, UX Designer & Engineer
   author: qrayg
-  author_url: https://qrayg.com/
+  url: https://qrayg.com
 analytics: |
   // google analytics
   window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
