@@ -5,22 +5,21 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>{{ pageTitle }}</title>
+    <title>{{ pageTitle | safe }}</title>
     <meta name="description" content="{{ site.meta.description }}" />
     <meta name="author" content="{{ site.meta.author + ' - '+ site.meta.url }}" />
     <meta name="generator" content="{{ eleventy.generator }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <meta name="title" content="{{ pageTitle }}" />
-    <meta name="description" content="{{ site.meta.description }}" />
+    <meta name="title" content="{{ pageTitle | safe }}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ site.meta.url }}{{ page.url | url }}" />
-    <meta property="og:title" content="{{ pageTitle }}" />
+    <meta property="og:title" content="{{ pageTitle | safe }}" />
     <meta property="og:description" content="{{ site.meta.description }}" />
     <meta property="og:image" content="{{ site.meta.url }}/og-image.png" />
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="{{ site.meta.url }}{{ page.url | url }}" />
-    <meta property="twitter:title" content="{{ pageTitle }}" />
+    <meta property="twitter:title" content="{{ pageTitle | safe }}" />
     <meta property="twitter:description" content="{{ site.meta.description }}" />
     <meta property="twitter:image" content="{{ site.meta.url }}/og-image.png" />
 
