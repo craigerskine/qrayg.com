@@ -164,8 +164,8 @@ eleventyNavigation:
       activeIndex: -1,
 
       init() {
-        this.$el.addEventListener('transitionend', () => {
-          if (this.$el.open) this.$el.querySelector('#weather-location').focus();
+        this.$el.addEventListener('transitionend', (e) => {
+          if (e.target === this.$el && this.$el.open) this.$el.querySelector('#weather-location').focus();
         });
       },
 
