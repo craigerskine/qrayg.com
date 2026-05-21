@@ -234,10 +234,10 @@ eleventyNavigation:
         motion-safe:transition-all
       "
     >
-      <h3 class="mb-1 text-xl font-bold">Set Weather Location</h3>
+      <h3 class="mb-6 text-xl font-bold">Set Weather Location</h3>
       <button @click="$el.closest('dialog').close()" class="ring-(2 inset current) w-8 h-8 bg-black text-white flex items-center justify-center absolute top-0 right-0 rounded-full -translate-y-1/2 translate-x-1/2 transition hover:(bg-gray-700)"><iconify-icon icon="mdi:close" width="24px" height="24px" class="block" noobserver></iconify-icon></button>
       <div class="form-control flex flex-col gap-1 relative">
-        <label for="weather-location" class="text-sm font-semibold opacity-75">Location</label>
+        <label for="weather-location" class="sr-only">Location</label>
         <div class="relative">
           <input
             type="search"
