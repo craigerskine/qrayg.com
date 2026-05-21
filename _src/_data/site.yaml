@@ -5,7 +5,3 @@ meta:
   author: qrayg
   url: https://qrayg.com
   separator: ' ⇢ '
-analytics: |
-  // google analytics
-  window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-  ga('create', 'UA-6318307-2', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
