@@ -121,7 +121,7 @@ eleventyNavigation:
           <div class="stat-desc text-xs" x-text="error" x-show="error"></div>
           <div class="stat-value" x-text="displayTemp()" x-show="!loading"></div>
           <sup class="stat-sup text-(gray-400 opacity-50) uppercase">&deg;F</sup>
-          <button @click="weather.showModal()" class="absolute inset-0 focus-visible:(outline-offset-4 rounded-lg shadow-none)"></button>
+          <button @click="weather.showModal()" class="absolute inset-y-0 -inset-x-2 rounded-lg transition hover:(bg-white/5 ring-(1 inset white/5)) focus-visible:(outline-offset-4 shadow-none)"><span class="sr-only">Set location</span></button>
         </div>
       </li>
     </ul>
@@ -235,10 +235,9 @@ eleventyNavigation:
       "
     >
       <h3 class="mb-1 text-xl font-bold">Set Weather Location</h3>
-      <p class="mb-4 text-xs opacity-50" x-text="'Currently: ' + $store.weather.city"></p>
-      <button @click="$el.closest('dialog').close()" class="outline-(& 2 current offset-1) w-8 h-8 bg-black text-white flex items-center justify-center absolute top-0 right-0 rounded-full -translate-y-1/2 translate-x-1/2"><iconify-icon icon="mdi:close" width="24px" height="24px" class="block" noobserver></iconify-icon></button>
+      <button @click="$el.closest('dialog').close()" class="ring-(2 inset current) w-8 h-8 bg-black text-white flex items-center justify-center absolute top-0 right-0 rounded-full -translate-y-1/2 translate-x-1/2 transition hover:(bg-gray-700)"><iconify-icon icon="mdi:close" width="24px" height="24px" class="block" noobserver></iconify-icon></button>
       <div class="form-control flex flex-col gap-1 relative">
-        <label for="weather-location" class="text-sm font-semibold opacity-75">Search city</label>
+        <label for="weather-location" class="text-sm font-semibold opacity-75">Location</label>
         <div class="relative">
           <input
             type="search"
@@ -257,22 +256,26 @@ eleventyNavigation:
             autocomplete="off"
           />
           <span x-show="searching" class="text-xs absolute right-6 top-1/2 -translate-y-1/2 opacity-50">Searching...</span>
+          <ul x-ref="resultsList" x-show="results.length > 0" class="mt-1 border-(& gray-200) w-[anchor-size(width)] max-h-[200px] bg-white overflow-y-auto divide-(y gray-200) fixed z-50 rounded" style="position-anchor: --weather-input; top: anchor(bottom); left: anchor(left);">
+            <template x-for="(result, index) in results" :key="result.id">
+              <li>
+                <button
+                  data-result
+                  @click="select(result)"
+                  :class="index === activeIndex ? 'bg-gray-200' : ''"
+                  class="w-full px-4 py-2 text-left text-sm flex items-baseline gap-2 transition hover:bg-gray-300"
+                >
+                  <span x-text="result.name" class="font-semibold"></span>
+                  <span x-text="(result.admin1 ? result.admin1 + ', ' : '') + result.country" class="text-xs opacity-50 truncate"></span>
+                </button>
+              </li>
+            </template>
+          </ul>
         </div>
-        <ul x-ref="resultsList" x-show="results.length > 0" class="mt-1 border-(& gray-200) w-[anchor-size(width)] max-h-[200px] bg-white overflow-y-auto divide-(y gray-200) fixed z-50 rounded" style="position-anchor: --weather-input; top: anchor(bottom); left: anchor(left);">
-          <template x-for="(result, index) in results" :key="result.id">
-            <li>
-              <button
-                data-result
-                @click="select(result)"
-                :class="index === activeIndex ? 'bg-gray-200' : ''"
-                class="w-full px-4 py-2 text-left text-sm flex items-baseline gap-2 transition hover:bg-gray-300"
-              >
-                <span x-text="result.name" class="font-semibold"></span>
-                <span x-text="(result.admin1 ? result.admin1 + ', ' : '') + result.country" class="text-xs opacity-50 truncate"></span>
-              </button>
-            </li>
-          </template>
-        </ul>
+        <p class="mt-1 text-xs font-semibold opacity-60" x-text="'Currently: ' + $store.weather.city"></p>
+      </div>
+      <div class="dialog-actions mt-1 flex items-end justify-end gap-2">
+        <button @click="$el.closest('dialog').close()" class="px-5 h-11 border-(& current) bg-transparent text-current text-sm font-semibold inline-flex items-center gap-1 rounded-md transition hover:(bg-gray-200)">OK</button>
       </div>
     </div>
     <form

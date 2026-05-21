@@ -15,7 +15,7 @@ install({
   theme: {
     extend: {
       colors: ({ theme }) => ({
-        gray: theme('colors.zinc'),
+        gray: theme('colors.neutral'),
       }),
       fontFamily: ({ theme }) => ({
         sans: ['Inter', ...theme('fontFamily.sans')],
