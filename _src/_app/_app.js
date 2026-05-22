@@ -62,12 +62,87 @@ install({
 });
 injectGlobal`
   @layer base {
-    :focus-visible { @apply outline-(& 2 current offset-1); }
+    :focus-visible { @apply outline-(& 2 current offset-1) rounded-md; }
     .social a { @apply after:(content-[''] w-full h-full absolute top-0 left-0 index-10 opacity-0 rounded-full) focus-visible:(outline-none after:(outline-(& 2 current offset-1))); }
     .social .active,.social a:hover,.social a:focus-visible { @apply after:(bg-current opacity-75 shadow-xl motion-safe:transition-all scale-150); }
     .social a iconify-icon { @apply text-white opacity-50 relative z-20 motion-safe:transition-all; }
     .social .active,.social a:hover,.social a:focus-visible { @apply motion-safe:animate-blob; }
     .social .active iconify-icon,.social a:hover iconify-icon,.social a:focus-visible iconify-icon { @apply text-white opacity-100; }
+
+    .tooltip {
+      --tip-bg: black;
+      --tip-fg: white;
+      --tip-off: calc(100% + 0.5rem);
+      --tip-tail: calc(100% + 0.25rem);
+      
+      display: inline-block;
+      position: relative;
+
+      & > .tooltip-content,&[data-tip]:before {
+        padding: 0.5rem 1rem;
+        width: max-content;
+        max-width: 20rem;
+        background-color: var(--tip-bg);
+        color: var(--tip-fg);
+        font-size: 1rem;
+        line-height: 24px;
+        text-align: center;
+        white-space: normal;
+        pointer-events: none;
+        position: absolute;
+        z-index: 2;
+        content: attr(data-tip);
+        opacity: 0;
+        border-radius: 0.25rem;
+
+        @media (min-width: 768px) {
+          padding: 0.25rem 1rem;
+          font-size: 0.75rem;
+          line-height: 18px;
+        }
+      }
+
+      &:after {
+        width: 1rem;
+        height: 0.5rem;
+        background-color: var(--tip-bg);
+        display: block;
+        position: absolute;
+        pointer-events: none;
+        content: "";
+        opacity: 0;
+        clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        & > .tooltip-content, &[data-tip]:before, &:after {
+          transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1) 75ms, transform 0.2s cubic-bezier(0.4, 0, 0.2, 1) 75ms;
+        }
+      }
+
+      &[data-tip]:not([data-tip=""], :has(.tooltip-content:not(:empty))) {
+        &.tooltip-open, &:hover, &:has(:focus-visible) {
+          & > .tooltip-content, &[data-tip]:before, &:after {
+            --tip-pos: 0rem;
+            opacity: 1;
+            @media (prefers-reduced-motion: no-preference) {
+              transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0s, transform 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+            }
+          }
+        }
+      }
+    }
+
+    .tooltip {
+      & > .tooltip-content, &[data-tip]:before {
+        inset: auto auto calc(var(--tip-off) + 0.25rem) 50%;
+        transform: translateX(-50%) translateY(var(--tip-pos, 0.25rem));
+      }
+      &:after {
+        inset: auto auto var(--tip-tail) 50%;
+        transform: translateX(-50%) translateY(var(--tip-pos, 0.25rem));
+      }
+    }
   }
 `
 

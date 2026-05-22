@@ -116,12 +116,12 @@ eleventyNavigation:
         }
       }
       " class="hidden md:(flex items-center justify-center gap-1.5)">
-        <div class="flex items-center justify-center gap-1.5 relative">
+        <div :data-tip="$store.weather.city" class="tooltip flex items-center justify-center gap-1.5 relative">
           <strong class="stat-desc text-xs uppercase" x-show="loading">Loading...</strong>
           <div class="stat-desc text-xs" x-text="error" x-show="error"></div>
           <div class="stat-value" x-text="displayTemp()" x-show="!loading"></div>
           <sup class="stat-sup text-(gray-400 opacity-50) uppercase">&deg;F</sup>
-          <button @click="weather.showModal()" class="absolute inset-y-0 -inset-x-2 rounded-lg transition hover:(bg-white/5 ring-(1 inset white/5)) focus-visible:(outline-offset-4 shadow-none)"><span class="sr-only">Set location</span></button>
+          <button @click="weather.showModal()" class="absolute inset-y-0 -inset-x-2 rounded-md transition hover:(bg-white/5 ring-(1 inset white/5)) focus-visible:(outline-offset-4 shadow-none)"><span class="sr-only">Set location</span></button>
         </div>
       </li>
     </ul>
