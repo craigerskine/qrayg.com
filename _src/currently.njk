@@ -263,14 +263,14 @@ eleventyNavigation:
               autocomplete="off"
             />
             <span x-show="searching" class="text-xs absolute right-6 top-1/2 -translate-y-1/2 opacity-50">Searching...</span>
-            <ul x-ref="resultsList" x-show="results.length > 0" class="mt-1 border-(& gray-200) w-[anchor-size(width)] max-h-[200px] bg-white overflow-y-auto divide-(y gray-200) fixed z-50 rounded" style="position-anchor: --weather-input; top: anchor(bottom); left: anchor(left);">
+            <ul x-ref="resultsList" x-show="results.length > 0" class="mt-1 border-(& white/20) w-[anchor-size(width)] max-h-[200px] bg-gray-700 overflow-y-auto divide-(y white/10) fixed z-50 rounded shadow-(lg black/50)" style="position-anchor: --weather-input; top: anchor(bottom); left: anchor(left);">
               <template x-for="(result, index) in results" :key="result.id">
                 <li>
                   <button
                     data-result
                     @click="select(result)"
-                    :class="index === activeIndex ? 'bg-gray-200' : ''"
-                    class="w-full px-4 py-2 text-left text-sm flex items-baseline gap-2 transition hover:bg-gray-300"
+                    :class="index === activeIndex ? 'bg-black/20' : ''"
+                    class="w-full px-4 py-2 text-left text-sm flex items-baseline gap-2 transition hover:bg-black/30"
                   >
                     <span x-text="result.name" class="font-semibold"></span>
                     <span x-text="(result.admin1 ? result.admin1 + ', ' : '') + result.country" class="text-xs opacity-50 truncate"></span>
