@@ -121,7 +121,7 @@ eleventyNavigation:
           <div class="stat-desc text-xs" x-text="error" x-show="error"></div>
           <div class="stat-value" x-text="displayTemp()" x-show="!loading"></div>
           <sup class="stat-sup text-(gray-400 opacity-50) uppercase">&deg;F</sup>
-          <button @click="weather.showModal()" class="absolute inset-y-0 -inset-x-2 rounded-md transition hover:(bg-white/5 ring-(1 inset white/5)) focus-visible:(outline-offset-4 shadow-none)"><span class="sr-only">Set location</span></button>
+          <button @click="weather.showModal()" class="absolute inset-y-0 -inset-x-2 rounded-md transition hover:(bg-white/5 ring-(1 inset white/5)) focus-visible:(outline-offset-4 shadow-none)" data-cuelume-hover="tick"><span class="sr-only">Set location</span></button>
         </div>
       </li>
     </ul>
@@ -240,7 +240,7 @@ eleventyNavigation:
     >
       <div class="dialog-header">
         <h3 class="text-xl font-bold">Set Weather Location</h3>
-        <button @click="$el.closest('dialog').close()" class="ring-(1 inset current) w-8 h-8 bg-gray-900 text-gray-500 flex items-center justify-center absolute top-0 right-0 rounded-full shadow-(md black/50) -translate-y-1/2 translate-x-1/2 transition hover:(text-gray-400 bg-gray-800)"><iconify-icon icon="mdi:close" width="24px" height="24px" class="block" noobserver></iconify-icon></button>
+        <button data-cuelume-hover="tick" @click="$el.closest('dialog').close()" class="ring-(1 inset current) w-8 h-8 bg-gray-900 text-gray-500 flex items-center justify-center absolute top-0 right-0 rounded-full shadow-(md black/50) -translate-y-1/2 translate-x-1/2 transition hover:(text-gray-400 bg-gray-800)"><iconify-icon icon="mdi:close" width="24px" height="24px" class="block" noobserver></iconify-icon></button>
       </div>
       <div class="dialog-body">
         <div class="form-control flex flex-col gap-1 relative">
@@ -283,7 +283,7 @@ eleventyNavigation:
         </div>
       </div>
       <div class="dialog-actions flex items-end justify-end gap-2">
-        <button @click="$el.closest('dialog').close()" class="px-5 h-11 border-(& current) bg-transparent [color:color-mix(in_oklab,currentColor,transparent_40%)] text-sm font-semibold inline-flex items-center gap-1 rounded-md transition hover:(bg-white/10)">OK</button>
+        <button data-cuelume-hover="tick" @click="$el.closest('dialog').close()" class="px-5 h-11 border-(& current) bg-transparent [color:color-mix(in_oklab,currentColor,transparent_40%)] text-sm font-semibold inline-flex items-center gap-1 rounded-md transition hover:(bg-white/10)">OK</button>
       </div>
     </div>
     <form

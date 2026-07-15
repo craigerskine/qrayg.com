@@ -4,6 +4,10 @@ import 'instant.page';
 // icons
 import 'iconify-icon';
 
+// sounds
+import { bind, play } from 'cuelume';
+bind();
+
 // twind
 import { install, injectGlobal } from '@twind/core';
 import presetAutoprefix from '@twind/preset-autoprefix';
