@@ -1,381 +1,329 @@
 ---
-layout: 'layouts/default.njk'
+layout: layouts/default.njk
 title: Currently
-beat:
-  info: Internet/Beat Time
 eleventyNavigation:
   key: Currently
-  icon: mdi:timer-settings
+  icon: mdi:alarm
   order: 1
 ---
 
-<section class="w-full h-screen font-roboto flex-(& col) select-none">
-  <article class="clock w-full h-full flex-(& 1 col) justify-center">
-    <h1 class="time w-full text-5xl font-thin leading-none flex md:(text-[calc(5vw+5vh+.5vmin)])">
-      <span class="hours w-full text-center flex-1"></span>
-      <span class="minutes w-full text-center flex-1"></span>
-      <span class="seconds w-full text-center flex-1"></span>
-      {# <span class="milliseconds w-full text-center flex-1"></span> #}
-    </h1>
-    <ul class="binary-digits w-full hidden lg:flex">
-      <li class="w-full py-4 lg:py-8 flex-1 flex items-end">
-        <ul class="hour-1 px-4 w-full flex-(& 1 col) space-y-2">
-          <li class="tick hrs-1-2 ml-auto w-4 h-1 rounded-full motion-safe:(transition-all)"></li>
-          <li class="tick hrs-1-1 ml-auto w-4 h-1 rounded-full motion-safe:(transition-all)"></li>
-        </ul>
-        <ul class="hour-2 px-4 w-full flex-(& 1 col) space-y-2">
-          <li class="tick hrs-2-8 w-4 h-1 rounded-full motion-safe:(transition-all)"></li>
-          <li class="tick hrs-2-4 w-4 h-1 rounded-full motion-safe:(transition-all)"></li>
-          <li class="tick hrs-2-2 w-4 h-1 rounded-full motion-safe:(transition-all)"></li>
-          <li class="tick hrs-2-1 w-4 h-1 rounded-full motion-safe:(transition-all)"></li>
-        </ul>
-      </li>
-      <li class="w-full py-4 flex-(& 1) items-end lg:(py-8)">
-        <ul class="minute-1 px-4 w-full flex-(& 1 col) space-y-2">
-          <li class="tick min-1-4 ml-auto w-4 h-1 rounded-full motion-safe:(transition-all)"></li>
-          <li class="tick min-1-2 ml-auto w-4 h-1 rounded-full motion-safe:(transition-all)"></li>
-          <li class="tick min-1-1 ml-auto w-4 h-1 rounded-full motion-safe:(transition-all)"></li>
-        </ul>
-        <ul class="minute-2 px-4 w-full flex-(& 1 col) space-y-2">
-          <li class="tick min-2-8 w-4 h-1 rounded-full motion-safe:(transition-all)"></li>
-          <li class="tick min-2-4 w-4 h-1 rounded-full motion-safe:(transition-all)"></li>
-          <li class="tick min-2-2 w-4 h-1 rounded-full motion-safe:(transition-all)"></li>
-          <li class="tick min-2-1 w-4 h-1 rounded-full motion-safe:(transition-all)"></li>
-        </ul>
-      </li>
-      <li class="w-full py-4 flex-(& 1) items-end lg:(py-8)">
-        <ul class="second-1 px-4 w-full flex-(& 1 col) space-y-2">
-          <li class="tick sec-1-4 ml-auto w-4 h-1 rounded-full motion-safe:(transition-all)"></li>
-          <li class="tick sec-1-2 ml-auto w-4 h-1 rounded-full motion-safe:(transition-all)"></li>
-          <li class="tick sec-1-1 ml-auto w-4 h-1 rounded-full motion-safe:(transition-all)"></li>
-        </ul>
-        <ul class="second-2 px-4 w-full flex-(& 1 col) space-y-2">
-          <li class="tick sec-2-8 w-4 h-1 rounded-full motion-safe:(transition-all)"></li>
-          <li class="tick sec-2-4 w-4 h-1 rounded-full motion-safe:(transition-all)"></li>
-          <li class="tick sec-2-2 w-4 h-1 rounded-full motion-safe:(transition-all)"></li>
-          <li class="tick sec-2-1 w-4 h-1 rounded-full motion-safe:(transition-all)"></li>
-        </ul>
-      </li>
-    </ul>
-  </article>
-  <aside class="misc w-full flex-(& col) justify-center">
-    <ul class="font-bold text-[calc(1.25vw+1vh)] [&_sup]:(text-[.5em]) grid grid-cols-1 md:grid-cols-3">
-      <li class="hidden py-4 md:block lg:(py-32)">
-        <h2 class="internet pl-5 flex items-center justify-center gap-1.5">
-          <sup class="text-(gray-400/50) font-black uppercase">@</sup>
-          <b class="beats font-black" title="{{ beat.info }}" aria-label="{{ beat.info }}" tabindex="0">&nbsp;</b>
-        </h2>
-      </li>
-      <li>
-        <ul class="date mx-auto w-fit flex gap-4 lg:gap-16">
-          <li class="py-4 flex-1 flex items-center justify-center gap-1.5 lg:(py-32)">
-            <b class="date-m font-black">&nbsp;</b>
-            <sup class="date-mm text-(gray-400 opacity-50) uppercase">&nbsp;</sup>
-          </li>
-          <li class="py-4 flex-1 flex items-center justify-center gap-1.5 lg:(py-32)">
-            <b class="date-d font-black">&nbsp;</b>
-            <sup class="date-dd text-(gray-400 opacity-50) uppercase">&nbsp;</sup>
-          </li>
-          <li class="py-4 flex-(& 1) items-center justify-center gap-1.5 lg:(py-32)">
-            <b class="date-y font-black">&nbsp;</b>
-            <sup class="date-yy text-(gray-400 opacity-50) uppercase">AD</sup>
-          </li>
-        </ul>
-      </li>
-      <li x-data="{
-        temp: null,
-        unit: 'F',
-        loading: true,
-        error: '',
-        interval: 30,
+{%- setblock 'header' -%}
+  <h1 class="mr-auto text-xs font-bold tracking-widest uppercase opacity-50">{{ title }}</h1>
+  <div class="font-bold" x-html="currentDate"></div>
+{%- endsetblock -%}
 
-        async init() {
-          await this.fetchTemp();
-          setInterval(() => this.fetchTemp(), this.interval * 60 * 1000);
-          this.$watch('$store.weather.lat', () => this.fetchTemp());
-        },
-
-        async fetchTemp() {
-          this.loading = true; this.error = '';
-          try {
-            const unitQuery = this.unit === 'F' ? 'fahrenheit' : 'celsius';
-            const url = `https://api.open-meteo.com/v1/forecast?latitude=${this.$store.weather.lat}&longitude=${this.$store.weather.lon}&current=temperature_2m&temperature_unit=${unitQuery}`;
-            const res = await fetch(url);
-            const data = await res.json();
-            this.temp = Math.round(data?.current?.temperature_2m);
-            if (this.temp == null) throw new Error('Weather unavailable');
-          } catch (e) {
-            this.error = e.message || 'Failed to fetch weather';
-          } finally {
-            this.loading = false;
-          }
-        },
-
-        displayTemp() {
-          return this.temp == null ? '--' : `${this.temp}`;
-        }
-      }
-      " class="hidden md:(flex items-center justify-center gap-1.5)">
-        <div :data-tip="$store.weather.city" class="tooltip flex items-center justify-center gap-1.5 relative">
-          <strong class="stat-desc text-xs uppercase" x-show="loading">Loading...</strong>
-          <div class="stat-desc text-xs" x-text="error" x-show="error"></div>
-          <div class="stat-value" x-text="displayTemp()" x-show="!loading"></div>
-          <sup class="stat-sup text-(gray-400 opacity-50) uppercase">&deg;F</sup>
-          <button @click="weather.showModal()" class="absolute inset-y-0 -inset-x-2 rounded-md transition hover:(bg-white/5 ring-(1 inset white/5)) focus-visible:(outline-offset-4 shadow-none)" data-cuelume-hover="tick"><span class="sr-only">Set location</span></button>
+<template x-for="row in timeRows" :key="row.title" hidden>
+  <section class="grid relative md:px-4" :class="'section-'+ row.title">
+    <div class="flex flex-col justify-center gap-2">
+      <div class="pb-4 flex items-end gap-4">
+        <time class="[font-size:var(--fluid-hero)] font-thin leading-none xl:tracking-[-.05em]" x-text="row.time"></time>
+        <sub class="text-xs tracking-widest font-bold uppercase opacity-20" x-text="row.title"></sub>
+        <!-- binary -->
+        <div class="ml-auto pb-1 flex items-end gap-2">
+          <template x-for="(bits, col) in row.binary" :key="col" hidden>
+            <div class="flex flex-col items-center gap-1">
+              <template x-for="(bit, i) in bits" :key="i" hidden>
+                <div class="bit w-2 aspect-square ring-inset ring-1 ring-current opacity-10 rounded-box transition [&.bit-active]:bg-current [&.bit-active]:ring-transparent [&.bit-active]:opacity-25" :class="bit ? 'bit-active' : ''"></div>
+              </template>
+            </div>
+          </template>
         </div>
-      </li>
-    </ul>
-  </aside>
-</section>
+      </div>
+      <!-- bars -->
+      <div class="h-8 flex items-end gap-0.5">
+        <template x-for="(filled, i) in row.bar" :key="i" hidden>
+          <div class="bar flex-1 h-full ring-inset ring-1 ring-current [&.bar-active]:ring-transparent [&.bar-active]:bg-current opacity-5 rounded-field transition-all" :class="{ 'bar-active': i < row.current }" :style="`height: ${i < row.current ? '100%' : '25%'}`"></div>
+        </template>
+      </div>
+      <!-- markers -->
+      <div class="text-xs flex justify-between opacity-20">
+        <template x-for="mark in row.markers" :key="mark" hidden>
+          <div x-text="mark"></div>
+        </template>
+      </div>
+    </div>
+  </section>
+</template>
 
-<template x-teleport="body">
+{%- setblock 'footer' -%}
+  <footer class="py-2 px-4 text-sm shrink-0 md:px-8">
+    <div class="font-bold tracking-wider flex flex-wrap items-center gap-2">
+      <div>
+        <p class="inline-flex gap-1">
+          <strong class="text-xs" x-show="loading">Loading...</strong>
+          <strong class="text-xs text-error" x-text="error" x-show="error"></strong>
+          <span class="text-sm" x-text="displayTemp()" x-show="!loading"></span>
+          <sup class="text-xs leading-none top-0 opacity-50" x-show="!loading">&deg;F</sup>
+        </p>
+      </div>
+      <div class="flex items-center">
+        <div class="tooltip">
+          <div class="tooltip-content text-xs">Change location</div>
+          <button data-cuelume-press data-cuelume-release data-cuelume-hover="tick" @click="weather.showModal()" class="btn btn-ghost btn-sm text-current/50 uppercase hover:[background-color:color-mix(in_oklab,currentColor_20%,transparent)]" aria-label="Change location" x-text="$store.weather.city"></button>
+        </div>
+      </div>
+      <div data-cuelume-hover="tick" tabindex="0" class="tooltip tooltip-end ml-auto inline-flex gap-1">
+        <div class="tooltip-content pb-1.5 text-xs">Beat Time</div>
+        <sup class="text-sm leading-none top-0 opacity-50">@</sup><span x-text="beatTime"></span>
+      </div>
+    </div>
+  </footer>
+
   <dialog
     id="weather"
-    class="
-      dialog
-      m-0
-      p-0
-      w-full
-      max-w-none
-      h-full
-      max-h-none
-      min-h-screen
-      bg-transparent
-      text-[inherit]
-      invisible
-      grid
-      items-center
-      justify-items-center
-      fixed
-      inset-0
-      pointer-events-none
-      overflow-y-hidden
-      [overscroll-behavior:contain]
-      opacity-0
-      motion-safe:(transition-all)
-      [&[open]]:(pointer-events-auto visible opacity-100)
-      [&[open]_.dialog-box]:(translate-y-0 scale-100)
-      [&::backdrop]:(bg-black/40)
-    "
-    x-data="{
-      query: '',
-      results: [],
-      searching: false,
-      activeIndex: -1,
-
-      init() {
-        this.$el.addEventListener('transitionend', (e) => {
-          if (e.target === this.$el && this.$el.open) this.$el.querySelector('#weather-location').focus();
-        });
-      },
-
-      navigate(dir) {
-        if (!this.results.length) return;
-        const len = this.results.length;
-        if      (dir === 'down')   this.activeIndex = (this.activeIndex + 1) % len;
-        else if (dir === 'up')     this.activeIndex = (this.activeIndex - 1 + len) % len;
-        else if (dir === 'first')  this.activeIndex = 0;
-        else if (dir === 'last')   this.activeIndex = len - 1;
-        else if (dir === 'pagedown') this.activeIndex = Math.min(len - 1, this.activeIndex + 5);
-        else if (dir === 'pageup')   this.activeIndex = Math.max(0, this.activeIndex - 5);
-        this.$nextTick(() => {
-          const list = this.$refs.resultsList;
-          const item = list?.querySelectorAll('[data-result]')[this.activeIndex];
-          if (!list || !item) return;
-          const itemBottom = item.offsetTop + item.offsetHeight;
-          if (itemBottom > list.scrollTop + list.clientHeight) list.scrollTop = itemBottom - list.clientHeight;
-          else if (item.offsetTop < list.scrollTop) list.scrollTop = item.offsetTop;
-        });
-      },
-
-      async search() {
-        this.results = [];
-        this.activeIndex = -1;
-        if (this.query.length < 2) return;
-        this.searching = true;
-        try {
-          const res = await fetch('https://geocoding-api.open-meteo.com/v1/search?name=' + encodeURIComponent(this.query) + '&count=8&language=en&format=json');
-          const data = await res.json();
-          this.results = data.results || [];
-        } catch(e) {
-          this.results = [];
-        } finally {
-          this.searching = false;
-        }
-      },
-
-      select(result) {
-        const city = result.name + (result.admin1 ? ', ' + result.admin1 : '') + (result.country_code !== 'US' ? ' (' + result.country_code + ')' : '');
-        this.$store.weather.lat = result.latitude;
-        this.$store.weather.lon = result.longitude;
-        this.$store.weather.city = city;
-        localStorage.setItem('weather_location', JSON.stringify({ lat: result.latitude, lon: result.longitude, city }));
-        this.query = '';
-        this.results = [];
-        this.$el.close();
-      }
-    }"
-    @cancel="if (results.length) { $event.preventDefault(); results = []; query = ''; }"
-  >
-    <div
-      class="
-        dialog-box
-        p-6
-        w-11/12
-        max-w-lg
-        bg-gray-800
-        text-gray-100
-        ring-(inset 1 white/10)
-        grid-(& cols-1)
-        gap-6
-        divide-(y transparent)
-        col-start-1
-        row-start-1
-        translate-y-3
-        rounded-lg
-        shadow-(2xl black/50)
-        scale-90
-        motion-safe:transition-all
-      "
-    >
-      <div class="dialog-header">
-        <h3 class="text-xl font-bold">Set Weather Location</h3>
-        <button data-cuelume-hover="tick" @click="$el.closest('dialog').close()" class="ring-(1 inset current) w-8 h-8 bg-gray-900 text-gray-500 flex items-center justify-center absolute top-0 right-0 rounded-full shadow-(md black/50) -translate-y-1/2 translate-x-1/2 transition hover:(text-gray-400 bg-gray-800)"><iconify-icon icon="mdi:close" width="24px" height="24px" class="block" noobserver></iconify-icon></button>
-      </div>
-      <div class="dialog-body">
-        <div class="form-control flex flex-col gap-1 relative">
-          <label for="weather-location" class="sr-only">Location</label>
-          <div class="relative">
-            <input
-              type="search"
-              id="weather-location"
-              x-model="query"
-              @input.debounce.300ms="search()"
-              @keydown.down.prevent="navigate('down')"
-              @keydown.up.prevent="navigate('up')"
-              @keydown.page-down.prevent="navigate('pagedown')"
-              @keydown.page-up.prevent="navigate('pageup')"
-              @keydown.home.prevent="navigate('first')"
-              @keydown.end.prevent="navigate('last')"
-              @keydown.enter.prevent="activeIndex >= 0 && select(results[activeIndex])"
-              class="w-full px-4 py-2 border-(& white/10) bg-white/5 rounded [anchor-name:--weather-input] transition focus:(outline-(& 2 black/25 offset-0) shadow)"
-              placeholder="City, State, ZIP, or Country..."
-              autocomplete="off"
-            />
-            <span x-show="searching" class="text-xs absolute right-6 top-1/2 -translate-y-1/2 opacity-50">Searching...</span>
-            <ul x-ref="resultsList" x-show="results.length > 0" class="mt-1 border-(& white/20) w-[anchor-size(width)] max-h-[200px] bg-gray-700 overflow-y-auto divide-(y white/10) fixed z-50 rounded shadow-(lg black/50)" style="position-anchor: --weather-input; top: anchor(bottom); left: anchor(left);">
-              <template x-for="(result, index) in results" :key="result.id">
+    class="modal"
+    @cancel="if (results.length) { $event.preventDefault(); results = []; query = ''; }">
+    <div class="modal-box overflow-visible">
+      <h2 class="font-bold text-xl">Weather Settings</h2>
+      <div class="fieldset">
+        <label for="weather-location" class="fieldset-legend">Location</label>
+        <div class="relative">
+          <input
+            type="search"
+            id="weather-location"
+            x-model="query"
+            @input.debounce.300ms="search()"
+            @keydown.down.prevent="navigate('down')"
+            @keydown.up.prevent="navigate('up')"
+            @keydown.page-down.prevent="navigate('pagedown')"
+            @keydown.page-up.prevent="navigate('pageup')"
+            @keydown.home.prevent="navigate('first')"
+            @keydown.end.prevent="navigate('last')"
+            @keydown.enter.prevent="activeIndex >= 0 && select(results[activeIndex])"
+            class="input w-full placehmolder:italic [anchor-name:--weather-input]"
+            placeholder="City, State, ZIP, or Country..."
+            autocomplete="off"
+          />
+          <div x-ref="resultsList" x-show="results.length > 0" class="my-2 border border-base-300 h-auto max-h-[calc(50vh*.5)] bg-base-100 overflow-y-auto absolute rounded-box shadow-lg [position-anchor:--weather-input]" style="top: anchor(bottom); left: anchor(left);">
+            <menu class="menu menu-sm w-52">
+              <template x-for="(result, index) in results" :key="result.id" hidden>
                 <li>
                   <button
                     data-result
                     @click="select(result)"
-                    :class="index === activeIndex ? 'bg-black/20' : ''"
-                    class="w-full px-4 py-2 text-left text-sm flex items-baseline gap-2 transition hover:bg-black/30"
+                    :class="index === activeIndex ? 'menu-active' : ''"
                   >
                     <span x-text="result.name" class="font-semibold"></span>
                     <span x-text="(result.admin1 ? result.admin1 + ', ' : '') + result.country" class="text-xs opacity-50 truncate"></span>
                   </button>
                 </li>
               </template>
-            </ul>
+            </menu>
           </div>
-          <p class="mt-1 text-xs font-semibold opacity-60" x-text="'Currently: ' + $store.weather.city"></p>
         </div>
+        <p class="label" x-text="searching ? 'Searching...' : ('Current: ' + $store.weather.city)"></p>
       </div>
-      <div class="dialog-actions flex items-end justify-end gap-2">
-        <button data-cuelume-hover="tick" @click="$el.closest('dialog').close()" class="px-5 h-11 border-(& current) bg-transparent [color:color-mix(in_oklab,currentColor,transparent_40%)] text-sm font-semibold inline-flex items-center gap-1 rounded-md transition hover:(bg-white/10)">OK</button>
+      <div class="modal-action">
+        <button class="btn btn-outline" @click="$el.closest('dialog').close()" data-cuelume-hover="tick" data-cuelume-press data-cuelume-release>OK</button>
       </div>
     </div>
-    <form
-      method="dialog"
-      class="
-        dialog-backdrop
-        text-transparent
-        grid
-        col-start-1
-        row-start-1
-        self-stretch
-        justify-self-stretch
-        fixed
-        inset-0
-        -z-[1]
-      "
-    >
-      <button>close</button>
-    </form>
+    <form method="dialog" class="modal-backdrop"><button>close</button></form>
   </dialog>
-</template>
+{%- endsetblock -%}
 
-{% setblock 'js' %}
-<script>
-  document.addEventListener('alpine:init', () => {
-    const saved = JSON.parse(localStorage.getItem('weather_location') || 'null');
-    Alpine.store('weather', {
-      lat: saved?.lat ?? 44.5133,
-      lon: saved?.lon ?? -88.0133,
-      city: saved?.city ?? 'Green Bay, WI'
+{%- setblock 'data' -%}clock{%- endsetblock -%}
+
+{%- setblock 'js' -%}
+  <script>
+    document.addEventListener('alpine:init', () => {
+      Alpine.data('clock', function() {
+        return {
+          currentHour: 0,
+          currentMinute: 0,
+          currentSecond: 0,
+          currentDate: '',
+          binaryTime: {},
+          beatTime: '',
+
+          get timeRows() {
+            return [
+              {
+                title: 'hh',
+                time: this.hourPadded,
+                current: this.hour_12,
+                binary: [this.binaryTime.h1, this.binaryTime.h2],
+                bar: 12,
+                markers: ['01','03','06','09','12'],
+              },
+              {
+                title: 'mm',
+                time: this.minutePadded,
+                current: this.currentMinute,
+                binary: [this.binaryTime.m1, this.binaryTime.m2],
+                bar: 59,
+                markers: ['01','15','30','45','59'],
+              },
+              {
+                title: 'ss',
+                time: this.secondPadded,
+                current: this.currentSecond,
+                binary: [this.binaryTime.s1, this.binaryTime.s2],
+                bar: 59,
+                markers: ['01','15','30','45','59'],
+              },
+            ]
+          },
+
+          get hourPadded() {
+            let h = this.currentHour % 12;
+            return h === 0 ? '12' : String(h).padStart(2, '0');
+          },
+
+          get hour_12() {
+            let h = this.currentHour % 12;
+            return h === 0 ? 12 : h;
+          },
+
+          get minutePadded() {
+            return String(this.currentMinute).padStart(2, '0')
+          },
+
+          get secondPadded() {
+            return String(this.currentSecond).padStart(2, '0')
+          },
+
+          toBinaryDigit(digit) {
+            return digit.toString(2)
+              .padStart(4, '0')
+              .split('')
+              .map(b => b === '1');
+          },
+
+          getBinaryTime() {
+            const hour = this.hour_12;
+            const min  = this.currentMinute;
+            const sec  = this.currentSecond;
+
+            return {
+              h1: this.toBinaryDigit(Math.floor(hour / 10)),
+              h2: this.toBinaryDigit(hour % 10),
+              m1: this.toBinaryDigit(Math.floor(min / 10)),
+              m2: this.toBinaryDigit(min % 10),
+              s1: this.toBinaryDigit(Math.floor(sec / 10)),
+              s2: this.toBinaryDigit(sec % 10),
+            };
+          },
+
+          getBeatTime() {
+            const now = new Date();
+            const seconds = (now.getUTCHours() * 3600) + (now.getUTCMinutes() * 60) + now.getUTCSeconds();
+            return (seconds / 86.4).toFixed(2);
+          },
+
+          updateTime() {
+            const now = new Date();
+            // time
+            this.currentHour   = now.getHours();
+            this.currentMinute = now.getMinutes();
+            this.currentSecond = now.getSeconds();
+            // date
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const day   = String(now.getDate()).padStart(2, '0');
+            const year  = String(now.getFullYear());
+            this.currentDate = `${month} <small class="opacity-25">/</small> ${day} <small class="opacity-25">/</small> ${year}`;
+            // binary
+            this.binaryTime = this.getBinaryTime();
+            // beat
+            this.beatTime = this.getBeatTime();
+          },
+
+          // temp
+          temp: null,
+          unit: 'F',
+          loading: true,
+          error: '',
+          interval: 30,
+          async fetchTemp() {
+            this.loading = true; this.error = '';
+            try {
+              const unitQuery = this.unit === 'F' ? 'fahrenheit' : 'celsius';
+              const url = `https://api.open-meteo.com/v1/forecast?latitude=${this.$store.weather.lat}&longitude=${this.$store.weather.lon}&current=temperature_2m&temperature_unit=${unitQuery}`;
+              const res = await fetch(url);
+              const data = await res.json();
+              this.temp = Math.round(data?.current?.temperature_2m);
+              if (this.temp == null) throw new Error('Weather unavailable');
+            } catch (e) {
+              this.error = e.message || 'Failed to fetch weather';
+            } finally {
+              this.loading = false;
+            }
+          },
+          displayTemp() {
+            return this.temp == null ? '--' : `${this.temp}`;
+          },
+
+          // weather dialog
+          query: '',
+          results: [],
+          searching: false,
+          activeIndex: -1,
+
+          navigate(dir) {
+            if (!this.results.length) return;
+            const len = this.results.length;
+            if      (dir === 'down')   this.activeIndex = (this.activeIndex + 1) % len;
+            else if (dir === 'up')     this.activeIndex = (this.activeIndex - 1 + len) % len;
+            else if (dir === 'first')  this.activeIndex = 0;
+            else if (dir === 'last')   this.activeIndex = len - 1;
+            else if (dir === 'pagedown') this.activeIndex = Math.min(len - 1, this.activeIndex + 5);
+            else if (dir === 'pageup')   this.activeIndex = Math.max(0, this.activeIndex - 5);
+            this.$nextTick(() => {
+              const list = this.$refs.resultsList;
+              const item = list?.querySelectorAll('[data-result]')[this.activeIndex];
+              if (!list || !item) return;
+              const itemBottom = item.offsetTop + item.offsetHeight;
+              if (itemBottom > list.scrollTop + list.clientHeight) list.scrollTop = itemBottom - list.clientHeight;
+              else if (item.offsetTop < list.scrollTop) list.scrollTop = item.offsetTop;
+            });
+          },
+
+          async search() {
+            this.results = [];
+            this.activeIndex = -1;
+            if (this.query.length < 2) return;
+            this.searching = true;
+            try {
+              const res = await fetch('https://geocoding-api.open-meteo.com/v1/search?name=' + encodeURIComponent(this.query) + '&count=8&language=en&format=json');
+              const data = await res.json();
+              this.results = data.results || [];
+            } catch(e) {
+              this.results = [];
+            } finally {
+              this.searching = false;
+            }
+          },
+
+          select(result) {
+            const city = result.name + (result.admin1 ? ', ' + result.admin1 : '') + (result.country_code !== 'US' ? ' (' + result.country_code + ')' : '');
+            this.$store.weather.lat = result.latitude;
+            this.$store.weather.lon = result.longitude;
+            this.$store.weather.city = city;
+            localStorage.setItem('weather_location', JSON.stringify({ lat: result.latitude, lon: result.longitude, city }));
+            this.query = '';
+            this.results = [];
+            this.$el.close();
+          },
+
+          // init
+          async init() {
+            this.updateTime();
+            setInterval(() => this.updateTime(), 10);
+            this.$el.addEventListener('transitionend', (e) => {
+              if (e.target === this.$el && this.$el.open) this.$el.querySelector('#weather-location').focus();
+            });
+            await this.fetchTemp();
+            setInterval(() => this.fetchTemp(), this.interval * 60 * 1000);
+            this.$watch('$store.weather.lat', () => this.fetchTemp());
+          },
+        }
+      });
+
+      const saved = JSON.parse(localStorage.getItem('weather_location') || 'null');
+      Alpine.store('weather', {
+        lat: saved?.lat ?? 44.5133,
+        lon: saved?.lon ?? -88.0133,
+        city: saved?.city ?? 'Green Bay, WI'
+      });
     });
-  });
-
-  // selector
-  const $_ = (selector, callback) => document.querySelectorAll(selector).forEach(callback);
-
-  // utilities
-  const pad = num => num.toString().padStart(2, '0');
-  const formatDate = (date, options) => date.toLocaleDateString("en-US", options);
-
-  function updateClock() {
-    const date = new Date();
-    const hours = date.getHours() % 12 || 12;
-    const minutes = date.getMinutes();
-    const seconds = date.getSeconds();
-    const milliseconds = Math.floor(date.getMilliseconds() / 10);
-
-    // time
-    $_('.hours', e => e.textContent = pad(hours));
-    $_('.minutes', e => e.textContent = pad(minutes));
-    $_('.seconds', e => e.textContent = pad(seconds));
-    $_('.milliseconds', e => e.textContent = pad(milliseconds));
-
-    // beats
-    const beatHours = (date.getUTCHours() + 1) % 24;
-    const beats = ((beatHours * 3600 + date.getUTCMinutes() * 60 + date.getUTCSeconds()) / 86.4).toFixed(2);
-    $_('.beats', e => e.textContent = beats);
-
-    // date
-    $_('.date-m', e => e.textContent = formatDate(date, {month: '2-digit'}));
-    $_('.date-mm', e => e.textContent = formatDate(date, {month: 'short'}));
-    $_('.date-d', e => e.textContent = formatDate(date, {day: '2-digit'}));
-    $_('.date-dd', e => e.textContent = formatDate(date, {weekday: 'short'}));
-    $_('.date-y', e => e.textContent = formatDate(date, {year: 'numeric'}));
-
-    // binary
-    updateBinary(hours, minutes, seconds);
-  }
-
-  function updateBinary(hours, minutes, seconds) {
-    const updateDigit = (value, prefix) => {
-      const binary = value.toString(2).padStart(4, '0');
-      for (let i = 0; i < 4; i++) {
-        const selector = `.${prefix}-${2 ** i}`;
-        const isOn = binary[3 - i] === '1';
-        $_(selector, e => e.classList.toggle('bg-blue-400', isOn));
-        $_(selector, e => e.classList.toggle('motion-safe:animate-blob', isOn));
-        $_(selector, e => e.classList.toggle('ring-1', !isOn));
-        $_(selector, e => e.classList.toggle('ring-gray-500/25', !isOn));
-      }
-    };
-
-    updateDigit(Math.floor(hours / 10), 'hrs-1');
-    updateDigit(hours % 10, 'hrs-2');
-    updateDigit(Math.floor(minutes / 10), 'min-1');
-    updateDigit(minutes % 10, 'min-2');
-    updateDigit(Math.floor(seconds / 10), 'sec-1');
-    updateDigit(seconds % 10, 'sec-2');
-  }
-
-  // init
-  updateClock();
-  setInterval(updateClock, 10);
-</script>
-{% endsetblock %}
+  </script>
+{%- endsetblock -%}

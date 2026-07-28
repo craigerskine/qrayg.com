@@ -14,13 +14,10 @@ export default function (eleventyConfig) {
   eleventyConfig.setDataFileBaseName('_data');
 
   eleventyConfig.addPassthroughCopy({
-    '_src/_assets/qnx': '_assets/qnx',
-    '_src/_assets/twitch': '_assets/twitch',
     '_src/_assets/_root': './',
+    '_src/_assets/css': '_assets/css',
+    '_src/_assets/js': '_assets/js',
   });
-  eleventyConfig.addPassthroughCopy('_src/_assets/twitch');
-  eleventyConfig.addPassthroughCopy('_src/_assets/qnx');
-  eleventyConfig.addPassthroughCopy({'_src/_assets/_root': './'});
 
   eleventyConfig.addWatchTarget('./_src/_app/_app.js');
 

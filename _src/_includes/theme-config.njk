@@ -1,0 +1,50 @@
+<style type="text/tailwindcss">
+  :root {
+    --depth: 0;
+    --noise: 0;
+    --fluid-hero: clamp(2.5rem, -1.4286rem + 9.8214vw, 8rem);; /* 40-128 : 640/1536 */
+    --grid: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4' width='4' height='4'><rect x='0' y='0' width='2' height='2' fill='color-mix(in oklab, currentColor 5%, transparent)'></rect></svg>");
+  }
+
+  @theme {
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-mono: 'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+    --animate-blob: blob .3s ease-in-out;
+    --animate-ping-sm: anim_ping-sm 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+    --animate-throb: anim_throb 3s ease-in-out infinite;
+    --animate-spin: anim_spin 8s ease-in-out infinite;
+
+    @keyframes blob {
+      15% { transform-origin: center center; transform: scale(1.4, 1.2); }
+      40% { transform-origin: center center; transform: scale(.9, .9); }
+      75% { transform-origin: center center; transform: scale(1.08, 1); }
+      100% { transform-origin: center center; transform: scale(1, 1); }
+    }
+
+    @keyframes anim_ping-sm {
+      75%, 100% {
+        transform: scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    @keyframes anim_throb {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1.001); }
+    }
+
+    @keyframes anim_spin {
+      0%, 90% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  }
+
+  :focus-visible { @apply outline-2 outline-current outline-offset-1 rounded-md; }
+  .social a { @apply after:content-[''] after:w-full after:h-full after:absolute after:top-0 after:left-0 after:z-10 after:opacity-0 after:rounded-full focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:outline-current focus-visible:after:outline-offset-1; }
+  .social .active,.social a:hover,.social a:focus-visible { @apply after:bg-current after:opacity-75 after:shadow-xl after:motion-safe:transition-all after:scale-150; }
+  .social a iconify-icon { @apply text-(--color-base-content)/25 relative z-20 motion-safe:transition-all; }
+  .social .active,.social a:hover,.social a:focus-visible { @apply motion-safe:animate-blob; }
+  .social .active iconify-icon,.social a:hover iconify-icon,.social a:focus-visible iconify-icon { @apply text-(--color-base-content); }
+</style>

@@ -8,148 +8,6 @@ import 'iconify-icon';
 import { bind, play } from 'cuelume';
 bind();
 
-// twind
-import { install, injectGlobal } from '@twind/core';
-import presetAutoprefix from '@twind/preset-autoprefix';
-import presetTailwind from '@twind/preset-tailwind';
-install({
-  presets: [presetAutoprefix(), presetTailwind()],
-  darkMode: 'class',
-  hash: false,
-  theme: {
-    extend: {
-      colors: ({ theme }) => ({
-        gray: theme('colors.neutral'),
-      }),
-      fontFamily: ({ theme }) => ({
-        sans: ['Inter', ...theme('fontFamily.sans')],
-        mono: ['Inconsolata', ...theme('fontFamily.mono')],
-        roboto: ['Roboto Mono', ...theme('fontFamily.mono')],
-      }),
-      boxShadow: {
-        'up': '0 -5px 15px 0 rgba(0,0,0,.2)',
-      },
-      keyframes: {
-        blob: {
-          '15%': { 'transform-origin': 'center center', transform: 'scale(1.4, 1.2)', },
-          '40%': { 'transform-origin': 'center center', transform: 'scale(.9, .9)', },
-          '75%': { 'transform-origin': 'center center', transform: 'scale(1.08, 1)', },
-          '100%': { 'transform-origin': 'center center', transform: 'scale(1, 1)', },
-        },
-        'anim_ping-sm': {
-          '75%, 100%': {
-            transform: 'scale(1.5)',
-            opacity: '0',
-          },
-        },
-        'anim_throb': {
-          '0%': { transform: 'scale(1)' },
-          '50%': { transform: 'scale(1.1)' },
-          '100%': { transform: 'scale(1.001)' },
-        },
-        'anim_spin': {
-          '0%, 90%': { transform: 'rotate(0deg)' },
-          '100%': { transform: 'rotate(360deg)' },
-        },
-      },
-      animation: {
-        blob: 'blob .3s ease-in-out',
-        'ping-sm': 'anim_ping-sm 1s cubic-bezier(0, 0, 0.2, 1) infinite',
-        'throb': 'anim_throb 3s ease-in-out infinite',
-        'spin': 'anim_spin 8s ease-in-out infinite',
-      },
-    },
-  },
-  rules: [
-    [ 'bg-grid', { 'background-image': 'url("data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 4 4\' width=\'4\' height=\'4\'><rect x=\'0\' y=\'0\' width=\'2\' height=\'2\' fill=\'rgba(5,5,5,.33)\'></rect></svg>")', } ],
-  ],
-});
-injectGlobal`
-  @layer base {
-    :focus-visible { @apply outline-(& 2 current offset-1) rounded-md; }
-    .social a { @apply after:(content-[''] w-full h-full absolute top-0 left-0 index-10 opacity-0 rounded-full) focus-visible:(outline-none after:(outline-(& 2 current offset-1))); }
-    .social .active,.social a:hover,.social a:focus-visible { @apply after:(bg-current opacity-75 shadow-xl motion-safe:transition-all scale-150); }
-    .social a iconify-icon { @apply text-white opacity-50 relative z-20 motion-safe:transition-all; }
-    .social .active,.social a:hover,.social a:focus-visible { @apply motion-safe:animate-blob; }
-    .social .active iconify-icon,.social a:hover iconify-icon,.social a:focus-visible iconify-icon { @apply text-white opacity-100; }
-
-    .tooltip {
-      --tip-bg: black;
-      --tip-fg: white;
-      --tip-off: calc(100% + 0.5rem);
-      --tip-tail: calc(100% + 0.25rem);
-      
-      display: inline-block;
-      position: relative;
-
-      & > .tooltip-content,&[data-tip]:before {
-        padding: 0.5rem 1rem;
-        width: max-content;
-        max-width: 20rem;
-        background-color: var(--tip-bg);
-        color: var(--tip-fg);
-        font-size: 1rem;
-        line-height: 24px;
-        text-align: center;
-        white-space: normal;
-        pointer-events: none;
-        position: absolute;
-        z-index: 2;
-        content: attr(data-tip);
-        opacity: 0;
-        border-radius: 0.25rem;
-
-        @media (min-width: 768px) {
-          padding: 0.25rem 1rem;
-          font-size: 0.75rem;
-          line-height: 18px;
-        }
-      }
-
-      &:after {
-        width: 1rem;
-        height: 0.5rem;
-        background-color: var(--tip-bg);
-        display: block;
-        position: absolute;
-        pointer-events: none;
-        content: "";
-        opacity: 0;
-        clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
-      }
-
-      @media (prefers-reduced-motion: no-preference) {
-        & > .tooltip-content, &[data-tip]:before, &:after {
-          transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1) 75ms, transform 0.2s cubic-bezier(0.4, 0, 0.2, 1) 75ms;
-        }
-      }
-
-      &[data-tip]:not([data-tip=""], :has(.tooltip-content:not(:empty))) {
-        &.tooltip-open, &:hover, &:has(:focus-visible) {
-          & > .tooltip-content, &[data-tip]:before, &:after {
-            --tip-pos: 0rem;
-            opacity: 1;
-            @media (prefers-reduced-motion: no-preference) {
-              transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0s, transform 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0s;
-            }
-          }
-        }
-      }
-    }
-
-    .tooltip {
-      & > .tooltip-content, &[data-tip]:before {
-        inset: auto auto calc(var(--tip-off) + 0.25rem) 50%;
-        transform: translateX(-50%) translateY(var(--tip-pos, 0.25rem));
-      }
-      &:after {
-        inset: auto auto var(--tip-tail) 50%;
-        transform: translateX(-50%) translateY(var(--tip-pos, 0.25rem));
-      }
-    }
-  }
-`
-
 // particles - https://github.com/VincentGarreau/particles.js/
 import 'particles.js';
 import particlesOptions from '../_app/configs/particles.json';
@@ -161,7 +19,40 @@ if(document.querySelector('#particles')) {
 
 // alpinejs
 import Alpine from 'alpinejs';
-import focus from '@alpinejs/focus';
-Alpine.plugin([focus]);
+import persist from '@alpinejs/persist';
+
+document.addEventListener('alpine:init', () => {
+  Alpine.data('app', function() {
+    return {
+      theme: this.$persist('dark'),
+      themes: [
+        'light',
+        'dark',
+        'abyss',
+        'acid',
+        'black',
+        'business',
+        'caramellatte',
+        'coffee',
+        'dim',
+        'dracula',
+        'fantasy',
+        'forest',
+        'garden',
+        'halloween',
+        'lemonade',
+        'luxury',
+        'nord',
+        'silk',
+        'sunset',
+        'synthwave',
+        'valentine',
+        'winter',
+      ],
+    }
+  });
+});
+
+Alpine.plugin([persist]);
 window.Alpine = Alpine;
 Alpine.start();
