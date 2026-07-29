@@ -8,8 +8,10 @@ eleventyNavigation:
 ---
 
 {%- setblock 'header' -%}
-  <h1 class="mr-auto text-xs font-bold uppercase opacity-50 md:tracking-widest">{{ title }}</h1>
-  <div class="font-bold flex items-center gap-0.5 md:pr-4 md:gap-2" x-html="currentDate"></div>
+  <hgroup class="mr-auto text-sm leading-none space-y-0.5">
+    <h1 class="text-current/30 text-[.75em] font-bold uppercase md:tracking-widest">{{ title }}</h1>
+    <p><time class="font-bold flex items-center gap-0.5 md:gap-1.5" x-html="currentDate"></time></p>
+  </hgroup>
 {%- endsetblock -%}
 
 <template x-for="row in timeRows" :key="row.title" hidden>
