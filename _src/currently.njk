@@ -8,24 +8,24 @@ eleventyNavigation:
 ---
 
 {%- setblock 'header' -%}
-  <hgroup class="mr-auto text-sm leading-none space-y-0.5">
-    <h1 class="text-current/30 text-[.75em] font-bold uppercase md:tracking-widest">{{ title }}</h1>
+  <hgroup class="mr-auto text-current/50 text-sm leading-none space-y-0.5">
+    <h1 class="text-current/50 text-[.75em] font-bold uppercase md:tracking-widest">{{ title }}</h1>
     <p><time class="font-bold flex items-center gap-0.5 md:gap-1.5" x-html="currentDate"></time></p>
   </hgroup>
 {%- endsetblock -%}
 
 <template x-for="row in timeRows" :key="row.title" hidden>
-  <section class="grid relative md:px-4" :class="'section-'+ row.title">
+  <section class="text-current/50 grid relative md:px-4" :class="'section-'+ row.title">
     <div class="flex flex-col justify-center gap-2">
       <div class="pb-4 flex items-end gap-4">
         <time class="[font-size:var(--fluid-hero)] font-normal leading-[.8] md:font-thin" x-text="row.time"></time>
-        <sub class="text-xs tracking-widest font-bold uppercase opacity-20" x-text="row.title"></sub>
+        <sub class="text-xs tracking-widest font-bold uppercase opacity-30" x-text="row.title"></sub>
         <!-- binary -->
         <div class="ml-auto pb-1 flex items-end gap-1">
           <template x-for="(bits, col) in row.binary" :key="col" hidden>
             <div class="flex flex-col items-center gap-1">
               <template x-for="(bit, i) in bits" :key="i" hidden>
-                <div class="bit w-2 aspect-square ring-inset ring-1 ring-current opacity-10 rounded-box transition [&.bit-active]:bg-current [&.bit-active]:ring-transparent [&.bit-active]:opacity-25" :class="bit ? 'bit-active' : ''"></div>
+                <div class="bit w-2 aspect-square ring-inset ring-1 ring-current opacity-30 rounded-box transition [&.bit-active]:bg-current [&.bit-active]:ring-transparent" :class="bit ? 'bit-active' : ''"></div>
               </template>
             </div>
           </template>
@@ -34,11 +34,11 @@ eleventyNavigation:
       <!-- bars -->
       <div class="h-8 flex items-end gap-0.5">
         <template x-for="(filled, i) in row.bar" :key="i" hidden>
-          <div class="bar flex-1 h-full ring-inset ring-1 ring-current [&.bar-active]:ring-transparent [&.bar-active]:bg-current opacity-5 rounded-field transition-all" :class="{ 'bar-active': i < row.current }" :style="`height: ${i < row.current ? '100%' : '25%'}`"></div>
+          <div class="bar flex-1 h-full ring-inset ring-1 ring-current [&.bar-active]:ring-transparent [&.bar-active]:bg-current opacity-15 rounded-field transition-all" :class="{ 'bar-active': i < row.current }" :style="`height: ${i < row.current ? '100%' : '25%'}`"></div>
         </template>
       </div>
       <!-- markers -->
-      <div class="text-xs flex justify-between opacity-20">
+      <div class="text-xs flex justify-between opacity-30">
         <template x-for="mark in row.markers" :key="mark" hidden>
           <div x-text="mark"></div>
         </template>
@@ -48,22 +48,22 @@ eleventyNavigation:
 </template>
 
 {%- setblock 'footer' -%}
-  <footer class="py-2 px-4 text-sm shrink-0 md:px-8">
-    <div class="font-bold tracking-wider flex flex-wrap items-center gap-2">
-      <div>
-        <div class="tooltip tooltip-start">
+  <footer class="py-2 px-4 text-current/50 text-sm shrink-0 md:px-8">
+    <div class="flex flex-wrap items-center gap-2">
+      <div data-cuelume-hover="tick" tabindex="0" class="tooltip tooltip-start inline-flex gap-1">
+        <div class="tooltip-content pb-1.5 text-xs">Beat Time</div>
+        <sup class="text-sm leading-none font-bold italic top-0.5 opacity-50">@</sup><strong x-text="beatTime"></strong>
+      </div>
+      <div class="ml-auto">
+        <div class="tooltip tooltip-end">
           <div class="tooltip-content text-xs" x-text="$store.weather.city"></div>
-          <button data-cuelume-press data-cuelume-release data-cuelume-hover="tick" @click="weather.showModal()" class="btn btn-ghost btn-sm uppercase hover:[background-color:color-mix(in_oklab,currentColor_10%,transparent)]" aria-label="Change location">
+          <button data-cuelume-press data-cuelume-release data-cuelume-hover="tick" @click="weather.showModal()" class="btn btn-ghost btn-sm text-sm text-current font-bold uppercase gap-0.5 hover:[background-color:color-mix(in_oklab,currentColor_10%,transparent)]" aria-label="Change location">
             <strong class="text-xs" x-show="loading">Loading...</strong>
             <strong class="text-xs text-error" x-text="error" x-show="error"></strong>
             <span class="text-sm" x-text="displayTemp()" x-show="!loading"></span>
             <sup class="text-xs leading-none -top-0.5 opacity-50" x-show="!loading">&deg;F</sup>
           </button>
         </div>
-      </div>
-      <div data-cuelume-hover="tick" tabindex="0" class="tooltip tooltip-end ml-auto inline-flex gap-1">
-        <div class="tooltip-content pb-1.5 text-xs">Beat Time</div>
-        <sup class="text-sm leading-none top-0 opacity-50">@</sup><span x-text="beatTime"></span>
       </div>
     </div>
   </footer>
