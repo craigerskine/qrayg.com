@@ -9,7 +9,7 @@
   </div>
   <div tabindex="-1" class="dropdown-content my-2 border border-base-content/10 h-[30.5rem] max-h-[calc(100vh-8.6rem)] bg-base-100 overflow-y-auto rounded-field shadow-lg">
     <menu class="menu menu-sm w-52">
-      <li class="menu-title text-xs uppercase">Theme</li>
+      <li class="menu-title text-xs uppercase">Site Theme</li>
       <template x-for="item in themes" hidden>
         <li>
           <button data-cuelume-hover="tick" data-cuelume-press data-cuelume-release @click="theme = item; document.activeElement.blur();" class="capitalize" :class="item === theme && 'menu-active'">

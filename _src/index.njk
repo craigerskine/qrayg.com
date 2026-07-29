@@ -5,6 +5,9 @@ eleventyNavigation:
   icon: mdi:home-roof
 ---
 
+{%- setblock 'header' -%}
+{%- endsetblock -%}
+
 <section class="landing m-auto text-center relative z-20 motion-safe:transition-all" x-data="social">
   <h1 class="logo group pt-4 pb-24 flex justify-center relative">
     <a href="{{ '/' | url }}" class="mx-4 w-24 aspect-square text-current flex rounded-full motion-safe:animate-spin focus-visible:outline-none focus-visible:[&>b]:outline-2 focus-visible:[&>b]:outline-current focus-visible:[&>b]:outline-offset-4 md:w-32" data-cuelume-hover="sparkle">
@@ -34,45 +37,48 @@ eleventyNavigation:
   </h2>
 </section>
 
+{%- setblock 'footer' -%}
+{%- endsetblock -%}
+
 {% setblock 'js' %}
-<script>
-  document.addEventListener('alpine:init', () => {
-    Alpine.data('social', () => ({
-      social: [
-        { name: 'PayPal', icon: 'mdi:paypal', color: 'indigo-800', url: 'https://paypal.me/qrayg', },
-        { name: 'Venmo', icon: 'mdi:venmo', color: 'blue-700', url: 'https://account.venmo.com/u/qrayg', },
-        { name: 'Ko-Fi', icon: 'cib:ko-fi', color: 'gray-600', url: 'https://ko-fi.com/qrayg', },
-        { name: 'Gumroad', icon: 'simple-icons:gumroad', color: 'violet-400', url: 'https://qrayg.gumroad.com/', },
-        { name: 'Patreon', icon: 'simple-icons:patreon', color: 'rose-400', url: 'https://patreon.com/qrayg/', },
-      ],
-      socialActive: null,
-      socialLoopPaused: false,
-      streamState: null,
-      socialLoop() {
-        setInterval(() => {
-          if(!this.socialLoopPaused) {
-            if(this.socialActive < this.social.length) {
-              this.socialActive++
-            } else {
-              this.socialActive = null
+  <script>
+    document.addEventListener('alpine:init', () => {
+      Alpine.data('social', () => ({
+        social: [
+          { name: 'PayPal', icon: 'mdi:paypal', color: 'indigo-800', url: 'https://paypal.me/qrayg', },
+          { name: 'Venmo', icon: 'mdi:venmo', color: 'blue-700', url: 'https://account.venmo.com/u/qrayg', },
+          { name: 'Ko-Fi', icon: 'cib:ko-fi', color: 'gray-600', url: 'https://ko-fi.com/qrayg', },
+          { name: 'Gumroad', icon: 'simple-icons:gumroad', color: 'violet-400', url: 'https://qrayg.gumroad.com/', },
+          { name: 'Patreon', icon: 'simple-icons:patreon', color: 'rose-400', url: 'https://patreon.com/qrayg/', },
+        ],
+        socialActive: null,
+        socialLoopPaused: false,
+        streamState: null,
+        socialLoop() {
+          setInterval(() => {
+            if(!this.socialLoopPaused) {
+              if(this.socialActive < this.social.length) {
+                this.socialActive++
+              } else {
+                this.socialActive = null
+              }
             }
-          }
-        }, 1500);
-      },
-      hashListener() {
-        this.hashUpdate();
-        window.addEventListener('hashchange', () => {
+          }, 1500);
+        },
+        hashListener() {
           this.hashUpdate();
-        });
-      },
-      hashUpdate() {
-        this.streamState = window.location.hash ? window.location.hash.substring(1) : null;
-      },
-      init() {
-        this.socialLoop();
-        this.hashListener();
-      },
-    }));
-  });
-</script>
+          window.addEventListener('hashchange', () => {
+            this.hashUpdate();
+          });
+        },
+        hashUpdate() {
+          this.streamState = window.location.hash ? window.location.hash.substring(1) : null;
+        },
+        init() {
+          this.socialLoop();
+          this.hashListener();
+        },
+      }));
+    });
+  </script>
 {% endsetblock %}
