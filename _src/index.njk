@@ -23,7 +23,7 @@ eleventyNavigation:
   <ul class="social mb-16 flex justify-center relative">
     <template x-for="(soc, index) in social">
       <li class="mx-3 md:mx-8" @mouseover="socialLoopPaused = true, socialActive = null" @mouseout="socialLoopPaused = false">
-        <a :href="soc.url" class="w-8 h-8 flex relative rounded-full motion-safe:transition-all md:w-12 md:h-12" :class="['text-'+ soc.color, socialActive === (index + 1) ? 'active' : '']" :aria-label="soc.name" data-cuelume-hover="tick">
+        <a :href="soc.url" class="w-8 h-8 flex relative rounded-full motion-safe:transition-all md:w-12 md:h-12" :class="['text-'+ soc.color, socialActive === (index + 1) ? 'active' : '']" :aria-label="soc.name" data-cuelume-hover="droplet">
           <iconify-icon :icon="soc.icon" class="m-auto text-2xl block md:text-3xl" noobserver></iconify-icon>
         </a>
       </li>

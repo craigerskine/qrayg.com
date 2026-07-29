@@ -47,60 +47,8 @@
 
       <header class="py-2 px-4 w-full text-sm shrink-0 flex items-center justify-end gap-1 md:px-8">
         {%- renderblock 'header' %}
-        <div class="dropdown dropdown-end group">
-          <div data-cuelume-hover="tick" data-cuelume-press data-cuelume-release tabindex="0" class="btn btn-ghost btn-circle hover:bg-current/10 group-focus-within:bg-current/10" role="button">
-            <div :data-theme="theme" class="w-3/5 aspect-square p-0.5 border border-base-300 bg-base-100 grid grid-cols-2 grid-rows-2 gap-px rounded-field">
-              <div class="bg-primary rounded-field"></div>
-              <div class="bg-secondary rounded-field"></div>
-              <div class="bg-accent rounded-field"></div>
-              <div class="bg-base-content rounded-field"></div>
-            </div>
-          </div>
-          <div tabindex="-1" class="dropdown-content my-2 border border-base-content/10 h-[30.5rem] max-h-[calc(100vh-8.6rem)] bg-base-100 overflow-y-auto rounded-box shadow-lg">
-            <menu class="menu menu-sm w-52">
-              <li class="menu-title text-xs uppercase">Theme</li>
-              <template x-for="item in themes" hidden>
-                <li>
-                  <button data-cuelume-hover="tick" data-cuelume-press data-cuelume-release @click="theme = item; document.activeElement.blur();" class="capitalize" :class="item === theme && 'menu-active'">
-                    <div :data-theme="item" class="w-4 h-4 p-0.5 border border-base-300 bg-base-100 grid grid-cols-2 grid-rows-2 gap-px rounded-field">
-                      <div class="bg-primary rounded-field"></div>
-                      <div class="bg-secondary rounded-field"></div>
-                      <div class="bg-accent rounded-field"></div>
-                      <div class="bg-base-content rounded-field"></div>
-                    </div>
-                    <span x-text="item"></span>
-                    <iconify-icon x-show="item === theme" icon="mdi:check" class="iconify ml-auto" noobserver></iconify-icon>
-                  </button>
-                </li>
-              </template>
-            </menu>
-          </div>
-        </div>
-        <nav class="dropdown dropdown-end group">
-          <div data-cuelume-hover="tick" data-cuelume-press data-cuelume-release tabindex="0" class="btn btn-ghost btn-circle hover:bg-current/10 group-focus-within:bg-current/10" aria-controls="nav-main" role="button">
-            <span class="sr-only">Menu</span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="w-4 h-4 fill-current pointer-events-none">
-              <rect width="9" height="2" y="7" rx="1" class="origin-center -translate-y-[5px] translate-x-[7px] group-focus-within:translate-x-0 group-focus-within:translate-y-0 group-focus-within:rotate-[315deg] motion-safe:transition-all" />
-              <rect width="16" height="2" y="7" rx="1" class="origin-center group-focus-within:rotate-45 motion-safe:transition-all" />
-              <rect width="9" height="2" y="7" rx="1" class="origin-center translate-y-[5px] group-focus-within:translate-y-0 group-focus-within:rotate-[135deg] motion-safe:transition-all" />
-            </svg>
-          </div>
-          <div
-            tabindex="-1"
-            class="dropdown-content my-2 border border-base-content/10 bg-base-100 rounded-box shadow-lg"
-            id="nav-main">
-            <menu class="menu menu-sm menu-horizontal p-1 [flex-flow:row]">
-              {%- for item in collections.all | eleventyNavigation %}
-              <li>
-                <a href="{{ item.url | url }}" class="text-lg{% if item.url !== '/' %}{% if item.url === page.url or item.url in page.url %} menu-active{% endif %}{% else %}{% if item.url === page.url %} menu-active{% endif %}{% endif %}"{% if item.url !== '/' %}{% if item.url === page.url or item.url in page.url %} aria-current="page"{% endif %}{% else %}{% if item.url === page.url %} aria-current="page"{% endif %}{% endif %} data-cuelume-hover="tick">
-                  <iconify-icon icon="{{ item.icon }}" noobserver></iconify-icon>
-                  <b class="sr-only">{{ item.title }}</b>
-                </a>
-              </li>
-              {%- endfor %}
-            </menu>
-          </div>
-        </nav>
+        {%- include 'nav-themes.njk' -%}
+        {%- include 'nav-main.njk' -%}
       </header>
 
       <main class="p-4 grow {{- ' grid grid-cols-1 gap-x-8 xl:grid-cols-3' if '/currently/' in page.url else ' flex items-center' }}">

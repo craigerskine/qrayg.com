@@ -1,0 +1,29 @@
+<div class="dropdown dropdown-end group">
+  <div data-cuelume-hover="tick" data-cuelume-press data-cuelume-release tabindex="0" class="btn btn-ghost btn-circle hover:bg-current/10 group-focus-within:bg-current/10" role="button">
+    <div :data-theme="theme" class="w-3/5 aspect-square border border-base-300 bg-base-100 grid grid-cols-2 grid-rows-2 gap-px overflow-hidden rounded-full rotate-45">
+      <div class="bg-primary rounded-field"></div>
+      <div class="bg-secondary rounded-field"></div>
+      <div class="bg-accent rounded-field"></div>
+      <div class="bg-base-content rounded-field"></div>
+    </div>
+  </div>
+  <div tabindex="-1" class="dropdown-content my-2 border border-base-content/10 h-[30.5rem] max-h-[calc(100vh-8.6rem)] bg-base-100 overflow-y-auto rounded-field shadow-lg">
+    <menu class="menu menu-sm w-52">
+      <li class="menu-title text-xs uppercase">Theme</li>
+      <template x-for="item in themes" hidden>
+        <li>
+          <button data-cuelume-hover="tick" data-cuelume-press data-cuelume-release @click="theme = item; document.activeElement.blur();" class="capitalize" :class="item === theme && 'menu-active'">
+            <div :data-theme="item" class="w-4 h-4 border border-base-300 bg-base-100 grid grid-cols-2 grid-rows-2 gap-px overflow-hidden rounded-full rotate-45">
+              <div class="bg-primary rounded-field"></div>
+              <div class="bg-secondary rounded-field"></div>
+              <div class="bg-accent rounded-field"></div>
+              <div class="bg-base-content rounded-field"></div>
+            </div>
+            <span x-text="item"></span>
+            <iconify-icon x-show="item === theme" icon="mdi:check" class="iconify ml-auto" noobserver></iconify-icon>
+          </button>
+        </li>
+      </template>
+    </menu>
+  </div>
+</div>
