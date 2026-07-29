@@ -87,12 +87,12 @@
           </div>
           <div
             tabindex="-1"
-            class="dropdown-content mx-2 border border-base-content/10 bg-base-100 rounded-box shadow-lg"
+            class="dropdown-content my-2 border border-base-content/10 bg-base-100 rounded-box shadow-lg"
             id="nav-main">
             <menu class="menu menu-sm menu-horizontal p-1 [flex-flow:row]">
               {%- for item in collections.all | eleventyNavigation %}
               <li>
-                <a href="{{ item.url | url }}" class="text-lg{% if item.url !== '/' %}{% if item.url === page.url or item.url in page.url %} menu-active{% endif %}{% endif %}"{%- if item.url === page.url or item.url in page.url %} aria-current="page"{%- endif %} data-cuelume-hover="tick">
+                <a href="{{ item.url | url }}" class="text-lg{% if item.url !== '/' %}{% if item.url === page.url or item.url in page.url %} menu-active{% endif %}{% else %}{% if item.url === page.url %} menu-active{% endif %}{% endif %}"{% if item.url !== '/' %}{% if item.url === page.url or item.url in page.url %} aria-current="page"{% endif %}{% else %}{% if item.url === page.url %} aria-current="page"{% endif %}{% endif %} data-cuelume-hover="tick">
                   <iconify-icon icon="{{ item.icon }}" noobserver></iconify-icon>
                   <b class="sr-only">{{ item.title }}</b>
                 </a>
