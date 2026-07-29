@@ -70,10 +70,10 @@ eleventyNavigation:
 
   <dialog
     id="weather"
-    class="modal"
+    class="modal modal-bottom sm:modal-middle"
     @cancel="if (results.length) { $event.preventDefault(); results = []; query = ''; }">
     <div class="modal-box overflow-visible">
-      <h2 class="font-bold text-xl">Weather Settings</h2>
+      <h2 class="mb-4 font-bold text-xl">Weather Settings</h2>
       <div class="fieldset">
         <label for="weather-location" class="fieldset-legend">Location</label>
         <div class="relative">
@@ -112,9 +112,7 @@ eleventyNavigation:
         </div>
         <p class="label" x-text="searching ? 'Searching...' : ('Current: ' + $store.weather.city)"></p>
       </div>
-      <div class="modal-action">
-        <button class="btn btn-outline" @click="$el.closest('dialog').close()" data-cuelume-hover="tick" data-cuelume-press data-cuelume-release>OK</button>
-      </div>
+      <button @click="$el.closest('dialog').close()" class="btn btn-ghost btn-sm btn-circle text-lg absolute top-1.5 right-1.5" aria-label="Close" data-cuelume-hover="tick" data-cuelume-press data-cuelume-release><iconify-icon icon="mdi:close" class="iconify" noobserver></iconify-icon></button>
     </div>
     <form method="dialog" class="modal-backdrop"><button>close</button></form>
   </dialog>
