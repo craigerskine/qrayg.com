@@ -8,8 +8,8 @@ eleventyNavigation:
 ---
 
 {%- setblock 'header' -%}
-  <h1 class="mr-auto text-xs font-bold tracking-widest uppercase opacity-50">{{ title }}</h1>
-  <div class="font-bold" x-html="currentDate"></div>
+  <h1 class="mr-auto text-xs font-bold uppercase opacity-50 md:tracking-widest">{{ title }}</h1>
+  <div class="font-bold flex items-center gap-0.5 md:pr-4 md:gap-2" x-html="currentDate"></div>
 {%- endsetblock -%}
 
 <template x-for="row in timeRows" :key="row.title" hidden>
@@ -49,17 +49,14 @@ eleventyNavigation:
   <footer class="py-2 px-4 text-sm shrink-0 md:px-8">
     <div class="font-bold tracking-wider flex flex-wrap items-center gap-2">
       <div>
-        <p class="inline-flex gap-1">
-          <strong class="text-xs" x-show="loading">Loading...</strong>
-          <strong class="text-xs text-error" x-text="error" x-show="error"></strong>
-          <span class="text-sm" x-text="displayTemp()" x-show="!loading"></span>
-          <sup class="text-xs leading-none top-0 opacity-50" x-show="!loading">&deg;F</sup>
-        </p>
-      </div>
-      <div class="flex items-center">
-        <div class="tooltip">
-          <div class="tooltip-content text-xs">Change location</div>
-          <button data-cuelume-press data-cuelume-release data-cuelume-hover="tick" @click="weather.showModal()" class="btn btn-ghost btn-sm text-current/50 uppercase hover:[background-color:color-mix(in_oklab,currentColor_20%,transparent)]" aria-label="Change location" x-text="$store.weather.city"></button>
+        <div class="tooltip tooltip-start">
+          <div class="tooltip-content text-xs" x-text="$store.weather.city"></div>
+          <button data-cuelume-press data-cuelume-release data-cuelume-hover="tick" @click="weather.showModal()" class="btn btn-ghost btn-sm uppercase hover:[background-color:color-mix(in_oklab,currentColor_10%,transparent)]" aria-label="Change location">
+            <strong class="text-xs" x-show="loading">Loading...</strong>
+            <strong class="text-xs text-error" x-text="error" x-show="error"></strong>
+            <span class="text-sm" x-text="displayTemp()" x-show="!loading"></span>
+            <sup class="text-xs leading-none -top-0.5 opacity-50" x-show="!loading">&deg;F</sup>
+          </button>
         </div>
       </div>
       <div data-cuelume-hover="tick" tabindex="0" class="tooltip tooltip-end ml-auto inline-flex gap-1">
