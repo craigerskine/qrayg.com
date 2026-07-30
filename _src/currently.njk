@@ -8,17 +8,19 @@ eleventyNavigation:
 ---
 
 {%- setblock 'header' -%}
-  <hgroup class="mr-auto text-current/50 text-sm leading-none space-y-0.5">
+  <hgroup class="mr-auto text-current/75 text-sm leading-none space-y-0.5">
     <h1 class="text-current/50 text-[.75em] font-bold uppercase md:tracking-widest">{{ title }}</h1>
     <p><time class="font-bold flex items-center gap-0.5 md:gap-1.5" x-html="currentDate"></time></p>
   </hgroup>
 {%- endsetblock -%}
 
+{%- setblock 'mainClasses' %} grid grid-cols-1 gap-y-8 gap-x-16 xl:grid-cols-3{%- endsetblock -%}
+
 <template x-for="row in timeRows" :key="row.title" hidden>
-  <section class="text-current/50 grid relative md:px-4" :class="'section-'+ row.title">
+  <section class="text-current/75 grid relative md:px-4" :class="'section-'+ row.title">
     <div class="flex flex-col justify-center gap-2">
       <div class="pb-4 flex items-end gap-4">
-        <time class="[font-size:var(--fluid-hero)] font-normal leading-[.8] md:font-thin" x-text="row.time"></time>
+        <time class="text-(length:--fluid-hero) font-light leading-[.8] md:font-thin md:tracking-tighter" x-text="row.time"></time>
         <sub class="text-xs tracking-widest font-bold uppercase opacity-30" x-text="row.title"></sub>
         <!-- binary -->
         <div class="ml-auto pb-1 flex items-end gap-1">
@@ -32,9 +34,9 @@ eleventyNavigation:
         </div>
       </div>
       <!-- bars -->
-      <div class="h-8 flex items-end gap-0.5">
+      <div class="h-8 flex items-end gap-0.5 opacity-10">
         <template x-for="(filled, i) in row.bar" :key="i" hidden>
-          <div class="bar flex-1 h-full ring-inset ring-1 ring-current [&.bar-active]:ring-transparent [&.bar-active]:bg-current opacity-15 rounded-field transition-all" :class="{ 'bar-active': i < row.current }" :style="`height: ${i < row.current ? '100%' : '25%'}`"></div>
+          <div class="bar flex-1 h-full ring-inset ring-1 ring-current [&.bar-active]:ring-transparent [&.bar-active]:bg-current rounded-field transition-all" :class="{ 'bar-active': i < row.current }" :style="`height: ${i < row.current ? '100%' : '25%'}`"></div>
         </template>
       </div>
       <!-- markers -->
@@ -48,7 +50,7 @@ eleventyNavigation:
 </template>
 
 {%- setblock 'footer' -%}
-  <footer class="py-2 px-4 text-current/50 text-sm shrink-0 md:px-8">
+  <footer class="py-2 px-4 text-current/75 text-sm shrink-0 md:px-8">
     <div class="flex flex-wrap items-center gap-2">
       <div data-cuelume-hover="tick" tabindex="0" class="tooltip tooltip-start inline-flex gap-1">
         <div class="tooltip-content pb-1.5 text-xs">Beat Time</div>

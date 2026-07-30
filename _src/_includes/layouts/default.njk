@@ -58,7 +58,7 @@
         {%- include 'nav-main.njk' -%}
       </header>
 
-      <main class="p-4 grow {{- ' grid grid-cols-1 gap-x-8 xl:grid-cols-3' if '/currently/' in page.url else ' flex items-center' }}">
+      <main class="p-4 grow {%- renderblock 'mainClasses' %}">
         {{ content | safe }}
       </main>
 

@@ -3,10 +3,12 @@ layout: 'layouts/default.njk'
 eleventyNavigation:
   key: Home
   icon: mdi:home-roof
+  order: 0
 ---
 
-{%- setblock 'header' -%}
-{%- endsetblock -%}
+{%- setblock 'header' -%}{%- endsetblock -%}
+
+{%- setblock 'mainClasses' %}  flex items-center{%- endsetblock -%}
 
 <section class="landing m-auto text-center relative z-20 motion-safe:transition-all" x-data="social">
   <h1 class="logo group pt-4 pb-24 flex justify-center relative">
@@ -37,8 +39,7 @@ eleventyNavigation:
   </h2>
 </section>
 
-{%- setblock 'footer' -%}
-{%- endsetblock -%}
+{%- setblock 'footer' -%}{%- endsetblock -%}
 
 {% setblock 'js' %}
   <script>
