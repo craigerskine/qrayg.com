@@ -40,7 +40,7 @@
     }
   }
 
-  :focus-visible { @apply outline outline-current/33 outline-offset-1 rounded-md; }
+  :focus-visible { @apply outline outline-current/33 outline-offset-1 rounded-(--radius-field); }
   .social a { @apply after:content-[''] after:w-full after:h-full after:absolute after:top-0 after:left-0 after:z-10 after:opacity-0 after:rounded-[inherit] focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:outline-current focus-visible:after:outline-offset-1; }
   .social .active,.social a:hover,.social a:focus-visible { @apply after:bg-current after:opacity-50 after:shadow-xl after:motion-safe:transition-all after:scale-150; }
   .social a iconify-icon { @apply text-(--color-base-content)/25 relative z-20 motion-safe:transition-all; }
