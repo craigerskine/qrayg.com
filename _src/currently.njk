@@ -34,13 +34,13 @@ eleventyNavigation:
         </div>
       </div>
       <!-- bars -->
-      <div class="h-8 flex items-end gap-0.5 opacity-10">
+      <div class="h-8 flex items-end gap-0.5">
         <template x-for="(filled, i) in row.bar" :key="i" hidden>
-          <div class="bar flex-1 h-full ring-inset ring-1 ring-current [&.bar-active]:ring-transparent [&.bar-active]:bg-current rounded-field transition-all" :class="{ 'bar-active': i < row.current }" :style="`height: ${i < row.current ? '100%' : '25%'}`"></div>
+          <div class="bar text-(--color-base-content)/10 flex-1 h-full outline outline-current -outline-offset-1 [&.bar-active]:outline-transparent [&.bar-active]:bg-current rounded-field transition-all" :class="{ 'bar-active shadow-[inset_0_1px_currentColor]': i < row.current }" :style="`height: ${i < row.current ? '100%' : '25%'}`"></div>
         </template>
       </div>
       <!-- markers -->
-      <div class="text-xs flex justify-between opacity-30">
+      <div class="text-xs flex justify-between opacity-20">
         <template x-for="mark in row.markers" :key="mark" hidden>
           <div x-text="mark"></div>
         </template>

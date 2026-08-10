@@ -1,6 +1,6 @@
 <div class="dropdown dropdown-end group">
   <div data-cuelume-hover="tick" data-cuelume-press data-cuelume-release tabindex="0" class="btn btn-ghost btn-circle hover:bg-current/10 group-focus-within:bg-current/10" role="button">
-    <div :data-theme="theme" class="w-3/5 aspect-square border border-base-300 bg-base-100 grid grid-cols-2 grid-rows-2 gap-px overflow-hidden rounded-full rotate-45">
+    <div :data-theme="theme" class="w-3/5 aspect-square border border-current bg-current text-base-100 grid grid-cols-2 grid-rows-2 gap-px overflow-hidden rounded-full rotate-45">
       <div class="bg-primary rounded-field"></div>
       <div class="bg-secondary rounded-field"></div>
       <div class="bg-accent rounded-field"></div>
@@ -13,7 +13,7 @@
       <template x-for="item in themes" hidden>
         <li>
           <button data-cuelume-hover="tick" data-cuelume-press data-cuelume-release @click="theme = item; document.activeElement.blur();" class="capitalize" :class="item === theme && 'menu-active'">
-            <div :data-theme="item" class="w-4 h-4 border border-base-300 bg-base-100 grid grid-cols-2 grid-rows-2 gap-px overflow-hidden rounded-full rotate-45">
+            <div :data-theme="item" class="w-4 h-4 border border-current bg-current text-base-100 grid grid-cols-2 grid-rows-2 gap-px overflow-hidden rounded-full rotate-45">
               <div class="bg-primary rounded-field"></div>
               <div class="bg-secondary rounded-field"></div>
               <div class="bg-accent rounded-field"></div>
