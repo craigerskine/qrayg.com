@@ -27,7 +27,7 @@ eleventyNavigation:
           <template x-for="(bits, col) in row.binary" :key="col" hidden>
             <div class="flex flex-col items-center gap-1">
               <template x-for="(bit, i) in bits" :key="i" hidden>
-                <div class="bit w-2 aspect-square ring-inset ring-1 ring-current opacity-30 rounded-box transition [&.bit-active]:bg-current [&.bit-active]:ring-transparent" :class="bit ? 'bit-active' : ''"></div>
+                <div class="bit w-2 aspect-square text-(--color-base-content)/20 outline outline-current -outline-offset-1 rounded-box transition [&.bit-active]:bg-current [&.bit-active]:outline-transparent" :class="bit ? 'bit-active shadow-[inset_0_1px_currentColor]' : ''"></div>
               </template>
             </div>
           </template>
