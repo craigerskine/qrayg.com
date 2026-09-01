@@ -14,7 +14,7 @@ eleventyNavigation:
   </hgroup>
 {%- endsetblock -%}
 
-{%- setblock 'mainClasses' %} grid grid-cols-1 gap-y-8 gap-x-16 xl:grid-cols-3{%- endsetblock -%}
+{%- setblock 'mainClasses' %} mx-auto w-full max-w-5xl grid items-center gap-4{%- endsetblock -%}
 
 <template x-for="row in timeRows" :key="row.title" hidden>
   <section class="text-current/75 grid relative md:px-4" :class="'section-'+ row.title">
