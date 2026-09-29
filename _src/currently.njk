@@ -115,7 +115,7 @@ eleventyNavigation:
         </div>
         <p class="label" x-text="searching ? 'Searching...' : ('Current: ' + $store.weather.city)"></p>
       </div>
-      <button @click="$el.closest('dialog').close()" class="btn btn-ghost btn-sm btn-circle text-lg absolute top-1.5 right-1.5" aria-label="Close" data-cuelume-hover="tick" data-cuelume-press data-cuelume-release><iconify-icon icon="mdi:close" class="iconify" noobserver></iconify-icon></button>
+      <button @click="$el.closest('dialog').close()" class="btn btn-ghost btn-sm btn-square text-lg absolute top-1.5 right-1.5" aria-label="Close" data-cuelume-hover="tick" data-cuelume-press data-cuelume-release><iconify-icon icon="mdi:close" class="iconify" noobserver></iconify-icon></button>
     </div>
     <form method="dialog" class="modal-backdrop"><button>close</button></form>
   </dialog>
