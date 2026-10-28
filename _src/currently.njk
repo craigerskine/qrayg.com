@@ -75,7 +75,7 @@ eleventyNavigation:
     id="weather"
     class="modal modal-bottom sm:modal-middle"
     @cancel="if (results.length) { $event.preventDefault(); results = []; query = ''; }">
-    <div class="modal-box overflow-visible">
+    <div class="modal-box border border-base-300 overflow-visible">
       <h2 class="mb-4 font-bold text-xl">Weather Settings</h2>
       <div class="fieldset">
         <label for="weather-location" class="fieldset-legend">Location</label>
