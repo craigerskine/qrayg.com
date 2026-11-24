@@ -1,6 +1,6 @@
 import { EleventyRenderPlugin } from '@11ty/eleventy';
 import eleventyNavigationPlugin from '@11ty/eleventy-navigation';
-import esbuild from 'esbuild';
+import * as esbuild from 'esbuild-wasm';
 import markdownIt from 'markdown-it';
 import markdownItAttrs from 'markdown-it-attrs';
 import yaml from 'js-yaml';
