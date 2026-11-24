@@ -52,7 +52,7 @@ eleventyNavigation:
 {%- setblock 'footer' -%}
   <footer class="py-2 px-4 text-current/75 text-sm shrink-0 md:px-8">
     <div class="flex flex-wrap items-center gap-2">
-      <div data-cuelume-hover="tick" tabindex="0" class="tooltip tooltip-start inline-flex gap-1">
+      <div tabindex="0" class="tooltip tooltip-start inline-flex gap-1">
         <div class="tooltip-content pb-1.5 text-xs">Beat Time</div>
         <sup class="text-sm leading-none font-bold italic top-0.5 opacity-50">@</sup>
         <time class="font-bold" x-text="beatTime"></time>
@@ -60,7 +60,7 @@ eleventyNavigation:
       <div class="ml-auto">
         <div class="tooltip tooltip-end">
           <div class="tooltip-content text-xs" x-text="$store.weather.city"></div>
-          <button data-cuelume-press data-cuelume-release data-cuelume-hover="tick" @click="weather.showModal()" class="btn btn-ghost btn-sm text-sm text-current font-bold uppercase gap-0.5 hover:[background-color:color-mix(in_oklab,currentColor_10%,transparent)]" aria-label="Change location">
+          <button data-cuelume-open @click="weather.showModal()" class="btn btn-ghost btn-sm text-sm text-current font-bold uppercase gap-0.5 hover:[background-color:color-mix(in_oklab,currentColor_10%,transparent)]" aria-label="Change location">
             <strong class="text-xs" x-show="loading">Loading...</strong>
             <strong class="text-xs text-error" x-text="error" x-show="error"></strong>
             <span class="text-sm" x-text="displayTemp()" x-show="!loading"></span>
@@ -115,7 +115,7 @@ eleventyNavigation:
         </div>
         <p class="label" x-text="searching ? 'Searching...' : ('Current: ' + $store.weather.city)"></p>
       </div>
-      <button @click="$el.closest('dialog').close()" class="btn btn-ghost btn-sm btn-square text-lg absolute top-1.5 right-1.5" aria-label="Close" data-cuelume-hover="tick" data-cuelume-press data-cuelume-release><iconify-icon icon="mdi:close" class="iconify" noobserver></iconify-icon></button>
+      <button @click="$el.closest('dialog').close()" class="btn btn-ghost btn-sm btn-square text-lg absolute top-1.5 right-1.5" aria-label="Close" data-cuelume-close><iconify-icon icon="mdi:close" class="iconify" noobserver></iconify-icon></button>
     </div>
     <form method="dialog" class="modal-backdrop"><button>close</button></form>
   </dialog>

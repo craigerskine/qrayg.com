@@ -5,7 +5,7 @@ import 'instant.page';
 import 'iconify-icon';
 
 // sounds
-import { bind, play } from 'cuelume';
+import { bind } from 'cuelume';
 bind();
 
 // particles - https://github.com/VincentGarreau/particles.js/

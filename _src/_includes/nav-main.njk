@@ -1,5 +1,5 @@
 <nav class="dropdown dropdown-end group">
-  <div data-cuelume-hover="tick" data-cuelume-press data-cuelume-release tabindex="0" class="btn btn-ghost btn-circle hover:bg-current/10 group-focus-within:bg-current/10" aria-controls="nav-main" role="button">
+  <div data-cuelume-toggle tabindex="0" class="btn btn-ghost btn-circle hover:bg-current/10 group-focus-within:bg-current/10" aria-controls="nav-main" role="button">
     <span class="sr-only">Menu</span>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="w-4 h-4 fill-current pointer-events-none">
       <rect width="9" height="2" y="7" rx="1" class="origin-center -translate-y-[5px] translate-x-[7px] group-focus-within:translate-x-0 group-focus-within:translate-y-0 group-focus-within:rotate-[315deg] motion-safe:transition-all" />
@@ -14,7 +14,7 @@
     <menu class="menu menu-sm p-1 gap-1">
       {%- for item in collections.all | eleventyNavigation %}
       <li>
-        <a href="{{ item.url | url }}" class="btn btn-ghost btn-sm btn-square text-lg{% if item.url !== '/' %}{% if item.url === page.url or item.url in page.url %} btn-active{% endif %}{% else %}{% if item.url === page.url %} btn-active{% endif %}{% endif %}"{% if item.url !== '/' %}{% if item.url === page.url or item.url in page.url %} aria-current="page"{% endif %}{% else %}{% if item.url === page.url %} aria-current="page"{% endif %}{% endif %} data-cuelume-hover="tick">
+        <a href="{{ item.url | url }}" class="btn btn-ghost btn-sm btn-square text-lg{% if item.url !== '/' %}{% if item.url === page.url or item.url in page.url %} btn-active{% endif %}{% else %}{% if item.url === page.url %} btn-active{% endif %}{% endif %}"{% if item.url !== '/' %}{% if item.url === page.url or item.url in page.url %} aria-current="page"{% endif %}{% else %}{% if item.url === page.url %} aria-current="page"{% endif %}{% endif %} data-cuelume-navigate>
           <iconify-icon icon="{{ item.icon }}" noobserver></iconify-icon>
           <b class="sr-only">{{ item.title }}</b>
         </a>
